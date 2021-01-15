@@ -6,4 +6,3 @@ urlpatterns = [
     url(r'^$',index),
     path('admin/', admin.site.urls),
 ]
-#modificado por Ricardo
