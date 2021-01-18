@@ -6,3 +6,7 @@ urlpatterns = [
     url(r'^$',index),
     path('admin/', admin.site.urls),
 ]
+#Comentario nuevo
+#Eymar Josue. Nuevo comentario.
+#Eymar Josue. Nuevo comentario 2.
+#cambio
