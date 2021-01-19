@@ -15,7 +15,7 @@ class datosPersonales(models.Model):
     grupo = models.CharField(max_length = 30)
     telefono = models.CharField(max_length = 30)
     otro_idiona = models.CharField(max_length = 30)
-    residencia _distinta = models.BooleanField()
+    residencia_distinta = models.BooleanField()
     calle = models.CharField(max_length = 30)
     numero = models.IntegerField(default=0)
     colonia = models.CharField(max_length = 30)
@@ -23,3 +23,8 @@ class datosPersonales(models.Model):
     estado = models.CharField(max_length = 30)
     propietario = models.CharField(max_length = 30)
     parentesco = models.CharField(max_length = 30)
+    def __str__(self):
+        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14{15}{16}{17}{18}{19}{20}'.format(self.fecha, self.solicita_beca_alimentaria, self.ap_paterno, self.ap_materno, self.nombre
+        , self.sexo, self.edad, self.estado_civil, self.carrera, self.semestre, self.grupo, self.telefono
+        , self.otro_idiona, self.residencia_distinta, self.calle, self.numero, self.colonia, self.municipio
+        , self.estado, self.propietario, self.parentesco)
