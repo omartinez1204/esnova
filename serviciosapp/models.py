@@ -1,3 +1,25 @@
 from django.db import models
 
 # Create your models here.
+class datosPersonales(models.Model):
+    fecha = models.DateTimeField('fecha')
+    solicita_beca_alimentaria = models.BooleanField()
+    ap_paterno = models.CharField(max_length = 30)
+    ap_materno = models.CharField(max_length = 30)
+    nombre = models.CharField(max_length = 30)
+    sexo = models.CharField(max_length = 3)
+    edad = models.IntegerField(default=0)
+    estado_civil = models.CharField(max_length = 30)
+    carrera = models.CharField(max_length = 30)
+    semestre = models.IntegerField(default=0)
+    grupo = models.CharField(max_length = 30)
+    telefono = models.CharField(max_length = 30)
+    otro_idiona = models.CharField(max_length = 30)
+    residencia _distinta = models.BooleanField()
+    calle = models.CharField(max_length = 30)
+    numero = models.IntegerField(default=0)
+    colonia = models.CharField(max_length = 30)
+    municipio = models.CharField(max_length = 30)
+    estado = models.CharField(max_length = 30)
+    propietario = models.CharField(max_length = 30)
+    parentesco = models.CharField(max_length = 30)
