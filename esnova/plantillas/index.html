@@ -2,8 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Estudio Socioeconomico</title>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
   </head>
   <body>
+      {% bootstrap_javascript jquery='full' %}
+      
+      {% block header %}
+      {% include 'subPlantillas/header.html' %}
+      {% endblock %}
   </body>
 </html>
