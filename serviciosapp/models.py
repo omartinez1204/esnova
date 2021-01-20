@@ -117,8 +117,7 @@ class datosPersonaDeQuienDepende(models.Model):
     celular_tercero = models.CharField(max_length = 30)
     ocupacion_tercero = models.CharField(max_length = 30)
     def __str__(self):
-        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}{21}{22}{23}{24}{25}{26}{27}{28}{29}{30}{31}{32}{33}{34}{35}{36}{37}{38}{39}{40}{41}}'
-        .format(self.ap_paterno, self.ap_materno, self.nombre, self.sexo, self.edad, self.estado_civil, self.telefono_fijo, self.celular, self.parentesco,
+        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}{21}{22}{23}{24}{25}{26}{27}{28}{29}{30}{31}{32}{33}{34}{35}{36}{37}{38}{39}{40}{41}}'.format(self.ap_paterno, self.ap_materno, self.nombre, self.sexo, self.edad, self.estado_civil, self.telefono_fijo, self.celular, self.parentesco,
         self.calle, self.numero, self.colonia, self.municipio, self.region, self.estado, self.grado_escolaridad, self.tipo_de_trabajo, self.ocupacion,
         self.labores_del_campo, self.negocio_propio, self.tipo_de_producto, self.jubilado, self.dependencia_jubilo, self.empresa, self.cargo,
         self.area, self.antiguedad, self.telefono_empresa, self.calle_empresa, self.numero_empresa, self.colonia_empresa, self.municipio_empresa,
@@ -162,8 +161,7 @@ class datosDelResponsable(models.Model):
     region_empresa = models.CharField(max_length = 30)
     estado_empresa = models.CharField(max_length = 30)
     def __str__(self):
-        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}{21}{22}{23}{24}{25}{26}{27}{28}{29}{30}{31}{32}{33}{34}{35}{36}{37}{38}{39}{40}{41}}'
-        .format(self.ap_paterno, self.ap_materno, self.nombre, self.sexo, self.edad, self.estado_civil, self.telefono_fijo, self.celular, self.parentesco,
+        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}{21}{22}{23}{24}{25}{26}{27}{28}{29}{30}{31}{32}{33}{34}{35}{36}{37}{38}{39}{40}{41}}'.format(self.ap_paterno, self.ap_materno, self.nombre, self.sexo, self.edad, self.estado_civil, self.telefono_fijo, self.celular, self.parentesco,
         self.calle, self.numero, self.colonia, self.municipio, self.region, self.estado, self.grado_escolaridad, self.tipo_de_trabajo, self.ocupacion,
         self.labores_del_campo, self.negocio_propio, self.tipo_de_producto, self.jubilado, self.dependencia_jubilo, self.empresa, self.cargo,
         self.area, self.antiguedad, self.telefono_empresa, self.calle_empresa, self.numero_empresa, self.colonia_empresa, self.municipio_empresa,

@@ -1,0 +1,4 @@
+{% for articulo in articulos.all %}
+  <label  for="ts1">{{articulo}}</label>
+  <input type="checkbox" name="articulo" value="{{ articulo.pk }}" />
+{% endfor %}
