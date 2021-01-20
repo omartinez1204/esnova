@@ -166,3 +166,14 @@ class datosDelResponsable(models.Model):
         self.labores_del_campo, self.negocio_propio, self.tipo_de_producto, self.jubilado, self.dependencia_jubilo, self.empresa, self.cargo,
         self.area, self.antiguedad, self.telefono_empresa, self.calle_empresa, self.numero_empresa, self.colonia_empresa, self.municipio_empresa,
         self.region_empresa, self.estado_empresa)
+
+class Articulo(models.Model):
+    articulo = models.CharField(max_length = 50)
+    def __str__(self):
+        return '{0}'.format(self.articulo)
+
+class Alumno(models.Model):
+    nombre = models.CharField(max_length = 50)
+    articulos = models.ManyToManyField(Articulo)
+    def __str__(self):
+        return '{0}'.format(self.nombre)
