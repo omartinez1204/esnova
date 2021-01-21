@@ -167,6 +167,28 @@ class datosDelResponsable(models.Model):
         self.area, self.antiguedad, self.telefono_empresa, self.calle_empresa, self.numero_empresa, self.colonia_empresa, self.municipio_empresa,
         self.region_empresa, self.estado_empresa)
 
+
+
+class ingresoFamiliarMensual(models.Model):
+    personas_que_trabajan = models.IntegerField(default=0)
+    ingreso_padre =  models.FloatField()
+    ingreso_madre =  models.FloatField()
+    otro_nombre_1 = models.CharField(max_length = 30)
+    otro_nombre_2 = models.CharField(max_length = 30)
+    apoyo_F_E = models.BooleanField()
+    tipo_de_apoyo =  models.CharField(max_length = 30)
+    numero_folio = models.CharField(max_length = )
+    monto_folio =  models.FloatField()
+    otro_especifique = models.CharField(max_length = 30)
+    iniciativa_privada  = models.CharField(max_length = 30)
+    monto_i_p =  models.FloatField()
+    numero_persona_dep = models.IntegerField(default=0)
+    ingreso_mensual_total = models.FloatField()
+    def __str__(self):
+        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}'.format(self.personas_que_trabajan, self.ingreso_padre, self.ingreso_madre,
+        self.otro_nombre_1, self.otro_nombre_2, self.apoyo_F_E, self.tipo_de_apoyo, self.numero_folio,self.monto_folio, self.otro_especifique, self.iniciativa_privada,
+        self.monto_i_p, self.numero_persona_dep, self.ingreso_mensual_total )
+
 class Articulo(models.Model):
     articulo = models.CharField(max_length = 50)
     def __str__(self):
