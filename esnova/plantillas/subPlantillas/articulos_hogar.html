@@ -2,7 +2,10 @@
   {% for articulo in articulos %}
   <tr>
     <td align=left><label  for="ts1">{{articulo}}</label></td>
-    <td><input type="checkbox" name="articulo" value="{{ articulo.pk }}" /></td>
+    <td><input type="checkbox" name="articulo" value="{{ articulo.id }}" /></td>
   </tr>
   {% endfor %}
-</table>
+  <tr>
+    <td><label align=left>Otro: </label>
+    <input type="text" name="otro_articulo" value=""></td>
+</<table>
