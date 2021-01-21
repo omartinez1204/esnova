@@ -179,7 +179,7 @@ class ingresoFamiliarMensual(models.Model):
     ingreso_nombre_2 =  models.FloatField()
     apoyo_F_E = models.BooleanField()
     tipo_de_apoyo =  models.CharField(max_length = 30)
-    numero_folio = models.CharField(max_length = )
+    numero_folio = models.CharField(max_length = 30)
     monto_folio =  models.FloatField()
     otro_especifique = models.CharField(max_length = 30)
     iniciativa_privada  = models.CharField(max_length = 30)
