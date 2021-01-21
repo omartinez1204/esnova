@@ -6,16 +6,114 @@
     <title>Estudio Socioeconómico</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/estilos.css'  %}">
   </head>
   <body>
       {% block header %}
       {% include 'subPlantillas/header.html' %}
       {% endblock %}
 
-      <h2>articulos</h2><br>
-      {% block articulos_casa %}
-      {% include 'subPlantillas/articulos_hogar.html' %}
-      {% endblock %}
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+      <div class="container-fluid text-center justify-content-center" >
+            <div class="row justify-content-center">
+
+                    <div class="frm">
+
+                         <form action="" method="" enctype="multipart/form-data">
+                            <br>
+                            <table>
+                                <tr>
+                                    <th>  </th><th>Apellido Paterno  </th> <th>Apellido Materno  </th> <th>Nombre </th> <th>Sexo</th><th>Introduce tu edad </th><th>Introduce tu estado civil </th>
+                                </tr>
+                                <tr>
+                                  <th>  </th>
+                                    <th><input type="text" name="apellido_paterno" class="input-text2"></th><th><input type="text" name="apellido_materno" class="input-text2"></th> <th><input type="text" name="nombre" class="input-text2"></th>
+                                    <th>
+                                      <div class="radio">
+                                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                      <label class="form-check-label" for="flexRadioDefault1">
+                                        M
+                                      </label>
+                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                       F
+                                    </label>
+                                    </div>
+
+                                    </th>
+                                    <th><input type="number" name="edad" class="input-text2"></th>
+                                    <th><input type="text" name="estado_civi" class="input-text2"></th>
+                                </tr>
+                                <tr>
+                                    <th></th><th>Carrera  </th> <th>Semestre  </th> <th> </th> <th> </th><th> </th><th>Grupo </th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th><input type="text" name="carrera" class="input-text2"></th>
+                                    <th><input type="number" name="semestre" class="input-text2"></th>
+                                    <th></th><th></th><th></th>
+                                    <th><input type="text" name="grupo" class="input-text2"></th>
+                                </tr>
+                                <tr>
+                                    <th>  </th><th>Telefono Celular(lada) </th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th><input type="text" name="celular" class="input-text2"></th>
+                                </tr>
+                                <tr>
+                                    <th></th><th> ¿Qué otro idioma, lenguaje o dialecto habla? </th><th></th><th>Su estancia en la universidad, implica residencia distinta a la familiar: </th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th><input type="text" name="lenguaje" class="input-text2"></th>
+                                    <th></th>
+                                    <th>
+                                      <div class="radio">
+                                      <input class="form-check-input" type="radio" name="sino1" id="flexRadioDefault1">
+                                      <label class="form-check-label" for="flexRadioDefault1">
+                                        Si
+                                      </label>
+
+                                     <input class="form-check-input" type="radio" name="sino1" id="flexRadioDefault2" checked>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                       No
+                                    </label>
+                                    </div>
+
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th></th><th>Calle </th> <th>Numero  </th> <th> </th><th>Colonia o Barrio</th><th> </th><th>Municipio </th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th><input type="text" name="calle" class="input-text2"></th>
+                                    <th><input type="number" name="numero_calle" class="input-text2"></th>
+                                    <th></th>
+                                      <th><input type="text" name="colonia" class="input-text2"></th>
+                                    <th></th>
+                                    <th><input type="text" name="municipio" class="input-text2"></th>
+                                </tr>
+                                <tr>
+                                    <th></th><th>Estado  </th> <th>Nombre de la casa de huésped o del propietario(si la residencia es distinta a la familiar) </th> <th> </th> <th> </th><th> </th><th>Parentesco </th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th><input type="text" name="estado" class="input-text2"></th>
+                                    <th><input type="text" name="nombre_casa" class="input-text2"></th>
+                                    <th></th><th></th><th></th>
+                                    <th><input type="text" name="parentesco" class="input-text2"></th>
+                                </tr>
+                                  <tr>
+                                    <th></th>
+                                    <th><button class="btn btn-primary btn-lg">Aceptar</button></th>
+                                </tr>
+                            </table>
+                        </form>
+                </div>
+            </div>
+        </div>
   </body>
 </html>
