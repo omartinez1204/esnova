@@ -175,6 +175,8 @@ class ingresoFamiliarMensual(models.Model):
     ingreso_madre =  models.FloatField()
     otro_nombre_1 = models.CharField(max_length = 30)
     otro_nombre_2 = models.CharField(max_length = 30)
+    ingreso_nombre_1 =  models.FloatField()
+    ingreso_nombre_2 =  models.FloatField()
     apoyo_F_E = models.BooleanField()
     tipo_de_apoyo =  models.CharField(max_length = 30)
     numero_folio = models.CharField(max_length = )
@@ -185,8 +187,8 @@ class ingresoFamiliarMensual(models.Model):
     numero_persona_dep = models.IntegerField(default=0)
     ingreso_mensual_total = models.FloatField()
     def __str__(self):
-        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}'.format(self.personas_que_trabajan, self.ingreso_padre, self.ingreso_madre,
-        self.otro_nombre_1, self.otro_nombre_2, self.apoyo_F_E, self.tipo_de_apoyo, self.numero_folio,self.monto_folio, self.otro_especifique, self.iniciativa_privada,
+        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}'.format(self.personas_que_trabajan, self.ingreso_padre, self.ingreso_madre,
+        self.otro_nombre_1, self.otro_nombre_2, self.ingreso_nombre_1, self.ingreso_nombre_2, self.apoyo_F_E, self.tipo_de_apoyo, self.numero_folio,self.monto_folio, self.otro_especifique, self.iniciativa_privada,
         self.monto_i_p, self.numero_persona_dep, self.ingreso_mensual_total )
 
 class Articulo(models.Model):
