@@ -1,0 +1,87 @@
+.container_MENSAJE{
+  margin-right: 60px;
+}
+.container_GASTOS{
+margin-left:60px;
+}
+
+.container1{
+  width: 20%;
+  float: left;
+  margin-left:60px;
+}
+
+.container2{
+  width:67%;
+  float: right;
+  margin-right:60px;
+}
+.containerRenta{
+  width:63%;
+  float: left;
+  margin-top: 5px;
+}
+
+.containerRenta2{
+  width:25%;
+  float: right;
+  margin-right:60px;
+}
+
+.container_mes{
+  width:60%;
+  float: left;
+  margin-top: 5px;
+}
+
+.container_mes2{
+  width:30%;
+  float: right;
+  margin-right:60px;
+}
+
+.containerizquierda{
+  width:42%;
+  float: left;
+}
+.containerderecha{
+  width:50%;
+  float: right;
+  margin-right:60px;
+}
+
+.containermsg{
+  width:62%;
+  float: left;
+}
+
+.containercaja1{
+  width:33%;
+  float: right;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+
+.containermsg2{
+  margin-top: 25px;
+  width:48%;
+  float: left;
+  margin-left: 40px;
+}
+
+.containercaja2{
+  width:44%;
+  float: right;
+  margin-top: 20px;
+}
+
+.container_trans_msg{
+  width:40%;
+  float: left;
+}
+.container_trans_opc{
+  width:53%;
+  float: right;
+  margin-right: 60px;
+  background-color: pink;
+}
