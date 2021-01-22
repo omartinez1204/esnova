@@ -191,6 +191,36 @@ class ingresoFamiliarMensual(models.Model):
         self.otro_nombre_1, self.otro_nombre_2, self.ingreso_nombre_1, self.ingreso_nombre_2, self.apoyo_F_E, self.tipo_de_apoyo, self.numero_folio,self.monto_folio, self.otro_especifique, self.iniciativa_privada,
         self.monto_i_p, self.numero_persona_dep, self.ingreso_mensual_total )
 
+class gastoFamiliarMensual(models.Model):
+    agua = models.FloatField()
+    luz = models.FloatField()
+    telefono = models.FloatField()
+    gas = models.FloatField()
+    educacion = models.FloatField()
+    transporte = models.FloatField()
+    renta = models.FloatField()
+    television_por_cable = models.FloatField()
+    internet = models.FloatField()
+    otros_1 = models.FloatField()
+    otros_2 = models.FloatField()
+    gasto_alimentacion = models.FloatField()
+    gastos_vestido = models.FloatField()
+    gastos_servicios_medicos = models.FloatField()
+    gasto_diversion = models.FloatField()
+    otros_gastos_1 = models.FloatField()
+    otros_gastos_2 = models.FloatField()
+    total_gastos = models.FloatField()
+
+    def __str__(self):
+        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}'.format(self.agua, self.luz, self.telefono, self.gas, self.educacion, self.transporte,
+         self.renta, self.television_por_cable, self.internet, self.otros_1, self.otros_2, self.gasto_alimentacion, self.gastos_vestido, self.gastos_servicios_medicos,
+         self.gasto_diversion, self.otros_gastos_1, self.otros_gastos_2, self.total_gastos  )
+
+    
+
+
+
+
 class informacionSocioEconomica(models.Model):
     casa_familiar = models.CharField(max_length = 30)
     material_paredes = models.CharField(max_length = 30)
@@ -199,4 +229,3 @@ class informacionSocioEconomica(models.Model):
     tipo_vivienda = models.CharField(max_length = 30)
     servicios_publicos = models.CharField(max_length = 30)
     servicios_vivienda = models.CharField(max_length = 30)
-    
