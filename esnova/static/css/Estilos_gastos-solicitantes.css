@@ -1,0 +1,192 @@
+.container_MENSAJE{
+  margin-right: 60px;
+}
+.container_GASTOS{
+margin-left:60px;
+}
+
+.container1{
+  width: 20%;
+  float: left;
+  margin-left:60px;
+}
+
+.container2{
+  width:67%;
+  float: right;
+  margin-right:60px;
+}
+.containerRenta{
+  width:63%;
+  float: left;
+  margin-top: 5px;
+}
+
+.containerRenta2{
+  width:25%;
+  float: right;
+  margin-right:60px;
+}
+
+.container_mes{
+  width:60%;
+  float: left;
+  margin-top: 5px;
+}
+
+.container_mes2{
+  width:30%;
+  float: right;
+  margin-right:60px;
+}
+
+.containerizquierda{
+  width:42%;
+  float: left;
+}
+.containerderecha{
+  width:50%;
+  float: right;
+  margin-right:60px;
+}
+
+.containermsg{
+  width:62%;
+  float: left;
+}
+
+.containercaja1{
+  width:33%;
+  float: right;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+
+.containermsg2{
+  margin-top: 25px;
+  width:48%;
+  float: left;
+  margin-left: 40px;
+}
+
+.containercaja2{
+  width:44%;
+  float: right;
+  margin-top: 20px;
+}
+
+.container_trans_msg{
+  width:40%;
+  float: left;
+}
+.container_trans_opc{
+  width:53%;
+  float: right;
+  margin-right: 60px;
+}
+.container_nombre{
+  width:18%;
+  float: left;
+  margin-left: 50px;
+  margin-top: 12px;
+}
+.container_seleccion{
+  width:72%;
+  float: right;
+  margin-right: 60px;
+}
+.container_nombre2{
+  width:18%;
+  float: left;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+.container_seleccion2{
+  width:72%;
+  float: right;
+  margin-right: 60px;
+}
+.container_nombre3{
+  width:18%;
+  float: left;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+.container_seleccion3{
+  width:72%;
+  float: right;
+  margin-right: 60px;
+}
+.container_nombre4{
+  width:18%;
+  float: left;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+.container_seleccion4{
+  width:72%;
+  float: right;
+  margin-right: 60px;
+}
+
+.container_trabajo{
+  width:52%;
+  float: left;
+  margin-top: 5px;
+}
+
+.container_cajatrabajo{
+  width:38%;
+  float: right;
+  margin-right:75px;
+}
+
+.container_trabajo2{
+  width:30%;
+  float: left;
+  margin-left: 50px;
+  margin-top: 5px;
+}
+
+.container_cajatrabajo2{
+  width:25%;
+  float: right;
+  margin-right:370px;
+}
+.container_trabajo3{
+  width:30%;
+  float: left;
+  margin-left: 50px;
+  margin-top: 5px;
+}
+
+.container_cajatrabajo3{
+  width:25%;
+  float: right;
+  margin-right:370px;
+}
+
+.container_jefefamilia{
+  width:15%;
+  float: left;
+  margin-top: 5px;
+}
+
+.container_jefefamilia2{
+  width:50%;
+  float: right;
+  margin-right:370px;
+}
+
+.container_personas{
+  width:40%;
+  float: left;
+  margin-left: 50px;
+  margin-top: 5px;
+}
+
+.container_cajapersonas{
+  width:20%;
+  float: right;
+  margin-right:375px;
+}

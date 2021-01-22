@@ -6,7 +6,7 @@
     <title>Estudio Socioeconómico</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/estilos_vistas.css'  %}">
+    <link rel="stylesheet" href="{% static 'css/estilos_gastos-solicitantes.css'  %}">
   </head>
   <body>
       {% block header %}
@@ -130,31 +130,159 @@
           </div>
         </div>
           <br><br><br><br><br><br>
-          <p>Vll. Aparatos electrónicos que tiene para su uso personal: </p>
-
-          <div class="container_aparato1">
-            <br><h6>Celular:</h6><br>
-            <h6>Cámara fotografica:</h6><br>
-            <h6>Reproductor de audio:</h6><br>
-            <h6>Tableta electrónica:</h6>
-          </div>
-          <div class="container_aparato2">
-
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          <p>Vll. Aparatos electrónicos que tiene para su uso personal: </p><br>
+        <div class="container_aparato1">
+              <div class="container_nombre">
+                  <h6>Celular:</h6>
+              </div>
+              <div class="container_seleccion">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                  <label class="form-check-label" for="gridRadios1">
+                    Si
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                  <label class="form-check-label" for="gridRadios2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+            <br><br><br>
+            <div class="container_aparato2">
+                  <div class="container_nombre2">
+                      <h6>Cámara fotografica:</h6>
+                  </div>
+                  <div class="container_seleccion2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                      <label class="form-check-label" for="gridRadios1">
+                        Si
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                      <label class="form-check-label" for="gridRadios2">
+                        No
+                      </label>
+                    </div>
+                </div>
+            </div>
+            <br><br><br>
+            <div class="container_aparato3">
+                  <div class="container_nombre3">
+                      <h6>Reproductor de audio:</h6>
+                  </div>
+                  <div class="container_seleccion3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                      <label class="form-check-label" for="gridRadios1">
+                        Si
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                      <label class="form-check-label" for="gridRadios2">
+                        No
+                      </label>
+                    </div>
+                </div>
+            </div>
+            <br><br><br>
+            <div class="container_aparato4">
+                  <div class="container_nombre4">
+                      <h6>Tableta electrónica:</h6>
+                  </div>
+                  <div class="container_seleccion4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                      <label class="form-check-label" for="gridRadios1">
+                        Si
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                      <label class="form-check-label" for="gridRadios2">
+                        No
+                      </label>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br>
+            <form>
+            <div class="container_trabajo">
+              <p>Vlll. Si se encuentra empleado , mencione el centro de trabajo para el cual labora: </p>
+            </div>
+            <div class="container_cajatrabajo">
+              <div class="form-row">
+                <div class="col-12">
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+              </div>
+              </div>
+            </form>
+              <br><br><br>
+              <form>
+              <div class="container_trabajo2">
+                <p> Mencione el ingreso mensual que percibe: </p>
+              </div>
+              <div class="container_cajatrabajo2">
+                <div class="form-row">
+                  <div class="col-12">
+                    <input type="text" class="form-control" placeholder="$">
+                  </div>
+                </div>
+                </div>
+            </form>
+            <br><br><br>
+            <form>
+              <div class="container_trabajo3">
+                <p> Domicilio y teléfono del centro de trabajo: </p>
+              </div>
+              <div class="container_cajatrabajo3">
+                <div class="form-row">
+                  <div class="col-12">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                </div>
+                </div>
+              </form>
+              <br><br><br><br><br>
+              <form>
+                <div class="container_jefefamilia">
+                  <p>lX. ¿Es jefe de familia? </p>
+                </div>
+                <div class="container_jefefamilia2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                    <label class="form-check-label" for="gridRadios1">
+                      Si
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <label class="form-check-label" for="gridRadios2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </form>
+              <br><br><br>
+              <form>
+                <div class="container_personas">
+                  <p> ¿Cuántas personas dependen económicamente de usted?: </p>
+                </div>
+                <div class="container_cajapersonas">
+                  <div class="form-row">
+                    <div class="col-7">
+                      <input type="text" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                  </div>
+                </form>
+                <br><br><br><br>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 
