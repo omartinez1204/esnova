@@ -1,5 +1,15 @@
 from django.db import models
 
+
+#modelo usuarios
+class usuarios(models.Model):
+    matricula = models.CharField(max_length =30 )
+    contrasenia = models.CharField(max_length = 30)
+    email = models.EmailField()
+    def __str__(self):
+        return '{0}{1}{2}'.format(self.matricula, self.contrasenia, self.email)
+    
+
 # Create your models here.
 class datosPersonales(models.Model):
     fecha = models.DateTimeField('fecha')
