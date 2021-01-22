@@ -237,4 +237,45 @@ class informacionSocioEconomica(models.Model):
     material_techo = models.CharField(max_length = 30)
     tipo_vivienda = models.CharField(max_length = 30)
     servicios_publicos = models.CharField(max_length = 30)
-    servicios_vivienda = models.CharField(max_length = 30)
+    servicios_vivienda = models.TextField(null=True)
+    casa_cuenta_con = models.TextField(null=True)
+    personas_habitan = models.IntegerField(default=0)
+    cuartos = models.IntegerField(default=0)
+    banios = models.IntegerField(default=0)
+    banios_tipo = models.CharField(max_length = 30)
+    cocina_tipo = models.CharField(max_length = 30)
+    comedor = models.BooleanField()
+    sala = models.BooleanField()
+    biblioteca = models.BooleanField()
+    terraza = models.BooleanField()
+    cuarto_estudio = models.BooleanField()
+    patio = models.BooleanField()
+    cochera = models.BooleanField()
+    cuarto_servicio = models.BooleanField()
+    otro = models.CharField(max_length = 30)
+    focos = models.CharField(max_length = 30)
+    automovil = models.BooleanField()
+    marca = models.CharField(max_length = 30)
+    modelo = models.CharField(max_length = 30)
+    anio = models.IntegerField(default=0)
+    tipo_cultivo = models.CharField(max_length = 30)
+    otros_bienes = models.TextField(null=True)
+    negocio = models.CharField(max_length = 30)
+    tipo_negocio = models.CharField(max_length = 30)
+    otros_bienes_especifique = models.CharField(max_length = 30)
+    servicios_asistencia_medica = models.TextField(null=True)
+    otros_servicios = models.CharField(max_length = 30)
+    apoyo_dependencia = models.BooleanField()
+    en_especie = models.CharField(max_length = 30)
+    monto_apoyo = models.FloatField()
+    dependencia_empresa = models.CharField(max_length = 30)
+    periodo_apoyo = models.CharField(max_length = 30)
+    def __str__(self):
+        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}{21}{22}{23}{24}{25}{26}{27}{28}{29}{30}{31}{32}{33}{34}{35}{36}{37}{38}'.format(
+        self.casa_familiar, self.material_paredes, self.material_piso, self.material_techo, self.tipo_vivienda, self.servicios_publicos,
+        self.servicios_vivienda, self.casa_cuenta_con, self.personas_habitan, self.cuartos, self.banios, self.banios_tipo, self.cocina_tipo,
+        self.comedor, self.sala, self.biblioteca, self.terraza, self.cuarto_estudio, self.patio, self.cochera, self.cuarto_servicio,
+        self.otro, self.focos, self.automovil, self.marca, self. modelo, self.anio, self. tipo_cultivo, self.otros_bienes, self.negocio,
+        self.tipo_negocio, self.otros_bienes_especifique, self.servicios_asistencia_medica, self.otros_servicios, self.apoyo_dependencia,
+        self.en_especie, self.monto_apoyo, self.dependencia_empresa, self.periodo_apoyo
+        )
