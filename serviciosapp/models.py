@@ -216,8 +216,17 @@ class gastoFamiliarMensual(models.Model):
          self.renta, self.television_por_cable, self.internet, self.otros_1, self.otros_2, self.gasto_alimentacion, self.gastos_vestido, self.gastos_servicios_medicos,
          self.gasto_diversion, self.otros_gastos_1, self.otros_gastos_2, self.total_gastos  )
 
-    
 
+class personasQueDependenDelIngresoMensual(models.Model):
+    numero_hermanos = models.IntegerField(default=0)
+    nombres_personas = models.TextField(null=True)
+    edades_personas = models.TextField(null=True)
+    parentescos_personas = models.TextField(null=True)
+    tipo_comprobante_personas = models.TextField(null=True)
+    observaciones = models.TextField(null=True)
+    def __str__(self):
+        return '{0}{1}{2}{3}{4}{5}{6}'.format(self.numero_hermanos,self.nombres_personas, self.edades_personas,self.parentescos_personas, self.tipo_comprobante_personas,
+        self.observaciones)
 
 
 
