@@ -4,7 +4,6 @@ from django.conf.urls import url
 from esnova.views import *
 urlpatterns = [
     url(r'^$',index),
-    url(r'^$',index),
     url(r'^Gas_Solicitante/$',gastos_solicitante),
     path('admin/', admin.site.urls),
 ]
