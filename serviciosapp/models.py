@@ -191,13 +191,91 @@ class ingresoFamiliarMensual(models.Model):
         self.otro_nombre_1, self.otro_nombre_2, self.ingreso_nombre_1, self.ingreso_nombre_2, self.apoyo_F_E, self.tipo_de_apoyo, self.numero_folio,self.monto_folio, self.otro_especifique, self.iniciativa_privada,
         self.monto_i_p, self.numero_persona_dep, self.ingreso_mensual_total )
 
-class Articulo(models.Model):
-    articulo = models.CharField(max_length = 50)
-    def __str__(self):
-        return '{0}'.format(self.articulo)
+class gastoFamiliarMensual(models.Model):
+    agua = models.FloatField()
+    luz = models.FloatField()
+    telefono = models.FloatField()
+    gas = models.FloatField()
+    educacion = models.FloatField()
+    transporte = models.FloatField()
+    renta = models.FloatField()
+    television_por_cable = models.FloatField()
+    internet = models.FloatField()
+    otros_1 = models.FloatField()
+    otros_2 = models.FloatField()
+    gasto_alimentacion = models.FloatField()
+    gastos_vestido = models.FloatField()
+    gastos_servicios_medicos = models.FloatField()
+    gasto_diversion = models.FloatField()
+    otros_gastos_1 = models.FloatField()
+    otros_gastos_2 = models.FloatField()
+    total_gastos = models.FloatField()
 
-class Alumno(models.Model):
-    nombre = models.CharField(max_length = 50)
-    articulos = models.ManyToManyField(Articulo)
     def __str__(self):
-        return '{0}'.format(self.nombre)
+        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}'.format(self.agua, self.luz, self.telefono, self.gas, self.educacion, self.transporte,
+         self.renta, self.television_por_cable, self.internet, self.otros_1, self.otros_2, self.gasto_alimentacion, self.gastos_vestido, self.gastos_servicios_medicos,
+         self.gasto_diversion, self.otros_gastos_1, self.otros_gastos_2, self.total_gastos  )
+
+
+class personasQueDependenDelIngresoMensual(models.Model):
+    numero_hermanos = models.IntegerField(default=0)
+    nombres_personas = models.TextField(null=True)
+    edades_personas = models.TextField(null=True)
+    parentescos_personas = models.TextField(null=True)
+    tipo_comprobante_personas = models.TextField(null=True)
+    observaciones = models.TextField(null=True)
+    def __str__(self):
+        return '{0}{1}{2}{3}{4}{5}{6}'.format(self.numero_hermanos,self.nombres_personas, self.edades_personas,self.parentescos_personas, self.tipo_comprobante_personas,
+        self.observaciones)
+
+
+
+class informacionSocioEconomica(models.Model):
+    casa_familiar = models.CharField(max_length = 30)
+    material_paredes = models.CharField(max_length = 30)
+    material_piso = models.CharField(max_length = 30)
+    material_techo = models.CharField(max_length = 30)
+    tipo_vivienda = models.CharField(max_length = 30)
+    servicios_publicos = models.CharField(max_length = 30)
+    servicios_vivienda = models.TextField(null=True)
+    casa_cuenta_con = models.TextField(null=True)
+    personas_habitan = models.IntegerField(default=0)
+    cuartos = models.IntegerField(default=0)
+    banios = models.IntegerField(default=0)
+    banios_tipo = models.CharField(max_length = 30)
+    cocina_tipo = models.CharField(max_length = 30)
+    comedor = models.BooleanField()
+    sala = models.BooleanField()
+    biblioteca = models.BooleanField()
+    terraza = models.BooleanField()
+    cuarto_estudio = models.BooleanField()
+    patio = models.BooleanField()
+    cochera = models.BooleanField()
+    cuarto_servicio = models.BooleanField()
+    otro = models.CharField(max_length = 30)
+    focos = models.CharField(max_length = 30)
+    automovil = models.BooleanField()
+    marca = models.CharField(max_length = 30)
+    modelo = models.CharField(max_length = 30)
+    anio = models.IntegerField(default=0)
+    tipo_cultivo = models.CharField(max_length = 30)
+    otros_bienes = models.TextField(null=True)
+    negocio = models.CharField(max_length = 30)
+    tipo_negocio = models.CharField(max_length = 30)
+    otros_bienes_especifique = models.CharField(max_length = 30)
+    servicios_asistencia_medica = models.TextField(null=True)
+    otros_servicios = models.CharField(max_length = 30)
+    apoyo_dependencia = models.BooleanField()
+    en_especie = models.CharField(max_length = 30)
+    monto_apoyo = models.FloatField()
+    dependencia_empresa = models.CharField(max_length = 30)
+    periodo_apoyo = models.CharField(max_length = 30)
+    def __str__(self):
+        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}{21}{22}{23}{24}{25}{26}{27}{28}{29}{30}{31}{32}{33}{34}{35}{36}{37}{38}'.format(
+        self.casa_familiar, self.material_paredes, self.material_piso, self.material_techo, self.tipo_vivienda, self.servicios_publicos,
+        self.servicios_vivienda, self.casa_cuenta_con, self.personas_habitan, self.cuartos, self.banios, self.banios_tipo, self.cocina_tipo,
+        self.comedor, self.sala, self.biblioteca, self.terraza, self.cuarto_estudio, self.patio, self.cochera, self.cuarto_servicio,
+        self.otro, self.focos, self.automovil, self.marca, self. modelo, self.anio, self. tipo_cultivo, self.otros_bienes, self.negocio,
+        self.tipo_negocio, self.otros_bienes_especifique, self.servicios_asistencia_medica, self.otros_servicios, self.apoyo_dependencia,
+        self.en_especie, self.monto_apoyo, self.dependencia_empresa, self.periodo_apoyo
+        )
