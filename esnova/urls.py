@@ -6,6 +6,7 @@ urlpatterns = [
     url(r'^$',index),
     url(r'^$',index),
     url(r'^gastos_solicitante/$',gastos_solicitante),
+    url(r'^datos_solicitante/$',datos_solicitante),
     path('admin/', admin.site.urls),
 ]
 #Comentario nuevo

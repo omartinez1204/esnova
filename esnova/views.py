@@ -8,3 +8,6 @@ def index(request):
     return render(request, 'index.html')
 def gastos_solicitante(request):
     return render(request, 'Gastos_Solicitante.html')
+
+def datos_solicitante(request):
+    return render(request, 'datos_Solicitante.html')
