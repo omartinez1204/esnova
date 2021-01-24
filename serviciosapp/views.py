@@ -25,4 +25,7 @@ def registrar(request):
 
 
 def obtenerDatos_Solicitante(request):
+    datosPersonalesModel = datosPersonales(solicita_beca_alimentaria= bool(request.POST['solicita_beca_alimentaria']),)
+    
+
     return render(request,'index.html')
