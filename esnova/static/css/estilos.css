@@ -66,3 +66,12 @@ input.placeholder {
   font-family: 'Montserrat', sans-serif;
   color: #2C3E50;
 }
+
+nav .navbar-link li{
+
+color: #0b231e;
+}
+
+nav .navbar-nav li a{
+  color: green;
+  }
