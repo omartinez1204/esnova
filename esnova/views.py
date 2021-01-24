@@ -6,6 +6,10 @@ from serviciosapp.models import *
 def index(request):
 
     return render(request, 'index.html')
+
+def login(request):
+    return render(request, 'login.html')
+
 def gastos_solicitante(request):
     return render(request, 'Gastos_Solicitante.html')
 
@@ -17,5 +21,3 @@ def medios_estudiar(request):
 
 def datos_responsable(request):
     return render(request, 'datos_responsable.html')
-
-     

@@ -8,6 +8,7 @@ from serviciosapp.views import *
 urlpatterns = [
     url(r'^$',index),
     url(r'^$',index),
+    url(r'^login/$',login),
     url(r'^gastos_solicitante/$',gastos_solicitante),
     url(r'^datos_solicitante/$',datos_solicitante),
     url(r'^medios_estudiar/$',medios_estudiar),
