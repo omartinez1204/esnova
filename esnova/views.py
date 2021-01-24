@@ -17,3 +17,5 @@ def medios_estudiar(request):
 
 def datos_responsable(request):
     return render(request, 'datos_responsable.html')
+
+     
