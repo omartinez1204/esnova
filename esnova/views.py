@@ -3,8 +3,9 @@ import datetime
 from django.template import Template, Context
 from django.shortcuts import render
 from serviciosapp.models import *
-def index(request):
 
+
+def index(request):
     return render(request, 'index.html')
 
 def login(request):
