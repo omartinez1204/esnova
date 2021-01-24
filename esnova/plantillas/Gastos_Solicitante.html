@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/estilos_gastos-solicitantes.css'  %}">
+    <link rel="stylesheet" href="{% static 'css/estilos.css'  %}">
   </head>
   <body>
       {% block header %}
@@ -14,9 +15,10 @@
       {% endblock %}
 
   <div class="container">
-      <br><h4 class="text-center">INFORMACIÓN SOBRE GASTOS DEL SOLICITANTE</h4><br>
+      <br><h4 class="titulos text-center">INFORMACIÓN SOBRE GASTOS DEL SOLICITANTE</h4><br>
       <div class="container_MENSAJE" id="mensaje">
-      <p>l. ¿A cuánto ascienden sus gastos mensuales totales de manutención, incluyendo lo que paga de: alimentación,  transporte, vivienda,servicios médicos, libros y materiales escolares, entretenimiento, etc.? (por favor, no incluya los gastos en colegiatura e inscripciones de la universidad):
+      <p class="preguntas"><strong>l. ¿A cuánto ascienden sus gastos mensuales totales de manutención, incluyendo lo que paga de: alimentación,  transporte, vivienda,servicios médicos, libros y materiales escolares, entretenimiento, etc.? (por favor, no incluya los gastos en colegiatura e inscripciones de la universidad):
+      </strong>
           </p>
         </div>
         <div class="container_GASTOS">
@@ -32,7 +34,7 @@
       <br>
 
         <br><br>
-        <p>ll. Si tiene gastos adicionales por concepto de servicios médicos especializados , indique la causa y el monto mensual.</p>
+        <p class="preguntas"><strong>ll. Si tiene gastos adicionales por concepto de servicios médicos especializados , indique la causa y el monto mensual.</strong></p>
           <form>
             <div class="container1">
               <div class="col-auto">
@@ -57,7 +59,7 @@
           <br><br><br><br><br><br>
           <form>
           <div class="containerRenta">
-            <p>lll. Si renta cuarto o casa. ¿Con cuántas personas comparte el costo de la renta?    (No se cuente Ud.)</p>
+            <p class="preguntas"><strong>lll. Si renta cuarto o casa. ¿Con cuántas personas comparte el costo de la renta?    (No se cuente Ud.)</strong></p>
           </div>
           <div class="containerRenta2">
             <div class="form-row">
@@ -71,7 +73,7 @@
 
           <form>
           <div class="container_mes">
-            <p>lV. ¿Cuánto paga de renta mensualmente         (anote solo lo que Ud. Aporta)?</p>
+            <p class="preguntas"><strong>lV. ¿Cuánto paga de renta mensualmente         (anote solo lo que Ud. Aporta)?</strong></p>
           </div>
           <div class="container_mes2">
             <div class="form-row">
@@ -86,7 +88,7 @@
           <form>
           <div class="containerizquierda">
             <div class="containermsg">
-              <p>V. Si renta y vive con familiares. <br>¿Cuántas personas habitan la vivienda? </p>
+              <p class="preguntas"><strong>V. Si renta y vive con familiares. <br>¿Cuántas personas habitan la vivienda? </strong></p>
             </div>
             <div class="containercaja1">
               <div class="form-row">
@@ -98,7 +100,7 @@
           </div>
           <div class="containerderecha">
             <div class="containermsg2">
-              <p>¿Qué parentesco tiene con usted?</p>
+              <p class="preguntas"><strong>¿Qué parentesco tiene con usted?</strong></p>
             </div>
             <div class="containercaja2">
               <div class="form-row">
@@ -112,7 +114,7 @@
           <br><br><br><br><br><br><br>
           <div class="containerTransporte">
             <div class="container_trans_msg">
-              <p>Vl. Medio más frecuente para el traslado a la Universidad: </p>
+              <p class="preguntas"><strong> Vl. Medio más frecuente para el traslado a la Universidad: </strong></p>
             </div>
             <div class="container_trans_opc">
               <div class="form-group col-md-12">
@@ -130,7 +132,7 @@
           </div>
         </div>
           <br><br><br><br><br><br>
-          <p>Vll. Aparatos electrónicos que tiene para su uso personal: </p><br>
+          <p class="preguntas"><strong>Vll. Aparatos electrónicos que tiene para su uso personal: </strong></p><br>
         <div class="container_aparato1">
               <div class="container_nombre">
                   <h6>Celular:</h6>
@@ -213,7 +215,7 @@
             <br><br><br><br><br>
             <form>
             <div class="container_trabajo">
-              <p>Vlll. Si se encuentra empleado , mencione el centro de trabajo para el cual labora: </p>
+              <p class="preguntas"><strong>Vlll. Si se encuentra empleado , mencione el centro de trabajo para el cual labora: </strong></p>
             </div>
             <div class="container_cajatrabajo">
               <div class="form-row">
@@ -226,7 +228,7 @@
               <br><br><br>
               <form>
               <div class="container_trabajo2">
-                <p> Mencione el ingreso mensual que percibe: </p>
+                <p class="preguntas"><strong> Mencione el ingreso mensual que percibe:<strong> </p>
               </div>
               <div class="container_cajatrabajo2">
                 <div class="form-row">
@@ -239,7 +241,7 @@
             <br><br><br>
             <form>
               <div class="container_trabajo3">
-                <p> Domicilio y teléfono del centro de trabajo: </p>
+                <p class="preguntas"> <strong>Domicilio y teléfono del centro de trabajo: </strong></p>
               </div>
               <div class="container_cajatrabajo3">
                 <div class="form-row">
@@ -252,7 +254,7 @@
               <br><br><br><br><br>
               <form>
                 <div class="container_jefefamilia">
-                  <p>lX. ¿Es jefe de familia? </p>
+                  <p class="preguntas"><strong>lX. ¿Es jefe de familia? </strong></p>
                 </div>
                 <div class="container_jefefamilia2">
                   <div class="form-check">
@@ -272,7 +274,7 @@
               <br><br><br>
               <form>
                 <div class="container_personas">
-                  <p> ¿Cuántas personas dependen económicamente de usted?: </p>
+                  <p class="preguntas"> <strong>¿Cuántas personas dependen económicamente de usted?: </strong></p>
                 </div>
                 <div class="container_cajapersonas">
                   <div class="form-row">
