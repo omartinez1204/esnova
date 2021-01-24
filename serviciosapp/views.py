@@ -6,12 +6,12 @@ from serviciosapp.models import *
 
 # Create your views here.
 
-def login(request):
+def inicio(request):
     matricula=request.POST['matricula']
     contrasenia=request.POST['contrasenia']
     usuarios = usuario.objects.all()
     for usuario in usuarios:
-        if usuario.matricula == matricula and usuario.contrasenia == contrasenia
+        #if usuario.matricula == matricula and usuario.contrasenia == contrasenia
             u = usuario
     context = {
         'usuario':u
