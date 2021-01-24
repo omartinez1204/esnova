@@ -7,7 +7,7 @@ def index(request):
 
     return render(request, 'index.html')
 
-def gastos_solicitante(request):
+def login(request):
     return render(request, 'login.html')
 
 def gastos_solicitante(request):
