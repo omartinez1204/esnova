@@ -1,9 +1,8 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls import url
 from esnova.views import *
-from serviciosapp.views import *
-
+#from serviciosapp.views import *
 
 urlpatterns = [
     url(r'^$',index),
@@ -14,8 +13,8 @@ urlpatterns = [
     url(r'^medios_estudiar/$',medios_estudiar),
     url(r'^datos_responsable/$',datos_responsable),
     #url(r'^obtenerDatos_Solicitante/$',obtenerDatos_Solicitante),
+    path('serviciosapp/', include('serviciosapp.urls')),
     path('admin/', admin.site.urls),
-
 ]
 #Comentario nuevo
 #Eymar Josue. Nuevo comentario.
