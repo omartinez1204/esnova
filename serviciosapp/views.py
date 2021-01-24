@@ -18,10 +18,10 @@ def login(request):
     }
     return render(request, 'datos_solicitante.html', context)
 
-def registrar(request):
-    u = usuario(request.POST['matricula'], request.POST['contrasenia'], request.POST['email'])
-    u.save()
-    return render(request, 'index.html')
+#def registrar(request):
+#    u = usuario(request.POST['matricula'], request.POST['contrasenia'], request.POST['email'])
+#    u.save()
+#    return render(request, 'index.html')
 
 
 def obtenerDatos_Solicitante(request):
@@ -36,4 +36,4 @@ def obtenerDatos_Solicitante(request):
         'datosPersonalesModel': datosPersonalesModel,
     }
 
-    return render(request,'temporal.html',context)
+#    return render(request,'temporal.html',context)
