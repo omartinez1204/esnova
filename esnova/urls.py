@@ -13,7 +13,7 @@ urlpatterns = [
     url(r'^datos_solicitante/$',datos_solicitante),
     url(r'^medios_estudiar/$',medios_estudiar),
     url(r'^datos_responsable/$',datos_responsable),
-    url(r'^obtenerDatos_Solicitante/$',obtenerDatos_Solicitante),
+    #url(r'^obtenerDatos_Solicitante/$',obtenerDatos_Solicitante),
     path('admin/', admin.site.urls),
 
 ]
