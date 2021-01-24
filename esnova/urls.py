@@ -7,7 +7,7 @@ urlpatterns = [
     url(r'^$',index),
     url(r'^gastos_solicitante/$',gastos_solicitante),
     url(r'^datos_solicitante/$',datos_solicitante),
-    url(r'^medios_estudiar/$',datos_solicitante),
+    url(r'^medios_estudiar/$',medios_estudiar),
     path('admin/', admin.site.urls),
 ]
 #Comentario nuevo
