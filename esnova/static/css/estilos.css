@@ -42,3 +42,12 @@ table{
 .credit-card-div .pad-adjust {
   padding-top:10px;
 }
+input.placeholder {
+    text-align: center;
+}
+
+.btn-google {
+    color: #545454;
+    background-color: #f44336;
+    box-shadow: 0 1px 2px 1px #ddd
+}
