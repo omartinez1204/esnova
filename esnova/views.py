@@ -14,3 +14,6 @@ def datos_solicitante(request):
 
 def medios_estudiar(request):
     return render(request, 'medios_estudiar.html')
+
+def datos_responsable(request):
+    return render(request, 'datos_responsable.html')
