@@ -10,4 +10,7 @@ def gastos_solicitante(request):
     return render(request, 'Gastos_Solicitante.html')
 
 def datos_solicitante(request):
-    return render(request, 'datos_Solicitante.html')
+    return render(request, 'datos_solicitante.html')
+
+def medios_estudiar(request):
+    return render(request, 'medios_estudiar.html')
