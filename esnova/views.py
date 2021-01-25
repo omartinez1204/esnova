@@ -32,12 +32,13 @@ def ingreso_familiar(request):
 def iniciar(request):
     matricula=request.POST['matricula']
     contrasenia=request.POST['contrasenia']
+
     usuarios = Usuario.objects.all()
     for user in usuarios:
         if user.matricula == matricula and user.contrasenia == contrasenia:
             u = user
             context = {
-                'usuario':u,
+                'usuario':u
             }
             return render(request, 'datos_solicitante.html', context)
     return render(request, 'index.html')
@@ -46,6 +47,6 @@ def registrar(request):
     m=request.POST['matricula']
     e=request.POST['email']
     c=request.POST['contrasenia']
-    u = usuario(matricula = m, email = e, contrasenia = c)
+    u = Usuario(matricula = m, email = e, contrasenia = c)
     u.save()
     return render(request, 'index.html')
