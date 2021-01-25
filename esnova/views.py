@@ -14,6 +14,9 @@ def login(request):
 def gastos_solicitante(request):
     return render(request, 'Gastos_Solicitante.html')
 
+def dependencia(request):
+    return render(request, 'dependencias.html')
+
 def datos_solicitante(request):
     return render(request, 'datos_solicitante.html')
 
