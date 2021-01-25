@@ -69,17 +69,17 @@
         role="tabpanel"
         aria-labelledby="tab-login"
       >
-        <form>
+        <form action="{%  url 'iniciar' %}" method="post">{% csrf_token %}
 
           <div class="form-outline mb-4">
-            <input type="email" id="loginName" class="form-control" />
-            <label class="form-label" for="loginName">Matricula de alumno</label>
+            <input type="text" id="loginName" class="form-control" />
+            <label class="form-label" name="matricula" for="loginName">Matricula de alumno</label>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-4">
             <input type="password" id="loginPassword" class="form-control" />
-            <label class="form-label" for="loginPassword">Contraseña</label>
+            <label class="form-label" name="contrasenia" for="loginPassword">Contraseña</label>
           </div>
 
           <!-- 2 column grid layout -->
@@ -116,29 +116,29 @@
         role="tabpanel"
         aria-labelledby="tab-register"
       >
-        <form>
+        <form action="{%  url 'registrar' %}" method="post">{% csrf_token %}
 
           <div class="form-outline mb-4">
             <input type="text" id="registerName" class="form-control" />
-            <label class="form-label" for="registerName">Nombre de alumno</label>
+            <label class="form-label" name="matricula" for="registerName">Matricula de alumno</label>
           </div>
 
           <!-- Username input -->
           <div class="form-outline mb-4">
             <input type="text" id="registerUsername" class="form-control" />
-            <label class="form-label" for="registerUsername">Correo electronico</label>
+            <label class="form-label" name="email" for="registerUsername">Correo electronico</label>
           </div>
 
           <!-- Email input -->
           <div class="form-outline mb-4">
             <input type="password" id="registerEmail" class="form-control" />
-            <label class="form-label" for="registerEmail">Contraseña</label>
+            <label class="form-label" name="contrasenia" for="registerEmail">Contraseña</label>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-4">
             <input type="password" id="registerPassword" class="form-control" />
-            <label class="form-label" for="registerPassword">Confirmar contraseña</label>
+            <label class="form-label" name="contrasenia2" for="registerPassword">Confirmar contraseña</label>
           </div>
 
           <!-- Checkbox -->

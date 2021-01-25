@@ -13,7 +13,7 @@ class usuario(models.Model):
 # Create your models here.
 class datosPersonales(models.Model):
     fecha = models.DateTimeField('fecha')
-    solicita_beca_alimentaria = models.BooleanField()
+    solicita_beca_alimentaria = models.CharField(max_length = 3)
     ap_paterno = models.CharField(max_length = 30)
     ap_materno = models.CharField(max_length = 30)
     nombre = models.CharField(max_length = 30)
@@ -25,7 +25,7 @@ class datosPersonales(models.Model):
     grupo = models.CharField(max_length = 30)
     telefono = models.CharField(max_length = 30)
     otro_idiona = models.CharField(max_length = 30)
-    residencia_distinta = models.BooleanField()
+    residencia_distinta = models.CharField(max_length = 3)
     calle = models.CharField(max_length = 30)
     numero = models.IntegerField(default=0)
     colonia = models.CharField(max_length = 30)
