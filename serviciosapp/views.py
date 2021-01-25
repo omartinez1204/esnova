@@ -27,7 +27,7 @@ def login(request):
 
 def obtenerDatos_Solicitante(request):
 
-    consulta_datosPersonales = datosPersonales.objects.get()
+    #consulta_datosPersonales = datosPersonales.objects.get()
 
     datosPersonalesModel = datosPersonales(fecha = date.today(), solicita_beca_alimentaria= request.POST['solicita_beca_alimentaria'],
     ap_paterno=request.POST['apellido_paterno'], ap_materno = request.POST['apellido_materno'], nombre = request.POST['nombre'],
