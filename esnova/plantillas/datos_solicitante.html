@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/estilos.css'  %}">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.1.0/mdb.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
       {% block header %}
@@ -17,8 +21,12 @@
               <div class="row justify-content-center">
 
 
+<<<<<<< HEAD
                            <form action="{%  url 'serviciosapp:obtenerDatos_Solicitante' %}" class="credit-card-div" method="post">{% csrf_token %}
                              {{ form.as_p }}
+=======
+                           <form action="{%  url 'serviciosapp:obtenerDatos_Solicitante' %" class="credit-card-div" method="post">
+>>>>>>> 69e1091174d54cb91828342270896ab8ac43db69
                               <br>
                               <div class="panel panel-default" >
                               <div class="panel-heading">
@@ -30,7 +38,7 @@
                                   </div>
 
                                   <div class="col-md-3 col-sm-3 col-xs-3">
-                                  <span >Solicita Beca Alimentaria </span>
+                                  <span class="preguntas"><strong>Solicita Beca Alimentaria</strong> </span>
                                   <div class="radio">
                                   <input class="form-check-input" type="radio" name="solicita_beca_alimentaria" id="flexRadioDefault1" value="si">
                                   <label class="form-check-label" for="flexRadioDefault1">
@@ -44,7 +52,10 @@
 
                                   </div>
                                </div>
+                              <br>
+                               <div class="row ">
 
+<<<<<<< HEAD
                               <div class="row ">
 
                                     <div class="col-md-2 col-sm-2 col-xs-2">
@@ -82,11 +93,52 @@
                                      <span >Estado Civil</span>
                                      <input type="text" name="estado_civil" class="input-text2" required/>
                                     </div>
+=======
+                                     <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <span class="preguntas"><strong>Apellido Paterno:</strong></span>
+                                      <input type="text" class="form-control" name="apellido_paterno"/>
+                                     </div>
+                                     <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <span class="preguntas"><strong>Apellido Materno:</strong></span>
+                                      <input type="text" class="form-control" name="apellido_materno"/>
+                                     </div>
+                                     <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <span class="preguntas"><strong>Nombre:</strong></span>
+                                      <input type="text" class="form-control" name="nombre"/>
+                                     </div>
 
-                                </div>
+                                 </div>
+                                 <br>
+                                 <div class="row ">
+                                       <div class="col-md-3 col-sm-3 col-xs-3">
+                                        <span class="preguntas"><strong>Sexo:</strong></span>
+                                        <br>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                                          <label class="form-check-label" for="inlineRadio1">M</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                          <label class="form-check-label" for="inlineRadio2">F</label>
+                                        </div>
+
+                                       </div>
+                                       <div class="co2-md-2 col-sm-2 col-xs-2">
+                                        <span class="preguntas"><strong>Edad:</strong></span>
+                                        <input type="number" class="form-control" name="edad" max="50" min="17"/>
+                                       </div>
+                                       <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <span class="preguntas"><strong>Estado Civil:</strong></span>
+                                        <input type="text" class="form-control" name="estado_civi" />
+                                       </div>
+>>>>>>> 69e1091174d54cb91828342270896ab8ac43db69
+
+                                   </div>
+                                   <br>
 
                             <div class="row ">
                                 <div class="col-md-5 col-sm-5 col-xs-5">
+<<<<<<< HEAD
                                  <span > Carrera</span>
                                  <input type="text" name="carrera" class="input-text2" required/>
                                 </div>
@@ -101,17 +153,39 @@
                                 <div class="col-md-4 col-sm-4 col-xs-4">
                                  <span >Celular(lada:)</span>
                                  <input type="text" name="celular" class="input-text2" required/>
+=======
+                                 <span class="preguntas"><strong> Carrera</strong></span>
+                                 <input type="text" name="carrera" class="form-control"/>
+                                </div>
+                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                 <span class="preguntas" ><strong>Semestre</strong></span>
+                                 <input type="number" name="semestre" class="form-control"/>
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                 <span class="preguntas" > <strong>Grupo</strong></span>
+                                 <input type="text" name="grupo" class="form-control"/>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                 <span class="preguntas" ><strong>Celular(lada:)</strong></span>
+                                 <input type="text" name="celular" class="form-control"/>
+>>>>>>> 69e1091174d54cb91828342270896ab8ac43db69
                                 </div>
 
                               </div>
+                              <br>
                             <div class="row ">
                               <div class="col-md-6 col-sm-6 col-xs-6">
+<<<<<<< HEAD
                                <span > Además del idioma español, ¿Qué otro idioma, lenguaje o dialecto habla?</span>
                                <input type="text" name="otro_idioma" class="input-text2" required/>
+=======
+                               <span  class="preguntas"><strong> Además del idioma español, ¿Qué otro idioma, lenguaje o dialecto habla?</strong></span>
+                               <input type="text" name="otro_idioma" class="form-control"/>
+>>>>>>> 69e1091174d54cb91828342270896ab8ac43db69
                               </div>
 
                               <div class="col-md-6 col-sm-6 col-xs-6">
-                              <span >Su estancia en la universidad, implica residencia distinta a la familiar: </span>
+                              <span  class="preguntas"><strong>Su estancia en la universidad, implica residencia distinta a la familiar: </strong></span>
                               <div class="radio">
                               <input class="form-check-input" type="radio" name="residencia_distinta" id="flexRadioDefault1">
                               <label class="form-check-label" for="flexRadioDefault1">
@@ -125,13 +199,15 @@
 
                               </div>
                            </div>
+                           <br>
                            <div class="row ">
                              <div class="col-md-12">
-                                 <span >Domicilio donde vivirá mientras estudia: </span>
+                                 <span  class="subtitulos"><strong>Domicilio donde vivirá mientras estudia:</strong> </span>
                              </div>
                            </div>
                            <div class="row ">
                                <div class="col-md-3 col-sm-3 col-xs-3">
+<<<<<<< HEAD
                                 <span > Calle</span>
                                 <input type="text" name="calle" class="input-text2" required/>
                                </div>
@@ -146,11 +222,29 @@
                                <div class="col-md-4 col-sm-4 col-xs-4">
                                 <span >Municipio:</span>
                                 <input type="text" name="municipio" class="input-text2" required/>
+=======
+                                <span class="preguntas"><strong> Calle</strong></span>
+                                <input type="text" name="calle" class="form-control"/>
+                               </div>
+                               <div class="col-md-1 col-sm-1 col-xs-1">
+                                <span class="preguntas"><strong>Numero</strong></span>
+                                <input type="number" name="numero_calle" class="form-control"/>
+                               </div>
+                               <div class="col-md-4 col-sm-4 col-xs-4">
+                                <span class="preguntas"><strong>Colonia o barrio</strong></span>
+                                <input type="text" name="barrio" class="form-control"/>
+                               </div>
+                               <div class="col-md-4 col-sm-4 col-xs-4">
+                                <span class="preguntas" ><strong>Municipio:</strong></span>
+                                <input type="text" name="municipio" class="form-control"/>
+>>>>>>> 69e1091174d54cb91828342270896ab8ac43db69
                                </div>
 
                              </div>
+                             <br>
                              <div class="row ">
                                  <div class="col-md-3 col-sm-3 col-xs-3">
+<<<<<<< HEAD
                                   <span > Estado</span>
                                   <input type="text" name="estado" class="input-text2" required/>
                                  </div>
@@ -161,6 +255,18 @@
                                  <div class="col-md-2 col-sm-2 col-xs-2">
                                   <span >Parentesco</span>
                                   <input type="text" name="parentesco" class="input-text2" required/>
+=======
+                                  <span  class="preguntas"><strong> Estado</strong></span>
+                                  <input type="text" name="estado" class="form-control"/>
+                                 </div>
+                                 <div class="co6-md-7 col-sm-7 col-xs-7">
+                                  <span class="preguntas"><strong>Nombre de la casa de huésped o del propietario(si la residencia es distinta a la familiar:</strong></span>
+                                  <input type="text" name="propietario" class="form-control"/>
+                                 </div>
+                                 <div class="col-md-2 col-sm-2 col-xs-2">
+                                  <span class="preguntas" ><strong>Parentesco</strong></span>
+                                  <input type="text" name="parentesco" class="form-control"/>
+>>>>>>> 69e1091174d54cb91828342270896ab8ac43db69
                                  </div>
 
 
@@ -168,7 +274,7 @@
                                <br>
                                <div class="row ">
                                    <div class="col-md-12">
-                                   <button class="btn btn-success btn-lg">Guardar</button>
+                                   <button class="btn btn-outline-success  btn-lg">Guardar</button>
                                    </div>
 
                                  </div>
