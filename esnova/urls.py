@@ -15,6 +15,8 @@ urlpatterns = [
     url(r'^ingreso_familiar/$',ingreso_familiar),
     #url(r'^obtenerDatos_Solicitante/$',obtenerDatos_Solicitante),
     path('serviciosapp/', include('serviciosapp.urls')),
+    path('iniciar/>',iniciar, name= "iniciar"),
+    path('registrar/>',registrar, name= "registrar"),
     path('admin/', admin.site.urls),
 ]
 #Comentario nuevo

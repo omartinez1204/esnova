@@ -25,3 +25,25 @@ def datos_responsable(request):
 
 def ingreso_familiar(request):
     return render(request, 'ingreso_familiar.html')
+
+def iniciar(request):
+    matricula=request.POST['matricula']
+    contrasenia=request.POST['contrasenia']
+
+    usuarios = usuario.objects.all()
+    for usuario in usuarios:
+        if usuario.matricula == matricula and usuario.contrasenia == contrasenia:
+            u = usuario
+            context = {
+                'usuario':u
+            }
+            return render(request, 'datos_solicitante.html', context)
+    return render(request, 'index.html')
+
+def registrar(request):
+    m=request.POST['matricula']
+    e=request.POST['email']
+    c=request.POST['contrasenia']
+    u = usuario(matricula = m, email = e, contrasenia = c)
+    u.save()
+    return render(request, 'index.html')
