@@ -34,11 +34,11 @@ def iniciar(request):
     contrasenia=request.POST['contrasenia']
 
     usuarios = Usuario.objects.all()
-    for usuario in usuarios:
-        if usuario.matricula == matricula and usuario.contrasenia == contrasenia:
-            u = usuario
+    for user in usuarios:
+        if user.matricula == matricula and user.contrasenia == contrasenia:
+            u = user
             context = {
-            
+
                 'usuario':u
             }
             return render(request, 'datos_solicitante.html', context)
