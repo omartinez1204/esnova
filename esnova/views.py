@@ -16,6 +16,8 @@ def gastos_solicitante(request):
 
 def dependencia(request):
     return render(request, 'dependencias.html')
+def datos_personas_dependo(request):
+    return render(request, 'datos_personas_dependo.html')
 
 def datos_solicitante(request):
     return render(request, 'datos_solicitante.html')
