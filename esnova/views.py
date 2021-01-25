@@ -21,3 +21,6 @@ def medios_estudiar(request):
 
 def datos_responsable(request):
     return render(request, 'datos_responsable.html')
+
+def ingreso_familiar(request):
+    return render(request, 'ingreso_familiar.html')
