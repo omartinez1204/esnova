@@ -1,0 +1,21 @@
+.container_a{
+  margin-left: 50px;
+}
+
+.container_izq{
+  width: 26%;
+  float: left;
+}
+.container_centro{
+  width:32%;
+  float: right;
+}
+.container_derecha{
+  width:40%;
+  float: right;
+}
+
+.container_izq2{
+  width: 40%;
+  float: left;
+}

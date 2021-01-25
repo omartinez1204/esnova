@@ -13,6 +13,9 @@ urlpatterns = [
     url(r'^medios_estudiar/$',medios_estudiar),
     url(r'^datos_responsable/$',datos_responsable),
     url(r'^ingreso_familiar/$',ingreso_familiar),
+
+    url(r'^dependencias/$',dependencia),
+
     #url(r'^obtenerDatos_Solicitante/$',obtenerDatos_Solicitante),
     path('serviciosapp/', include('serviciosapp.urls')),
     path('iniciar/>',iniciar, name= "iniciar"),
