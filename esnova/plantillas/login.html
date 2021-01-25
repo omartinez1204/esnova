@@ -74,7 +74,8 @@
     role="tabpanel"
     aria-labelledby="tab-login"
   >
-    <form>
+	<form action="{%  url 'iniciar' %}" method="post">{% csrf_token %}
+		{{form.as_p}}
 			<!--
       <div class="text-center mb-3">
         <p>Sign in with:</p>
@@ -99,14 +100,24 @@
 
       <!-- Email input -->
       <div class="form-outline mb-4">
+<<<<<<< HEAD
         <input type="text" id="loginName" class="form-control" />
         <label class="form-label" name="matricula" for="loginName">Matricula de alumno</label>
+=======
+        <input type="text" id="loginName" name="matricula" class="form-control" />
+        <label class="form-label" for="loginName">Matricula de alumno</label>
+>>>>>>> b6c54f8eedbb32109573ed38a4bf39571b1e140c
       </div>
 
       <!-- Password input -->
       <div class="form-outline mb-4">
+<<<<<<< HEAD
         <input type="password" id="loginPassword" class="form-control" />
         <label class="form-label" name="contrasenia" for="loginPassword">Contraseña</label>
+=======
+        <input type="password" id="loginPassword" name="contrasenia" class="form-control" />
+        <label class="form-label" for="loginPassword">Contraseña</label>
+>>>>>>> b6c54f8eedbb32109573ed38a4bf39571b1e140c
       </div>
 
       <!-- 2 column grid layout -->
@@ -146,7 +157,8 @@
     role="tabpanel"
     aria-labelledby="tab-register"
   >
-    <form>
+	<form action="{%  url 'registrar' %}" method="post">{% csrf_token %}
+		{{form.as_p}}
       <!--<div class="text-center mb-3">
         <p>Sign up with:</p>
         <button type="button" class="btn btn-primary btn-floating mx-1">
@@ -170,20 +182,34 @@
 
       <!-- Name input -->
       <div class="form-outline mb-4">
+<<<<<<< HEAD
         <input type="text" id="registerName" class="form-control" />
+=======
+        <input type="text" id="registerName" name="matricula" class="form-control" />
+>>>>>>> b6c54f8eedbb32109573ed38a4bf39571b1e140c
         <label class="form-label" for="registerName">Matricula</label>
       </div>
 
       <!-- Username input -->
       <div class="form-outline mb-4">
+<<<<<<< HEAD
         <input type="text" id="registerUsername" class="form-control" />
         <label class="form-label" name="email" for="registerUsername">Correo electronico</label>
+=======
+        <input type="text" id="registerUsername" name="email" class="form-control" />
+        <label class="form-label" for="registerUsername">Correo electronico</label>
+>>>>>>> b6c54f8eedbb32109573ed38a4bf39571b1e140c
       </div>
 
       <!-- Email input -->
       <div class="form-outline mb-4">
+<<<<<<< HEAD
         <input type="password" id="registerEmail" class="form-control" />
         <label class="form-label" name="contrasenia" for="registerEmail">Contraseña</label>
+=======
+        <input type="password" id="registerEmail" name="contrasenia" class="form-control" />
+        <label class="form-label" for="registerEmail">Contraseña</label>
+>>>>>>> b6c54f8eedbb32109573ed38a4bf39571b1e140c
       </div>
 
       <!-- Password input -->

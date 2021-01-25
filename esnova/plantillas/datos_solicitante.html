@@ -21,7 +21,6 @@
               <div class="row justify-content-center">
                            <form action="{%  url 'serviciosapp:obtenerDatos_Solicitante' %}" class="credit-card-div" method="post">{% csrf_token %}
                              {{ form.as_p }}
-                           <form action="{%  url 'serviciosapp:obtenerDatos_Solicitante' %" class="credit-card-div" method="post">
                               <br>
                               <div class="panel panel-default" >
                               <div class="panel-heading">
@@ -35,11 +34,11 @@
                                   <div class="col-md-3 col-sm-3 col-xs-3">
                                   <span class="preguntas"><strong>Solicita Beca Alimentaria</strong> </span>
                                   <div class="radio">
-                                  <input class="form-check-input" type="radio" name="solicita_beca_alimentaria" id="flexRadioDefault1" value="si">
+                                  <input class="form-check-input" type="radio" name="solicita_beca_alimentaria" id="flexRadioDefault1" value="Si">
                                   <label class="form-check-label" for="flexRadioDefault1">
                                     Si
                                   </label>
-                                  <input class="form-check-input" type="radio" name="solicita_beca_alimentaria" id="flexRadioDefault2" value="no" checked>
+                                  <input class="form-check-input" type="radio" name="solicita_beca_alimentaria" id="flexRadioDefault2" value="No" checked>
                                   <label class="form-check-label" for="flexRadioDefault2">
                                      No
                                   </label>
@@ -118,11 +117,11 @@
                               <div class="col-md-6 col-sm-6 col-xs-6">
                               <span  class="preguntas"><strong>Su estancia en la universidad, implica residencia distinta a la familiar: </strong></span>
                               <div class="radio">
-                              <input class="form-check-input" type="radio" name="residencia_distinta" id="flexRadioDefault1">
+                              <input class="form-check-input" type="radio" name="residencia_distinta" id="flexRadioDefault1" value="Si">
                               <label class="form-check-label" for="flexRadioDefault1">
                                 Si
                               </label>
-                              <input class="form-check-input" type="radio" name="residencia_distinta" id="flexRadioDefault2" checked>
+                              <input class="form-check-input" type="radio" name="residencia_distinta" id="flexRadioDefault2"  value="No" checked>
                               <label class="form-check-label" for="flexRadioDefault2">
                                  No
                               </label>
