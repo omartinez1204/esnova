@@ -38,6 +38,7 @@ def iniciar(request):
         if usuario.matricula == matricula and usuario.contrasenia == contrasenia:
             u = usuario
             context = {
+            
                 'usuario':u
             }
             return render(request, 'datos_solicitante.html', context)
