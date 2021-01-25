@@ -2,7 +2,7 @@ from django.db import models
 
 
 #modelo usuario
-class usuario(models.Model):
+class Usuario(models.Model):
     matricula = models.CharField(max_length =30 )
     contrasenia = models.CharField(max_length = 30)
     email = models.EmailField()

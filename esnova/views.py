@@ -33,7 +33,7 @@ def iniciar(request):
     matricula=request.POST['matricula']
     contrasenia=request.POST['contrasenia']
 
-    usuarios = usuario.objects.all()
+    usuarios = Usuario.objects.all()
     for usuario in usuarios:
         if usuario.matricula == matricula and usuario.contrasenia == contrasenia:
             u = usuario
