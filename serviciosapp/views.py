@@ -23,3 +23,7 @@ def obtenerDatos_Solicitante(request):
         'datosPersonalesModel': datosPersonalesModel,
     }
     return render(request,'temporal.html',context)
+
+
+def obtenerGastos_Solicitante(request):
+    return render(request,'temporal')
