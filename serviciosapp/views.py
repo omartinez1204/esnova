@@ -26,4 +26,15 @@ def obtenerDatos_Solicitante(request):
 
 
 def obtenerGastos_Solicitante(request):
-    return render(request,'temporal')
+    return render(request,'temporal.html')
+
+def obtenermedios_estudiar(request):
+
+    datosmediosEstudiar = mediosParaEstudiar(computadora_de_escritorio = request.POST['computadora_de_escritorio'], laptop = request.POST['laptop'],
+    impresora = request.POST['impresora'], dvd = request.POST['dvd'], maquina_de_escribir = request.POST['maquina_de_escribir'], calculadora = request.POST['calculadora'],
+    escritorio = request.POST['escritorio'], enciclopedia = request.POST['enciclopedia'], libros_especializados = request.POST['libros_especializados'],
+    telefonia = request.POST['telefonia'], banda_ancha = request.POST['banda_ancha'], falta_algun_medio= request.POST['falta_algun_medio']
+    )
+    #datosmediosEstudiar.save()
+
+    return render(request,'temporal.html')
