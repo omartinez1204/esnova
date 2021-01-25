@@ -36,7 +36,6 @@ def obtenerDatos_Solicitante(request):
     residencia_distinta = request.POST['residencia_distinta'] , calle =  request.POST['calle'], numero = request.POST['numero_calle'],
     colonia = request.POST['barrio'], municipio = request.POST['municipio'], estado = request.POST['estado'],propietario = request.POST['propietario'],
     parentesco = request.POST['parentesco'])
-
     datosPersonales.save()
 
     context = {
