@@ -30,11 +30,76 @@ def obtenerGastos_Solicitante(request):
 
 def obtenermedios_estudiar(request):
 
-    datosmediosEstudiar = mediosParaEstudiar(computadora_de_escritorio = request.POST['computadora_de_escritorio'], laptop = request.POST['laptop'],
-    impresora = request.POST['impresora'], dvd = request.POST['dvd'], maquina_de_escribir = request.POST['maquina_de_escribir'], calculadora = request.POST['calculadora'],
-    escritorio = request.POST['escritorio'], enciclopedia = request.POST['enciclopedia'], libros_especializados = request.POST['libros_especializados'],
-    telefonia = request.POST['telefonia'], banda_ancha = request.POST['banda_ancha'], falta_algun_medio= request.POST['falta_algun_medio']
-    )
-    #datosmediosEstudiar.save()
+    try:
+        if  'True' == request.POST['computadora_de_escritorio']:
+            v1 = True
+    except Exception as e:
+        v1 = False
 
-    return render(request,'temporal.html')
+    try:
+        if  request.POST['laptop'] == 'True':
+            v2 = True
+    except Exception as e:
+        v2 = False
+    try:
+        if  request.POST['impresora'] == 'True':
+            v3 = True
+    except Exception as e:
+        v3 = False
+
+    try:
+        if  request.POST['dvd'] == 'True':
+            v4 = True
+    except Exception as e:
+        v4 = False
+
+    try:
+        if  request.POST['maquina_de_escribir'] == 'True':
+            v5 = True
+    except Exception as e:
+        v5 = False
+
+    try:
+        if  request.POST['calculadora'] == 'True':
+            v6 = True
+    except Exception as e:
+        v6 = False
+    try:
+        if  request.POST['escritorio'] == 'True':
+            v7 = True
+    except Exception as e:
+        v7 = False
+
+    try:
+        if  request.POST['enciclopedia'] == 'True':
+            v8 = True
+    except Exception as e:
+        v8 = False
+
+    try:
+        if  request.POST['libros_especializados'] == 'True':
+            v9 = True
+    except Exception as e:
+        v9 = False
+    try:
+        if  request.POST['telefonia'] == 'True':
+            v10 = True
+    except Exception as e:
+        v10 = False
+    try:
+        if  request.POST['banda_ancha'] == 'True':
+            v11 = True
+    except Exception as e:
+        v11 = False
+
+
+    datosmediosEstudiar = mediosParaEstudiar(computadora_de_escritorio = v1, laptop = v2,
+    impresora = v3, dvd = v4, maquina_de_escribir =v5, calculadora =v6,
+    escritorio =v7, enciclopedia =v8, libros_especializados = v9,
+    telefonia =v10, banda_ancha = v11, falta_algun_medio= request.POST['falta_algun_medio'])
+    datosmediosEstudiar.save()
+    context = {
+        'datosmediosEstudiar':datosmediosEstudiar,
+    }
+
+    return render(request,'temporal.html', context)
