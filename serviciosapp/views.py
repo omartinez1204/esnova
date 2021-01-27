@@ -110,3 +110,24 @@ def obtenermedios_estudiar(request):
     }
 
     return render(request,'temporal.html', context)
+
+def datosdelasPersonasQueDependes(request):
+
+    datosdequienesDependes = datosPersonaDeQuienDepende(ap_paterno = request.POST['apellido_paterno'], ar_materno = request.POST['apellido_materno'],
+    nombre = request.POST['nombre'], sexo = request.POST['sexo_'], edad = int(request.POST['edad']), estado_civil = request.POST['estado_civil'],
+    telefono_fijo = request.POST['telefono'], celular = request.POST['celular'], parentesco = request.POST['parentesco'], calle = request.POST['calle'],
+    numero = request.POST['numero'], colonia = request.POST['colonia'], municipio = request.POST['municipio'], region = request.POST['region'],
+    estado = request.POST['estado'], grado_escolaridad = request.POST['inlineRadioOptions_1'], tipo_de_trabajo = request.POST['tipo_de_trabajo'],
+    ocupacion = request.POST['ocupacion'], texto_ocupacion = request.POST['texto_ocupacion'], empresa = request.POST['empresa'] cargo  = request.POST['cargo'],
+    area = request.POST['area'], antiguedad = request.POST['antiguedad'], telefono_empresa = request.POST['telefono_empresa'], calle_empresa = request.POST['calle_empresa'],
+    numero_empresa = request.POST['numero_empresa'], colonia_empresa = request.POST['colonia_empresa'], municipio_empresa = request.POST['municipio_empresa'],
+    region_empresa = request.POST['region_empresa'], estado_empresa = request.POST['estado_empresa'], ap_paterno_tercero = request.POST['ap_paterno_tercero'],
+    ap_materno_tercero = request.POST['ap_materno_tercero'], nombre_tercero = request.POST['nombre_tercero'], edad_tercero = request.POST['edad_tercero'],
+    parentesco_tercero = request.POST['parentesco_tercero'],telefono_tercero = request.POST['telefono_tercero'], celular_tercero = request.POST['celular_tercero'],
+    ocupacion_tercero = request.POST['ocupacion_tercero'])
+    datosdequienesDependes.save()
+    context = {
+        'datosdequienesDependes':datosdequienesDependes,
+    }
+
+    return render(request,'temporal.html', context)
