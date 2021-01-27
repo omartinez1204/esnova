@@ -155,19 +155,19 @@
                            <div class="row ">
                                <div class="col-md-3 col-sm-3 col-xs-3">
                                 <span class="preguntas"><strong> Calle</strong></span>
-                                <input type="text" name="calle" class="form-control" required/>
+                                <input type="text" name="calle" class="form-control" id="texto1"/>
                                </div>
                                <div class="col-md-1 col-sm-1 col-xs-1">
                                 <span class="preguntas"><strong>Numero</strong></span>
-                                <input type="number" name="numero_calle" min="0" class="form-control" required/>
+                                <input type="number" name="numero_calle" min="0" class="form-control" id="texto1"/>
                                </div>
                                <div class="col-md-4 col-sm-4 col-xs-4">
                                 <span class="preguntas"><strong>Colonia o barrio</strong></span>
-                                <input type="text" name="barrio" class="form-control" required/>
+                                <input type="text" name="barrio" class="form-control" id="texto1"/>
                                </div>
                                <div class="col-md-4 col-sm-4 col-xs-4">
                                 <span class="preguntas"><strong>Municipio:</strong></span>
-                                <input type="text" name="municipio" class="form-control" required/>
+                                <input type="text" name="municipio" class="form-control" id="texto1"/>
                                  </div>
 
                              </div>
@@ -175,15 +175,15 @@
                              <div class="row ">
                                  <div class="col-md-3 col-sm-3 col-xs-3">
                                   <span class="preguntas"><strong> Estado</strong></span>
-                                  <input type="text" name="estado" class="form-control" required/>
+                                  <input type="text" name="estado" class="form-control" id="texto1"/>
                                  </div>
                                  <div class="co6-md-7 col-sm-7 col-xs-7">
                                   <span class="preguntas"><strong>Nombre de la casa de huésped o del propietario(si la residencia es distinta a la familiar:</strong></span>
-                                  <input type="text" name="propietario" class="form-control" required/>
+                                  <input type="text" name="propietario" class="form-control" id="texto1"/>
                                  </div>
                                  <div class="col-md-2 col-sm-2 col-xs-2">
                                   <span class="preguntas"><strong>Parentesco</strong></span>
-                                  <input type="text" name="parentesco" class="form-control" required/>
+                                  <input type="text" name="parentesco" class="form-control"id="texto1"/>
                                   </div>
                                </div>
 
@@ -233,7 +233,7 @@
       else {
           element.style.display='none';
       }
-
+      document.getElementById("texto1").value='';
     }
 </script>
 
