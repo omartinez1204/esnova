@@ -14,11 +14,8 @@ urlpatterns = [
     url(r'^datos_responsable/$',datos_responsable),
     url(r'^ingreso_familiar/$',ingreso_familiar),
     url(r'^dependencias/$',dependencia),
-<<<<<<< HEAD
     url(r'^personas_dependientes/$',datos_personas_dependo),
-=======
     url(r'^recuperar_contrasenia/$',recuperar_contrasenia),
->>>>>>> 211e3d91dcd76436738bb7ea1d54b0424297111e
     #url(r'^obtenerDatos_Solicitante/$',obtenerDatos_Solicitante),
     path('serviciosapp/', include('serviciosapp.urls')),
     path('iniciar/>',iniciar, name= "iniciar"),
