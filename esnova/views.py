@@ -21,7 +21,9 @@ def dependencia(request):
 def datos_personas_dependo(request):
     return render(request, 'datos_personas_dependo.html')
 
-def datos_solicitante(request):
+def datos_solicitante(request,usuario):
+    #if():
+
     return render(request, 'datos_solicitante.html')
 
 def medios_estudiar(request):
