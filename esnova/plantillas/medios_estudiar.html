@@ -16,8 +16,8 @@
         <div class="container text-center justify-content-center" >
               <div class="row justify-content-center">
 
-
-                           <form action="#" class="credit-card-div">
+                        <form action="{%  url 'serviciosapp:obtenermedios_estudiar' %}" class="credit-card-div" method="post">{% csrf_token %}
+                          {{ form.as_p }}
                               <br>
                               <div class="panel panel-default" >
                               <div class="panel-heading">
@@ -26,37 +26,37 @@
 
                                     <div class="col-md-2 col-sm-2 col-xs-2">
                                       <div class="form-check">
-                                      <input type="checkbox" name="computadora_de_escritorio" class="form-check-input">
+                                      <input type="checkbox" name="computadora_de_escritorio" class="form-check-input" value="True">
                                       <label class="form-check-label preguntas" for="exampleCheck1"><strong>Computadora de Escritorio</strong></label>
                                       </div>
                                     </div>
                                     <div class="col-md-2 col-sm-2 col-xs-2">
                                       <div class="form-check">
-                                      <input type="checkbox" name="laptop" class="form-check-input">
+                                      <input type="checkbox" name="laptop" class="form-check-input"  value="True">
                                       <label class="form-check-label preguntas" for="exampleCheck1"><strong>Laptop</strong></label>
                                       </div>
                                     </div>
                                     <div class="col-md-2 col-sm-2 col-xs-2">
                                       <div class="form-check">
-                                      <input type="checkbox" name="impresora" class="form-check-input">
+                                      <input type="checkbox" name="impresora" class="form-check-input"  value="True">
                                       <label class="form-check-label preguntas" for="exampleCheck1"><strong>Impresora</strong></label>
                                       </div>
                                     </div>
                                     <div class="col-md-2 col-sm-2 col-xs-2">
                                       <div class="form-check">
-                                      <input type="checkbox" name="dvd" class="form-check-input">
+                                      <input type="checkbox" name="dvd" class="form-check-input"  value="True">
                                       <label class="form-check-label preguntas" for="exampleCheck1"><strong>DVD-CD/WR</strong></label>
                                       </div>
                                     </div>
                                     <div class="co2-md-2 col-sm-2 col-xs-2">
                                       <div class="form-check">
-                                      <input type="checkbox" name="maquina_de_escribir" class="form-check-input">
+                                      <input type="checkbox" name="maquina_de_escribir" class="form-check-input"  value="True">
                                       <label class="form-check-label preguntas" for="exampleCheck1"><strong>Maquina de escribir</strong></label>
                                       </div>
                                     </div>
                                     <div class="col-md-2 col-sm-2 col-xs-2">
                                       <div class="form-check">
-                                      <input type="checkbox" name="calculadora" class="form-check-input">
+                                      <input type="checkbox" name="calculadora" class="form-check-input"  value="True">
                                       <label class="form-check-label preguntas" for="exampleCheck1"><strong>Calculadora</strong></label>
                                       </div>
                                     </div>
@@ -67,31 +67,31 @@
                             <div class="row ">
                               <div class="col-md-2 col-sm-2 col-xs-2">
                                 <div class="form-check">
-                                <input type="checkbox" name="escritorio" class="form-check-input">
+                                <input type="checkbox" name="escritorio" class="form-check-input"   value="True">
                                 <label class="form-check-label preguntas" for="exampleCheck1"><strong>Escritorio/mesa de trabajo</strong></label>
                                 </div>
                               </div>
                               <div class="col-md-2 col-sm-2 col-xs-2">
                                 <div class="form-check">
-                                <input type="checkbox" name="enciclopedia" class="form-check-input">
+                                <input type="checkbox" name="enciclopedia" class="form-check-input"   value="True">
                                 <label class="form-check-label preguntas" for="exampleCheck1"><strong>Enciclopedias</strong></label>
                                 </div>
                               </div>
                               <div class="col-md-2 col-sm-2 col-xs-2">
                                 <div class="form-check">
-                                <input type="checkbox" name="libros_especializados" class="form-check-input">
+                                <input type="checkbox" name="libros_especializados" class="form-check-input"   value="True">
                                 <label class="form-check-label preguntas" for="exampleCheck1"><strong>Libros Especializadosa</strong></label>
                                 </div>
                               </div>
                               <div class="col-md-2 col-sm-2 col-xs-2">
                                 <div class="form-check">
-                                <input type="checkbox" name="telefonia" class="form-check-input">
+                                <input type="checkbox" name="telefonia" class="form-check-input"   value="True">
                                 <label class="form-check-label preguntas" for="exampleCheck1"><strong> Internet: Telefonía</strong></label>
                                 </div>
                               </div>
                               <div class="co2-md-2 col-sm-2 col-xs-2">
                                 <div class="form-check">
-                                <input type="checkbox" name="banda_ancha" class="form-check-input">
+                                <input type="checkbox" name="banda_ancha" class="form-check-input"  value="True">
                                 <label class="form-check-label preguntas" for="exampleCheck1"><strong>Banda Ancha</strong></label>
                                 </div>
                               </div>
@@ -102,7 +102,7 @@
 
                                  <div class="co6-md-7 col-sm-7 col-xs-7">
                                   <span class="preguntas"><strong>¿Considera que le hace falta algún medio para mejorar su desempeño académico? (especifique):</strong></span>
-                                  <input type="text" name="falta_algun_medio" class="form-control"/>
+                                  <input type="text" name="falta_algun_medio" class="form-control" required/>
                                  </div>
 
                               <br>
