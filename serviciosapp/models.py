@@ -87,7 +87,7 @@ class datosPersonaDeQuienDepende(models.Model):
     ap_paterno = models.CharField(max_length = 30)
     ap_materno = models.CharField(max_length = 30)
     nombre = models.CharField(max_length = 30)
-    sexo = models.CharField(max_length = 3)
+    sexo = models.CharField(max_length = 30)
     edad = models.IntegerField(default=0)
     estado_civil = models.CharField(max_length = 30)
     telefono_fijo = models.CharField(max_length = 30)
