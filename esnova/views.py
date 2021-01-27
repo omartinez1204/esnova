@@ -6,6 +6,7 @@ from serviciosapp.models import *
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 import smtplib
+from django.contrib import messages
 
 def index(request):
     return render(request, 'index.html')
@@ -21,9 +22,7 @@ def dependencia(request):
 def datos_personas_dependo(request):
     return render(request, 'datos_personas_dependo.html')
 
-def datos_solicitante(request,usuario):
-    #if():
-
+def datos_solicitante(request):
     return render(request, 'datos_solicitante.html')
 
 def medios_estudiar(request):
@@ -47,7 +46,7 @@ def iniciar(request):
                 'usuario':u
             }
             return render(request, 'datos_solicitante.html', context)
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/login')
 
 def registrar(request):
     m=request.POST['matricula']

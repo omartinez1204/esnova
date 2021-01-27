@@ -116,7 +116,13 @@
     </div>
     <!-- Carousel wrapper -->
 
+      <div id="contenido">
+        {% if messages %}
+          {%for m in messages %}
+          {% endfor %}
+        {% endif %}
 
+      </div>
 
       <br>
     <img src="{% static 'img/nova.png'  %}" class="img-fluid mx-auto d-block rounded" width="127" height="127" align-center>
