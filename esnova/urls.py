@@ -15,11 +15,12 @@ urlpatterns = [
     url(r'^ingreso_familiar/$',ingreso_familiar),
 
     url(r'^dependencias/$',dependencia),
-
+    url(r'^recuperar_contrasenia/$',recuperar_contrasenia),
     #url(r'^obtenerDatos_Solicitante/$',obtenerDatos_Solicitante),
     path('serviciosapp/', include('serviciosapp.urls')),
     path('iniciar/>',iniciar, name= "iniciar"),
     path('registrar/>',registrar, name= "registrar"),
+    path('enviar_recuperacion/>',enviar_recuperacion, name= "enviar_recuperacion"),
     path('admin/', admin.site.urls),
 ]
 #Comentario nuevo

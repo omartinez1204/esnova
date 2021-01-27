@@ -3,7 +3,9 @@ import datetime
 from django.template import Template, Context
 from django.shortcuts import render
 from serviciosapp.models import *
-
+from django.core.mail import send_mail
+from django.http import HttpResponseRedirect
+import smtplib
 
 def index(request):
     return render(request, 'index.html')
@@ -41,7 +43,7 @@ def iniciar(request):
                 'usuario':u
             }
             return render(request, 'datos_solicitante.html', context)
-    return render(request, 'index.html')
+    return HttpResponseRedirect('/')
 
 def registrar(request):
     m=request.POST['matricula']
@@ -49,4 +51,33 @@ def registrar(request):
     c=request.POST['contrasenia']
     u = Usuario(matricula = m, email = e, contrasenia = c)
     u.save()
-    return render(request, 'index.html')
+    return HttpResponseRedirect('/')
+
+def recuperar_contrasenia(request):
+    return render(request, 'recuperar_contrasenia.html')
+
+def enviar_recuperacion(request):
+    matricula=request.POST['matricula']
+    usuarios = Usuario.objects.all()
+    for user in usuarios:
+        if user.matricula == matricula:
+            to = user.email
+            gmail_user = 'estudio.socioeconomico.nova@gmail.com'
+            gmail_pwd = 'NovaUniversitas2021'
+            smtpserver = smtplib.SMTP("smtp.gmail.com",587)
+            smtpserver.ehlo()
+            smtpserver.starttls()
+            smtpserver.ehlo
+            smtpserver.login(gmail_user, gmail_pwd)
+            header = 'To:' + to + '\n' + 'From: ' + gmail_user + '\n' + 'Subject:Recuperacion cuenta NovaUniversitas \n'
+            print(header)
+            msg = header + '\n Su password es: '+user.contrasenia+'\n\n'
+            smtpserver.sendmail(gmail_user, to, msg)
+            print('done!')
+            smtpserver.close()
+            #asunto = "Recuperación cuenta NovaUniversitas"
+            #mensaje = "Su contraseña es:"+u.contrasenia
+            #send_mail(asunto, mensaje, 'estudio.socioeconomico.nova@gmail.com', [u.email], fail_silently=False)
+            return HttpResponseRedirect('/')
+
+    return HttpResponseRedirect('/')
