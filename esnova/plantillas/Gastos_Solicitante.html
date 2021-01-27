@@ -17,75 +17,88 @@
   <div class="container">
       <br><h4 class="titulos text-center">INFORMACIÓN SOBRE GASTOS DEL SOLICITANTE</h4><br>
       <div class="container_MENSAJE" id="mensaje">
-      <p class="preguntas"><strong>l. ¿A cuánto ascienden sus gastos mensuales totales de manutención, incluyendo lo que paga de: alimentación,  transporte, vivienda,servicios médicos, libros y materiales escolares, entretenimiento, etc.? (por favor, no incluya los gastos en colegiatura e inscripciones de la universidad):
+
+      <form action="" class="credit-card-div">
+
+      <div class="row">
+      <p class="preguntas text-justify"><strong>l. ¿A cuánto ascienden sus gastos mensuales totales de manutención, incluyendo lo que paga de: alimentación,  transporte, vivienda,servicios médicos, libros y materiales escolares, entretenimiento, etc.? (por favor, no incluya los gastos en colegiatura e inscripciones de la universidad):
       </strong>
-          </p>
-        </div>
+      </p>
+
         <div class="container_GASTOS">
-          <form name="form_gastos">
+
           <div class="form-row">
             <div class="col-2">
-              <input type="text" class="form-control" placeholder="$">
+              <input type="text" name="gastos_mensuales" class="form-control" placeholder="$" onkeypress="return filterFloat(event,this);">
             </div>
           </div>
-        </form>
-        </div
-      </div
+
+        </div>
+      </div>
       <br>
 
-        <br><br>
+
+       <div class="row">
         <p class="preguntas"><strong>ll. Si tiene gastos adicionales por concepto de servicios médicos especializados , indique la causa y el monto mensual.</strong></p>
-          <form>
-            <div class="container1">
-              <div class="col-auto">
-                <label class="sr-only" for="inlineFormInputGroup"></label>
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">$</div>
-                  </div>
-                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Gastos medicos">
-                </div>
-              </div>
-            </div>
-            <div class="container2">
-              <div class="form-row align-items-center">
+
+
+            <div class="input-group">
+              <div class="container1">
                 <div class="col-auto">
-                  <label class="sr-only" for="inlineFormInput"></label>
-                  <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Causa">
+                  <label class="sr-only" for="inlineFormInputGroup"></label>
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">$</div>
+                    </div>
+                    <input type="text" name="gastos_adicionales"class="form-control" id="inlineFormInputGroup" placeholder="Gastos medicos" onkeypress="return filterFloat(event,this);">
+
+                  </div>
                 </div>
               </div>
+              <span class="input-group-addon"> </span>
+              <div class="container1">
+                <div class="form-row align-items-center">
+                  <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput"></label>
+                    <input type="text" name="causa" class="form-control mb-2" id="inlineFormInput" placeholder="Causa">
+                  </div>
+                </div>
+              </div>
+
             </div>
-          </form>
-          <br><br><br><br><br><br>
-          <form>
+
+          </div>
+
+          <br>
+
           <div class="containerRenta">
             <p class="preguntas"><strong>lll. Si renta cuarto o casa. ¿Con cuántas personas comparte el costo de la renta?    (No se cuente Ud.)</strong></p>
           </div>
           <div class="containerRenta2">
             <div class="form-row">
               <div class="col-12">
-                <input type="text" class="form-control" placeholder="">
+                <input type="number" name="cant_personas_renta" class="form-control" max="5" min="0" placeholder="">
               </div>
             </div>
             </div>
-          </form>
+
           <br><br><br><br><br><br>
 
-          <form>
+
           <div class="container_mes">
             <p class="preguntas"><strong>lV. ¿Cuánto paga de renta mensualmente         (anote solo lo que Ud. Aporta)?</strong></p>
           </div>
           <div class="container_mes2">
             <div class="form-row">
               <div class="col-12">
-                <input type="text" class="form-control" placeholder="$                                          mensuales">
+                <input type="text" name="renta_mensual" class="form-control"  onkeypress="return filterFloat(event,this);" placeholder="$                                          mensuales">
               </div>
             </div>
             </div>
-          </form>
+
           <br><br><br><br><br>
 
-          <form>
+
           <div class="containerizquierda">
             <div class="containermsg">
               <p class="preguntas"><strong>V. Si renta y vive con familiares. <br>¿Cuántas personas habitan la vivienda? </strong></p>
@@ -93,7 +106,7 @@
             <div class="containercaja1">
               <div class="form-row">
                 <div class="col-12">
-                  <input type="text" class="form-control" placeholder="">
+                  <input type="number" name="cant_familiares_renta" max="20" min="1" class="form-control" placeholder="">
                 </div>
               </div>
             </div>
@@ -105,12 +118,12 @@
             <div class="containercaja2">
               <div class="form-row">
                 <div class="col-12">
-                  <input type="text" class="form-control" placeholder="">
+                  <input type="text" name="parentesco_arrentador" class="form-control" placeholder="">
                 </div>
               </div>
             </div>
           </div>
-          </form>
+
           <br><br><br><br><br><br><br>
           <div class="containerTransporte">
             <div class="container_trans_msg">
@@ -118,41 +131,94 @@
             </div>
             <div class="container_trans_opc">
               <div class="form-group col-md-12">
-                <select id="inputState" class="form-control">
+                <select name="medio_de_transporte"  onclick="javascript:showContent5()" id="inputState" class="form-control">
                   <option selected>Transporte ...</option>
                   <option></option>
-                  <option>Taxi </option>
-                  <option>Mototaxi </option>
-                  <option>Bicicleta</option>
-                  <option>Motocicleta</option>
-                  <option>Automóvil propio</option>
+                  <option value="Taxi">Taxi </option>
+                  <option value="Mototaxi">Mototaxi </option>
+                  <option value="Bicicleta">Bicicleta</option>
+                  <option value="Motocicleta">Motocicleta</option>
+                  <option value="Automovil propio">Automóvil propio</option>
                   <option>Otro</option>
                 </select>
               </div>
           </div>
         </div>
-          <br><br><br><br><br><br>
+          <br><br><br><br><br>
+        <!--  <div id="content3" style="display: none;">
+            <div class="row ">
+                 <div class="col-md-4 col-sm-4 col-xs-4">
+                  <span class="preguntas"> <strong>En caso de que el medio de traslado sea motocicleta o automóvil propio, indique marca, modelo y año:</strong></span>
+                  <input type="text" name="datos_transporte_propio" class="form-control" id="texto4"/>
+                 </div>
+
+
+              </div>-->
+
+
           <p class="preguntas"><strong>Vll. Aparatos electrónicos que tiene para su uso personal: </strong></p><br>
-        <div class="container_aparato1">
-              <div class="container_nombre">
-                  <h6>Celular:</h6>
-              </div>
-              <div class="container_seleccion">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                  <label class="form-check-label" for="gridRadios1">
-                    Si
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                  <label class="form-check-label" for="gridRadios2">
-                    No
-                  </label>
-                </div>
-              </div>
+          <div class="row ">
+
+
+            <div class="col-md-3 col-sm-3 col-xs-3">
+            <h6>Celular:</h6>
+            <div class="radio">
+            <input class="form-check-input" type="radio" name="celular" id="check" value="1"  onclick="javascript:showContent()">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Si
+            </label>
+            <input class="form-check-input" type="radio" name="celular" id="check" value="0"  onclick="javascript:showContent2()">
+            <label class="form-check-label" for="flexRadioDefault2">
+               No
+            </label>
             </div>
-            <br><br><br>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3">
+            <h6>Cámara fotografica:</h6>
+            <div class="radio">
+            <input class="form-check-input" type="radio" name="camara_fotografica" id="flexRadioDefault1" value="1"  onclick="javascript:showContent()">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Si
+            </label>
+            <input class="form-check-input" type="radio" name="camara_fotografica" id="flexRadioDefault2" value="0"  onclick="javascript:showContent2()">
+            <label class="form-check-label" for="flexRadioDefault2">
+               No
+            </label>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-3 col-xs-3">
+          <h6>Reproductor de audio</h6>
+          <div class="radio">
+          <input class="form-check-input" type="radio" name="reproductor_de_audio" id="flexRadioDefault1" value="1"  onclick="javascript:showContent()">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Si
+          </label>
+          <input class="form-check-input" type="radio" name="reproductor_de_audio" id="flexRadioDefault2" value="0"  onclick="javascript:showContent2()">
+          <label class="form-check-label" for="flexRadioDefault2">
+             No
+          </label>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-3 col-xs-3">
+        <h6>Tableta electrónica:</h6>
+        <div class="radio">
+        <input class="form-check-input" type="radio" name="tableta_electronica" id="flexRadioDefault1" value="1"  onclick="javascript:showContent()">
+        <label class="form-check-label" for="residencia_distinta1">
+          Si
+        </label>
+        <input class="form-check-input" type="radio" name="tableta_electronica" id="flexRadioDefault2" value="0"  onclick="javascript:showContent2()">
+        <label class="form-check-label" for="flexRadioDefault2">
+           No
+        </label>
+        </div>
+      </div>
+
+         </div>
+            <br>
+            <!--
             <div class="container_aparato2">
                   <div class="container_nombre2">
                       <h6>Cámara fotografica:</h6>
@@ -212,48 +278,65 @@
                     </div>
                 </div>
             </div>
-            <br><br><br><br><br>
-            <form>
+          -->
+            <br>
+            <div id="content" style="display: none;">
+            <div class="row ">
+                 <div class="col-md-2 col-sm-2 col-xs-2">
+                  <span class="preguntas"> <strong>Marca:</strong></span>
+                  <input type="text" name="celular_marca" value="" class="form-control" id="texto1"/>
+                 </div>
+                 <div class="col-md-2 col-sm-2 col-xs-2">
+                  <span class="preguntas"><strong>Modelo:</strong></span>
+                  <input type="text" name="celular_modelo" value="" class="form-control" id="texto2"/>
+                 </div>
+
+              </div>
+              </div>
+              <br>
+
+
             <div class="container_trabajo">
               <p class="preguntas"><strong>Vlll. Si se encuentra empleado , mencione el centro de trabajo para el cual labora: </strong></p>
             </div>
             <div class="container_cajatrabajo">
               <div class="form-row">
                 <div class="col-12">
-                  <input type="text" class="form-control" placeholder="">
+                  <input type="text" name="centro_de_trabajo" value="" class="form-control" placeholder="">
                 </div>
               </div>
               </div>
-            </form>
+
               <br><br><br>
-              <form>
+
               <div class="container_trabajo2">
                 <p class="preguntas"><strong> Mencione el ingreso mensual que percibe:<strong> </p>
               </div>
               <div class="container_cajatrabajo2">
                 <div class="form-row">
                   <div class="col-12">
-                    <input type="text" class="form-control" placeholder="$">
+                    <input type="text" name="ingreso_mensual" value="" class="form-control" placeholder="$" onkeypress="return filterFloat(event,this);">
                   </div>
                 </div>
                 </div>
-            </form>
+
             <br><br><br>
-            <form>
+
               <div class="container_trabajo3">
                 <p class="preguntas"> <strong>Domicilio y teléfono del centro de trabajo: </strong></p>
               </div>
               <div class="container_cajatrabajo3">
                 <div class="form-row">
                   <div class="col-12">
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" name="datos_trabajo" value=" " class="form-control" placeholder="">
                   </div>
                 </div>
                 </div>
-              </form>
+
+
               <br><br><br><br><br>
-              <form>
-                <div class="container_jefefamilia">
+
+                <!--<div class="container_jefefamilia">
                   <p class="preguntas"><strong>lX. ¿Es jefe de familia? </strong></p>
                 </div>
                 <div class="container_jefefamilia2">
@@ -269,25 +352,158 @@
                       No
                     </label>
                   </div>
+                </div>-->
+                <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                <span  class="preguntas"><strong>lX. ¿Es jefe de familia?  </strong></span>
+                <div class="radio">
+                <input class="form-check-input" type="radio" name="jefe_de_familia" id="check2" value="1"  onclick="javascript:showContent3()">
+                <label class="form-check-label" for="residencia_distinta1">
+                  Si
+                </label>
+                <input class="form-check-input" type="radio" name="jefe_de_familia" id="check2" value="0"  onclick="javascript:showContent4()">
+                <label class="form-check-label" for="flexRadioDefault2">
+                   No
+                </label>
                 </div>
-              </form>
+
+                </div>
+             </div>
+
               <br><br><br>
-              <form>
-                <div class="container_personas">
-                  <p class="preguntas"> <strong>¿Cuántas personas dependen económicamente de usted?: </strong></p>
-                </div>
-                <div class="container_cajapersonas">
-                  <div class="form-row">
-                    <div class="col-7">
-                      <input type="text" class="form-control" placeholder="">
-                    </div>
+               <div id="content2" style="display: none;">
+                 <div class="row ">
+                      <div class="col-md-4 col-sm-4 col-xs-4">
+                       <span class="preguntas"> <strong>¿Cuántas personas dependen económicamente de usted?:</strong></span>
+                       <input type="number" name="personas_dependientes" value="" max="10" min="1" class="form-control" id="texto3"/>
+                      </div>
+
+
+                   </div>
+
+
+                 </div>
+
+                    <br>
+
+                    <div class="row ">
+                        <div class="col text-center">
+                        <button class="btn btn-outline-success  btn-lg">Guardar</button>
                   </div>
                   </div>
-                </form>
+
+                  </form>
+                  </div>
+                  </div>
+
+
+
+
+
                 <br><br><br><br>
+
+
+
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 
+      <script type="text/javascript">
+
+      function filterFloat(evt,input){
+          // Backspace = 8, Enter = 13, ‘0′ = 48, ‘9′ = 57, ‘.’ = 46, ‘-’ = 43
+          var key = window.Event ? evt.which : evt.keyCode;
+          var chark = String.fromCharCode(key);
+          var tempValue = input.value+chark;
+          if(key >= 48 && key <= 57){
+              if(filter(tempValue)=== false){
+                  return false;
+              }else{
+                  return true;
+              }
+          }else{
+                if(key == 8 || key == 13 || key == 0) {
+                    return true;
+                }else if(key == 46){
+                      if(filter(tempValue)=== false){
+                          return false;
+                      }else{
+                          return true;
+                      }
+                }else{
+                    return false;
+                }
+          }
+      }
+      function filter(__val__){
+          var preg = /^([0-9]+\.?[0-9]{0,2})$/;
+          if(preg.test(__val__) === true){
+              return true;
+          }else{
+             return false;
+          }
+
+      }
+
+      </script>
+      <script type="text/javascript">
+    function showContent() {
+        element = document.getElementById("content");
+        check = document.getElementById("check");
+        if (check.checked) {
+            element.style.display='block';
+        }
+        else {
+            element.style.display='none';
+        }
+    }
+    function showContent2() {
+      element = document.getElementById("content");
+      check = document.getElementById("check");
+      if (check.checked) {
+          element.style.display='none';
+      }
+      else {
+          element.style.display='none';
+      }
+      document.getElementById("texto1").value='';
+      document.getElementById("texto2").value='';
+    }
+
+    function showContent3() {
+        element = document.getElementById("content2");
+        check = document.getElementById("check2");
+        if (check.checked) {
+            element.style.display='block';
+        }
+        else {
+            element.style.display='none';
+        }
+    }
+    function showContent4() {
+        element = document.getElementById("content2");
+        check = document.getElementById("check2");
+        if (check.checked) {
+            element.style.display='block';
+        }
+        else {
+            element.style.display='none';
+        }
+        document.getElementById("texto3").value='';
+    }
+
+    function showContent5() {
+        element = document.getElementById("content3");
+        check = document.getElementById("inputState").value;
+        if (check.checke) {
+            element.style.display='block';
+        }
+        else {
+            element.style.display='none';
+        }
+
+    }
+
+</script>
 
   </body>
 </html>
