@@ -23,7 +23,7 @@ def obtenerDatos_Solicitante(request):
         ap_paterno=request.POST['apellido_paterno'], ap_materno = request.POST['apellido_materno'], nombre = request.POST['nombre'],
         sexo = request.POST['sexo'], edad = request.POST['edad'], estado_civil = request.POST['estado_civil'], carrera =request.POST['carrera'],
         semestre = request.POST['semestre'],grupo = request.POST['grupo'],telefono = request.POST['celular'], otro_idiona =  request.POST['otro_idioma'],
-        esidencia_distinta = '' , calle =  '', numero = '', colonia = '', municipio = '', estado ='',propietario = '', parentesco = '')
+        Residencia_distinta = '' , calle =  '', numero = '', colonia = '', municipio = '', estado ='',propietario = '', parentesco = '')
 
     datosPersonalesModel.save()
     context = {
