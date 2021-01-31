@@ -137,23 +137,23 @@
                   <option value="Taxi">Taxi </option>
                   <option value="Mototaxi">Mototaxi </option>
                   <option value="Bicicleta">Bicicleta</option>
-                  <option value="Motocicleta">Motocicleta</option>
-                  <option value="Automovil propio">Automóvil propio</option>
+                  <option value="MotoAuto">Motocicleta</option>
+                  <option value="MotoAuto">Automóvil propio</option>
                   <option>Otro</option>
                 </select>
               </div>
           </div>
         </div>
           <br><br><br><br><br>
-        <!--  <div id="content3" style="display: none;">
+       <div id="content3" style="display: none;">
             <div class="row ">
                  <div class="col-md-4 col-sm-4 col-xs-4">
                   <span class="preguntas"> <strong>En caso de que el medio de traslado sea motocicleta o automóvil propio, indique marca, modelo y año:</strong></span>
                   <input type="text" name="datos_transporte_propio" class="form-control" id="texto4"/>
                  </div>
+               </div>
 
-
-              </div>-->
+              </div
 
 
           <p class="preguntas"><strong>Vll. Aparatos electrónicos que tiene para su uso personal: </strong></p><br>
@@ -494,7 +494,7 @@
     function showContent5() {
         element = document.getElementById("content3");
         check = document.getElementById("inputState").value;
-        if (check.checke) {
+        if (check=='MotoAuto') {
             element.style.display='block';
         }
         else {
