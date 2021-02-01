@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Estudio Socioeconómico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/estilos.css'  %}">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  </head>
+  <body>
+      {% block header %}
+      {% include 'subPlantillas/header.html' %}
+      {% endblock %}
+      <h2 class="text-center">6. INGRESO FAMILIAR MENSUAL</h2>
+
+
+        <div class="container text-center justify-content-center" >
+
+              <div class="row justify-content-center">
+                           <form action="" class="credit-card-div" method="post">
+
+                              <br>
+                              <div class="panel panel-default" >
+                              <div class="panel-heading">
+
+                             <div class="row justify-content-center">
+                                <span class="preguntas"> <strong>Número de personas que trabajan:</strong></span>
+                                <input style="width: 4em" type="text" name="personas_que_trabajan" class="form-control" required/>
+                              </div>
+
+                              <br>
+                                <p class="preguntas"><strong>INGRESO MENSUAL DE LA FAMILIA </strong></p>
+                               <div class="row ">
+
+
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                     <span class="preguntas"> <strong>Padre:</strong></span>
+                                     <input type="text" onkeypress="return filterFloat(event,this);" name="ingreso_padre" class="form-control" >
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                     <span class="preguntas"><strong> Madre:</strong></span>
+                                     <input type="text" onkeypress="return filterFloat(event,this);" name="ingreso_madre" class="form-control"/>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+
+                                    <span class="preguntas"><strong> Otras personas aportan gasto?</strong></span>
+
+                                    <div class="radio">
+                                    <input class="form-check-input" type="radio" name="otros" onclick="showContent()" id="check" value="Si"   >
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                      Si
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="otros" onclick="showContent2()" id="check" value="No" checked>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                       No
+                                    </label>
+                                    </div>
+                                    </div>
+
+                                 </div>
+                                 <br>
+                                 <div id="content" style="display: none;">
+                                      <div class="row ">
+                                            <span class="preguntas"> <strong>Otros (especifique):</strong></span>
+                                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <input type="text" name="otro_nombre_1" value="" class="form-control" id="texto1" placeholder="Nombre"/>
+                                           </div>
+                                           <div class="col-md-4 col-sm-4 col-xs-4">
+                                           <input type="text" name="ingreso_nombre_1" value="" onkeypress="return filterFloat(event,this);"  class="form-control"  id="texto2" placeholder="Ingreso"/>
+                                          </div>
+                                         </div>
+
+                                         <div class="row ">
+
+                                               <div class="col-md-4 col-sm-4 col-xs-4">
+                                               <input type="text" name="otro_nombre_2" value="" class="form-control"  id="texto3" placeholder="Nombre"/>
+                                              </div>
+                                              <div class="col-md-4 col-sm-4 col-xs-4">
+                                              <input type="text" name="ingreso_nombre_2" value="" onkeypress="return filterFloat(event,this);"  class="form-control"  id="texto4" placeholder="Ingreso"/>
+                                             </div>
+                                            </div>
+
+                                       </div>
+
+
+                                 <div class="row ">
+
+
+                                       <span class="preguntas"><strong>¿Recibe apoyo tu familia por parte del Gobierno Federal o Estatal?:</strong></span>
+
+                                       <div class="radio">
+                                       <input class="form-check-input" type="radio" name="apoyo_F_E"  onclick="showContent3()" id="check2" value="1"  checked >
+                                       <label class="form-check-label" for="flexRadioDefault1">
+                                         Si
+                                       </label>
+                                       <input class="form-check-input" type="radio" name="apoyo_F_E"  onclick="showContent4()" id="check2" value="0" checked>
+                                       <label class="form-check-label" for="flexRadioDefault2">
+                                          No
+                                       </label>
+                                       </div>
+
+                                    </div>
+                                   <br>
+                        <div id="content2" style="display: none;">
+                            <div class="row ">
+
+                              <div class="radio">
+                              <input class="form-check-input" type="radio" name="tipo_de_apoyo" id="check3" value="Prospera"  onclick="showContent5()">
+                              <label class="form-check-label" for="flexRadioDefault2">
+                                PROSPERA
+                              </label>
+                              <input class="form-check-input" type="radio" name="tipo_de_apoyo" id="check3" value="Procampo"  onclick="showContent5()">
+                              <label class="form-check-label" for="flexRadioDefault2">
+                                 PROCAMPO
+                              </label>
+                              <input class="form-check-input" type="radio" name="tipo_de_apoyo" id="check3" value="Progresa"  onclick="showContent5()">
+                              <label class="form-check-label" for="flexRadioDefault2">
+                                 PROGRESA
+                              </label>
+                              <input class="form-check-input" type="radio" name="tipo_de_apoyo" id="check3" value="Otro"  onclick="showContent6()">
+                              <label class="form-check-label" for="flexRadioDefault2">
+                                 Otro
+                              </label>
+                              </div>
+
+
+                            </div>
+
+                           </div>
+                            <br>
+
+                           <div id="content3" style="display: none;">
+                                <div class="row ">
+
+                                      <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <span class="preguntas"> <strong>Numero de Folio:</strong></span>
+                                      <input type="number" name="numero_folio" value="" class="form-control" id="texto5"/>
+                                     </div>
+
+                                     <div class="col-md-4 col-sm-4 col-xs-4">
+                                     <span class="preguntas"> <strong>Monto:</strong></span>
+                                     <input type="text" onkeypress="return filterFloat(event,this);" name="folio_monto" value="" class="form-control" id="texto6"/>
+                                    </div>
+
+                                   </div>
+
+                                 </div>
+
+                                 <div id="content4" style="display: none;">
+                                      <div class="row ">
+
+                                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <span class="preguntas"> <strong>Especifique:</strong></span>
+                                            <input type="text" name="otro_especifique" value="" class="form-control" id="texto7"/>
+                                           </div>
+
+                                           <div class="col-md-4 col-sm-4 col-xs-4">
+                                           <span class="preguntas"> <strong>Iniciativa privada: </strong></span>
+                                           <input type="text" name="iniciativa_privada" value="" class="form-control" id="texto8"/>
+                                          </div>
+                                          <div class="col-md-4 col-sm-4 col-xs-4">
+                                          <span class="preguntas"> <strong>Monto:</strong></span>
+                                          <input type="text" onkeypress="return filterFloat(event,this);" name="monto_i_p" value="" class="form-control" id="texto9"/>
+                                         </div>
+
+                                         </div>
+
+                                       </div>
+
+                           <br>
+                           <div class="row justify-content-center">
+                              <span class="preguntas"> <strong>Cuántas personas en TOTAL dependen del ingreso reportado:</strong></span>
+                              <input style="width: 4em" type="number" name="numero_persona_dep" max="10" min="1" class="form-control" required/>
+                            </div>
+
+
+
+                           <div class="row justify-content-center">
+                                  <span class="preguntas"><strong>Ingreso mensual TOTAL:</strong></span>
+                                  <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="ingreso_mensual_total" class="form-control" value="" id="texto7"/>
+
+                               </div>
+
+
+
+                             </div>
+                               <br>
+                               <div class="row ">
+                                   <div class="col-md-12">
+                                   <button class="btn btn-outline-success  btn-lg">Guardar</button>
+                                   </div>
+
+                                 </div>
+
+                              </div>
+                              </div>
+                          </form>
+              </div>
+              </div>
+
+
+
+              <script type="text/javascript">
+
+              function showContent() {
+                element = document.getElementById("content");
+                check = document.getElementById("check");
+                if (check.checked) {
+                    element.style.display='block';
+                }
+                else {
+                    element.style.display='none';
+                }
+              }
+              function showContent2() {
+              element = document.getElementById("content");
+              check = document.getElementById("check");
+              if (check.checked) {
+                  element.style.display='none';
+              }
+              else {
+                  element.style.display='none';
+              }
+              document.getElementById("texto1").value='';
+              document.getElementById("texto2").value='';
+              document.getElementById("texto3").value='';
+              document.getElementById("texto4").value='';
+              }
+
+              function showContent3() {
+                element = document.getElementById("content2");
+                check = document.getElementById("check2");
+                if (check.checked) {
+                    element.style.display='block';
+                }
+                else {
+                    element.style.display='none';
+                }
+              }
+              function showContent4() {
+                element = document.getElementById("content2");
+                check = document.getElementById("check2");
+                if (check.checked) {
+                    element.style.display='block';
+                }
+                else {
+                    element.style.display='none';
+                }
+
+              }
+
+              function showContent5() {
+                element = document.getElementById("content3");
+                element2 = document.getElementById("content4");
+               check = document.getElementById("check3");
+                if (check.checked) {
+                    element.style.display='block';
+                    element2.style.display='none';
+                }
+                else {
+                    element.style.display='block';
+                    element2.style.display='none';
+                }
+                document.getElementById("texto7").value='';
+                document.getElementById("texto8").value='';
+                document.getElementById("texto9").value='';
+
+
+              }
+
+              function showContent6() {
+                element = document.getElementById("content3");
+                element2 = document.getElementById("content4");
+               check = document.getElementById("check3");
+                if (check.checked) {
+                    element.style.display='none';
+                    element2.style.display='block';
+                }
+                else {
+                    element.style.display='none';
+                    element2.style.display='block';
+                }
+                document.getElementById("texto5").value='';
+                document.getElementById("texto6").value='';
+
+
+
+              }
+
+              function filterFloat(evt,input){
+                  // Backspace = 8, Enter = 13, ‘0′ = 48, ‘9′ = 57, ‘.’ = 46, ‘-’ = 43
+                  var key = window.Event ? evt.which : evt.keyCode;
+                  var chark = String.fromCharCode(key);
+                  var tempValue = input.value+chark;
+                  if(key >= 48 && key <= 57){
+                      if(filter(tempValue)=== false){
+                          return false;
+                      }else{
+                          return true;
+                      }
+                  }else{
+                        if(key == 8 || key == 13 || key == 0) {
+                            return true;
+                        }else if(key == 46){
+                              if(filter(tempValue)=== false){
+                                  return false;
+                              }else{
+                                  return true;
+                              }
+                        }else{
+                            return false;
+                        }
+                  }
+              }
+              function filter(__val__){
+                  var preg = /^([0-9]+\.?[0-9]{0,2})$/;
+                  if(preg.test(__val__) === true){
+                      return true;
+                  }else{
+                     return false;
+                  }
+
+              }
+
+
+
+
+              </script>
+
+            </body>
+
+          </html>
