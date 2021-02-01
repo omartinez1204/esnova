@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^medios_estudiar/$',medios_estudiar),
     url(r'^datos_responsable/$',datos_responsable),
     url(r'^ingreso_familiar/$',ingreso_familiar),
+    url(r'^gasto_familiar/$',gasto_familiar),
     url(r'^dependencias/$',dependencia),
     url(r'^personas_dependientes/$',datos_personas_dependo),
     url(r'^recuperar_contrasenia/$',recuperar_contrasenia),

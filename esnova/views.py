@@ -34,6 +34,9 @@ def datos_responsable(request):
 def ingreso_familiar(request):
     return render(request, 'ingreso_familiar.html')
 
+def gasto_familiar(request):
+    return render(request, 'gasto_familiar.html')
+
 def iniciar(request):
     matricula=request.POST['matricula']
     contrasenia=request.POST['contrasenia']
