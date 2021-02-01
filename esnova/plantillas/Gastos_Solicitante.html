@@ -21,7 +21,8 @@
 
 
 
-      <form action="" class="credit-card-div">
+      <form action="{%  url 'serviciosapp:obtenerGastos_Solicitante' %}" class="credit-card-div">{% csrf_token %}
+        {{ form.as_p }}
 
       <div class="row">
       <p class="preguntas text-justify"><strong>l. ¿A cuánto ascienden sus gastos mensuales totales de manutención, incluyendo lo que paga de: alimentación,  transporte, vivienda,servicios médicos, libros y materiales escolares, entretenimiento, etc.? (por favor, no incluya los gastos en colegiatura e inscripciones de la universidad):

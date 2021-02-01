@@ -12,7 +12,7 @@ class Usuario(models.Model):
 
 # Create your models here.
 class datosPersonales(models.Model):
-    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     fecha = models.DateTimeField('fecha')
     solicita_beca_alimentaria = models.CharField(max_length = 3)
     ap_paterno = models.CharField(max_length = 30)
@@ -41,7 +41,7 @@ class datosPersonales(models.Model):
         self.propietario, self.parentesco)
 
 class gastosDelSolicitante(models.Model):
-    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     gastos_mensuales = models.FloatField()
     gastos_adicionales = models.FloatField()
     cant_personas_renta = models.IntegerField(default=0)
@@ -50,7 +50,7 @@ class gastosDelSolicitante(models.Model):
     parentesco_arrentador = models.CharField(max_length = 30)
     medio_de_transporte = models.CharField(max_length = 30)
     datos_transporte_propio = models.CharField(max_length = 30)
-    celular = models.BooleanField()
+    celular = models.CharField(max_length = 3)
     celular_marca = models.CharField(max_length = 30)
     celular_modelo = models.CharField(max_length = 30)
     camara_fotografica = models.BooleanField()
@@ -59,7 +59,7 @@ class gastosDelSolicitante(models.Model):
     centro_de_trabajo = models.CharField(max_length = 30)
     ingreso_mensual = models.FloatField()
     datos_trabajo = models.CharField(max_length = 30)
-    jefe_de_familia = models.BooleanField()
+    jefe_de_familia = models.CharField(max_length = 3)
     personas_dependientes = models.IntegerField(default=0)
     def __str__(self):
         return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}'.format(self.gastos_mensuales, self.gastos_adicionales,
@@ -68,7 +68,7 @@ class gastosDelSolicitante(models.Model):
         self.tableta_electronica, self.centro_de_trabajo, self.ingreso_mensual, self.datos_trabajo, self.jefe_de_familia, self.personas_dependientes)
 
 class mediosParaEstudiar(models.Model):
-    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     computadora_de_escritorio = models.BooleanField()
     laptop = models.BooleanField()
     impresora = models.BooleanField()
@@ -87,7 +87,7 @@ class mediosParaEstudiar(models.Model):
         self.libros_especializados, self.telefonia, self.banda_ancha, self.falta_algun_medio)
 
 class datosPersonaDeQuienDepende(models.Model):
-    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     ap_paterno = models.CharField(max_length = 30)
     ap_materno = models.CharField(max_length = 30)
     nombre = models.CharField(max_length = 30)
@@ -136,7 +136,7 @@ class datosPersonaDeQuienDepende(models.Model):
 
 
 class datosDelResponsable(models.Model):
-    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     ap_paterno = models.CharField(max_length = 30)
     ap_materno = models.CharField(max_length = 30)
     nombre = models.CharField(max_length = 30)
@@ -181,7 +181,7 @@ class datosDelResponsable(models.Model):
 
 
 class ingresoFamiliarMensual(models.Model):
-    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     personas_que_trabajan = models.IntegerField(default=0)
     ingreso_padre =  models.FloatField()
     ingreso_madre =  models.FloatField()
@@ -189,7 +189,7 @@ class ingresoFamiliarMensual(models.Model):
     otro_nombre_2 = models.CharField(max_length = 30)
     ingreso_nombre_1 =  models.FloatField()
     ingreso_nombre_2 =  models.FloatField()
-    apoyo_F_E = models.BooleanField()
+    apoyo_F_E = models.CharField(max_length = 3)
     tipo_de_apoyo =  models.CharField(max_length = 30)
     numero_folio = models.CharField(max_length = 30)
     monto_folio =  models.FloatField()
@@ -204,7 +204,7 @@ class ingresoFamiliarMensual(models.Model):
         self.monto_i_p, self.numero_persona_dep, self.ingreso_mensual_total )
 
 class gastoFamiliarMensual(models.Model):
-    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     agua = models.FloatField()
     luz = models.FloatField()
     telefono = models.FloatField()
@@ -231,7 +231,7 @@ class gastoFamiliarMensual(models.Model):
 
 
 class personasQueDependenDelIngresoMensual(models.Model):
-    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     numero_hermanos = models.IntegerField(default=0)
     nombres_personas = models.TextField(null=True)
     edades_personas = models.TextField(null=True)
@@ -245,7 +245,7 @@ class personasQueDependenDelIngresoMensual(models.Model):
 
 
 class informacionSocioEconomica(models.Model):
-    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     casa_familiar = models.CharField(max_length = 30)
     material_paredes = models.CharField(max_length = 30)
     material_piso = models.CharField(max_length = 30)
