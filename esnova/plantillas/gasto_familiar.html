@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Estudio Socioeconómico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/estilos.css'  %}">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  </head>
+  <body>
+      {% block header %}
+      {% include 'subPlantillas/header.html' %}
+      {% endblock %}
+      <h2 class="text-center">7. GASTO FAMILIAR MENSUAL</h2>
+
+
+        <div class="container text-center justify-content-center" >
+
+              <div class="row justify-content-center">
+                           <form action="" class="credit-card-div" method="post">
+
+                              <br>
+                              <h5 class="preguntas"><strong>Pago mensual de servicios</strong></h5>
+                              <div class="row justify-content-center">
+                                     <span class="preguntas"><strong>Agua:</strong></span>
+                                     <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="agua" class="form-control" value="" id="texto7"/>
+
+                                  </div>
+                                  <div class="row justify-content-center">
+                                         <span class="preguntas"><strong>Luz:</strong></span>
+                                         <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="luz" class="form-control" value="" id="texto7"/>
+
+                                      </div>
+                                      <div class="row justify-content-center">
+                                             <span class="preguntas"><strong>Telefono:</strong></span>
+                                             <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="telefono" class="form-control" value="" id="texto7"/>
+
+                                          </div>
+                                          <div class="row justify-content-center">
+                                                 <span class="preguntas"><strong>Gas:</strong></span>
+                                                 <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="gas" class="form-control" value="" id="texto7"/>
+
+                                              </div>
+                                              <div class="row justify-content-center">
+                                                     <span class="preguntas"><strong>Educacion:</strong></span>
+                                                     <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="educacion" class="form-control" value="" id="texto7"/>
+
+                                                  </div>
+                                                <div class="row justify-content-center">
+                                                         <span class="preguntas"><strong>Transporte:</strong></span>
+                                                         <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="transporte" class="form-control" value="" id="texto7"/>
+
+                                                  </div>
+                                                  <div class="row justify-content-center">
+                                                             <span class="preguntas"><strong>Renta:</strong></span>
+                                                             <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="renta" class="form-control" value="" id="texto7"/>
+
+                                                    </div>
+                                                      <div class="row justify-content-center">
+                                                                 <span class="preguntas"><strong>Television por cable:</strong></span>
+                                                                 <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="television_por_cable" class="form-control" value="" id="texto7"/>
+
+                                                          </div>
+
+                                                          <div class="row justify-content-center">
+                                                                     <span class="preguntas"><strong>Internet:</strong></span>
+                                                                     <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="internet" class="form-control" value="" id="texto7"/>
+
+                                                              </div>
+                                                            <h5 class="preguntas"><strong>Otros (especifique):</strong></h5>
+                                                              <div class="row justify-content-center">
+                                                                          <input type="text" style="width: 12em" name="Otros_1_nombre" class="form-control" value="" placeholder="Gasto nombre"/>
+                                                                         <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="otros_1" class="form-control" value="" placeholder="Gasto $"/>
+
+                                                                  </div>
+                                                                  <br>
+                                                                  <div class="row justify-content-center">
+                                                                              <input type="text" style="width: 12em" name="Otros_2_nombre" class="form-control" value="" placeholder="Gasto nombre"/>
+                                                                             <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="otros_2" class="form-control" value="" placeholder="Gasto $"/>
+
+                                                                      </div>
+                                      <br>
+                                      <div class="row justify-content-center">
+                                             <span class="preguntas"><strong>Gasto de alimentación:</strong></span>
+                                             <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="gasto_alimentacion" class="form-control" value="" id="texto7"/>
+
+                                          </div>
+                                          <div class="row justify-content-center">
+                                                 <span class="preguntas"><strong>Gasto de vestido:</strong></span>
+                                                 <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="gastos_vestido" class="form-control" value="" id="texto7"/>
+
+                                              </div>
+                                            <div class="row justify-content-center">
+                                                     <span class="preguntas"><strong>Gasto mensual de servicios:</strong></span>
+                                                     <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="gastos_servicios" class="form-control" value="" id="texto7"/>
+
+                                              </div>
+                                              <div class="row justify-content-center">
+                                                         <span class="preguntas"><strong>médicos o medicamentos:</strong></span>
+                                                         <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="gastos_servicios_medicos" class="form-control" value="" id="texto7"/>
+
+                                                </div>
+                                                  <div class="row justify-content-center">
+                                                             <span class="preguntas"><strong>Gasto de diversión:</strong></span>
+                                                             <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="gasto_diversion" class="form-control" value="" id="texto7"/>
+
+                                                      </div>
+
+
+                                                        <h5 class="preguntas"><strong>Otros gastos(especifique):</strong></h5>
+                                                          <div class="row justify-content-center">
+                                                                      <input type="text" style="width: 12em" name="otros_gastos_1_nombre" class="form-control" value="" placeholder="Gasto nombre"/>
+                                                                     <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="otros_gastos_1" class="form-control" value="" placeholder="Gasto $"/>
+
+                                                              </div>
+                                                              <br>
+                                                              <div class="row justify-content-center">
+                                                                          <input type="text" style="width: 12em" name="otros_gastos_2_nombre" class="form-control" value="" placeholder="Gasto nombre"/>
+                                                                         <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="otros_gastos_2" class="form-control" value="" placeholder="Gasto $"/>
+
+                                                                  </div>
+                                                             <br>
+                                                                  <div class="row justify-content-center">
+                                                                             <span class="preguntas"><strong>Total:</strong></span>
+                                                                             <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="total_gastos" class="form-control" value="" id="texto7"/>
+
+                                                                      </div>
+
+                              <br>
+
+                               <div class="row ">
+                                   <div class="col-md-12">
+                                   <button class="btn btn-outline-success  btn-lg">Guardar</button>
+                                   </div>
+
+                                 </div>
+
+
+                          </form>
+              </div>
+              </div>
+
+
+
+              <script type="text/javascript">
+
+              function showContent() {
+                element = document.getElementById("content");
+                check = document.getElementById("check");
+                if (check.checked) {
+                    element.style.display='block';
+                }
+                else {
+                    element.style.display='none';
+                }
+              }
+              function showContent2() {
+              element = document.getElementById("content");
+              check = document.getElementById("check");
+              if (check.checked) {
+                  element.style.display='none';
+              }
+              else {
+                  element.style.display='none';
+              }
+              document.getElementById("texto1").value='';
+              document.getElementById("texto2").value='';
+              document.getElementById("texto3").value='';
+              document.getElementById("texto4").value='';
+              }
+
+
+              function filterFloat(evt,input){
+                  // Backspace = 8, Enter = 13, ‘0′ = 48, ‘9′ = 57, ‘.’ = 46, ‘-’ = 43
+                  var key = window.Event ? evt.which : evt.keyCode;
+                  var chark = String.fromCharCode(key);
+                  var tempValue = input.value+chark;
+                  if(key >= 48 && key <= 57){
+                      if(filter(tempValue)=== false){
+                          return false;
+                      }else{
+                          return true;
+                      }
+                  }else{
+                        if(key == 8 || key == 13 || key == 0) {
+                            return true;
+                        }else if(key == 46){
+                              if(filter(tempValue)=== false){
+                                  return false;
+                              }else{
+                                  return true;
+                              }
+                        }else{
+                            return false;
+                        }
+                  }
+              }
+              function filter(__val__){
+                  var preg = /^([0-9]+\.?[0-9]{0,2})$/;
+                  if(preg.test(__val__) === true){
+                      return true;
+                  }else{
+                     return false;
+                  }
+
+              }
+
+
+
+
+              </script>
+
+            </body>
+
+          </html>
