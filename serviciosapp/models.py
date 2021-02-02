@@ -68,7 +68,7 @@ class gastosDelSolicitante(models.Model):
         self.tableta_electronica, self.centro_de_trabajo, self.ingreso_mensual, self.datos_trabajo, self.jefe_de_familia, self.personas_dependientes)
 
 class mediosParaEstudiar(models.Model):
-    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     computadora_de_escritorio = models.BooleanField()
     laptop = models.BooleanField()
     impresora = models.BooleanField()
