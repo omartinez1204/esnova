@@ -6,12 +6,14 @@ from serviciosapp.models import *
 from datetime import datetime,date
 
 # Create your views here.
+id_usuario_actual = 0;
 
 def obtenerDatos_Solicitante(request):
+    id_usuario_actual = int(request.POST['id_usuario'])
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
 
-    #consulta_datosPersonales = datosPersonales.objects.get()
     if request.POST['residencia_distinta'] == 'Si':
-        datosPersonalesModel = datosPersonales(fecha = date.today(), solicita_beca_alimentaria= request.POST['solicita_beca_alimentaria'],
+        datosPersonalesModel = datosPersonales(usuario_foraneo = consulta_datosPersonales,fecha = date.today(), solicita_beca_alimentaria= request.POST['solicita_beca_alimentaria'],
         ap_paterno=request.POST['apellido_paterno'], ap_materno = request.POST['apellido_materno'], nombre = request.POST['nombre'],
         sexo = request.POST['sexo'], edad = request.POST['edad'], estado_civil = request.POST['estado_civil'], carrera =request.POST['carrera'],
         semestre = request.POST['semestre'],grupo = request.POST['grupo'],telefono = request.POST['celular'], otro_idiona =  request.POST['otro_idioma'],
@@ -19,7 +21,7 @@ def obtenerDatos_Solicitante(request):
         colonia = request.POST['barrio'], municipio = request.POST['municipio'], estado = request.POST['estado'],propietario = request.POST['propietario'],
         parentesco = request.POST['parentesco'])
     else :
-        datosPersonalesModel = datosPersonales(fecha = date.today(), solicita_beca_alimentaria= request.POST['solicita_beca_alimentaria'],
+        datosPersonalesModel = datosPersonales(usuario_foraneo = consulta_datosPersonales, fecha = date.today(), solicita_beca_alimentaria= request.POST['solicita_beca_alimentaria'],
         ap_paterno=request.POST['apellido_paterno'], ap_materno = request.POST['apellido_materno'], nombre = request.POST['nombre'],
         sexo = request.POST['sexo'], edad = request.POST['edad'], estado_civil = request.POST['estado_civil'], carrera =request.POST['carrera'],
         semestre = request.POST['semestre'],grupo = request.POST['grupo'],telefono = request.POST['celular'], otro_idiona =  request.POST['otro_idioma'],
