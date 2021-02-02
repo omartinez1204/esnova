@@ -36,7 +36,7 @@ def obtenerDatos_Solicitante(request):
 
 def obtenerGastos_Solicitante(request):
     id_usuario_actual = int(request.POST['id_usuario'])
-    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
+    consulta_datosPersonales = Usuario.objects.get(pk = 1)
 
     v1 = True
     v2 = True
@@ -243,5 +243,33 @@ def obtenerIngresoFamiliar(request):
     datosingresofamiliar.save()
     context = {
         'datosingresofamiliar':datosingresofamiliar,
+    }
+    return render(request,'temporal.html', context)
+
+def obtenerGastoFamiliar(request):
+    consulta_datosPersonales = Usuario.objects.get(pk = 1)
+
+    datosgastofamiliar = gastoFamiliarMensual(usuario_fore = consulta_datosPersonales, agua = request.POST['agua'], luz = request.POST['luz'], telefono = request.POST['telefono'],
+    gas = request.POST['gas'], educacion = request.POST['educacion'], transporte = request.POST['transporte'], renta = request.POST['renta'], television_por_cable = request.POST['television_por_cable'],
+    internet = request.POST['internet'], otros_1 = request.POST['otros_1'], otros_2 = request.POST['otros_2'], gasto_alimentacion = request.POST['gasto_alimentacion'], gastos_vestido = request.POST['gastos_vestido'],
+    gastos_servicios_medicos = request.POST['gastos_servicios_medicos'], gasto_diversion = request.POST['gasto_diversion'], otros_gastos_1 = request.POST['otros_gastos_1'], otros_gastos_2 = request.POST['otros_gastos_2'],
+    total_gastos = request.POST['total_gastos'])
+
+    datosgastofamiliar.save()
+    context = {
+        'datosgastofamiliar':datosgastofamiliar,
+    }
+    return render(request,'temporal.html', context)
+
+def obtenerPersonasQueDependen(request):
+    consulta_datosPersonales = Usuario.objects.get(pk = 1)
+
+    datospersonasquedependen = personasQueDependenDelIngresoMensual(usuario_fore = consulta_datosPersonales, numero_hermanos = request.POST['numero_hermanos'],
+    nombres_personas = request.POST['nombres_personas'], edades_personas = request.POST['edades_personas'], parentescos_personas = request.POST['parentescos_personas'], tipo_comprobante_personas = request.POST['tipo_comprobante_personas'],
+    observaciones = request.POST['observaciones'])
+
+    datospersonasquedependen.save()
+    context = {
+        'datospersonasquedependen':datospersonasquedependen,
     }
     return render(request,'temporal.html', context)
