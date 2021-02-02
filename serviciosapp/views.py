@@ -34,6 +34,9 @@ def obtenerDatos_Solicitante(request):
     return render(request,'temporal.html',context)
 
 def obtenerGastos_Solicitante(request):
+
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
+
     v1 = True
     v2 = True
     v3 = True
@@ -57,14 +60,14 @@ def obtenerGastos_Solicitante(request):
 
     if request.POST['celular'] == 'Si':
         if request.POST['jefe_de_familia'] == 'Si':
-            datosGastosSolicitante = gastosDelSolicitante(gastos_mensuales = request.POST['gastos_mensuales'], gastos_adicionales = request.POST['gastos_adicionales'],
+            datosGastosSolicitante = gastosDelSolicitante(usuario_foraneo  = consulta_datosPersonales,gastos_mensuales = request.POST['gastos_mensuales'], gastos_adicionales = request.POST['gastos_adicionales'],
             cant_personas_renta = request.POST['cant_personas_renta'], renta_mensual = request.POST['renta_mensual'], cant_familiares_renta = request.POST['cant_familiares_renta'],
             parentesco_arrentador = request.POST['parentesco_arrentador'], medio_de_transporte = request.POST['medio_de_transporte'], datos_transporte_propio = request.POST['datos_transporte_propio'],
             celular = request.POST['celular'], celular_marca = request.POST['celular_marca'], celular_modelo = request.POST['celular_modelo'], camara_fotografica = v1, reproductor_de_audio = v2,
             tableta_electronica = v3, centro_de_trabajo = request.POST['centro_de_trabajo'], ingreso_mensual = request.POST['ingreso_mensual'], datos_trabajo = request.POST['datos_trabajo'],
             jefe_de_familia = request.POST['jefe_de_familia'], personas_dependientes = request.POST['personas_dependientes'])
         else:
-            datosGastosSolicitante = gastosDelSolicitante(gastos_mensuales = request.POST['gastos_mensuales'], gastos_adicionales = request.POST['gastos_adicionales'],
+            datosGastosSolicitante = gastosDelSolicitante(usuario_foraneo  = consulta_datosPersonales,gastos_mensuales = request.POST['gastos_mensuales'], gastos_adicionales = request.POST['gastos_adicionales'],
             cant_personas_renta = request.POST['cant_personas_renta'], renta_mensual = request.POST['renta_mensual'], cant_familiares_renta = request.POST['cant_familiares_renta'],
             parentesco_arrentador = request.POST['parentesco_arrentador'], medio_de_transporte = request.POST['medio_de_transporte'], datos_transporte_propio = request.POST['datos_transporte_propio'],
             celular = request.POST['celular'], celular_marca = request.POST['celular_marca'], celular_modelo = request.POST['celular_modelo'], camara_fotografica = v1, reproductor_de_audio = v2,
@@ -72,14 +75,14 @@ def obtenerGastos_Solicitante(request):
             jefe_de_familia = request.POST['jefe_de_familia'])
     else:
         if request.POST['jefe_de_familia'] == 'Si':
-            datosGastosSolicitante = gastosDelSolicitante(gastos_mensuales = request.POST['gastos_mensuales'], gastos_adicionales = request.POST['gastos_adicionales'],
+            datosGastosSolicitante = gastosDelSolicitante(usuario_foraneo  = consulta_datosPersonales,gastos_mensuales = request.POST['gastos_mensuales'], gastos_adicionales = request.POST['gastos_adicionales'],
             cant_personas_renta = request.POST['cant_personas_renta'], renta_mensual = request.POST['renta_mensual'], cant_familiares_renta = request.POST['cant_familiares_renta'],
             parentesco_arrentador = request.POST['parentesco_arrentador'], medio_de_transporte = request.POST['medio_de_transporte'], datos_transporte_propio = request.POST['datos_transporte_propio'],
             celular = request.POST['celular'], camara_fotografica = v1, reproductor_de_audio = v2,
             tableta_electronica = v3, centro_de_trabajo = request.POST['centro_de_trabajo'], ingreso_mensual = request.POST['ingreso_mensual'], datos_trabajo = request.POST['datos_trabajo'],
             jefe_de_familia = request.POST['jefe_de_familia'], personas_dependientes = request.POST['personas_dependientes'])
         else:
-            datosGastosSolicitante = gastosDelSolicitante(gastos_mensuales = request.POST['gastos_mensuales'], gastos_adicionales = request.POST['gastos_adicionales'],
+            datosGastosSolicitante = gastosDelSolicitante(usuario_foraneo  = consulta_datosPersonales,gastos_mensuales = request.POST['gastos_mensuales'], gastos_adicionales = request.POST['gastos_adicionales'],
             cant_personas_renta = request.POST['cant_personas_renta'], renta_mensual = request.POST['renta_mensual'], cant_familiares_renta = request.POST['cant_familiares_renta'],
             parentesco_arrentador = request.POST['parentesco_arrentador'], medio_de_transporte = request.POST['medio_de_transporte'], datos_transporte_propio = request.POST['datos_transporte_propio'],
             celular = request.POST['celular'], camara_fotografica = v1, reproductor_de_audio = v2,
