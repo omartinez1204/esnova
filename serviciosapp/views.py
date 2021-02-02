@@ -6,7 +6,7 @@ from serviciosapp.models import *
 from datetime import datetime,date
 
 # Create your views here.
-id_usuario_actual = 0;
+id_usuario_actual = 0
 
 def obtenerDatos_Solicitante(request):
     id_usuario_actual = int(request.POST['id_usuario'])
@@ -30,11 +30,12 @@ def obtenerDatos_Solicitante(request):
     datosPersonalesModel.save()
     context = {
         'datosPersonalesModel': datosPersonalesModel,
+        'id_usuario_actual': id_usuario_actual,
     }
-    return render(request,'temporal.html',context)
+    return render(request,'Gastos_Solicitante.html',context)
 
 def obtenerGastos_Solicitante(request):
-
+    id_usuario_actual = int(request.POST['id_usuario'])
     consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
 
     v1 = True
@@ -93,12 +94,14 @@ def obtenerGastos_Solicitante(request):
 
     context = {
         'datosGastosSolicitante':datosGastosSolicitante,
+        'id_usuario_actual':id_usuario_actual,
     }
 
-    return render(request,'temporal.html', context)
+    return render(request,'medios_estudiar.html', context)
 
 def obtenermedios_estudiar(request):
 
+    id_usuario_actual = int(request.POST['id_usuario'])
     try:
         if  'True' == request.POST['computadora_de_escritorio']:
             v1 = True
@@ -161,17 +164,18 @@ def obtenermedios_estudiar(request):
     except Exception as e:
         v11 = False
 
-
-    datosmediosEstudiar = mediosParaEstudiar(computadora_de_escritorio = v1, laptop = v2,
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
+    datosmediosEstudiar = mediosParaEstudiar( usuario_foraneo = consulta_datosPersonales,computadora_de_escritorio = v1, laptop = v2,
     impresora = v3, dvd = v4, maquina_de_escribir =v5, calculadora =v6,
     escritorio =v7, enciclopedia =v8, libros_especializados = v9,
     telefonia =v10, banda_ancha = v11, falta_algun_medio= request.POST['falta_algun_medio'])
     datosmediosEstudiar.save()
     context = {
         'datosmediosEstudiar':datosmediosEstudiar,
+        'id_usuario_actual': id_usuario_actual,
     }
 
-    return render(request,'temporal.html', context)
+    return render(request,'datos_responsable.html', context)
 
 def datosdelasPersonasQueDependes(request):
 
@@ -196,7 +200,9 @@ def datosdelasPersonasQueDependes(request):
 
 def obtenerDatos_Responsable(request):
 
-    datosresponsable = datosDelResponsable(ap_paterno = request.POST['apellido_paterno'], ap_materno = request.POST['apellido_materno'],
+    id_usuario_actual = int(request.POST['id_usuario'])
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
+    datosresponsable = datosDelResponsable(usuario_foraneo = consulta_datosPersonales  ,ap_paterno = request.POST['apellido_paterno'], ap_materno = request.POST['apellido_materno'],
     nombre = request.POST['nombre'], sexo =  request.POST['sexo'], edad = int(request.POST['edad']), estado_civil = request.POST['estado_civil'],
     telefono_fijo = request.POST['telefono'], celular = request.POST['celular'], parentesco = request.POST['parentesco'], calle = request.POST['calle'],
     numero = int(request.POST['numero']), colonia = request.POST['colonia'], municipio = request.POST['municipio'], region = request.POST['region'],
@@ -208,6 +214,7 @@ def obtenerDatos_Responsable(request):
     datosresponsable.save()
     context = {
         'datosresponsable':datosresponsable,
+        'id_usuario_actual':id_usuario_actual,
     }
 
     return render(request,'temporal.html', context)
