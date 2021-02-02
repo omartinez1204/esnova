@@ -34,6 +34,9 @@ def obtenerDatos_Solicitante(request):
     return render(request,'temporal.html',context)
 
 def obtenerGastos_Solicitante(request):
+    v1 = True
+    v2 = True
+    v3 = True
     try:
         if  1 == request.POST['camara_fotografica']:
             v1 = True
@@ -195,7 +198,7 @@ def obtenerDatos_Responsable(request):
     telefono_fijo = request.POST['telefono'], celular = request.POST['celular'], parentesco = request.POST['parentesco'], calle = request.POST['calle'],
     numero = int(request.POST['numero']), colonia = request.POST['colonia'], municipio = request.POST['municipio'], region = request.POST['region'],
     estado = request.POST['estado'], grado_escolaridad = request.POST['inlineRadioOptions_1'], tipo_de_trabajo = request.POST['tipo_de_trabajo'],
-    ocupacion = request.POST['ocupacion'], texto_ocupacion = request.POST['texto_ocupacion'], empresa = request.POST['empresa'], cargo  = request.POST['cargo'],
+    ocupacion = request.POST['ocupacion'], empresa = request.POST['empresa'], cargo  = request.POST['cargo'],
     area = request.POST['area'], antiguedad = request.POST['antiguedad'], telefono_empresa = request.POST['telefono_empresa'], calle_empresa = request.POST['calle_empresa'],
     numero_empresa = request.POST['numero_empresa'], colonia_empresa = request.POST['colonia_empresa'], municipio_empresa = request.POST['municipio_empresa'],
     region_empresa = request.POST['region_empresa'], estado_empresa = request.POST['estado_empresa'])
