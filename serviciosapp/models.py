@@ -41,7 +41,7 @@ class datosPersonales(models.Model):
 
 
 class gastosDelSolicitante(models.Model):
-    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     gastos_mensuales = models.FloatField()
     gastos_adicionales = models.FloatField()
     cant_personas_renta = models.IntegerField(default=0)
@@ -87,7 +87,7 @@ class mediosParaEstudiar(models.Model):
         self.libros_especializados, self.telefonia, self.banda_ancha, self.falta_algun_medio)
 
 class datosPersonaDeQuienDepende(models.Model):
-    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     ap_paterno = models.CharField(max_length = 30)
     ap_materno = models.CharField(max_length = 30)
     nombre = models.CharField(max_length = 30)
@@ -136,7 +136,7 @@ class datosPersonaDeQuienDepende(models.Model):
 
 
 class datosDelResponsable(models.Model):
-    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     ap_paterno = models.CharField(max_length = 30)
     ap_materno = models.CharField(max_length = 30)
     nombre = models.CharField(max_length = 30)
@@ -181,7 +181,7 @@ class datosDelResponsable(models.Model):
 
 
 class ingresoFamiliarMensual(models.Model):
-    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     personas_que_trabajan = models.IntegerField(default=0)
     ingreso_padre =  models.FloatField()
     ingreso_madre =  models.FloatField()
@@ -204,7 +204,7 @@ class ingresoFamiliarMensual(models.Model):
         self.monto_i_p, self.numero_persona_dep, self.ingreso_mensual_total )
 
 class gastoFamiliarMensual(models.Model):
-    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     agua = models.FloatField()
     luz = models.FloatField()
     telefono = models.FloatField()
@@ -231,7 +231,7 @@ class gastoFamiliarMensual(models.Model):
 
 
 class personasQueDependenDelIngresoMensual(models.Model):
-    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     numero_hermanos = models.IntegerField(default=0)
     nombres_personas = models.TextField(null=True)
     edades_personas = models.TextField(null=True)
@@ -245,7 +245,7 @@ class personasQueDependenDelIngresoMensual(models.Model):
 
 
 class informacionSocioEconomica(models.Model):
-    #usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     casa_familiar = models.CharField(max_length = 30)
     material_paredes = models.CharField(max_length = 30)
     material_piso = models.CharField(max_length = 30)
