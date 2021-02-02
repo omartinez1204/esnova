@@ -21,7 +21,7 @@
 
 
 
-      <form action="{%  url 'serviciosapp:obtenerGastos_Solicitante' %}" class="credit-card-div">{% csrf_token %}
+      <form action="{%  url 'serviciosapp:obtenerGastos_Solicitante' %}" class="credit-card-div" method="post">{% csrf_token %}
         {{ form.as_p }}
 
       <div class="row">
