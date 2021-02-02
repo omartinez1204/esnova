@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^dependencias/$',dependencia),
     url(r'^personas_dependientes/$',datos_personas_dependo),
     url(r'^recuperar_contrasenia/$',recuperar_contrasenia),
+    url(r'^informacion_adicional/$',informacion_adicional),
     #url(r'^obtenerDatos_Solicitante/$',obtenerDatos_Solicitante),
     path('serviciosapp/', include('serviciosapp.urls')),
     path('iniciar/>',iniciar, name= "iniciar"),

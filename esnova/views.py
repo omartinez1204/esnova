@@ -37,6 +37,9 @@ def ingreso_familiar(request):
 def gasto_familiar(request):
     return render(request, 'gasto_familiar.html')
 
+def informacion_adicional(request):
+    return render(request, 'informacion_adicional.html')
+
 def iniciar(request):
     matricula=request.POST['matricula']
     contrasenia=request.POST['contrasenia']

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Estudio Socioeconómico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/estilos.css'  %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+  </head>
+  <body>
+      {% block header %}
+      {% include 'subPlantillas/header.html' %}
+      {% endblock %}
+
+      <br>
+      <h2 class="text-center titulos">9. INFORMACIÓN SOCIO-ECONÓMICA ADICIONAL</h2>
+      <!--<p id="demo">Mesaage.</p>
+      <script>
+        document.getElementById("demo").innerHTML = "Hello JavaScript!";
+      </script>-->
+
+      <script>
+          function enableInput(index) {
+            var input1=document.querySelectorAll("input[name=otro_material]");
+
+          	for(var i=0;i<input1.length;i++)
+          	{
+          		input1[i].disabled=true;
+          	}
+          	document.getElementsByName(index.id)[0].disabled=false;
+          }
+          function enableInput2(index) {
+            var input1=document.querySelectorAll("input[name=otro_servicio]");
+            for(var i=0;i<input1.length;i++)
+            {
+              input1[i].disabled=true;
+
+            }
+            document.getElementsByName(index.id)[0].disabled=false;
+          }
+          function enableInput3(index) {
+            var input1=document.querySelectorAll("input[name=otro_servicio_vivienda]");
+            for(var i=0;i<input1.length;i++)
+            {
+              input1[i].disabled=true;
+
+            }
+            document.getElementsByName(index.id)[0].disabled=false;
+          }
+      </script>
+
+        <div class="container text-center justify-content-center" >
+              <div class="row justify-content-center">
+
+
+                           <form action="" class="needs-validation" >
+
+                              <br>
+                              <div class="panel panel-default" >
+                              <div class="panel-heading">
+
+                                 <div class="row ">
+                                  <div class="col-md-12">
+                                    <span class="preguntas"><strong>La casa familiar es:</strong></span>
+                                    <br>
+
+
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="casa_familiar" id="inlineRadio3" value="Propia" required>
+                                    <label class="form-check-label" for="inlineRadio3">Propia</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="casa_familiar" id="inlineRadio4" value="Alquilada" required>
+                                    <label class="form-check-label" for="inlineRadio4">Alquilada</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="casa_familiar" id="inlineRadio5" value="Prestada" required>
+                                    <label class="form-check-label" for="inlineRadio5">Prestada</label>
+                                  </div>
+
+
+                                   </div>
+                                    <br>
+                                     <div class="row ">
+                                     <div class="col-md-12">
+                                             <span class="preguntas"><strong>Material con que esta construida la casa(Paredes):</strong></span>
+                                             <br>
+
+                                             <div class="form-check form-check-inline">
+                                               <input class="form-check-input" type="radio" name="inlineRadioOptions_3" id="inlineRadio11" value="Adobe"  onclick="enableInput(this)" required>
+                                               <label class="form-check-label" for="inlineRadio11">Adobe</label>
+                                             </div>
+                                             <div class="form-check form-check-inline">
+                                               <input class="form-check-input" type="radio" name="inlineRadioOptions_3" id="inlineRadio12" value="Lamina"  onclick="enableInput(this)" required>
+                                               <label class="form-check-label" for="inlineRadio12">Lamina</label>
+                                             </div>
+                                             <div class="form-check form-check-inline">
+                                               <input class="form-check-input" type="radio" name="inlineRadioOptions_3" id="inlineRadio13" value="Madera"  onclick="enableInput(this)" required>
+                                               <label class="form-check-label" for="inlineRadio13">Madera</label>
+                                             </div>
+                                             <div class="form-check form-check-inline">
+                                               <input class="form-check-input" type="radio" name="inlineRadioOptions_3" id="inlineRadio13" value="Concreto"  onclick="enableInput(this)" required>
+                                               <label class="form-check-label" for="inlineRadio13">Concreto</label>
+                                             </div>
+
+
+                                           </div>
+
+                                            </div>
+
+                                              <div class="row ">
+                                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                                </div>
+                                                      <div class="col-md-3 col-sm-3 col-xs-3">
+                                                             <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="inlineRadioOptions_3" id="otro_material" value="Otro (Especifique)" onclick="enableInput(this)" required>
+                                                               <label class="form-check-label" for="otro_material">Otro (Especifique)</label>
+                                                             </div>
+                                                      </div>
+                                                      <div class="col-md-3 col-sm-3 col-xs-3">
+                                                        <input type="text" class="form-control" name="otro_material" placeholder="Especificar otro material" required/>
+                                                      </div>
+                                                      <div class="col-md-3 col-sm-3 col-xs-3">
+                                                      </div>
+                                              </div>
+                                              <br>
+                                                <br>
+                                                    <div class="row ">
+                                                      <div class="col-md-3 col-sm-3 col-xs-3">
+
+                                                      </div>
+                                                        <div class="col-md-3 col-sm-3 col-xs-3">
+                                                         <span class="preguntas"><strong>Material del piso:</strong></span>
+                                                         <input type="text" class="form-control" name="material_piso"/>
+                                                        </div>
+
+                                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                                         <span class="preguntas"><strong>Material del techo:</strong></span>
+                                                         <input type="text" class="form-control" name="material_techo"/>
+                                                        </div>
+
+
+                                                      </div>
+
+
+                                                </div>
+                                                </div>
+                                               <br>
+                                               <div class="row ">
+                                               <div class="col-md-12">
+                                                       <span class="preguntas"><strong>Tipo de vivienda:</strong></span>
+                                                       <br>
+
+                                                       <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="tipo_vivienda" id="inlineRadio14" value="Casa sola"  required>
+                                                         <label class="form-check-label" for="inlineRadio11">Casa sola</label>
+                                                       </div>
+                                                       <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="tipo_vivienda" id="inlineRadio15" value="Vecindad"  required>
+                                                         <label class="form-check-label" for="inlineRadio12">Vecindad</label>
+                                                       </div>
+                                                       <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="tipo_vivienda" id="inlineRadio16" value="Departamento"   required>
+                                                         <label class="form-check-label" for="inlineRadio13">Departamento</label>
+                                                       </div>
+                                                       <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="tipo_vivienda" id="inlineRadio17" value="Condominio"   required>
+                                                         <label class="form-check-label" for="inlineRadio13">Condominio</label>
+                                                       </div>
+
+
+                                                     </div>
+
+                                                      </div>
+
+                                                <br>
+                                                <div class="row ">
+                                                <div class="col-md-12">
+                                                        <span class="preguntas"><strong>Servicios públicos:</strong></span>
+                                                        <br>
+
+                                                        <div class="form-check form-check-inline">
+                                                          <input class="form-check-input" type="radio" name="servicios_publicos" id="inlineRadio17" value="Alumbrado publico"  onclick="enableInput2(this)" required>
+                                                          <label class="form-check-label" for="inlineRadio11">Alumbrado Público</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                          <input class="form-check-input" type="radio" name="servicios_publicos" id="inlineRadio18" value="Pavimentacion"  onclick="enableInput2(this)" required>
+                                                          <label class="form-check-label" for="inlineRadio12">Pavimentación</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                          <input class="form-check-input" type="radio" name="servicios_publicos" id="inlineRadio19" value="Drenaje"  onclick="enableInput2(this)" required>
+                                                          <label class="form-check-label" for="inlineRadio13">Drenaje</label>
+                                                        </div>
+
+                                                      </div>
+
+                                                       </div>
+
+                                                         <div class="row ">
+                                                           <div class="col-md-3 col-sm-3 col-xs-3">
+                                                           </div>
+                                                                 <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                        <div class="form-check form-check-inline">
+                                                                          <input class="form-check-input" type="radio" name="servicios_publicos" id="otro_servicio" value="Otro (Especifique)" onclick="enableInput2(this)" required>
+                                                                          <label class="form-check-label" for="otro_servicio">Otro (Especifique)</label>
+                                                                        </div>
+                                                                 </div>
+                                                                 <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                   <input type="text" class="form-control" name="otro_servicio" placeholder="Especificar otro material" required/>
+                                                                 </div>
+                                                                 <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                 </div>
+                                                         </div>
+                                                         <br>
+                                                         <div class="row ">
+                                                         <div class="col-md-12">
+                                                                 <span class="preguntas"><strong>Servicios con los que cuenta la vivienda:</strong></span>
+                                                                 <br>
+
+                                                                 <div class="form-check form-check-inline">
+                                                                   <input class="form-check-input" type="radio" name="servicios_vivienda" id="inlineRadio20" value="Telefono"  onclick="enableInput3(this)" required>
+                                                                   <label class="form-check-label" for="inlineRadio11">Teléfono</label>
+                                                                 </div>
+                                                                 <div class="form-check form-check-inline">
+                                                                   <input class="form-check-input" type="radio" name="servicios_vivienda" id="inlineRadio21" value="Television por cable"  onclick="enableInput3(this)" required>
+                                                                   <label class="form-check-label" for="inlineRadio12">Televisión por cable</label>
+                                                                 </div>
+                                                                 <div class="form-check form-check-inline">
+                                                                   <input class="form-check-input" type="radio" name="servicios_vivienda" id="inlineRadio22" value="Agua"  onclick="enableInput3(this)" required>
+                                                                   <label class="form-check-label" for="inlineRadio11">Agua</label>
+                                                                 </div>
+                                                                 <div class="form-check form-check-inline">
+                                                                   <input class="form-check-input" type="radio" name="servicios_vivienda" id="inlineRadio23" value="Luz"  onclick="enableInput3(this)" required>
+                                                                   <label class="form-check-label" for="inlineRadio12">Luz</label>
+                                                                 </div>
+                                                                 <div class="form-check form-check-inline">
+                                                                   <input class="form-check-input" type="radio" name="servicios_vivienda" id="inlineRadio24" value="Drenaje"  onclick="enableInput3(this)" required>
+                                                                   <label class="form-check-label" for="inlineRadio13">Drenaje</label>
+                                                                 </div>
+
+                                                               </div>
+
+                                                                </div>
+
+                                                                  <div class="row ">
+                                                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                    </div>
+                                                                          <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                                 <div class="form-check form-check-inline">
+                                                                                   <input class="form-check-input" type="radio" name="servicios_vivienda" id="otro_servicio_vivienda" value="Otro (Especifique)" onclick="enableInput3(this)" required>
+                                                                                   <label class="form-check-label" for="otro_servicio_vivienda">Otro (Especifique)</label>
+                                                                                 </div>
+                                                                          </div>
+                                                                          <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                            <input type="text" class="form-control" name="otro_servicio_vivienda" placeholder="Especificar otro material" required/>
+                                                                          </div>
+                                                                          <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                          </div>
+                                                                  </div>
+                                                                <br>
+                                                                <div class="row ">
+
+                                                                   <span class="preguntas"><strong>La casa familiar cuenta con:</strong></span>
+                                                                   </div>
+                                                                   <br>
+                                                                <div class="row ">
+
+                                                                      <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                        <div class="form-check">
+                                                                        <input type="checkbox" name="casa_cuenta_con" class="form-check-input" value="Calentador de Gas">
+                                                                        <label class="form-check-label" for="exampleCheck1"><strong>Calentador de gas</strong></label>
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                        <div class="form-check">
+                                                                        <input type="checkbox" name="casa_cuenta_con" class="form-check-input"  value="Aire acondicionado">
+                                                                        <label class="form-check-label" for="exampleCheck1"><strong>Aire acondicionado</strong></label>
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class="col-md-2 col-sm-2 col-xs-2">
+                                                                        <div class="form-check">
+                                                                        <input type="checkbox" name="casa_cuenta_con" class="form-check-input"  value="Estufa de Gas">
+                                                                        <label class="form-check-label" for="exampleCheck1"><strong>Estufa de gas</strong></label>
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class="col-md-2 col-sm-2 col-xs-2">
+                                                                        <div class="form-check">
+                                                                        <input type="checkbox" name="casa_cuenta_con" class="form-check-input"  value="Lavadora">
+                                                                        <label class="form-check-label" for="exampleCheck1"><strong>Lavadora</strong></label>
+                                                                        </div>
+                                                                      </div>
+
+                                                                  </div>
+                                                                  <br>
+
+
+                                                                <div class="row ">
+
+                                                                      <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                        <div class="form-check">
+                                                                        <input type="checkbox" name="casa_cuenta_con" class="form-check-input" value="Refrigerador">
+                                                                        <label class="form-check-label" for="exampleCheck1"><strong>Refrigerador</strong></label>
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class="col-md-2 col-sm-2 col-xs-2">
+                                                                        <div class="form-check">
+                                                                        <input type="checkbox" name="casa_cuenta_con" class="form-check-input"  value="Televisor">
+                                                                        <label class="form-check-label" for="exampleCheck1"><strong>Televisor</strong></label>
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                        <div class="form-check">
+                                                                        <input type="checkbox" name="casa_cuenta_con" class="form-check-input"  value="Horno de Microondas">
+                                                                        <label class="form-check-label" for="exampleCheck1"><strong>Horno de Microondas</strong></label>
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class="col-md-2 col-sm-2 col-xs-2">
+                                                                        <div class="form-check">
+                                                                        <input type="checkbox" name="casa_cuenta_con" class="form-check-input"  value="DVD">
+                                                                        <label class="form-check-label" for="exampleCheck1"><strong>DVD/Blu-ray</strong></label>
+                                                                        </div>
+                                                                      </div>
+
+                                                                  </div>
+
+                                                                  <div class="row ">
+
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                          <div class="form-check">
+                                                                          <input type="checkbox" name="casa_cuenta_con" class="form-check-input" value="Equipo de sonido">
+                                                                          <label class="form-check-label" for="exampleCheck1"><strong>Equipo de sonido</strong></label>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                          <div class="form-check">
+                                                                          <input type="checkbox" name="casa_cuenta_con" class="form-check-input"  value="Computadora de escritorio">
+                                                                          <label class="form-check-label" for="exampleCheck1"><strong>Computadora de escritorio </strong></label>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="col-md-2 col-sm-2 col-xs-2">
+                                                                          <div class="form-check">
+                                                                          <input type="checkbox" name="casa_cuenta_con" class="form-check-input"  value="Aspiradora">
+                                                                          <label class="form-check-label" for="exampleCheck1"><strong>Aspiradora</strong></label>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="col-md-2 col-sm-2 col-xs-2">
+                                                                          <div class="form-check">
+                                                                          <input type="checkbox" name="casa_cuenta_con" class="form-check-input"  value="Videocamara">
+                                                                          <label class="form-check-label" for="exampleCheck1"><strong>Videocámara</strong></label>
+                                                                          </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                              <div class="row ">
+                                                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                  <div class="form-check">
+                                                                  <input type="checkbox" name="casa_cuenta_con" class="form-check-input"   value="Podadora">
+                                                                  <label class="form-check-label" for="exampleCheck1"><strong>Podadora</strong></label>
+                                                                  </div>
+                                                                </div>
+                                                                  <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                  <div class="form-check">
+                                                                  <input type="checkbox" name="casa_cuenta_con" class="form-check-input"   value="Laptop">
+                                                                  <label class="form-check-label" for="exampleCheck1"><strong>Laptop</strong></label>
+                                                                  </div>
+                                                                </div>
+                                                                  <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                  <div class="form-check">
+                                                                  <input type="checkbox" name="casa_cuenta_con" class="form-check-input"   value="Videojuegos">
+                                                                  <label class="form-check-label" for="exampleCheck1"><strong>Videojuegos</strong></label>
+                                                                  </div>
+                                                                </div>
+
+
+
+                                                             </div>
+                                                            <br>
+
+
+
+                                          <div class="row ">
+                                          <div class="col-md-12">
+                                           <br>
+                                           <button class="btn btn-outline-success  btn-lg">Guardar información</button>
+                                          <br>
+                                          </div>
+
+                                         </div>
+                                         <br>
+                                    </form>
+                            </div>
+                        </div>
+           <script>
+
+            var input1=document.querySelectorAll("input[name=otro_material]");
+            for(var i=0;i<input1.length;i++)
+            {
+              input1[i].disabled=true;
+
+            }
+
+            var input2=document.querySelectorAll("input[name=otro_servicio]");
+            for(var i=0;i<input1.length;i++)
+            {
+              input2[i].disabled=true;
+
+            }
+
+            var input3=document.querySelectorAll("input[name=otro_servicio_vivienda]");
+            for(var i=0;i<input1.length;i++)
+            {
+              input3[i].disabled=true;
+
+            }
+          </script>
+
+          <script>
+          (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+              var forms = document.getElementsByClassName('needs-validation');
+              var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                  if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    Swal.fire({
+                      icon: 'error',
+                      title: '¡Ups!',
+                      text: 'Te faltaron algunos datos por rellenar.',
+                      footer: 'Verifica el formulario e intenta nuevamente.'
+                    })
+                  }
+                  form.classList.add('was-validated');
+                }, false);
+              });
+            }, false);
+          })();
+          </script>
+
+  </body>
+
+</html>
