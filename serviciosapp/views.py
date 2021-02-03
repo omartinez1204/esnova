@@ -177,9 +177,13 @@ def obtenermedios_estudiar(request):
 
     return render(request,'datos_responsable.html', context)
 
+#formulario numero 4
 def datosdelasPersonasQueDependes(request):
 
-    datosdequienesDependes = datosPersonaDeQuienDepende(ap_paterno = request.POST['apellido_paterno'], ap_materno = request.POST['apellido_materno'],
+    id_usuario_actual = int(request.POST['id_usuario'])
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
+
+    datosdequienesDependes = datosPersonaDeQuienDepende( usuario_foraneo= consulta_datosPersonales, ap_paterno = request.POST['apellido_paterno'], ap_materno = request.POST['apellido_materno'],
     nombre = request.POST['nombre'], sexo =  request.POST['sexo'], edad = int(request.POST['edad']), estado_civil = request.POST['estado_civil'],
     telefono_fijo = request.POST['telefono'], celular = request.POST['celular'], parentesco = request.POST['parentesco'], calle = request.POST['calle'],
     numero = int(request.POST['numero']), colonia = request.POST['colonia'], municipio = request.POST['municipio'], region = request.POST['region'],
@@ -194,9 +198,10 @@ def datosdelasPersonasQueDependes(request):
     datosdequienesDependes.save()
     context = {
         'datosdequienesDependes':datosdequienesDependes,
+        'id_usuario_actual':id_usuario_actual,
     }
 
-    return render(request,'temporal.html', context)
+    return render(request,'datos_responsable5.html', context)
 
 def obtenerDatos_Responsable(request):
 
