@@ -80,12 +80,13 @@ class mediosParaEstudiar(models.Model):
     libros_especializados = models.BooleanField()
     telefonia = models.BooleanField()
     banda_ancha = models.BooleanField()
-    falta_algun_medio = models.CharField(max_length = 30)
+    falta_algun_medio = models.CharField(max_length = 100)
     def __str__(self):
         return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}'.format(self.usuario_foraneo,self.computadora_de_escritorio, self.laptop,
         self.impresora, self.dvd, self.maquina_de_escribir, self.calculadora, self.escritorio, self.enciclopedia,
         self.libros_especializados, self.telefonia, self.banda_ancha, self.falta_algun_medio)
 
+#modelo 4
 class datosPersonaDeQuienDepende(models.Model):
     usuario_foraneo = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     ap_paterno = models.CharField(max_length = 30)
@@ -181,7 +182,7 @@ class datosDelResponsable(models.Model):
 
 
 class ingresoFamiliarMensual(models.Model):
-    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    usuario_foraneo = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     personas_que_trabajan = models.IntegerField(default=0)
     ingreso_padre =  models.FloatField()
     ingreso_madre =  models.FloatField()
@@ -199,12 +200,12 @@ class ingresoFamiliarMensual(models.Model):
     numero_persona_dep = models.IntegerField(default=0)
     ingreso_mensual_total = models.FloatField()
     def __str__(self):
-        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}'.format(self.personas_que_trabajan, self.ingreso_padre, self.ingreso_madre,
+        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}'.format(self.usuario_foraneo, self.personas_que_trabajan, self.ingreso_padre, self.ingreso_madre,
         self.otro_nombre_1, self.otro_nombre_2, self.ingreso_nombre_1, self.ingreso_nombre_2, self.apoyo_F_E, self.tipo_de_apoyo, self.numero_folio,self.monto_folio, self.otro_especifique, self.iniciativa_privada,
         self.monto_i_p, self.numero_persona_dep, self.ingreso_mensual_total )
 
 class gastoFamiliarMensual(models.Model):
-    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    usuario_foraneo = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     agua = models.FloatField()
     luz = models.FloatField()
     telefono = models.FloatField()
@@ -225,9 +226,9 @@ class gastoFamiliarMensual(models.Model):
     total_gastos = models.FloatField()
 
     def __str__(self):
-        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}'.format(self.agua, self.luz, self.telefono, self.gas, self.educacion, self.transporte,
+        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}'.format(self.usuario_foraneo, self.agua, self.luz, self.telefono, self.gas, self.educacion, self.transporte,
          self.renta, self.television_por_cable, self.internet, self.otros_1, self.otros_2, self.gasto_alimentacion, self.gastos_vestido, self.gastos_servicios_medicos,
-         self.gasto_diversion, self.otros_gastos_1, self.otros_gastos_2, self.total_gastos  )
+         self.gasto_diversion, self.otros_gastos_1, self.otros_gastos_2, self.total_gastos)
 
 
 class personasQueDependenDelIngresoMensual(models.Model):

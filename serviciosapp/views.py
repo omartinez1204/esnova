@@ -175,7 +175,7 @@ def obtenermedios_estudiar(request):
         'id_usuario_actual': id_usuario_actual,
     }
 
-    return render(request,'datos_responsable.html', context)
+    return render(request,'dependencias.html', context)
 
 #formulario numero 4
 def datosdelasPersonasQueDependes(request):
@@ -222,7 +222,7 @@ def obtenerDatos_Responsable(request):
         'id_usuario_actual':id_usuario_actual,
     }
 
-    return render(request,'temporal.html', context)
+    return render(request,'ingreso_familiar.html', context)
 
 def obtenerIngresoFamiliar(request):
     try:
@@ -231,15 +231,17 @@ def obtenerIngresoFamiliar(request):
     except Exception as e:
         v1 = False
 
+    id_usuario_actual = int(request.POST['id_usuario'])
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
     if request.POST['apoyo_F_E'] == 'Si':
-        datosingresofamiliar = ingresoFamiliarMensual(personas_que_trabajan = request.POST['personas_que_trabajan'], ingreso_padre = request.POST['ingreso_padre'],
+        datosingresofamiliar = ingresoFamiliarMensual(usuario_foraneo =  consulta_datosPersonales, personas_que_trabajan = request.POST['personas_que_trabajan'], ingreso_padre = request.POST['ingreso_padre'],
         ingreso_madre = request.POST['ingreso_madre'], otro_nombre_1 = request.POST['otro_nombre_1'], otro_nombre_2 = request.POST['otro_nombre_2'],
         ingreso_nombre_1 = request.POST['ingreso_nombre_1'], ingreso_nombre_2 = request.POST['ingreso_nombre_2'], apoyo_F_E = v1, tipo_de_apoyo = request.POST['tipo_de_apoyo'],
         numero_folio = request.POST['numero_folio'], monto_folio = request.POST['monto_folio'], otro_especifique = request.POST['otro_especifique'],
         iniciativa_privada = request.POST['iniciativa_privada'], monto_i_p = request.POST['monto_i_p'], numero_persona_dep = request.POST['numero_persona_dep'],
         ingreso_mensual_total = request.POST['ingreso_mensual_total'])
     else:
-        datosingresofamiliar = ingresoFamiliarMensual(personas_que_trabajan = request.POST['personas_que_trabajan'], ingreso_padre = request.POST['ingreso_padre'],
+        datosingresofamiliar = ingresoFamiliarMensual(usuario_foraneo =  consulta_datosPersonales, personas_que_trabajan = request.POST['personas_que_trabajan'], ingreso_padre = request.POST['ingreso_padre'],
         ingreso_madre = request.POST['ingreso_madre'], otro_nombre_1 = request.POST['otro_nombre_1'], otro_nombre_2 = request.POST['otro_nombre_2'],
         ingreso_nombre_1 = request.POST['ingreso_nombre_1'], ingreso_nombre_2 = request.POST['ingreso_nombre_2'], apoyo_F_E = v1,
         iniciativa_privada = request.POST['iniciativa_privada'], monto_i_p = request.POST['monto_i_p'], numero_persona_dep = request.POST['numero_persona_dep'],
@@ -248,12 +250,14 @@ def obtenerIngresoFamiliar(request):
     datosingresofamiliar.save()
     context = {
         'datosingresofamiliar':datosingresofamiliar,
+        'id_usuario_actual':id_usuario_actual,
     }
-    return render(request,'temporal.html', context)
+    return render(request,'gasto_familiar.html', context)
 
 def obtenerGastoFamiliar(request):
-    consulta_datosPersonales = Usuario.objects.get(pk = 1)
 
+    id_usuario_actual = int(request.POST['id_usuario'])
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
     datosgastofamiliar = gastoFamiliarMensual(usuario_fore = consulta_datosPersonales, agua = request.POST['agua'], luz = request.POST['luz'], telefono = request.POST['telefono'],
     gas = request.POST['gas'], educacion = request.POST['educacion'], transporte = request.POST['transporte'], renta = request.POST['renta'], television_por_cable = request.POST['television_por_cable'],
     internet = request.POST['internet'], otros_1 = request.POST['otros_1'], otros_2 = request.POST['otros_2'], gasto_alimentacion = request.POST['gasto_alimentacion'], gastos_vestido = request.POST['gastos_vestido'],
@@ -263,8 +267,9 @@ def obtenerGastoFamiliar(request):
     datosgastofamiliar.save()
     context = {
         'datosgastofamiliar':datosgastofamiliar,
+        'id_usuario_actual':id_usuario_actual,
     }
-    return render(request,'temporal.html', context)
+    return render(request,'datos_personas_dependo.html', context)
 
 def obtenerPersonasQueDependen(request):
     consulta_datosPersonales = Usuario.objects.get(pk = 1)
