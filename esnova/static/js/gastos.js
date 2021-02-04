@@ -96,6 +96,30 @@ document.getElementById("texto6").value='';
 document.getElementById("texto7").value='';
 }
 
+function showContent8() {
+  element = document.getElementById("content5");
+  check = document.getElementById("check5");
+  if (check.checked) {
+      element.style.display='block';
+  }
+  else {
+      element.style.display='none';
+  }
+}
+function showContent9() {
+element = document.getElementById("content5");
+check = document.getElementById("check5");
+if (check.checked) {
+    element.style.display='none';
+}
+else {
+    element.style.display='none';
+}
+document.getElementById("texto8").value='';
+document.getElementById("texto9").value='';
+
+}
+
 
 
 function filterFloat(evt,input){

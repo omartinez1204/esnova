@@ -41,8 +41,24 @@
         </div>
       </div>
       <br>
+      <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+      <p  class="preguntas"><strong> ¿Ttiene gastos adicionales por concepto de servicios médicos especializados ?  </strong></p>
+      <div class="radio">
+      <input class="form-check-input" type="radio" name="trabaja" id="check5" value="Si"  onclick="javascript:showContent8()">
+      <label class="form-check-label" for="flexRadioDefault3">
+        Si
+      </label>
+      <input class="form-check-input" type="radio" name="trabaja" id="check5" value="No"  onclick="javascript:showContent9()">
+      <label class="form-check-label" for="flexRadioDefault3">
+         No
+      </label>
+      </div>
 
-
+      </div>
+     </div>
+    <br>
+      <div id="content5" style="display: none;">
        <div class="row">
         <p class="preguntas"><strong>ll. Si tiene gastos adicionales por concepto de servicios médicos especializados , indique la causa y el monto mensual.</strong></p>
 
@@ -55,7 +71,7 @@
                     <div class="input-group-prepend">
                       <div class="input-group-text">$</div>
                     </div>
-                    <input type="text" name="gastos_adicionales"class="form-control" id="inlineFormInputGroup" placeholder="Gastos medicos" onkeypress="return filterFloat(event,this);">
+                    <input type="text" value="" name="gastos_adicionales"class="form-control" id="texto8" placeholder="Gastos medicos" onkeypress="return filterFloat(event,this);">
 
                   </div>
                 </div>
@@ -65,7 +81,7 @@
                 <div class="form-row align-items-center">
                   <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput"></label>
-                    <input type="text" name="causa" class="form-control mb-2" id="inlineFormInput" placeholder="Causa">
+                    <input type="text" value="" name="causa" class="form-control mb-2" id="texto9" placeholder="Causa">
                   </div>
                 </div>
               </div>
@@ -73,6 +89,8 @@
             </div>
 
           </div>
+
+        </div>
 
           <br>
 
