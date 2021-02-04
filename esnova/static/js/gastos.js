@@ -72,6 +72,31 @@ function showContent5() {
 }
 
 
+function showContent6() {
+  element = document.getElementById("content4");
+  check = document.getElementById("check4");
+  if (check.checked) {
+      element.style.display='block';
+  }
+  else {
+      element.style.display='none';
+  }
+}
+function showContent7() {
+element = document.getElementById("content4");
+check = document.getElementById("check4");
+if (check.checked) {
+    element.style.display='none';
+}
+else {
+    element.style.display='none';
+}
+document.getElementById("texto5").value='';
+document.getElementById("texto6").value='';
+document.getElementById("texto7").value='';
+}
+
+
 
 function filterFloat(evt,input){
     // Backspace = 8, Enter = 13, ‘0′ = 48, ‘9′ = 57, ‘.’ = 46, ‘-’ = 43
