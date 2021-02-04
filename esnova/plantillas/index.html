@@ -139,7 +139,7 @@
     </div>
     <!-- Carousel wrapper -->
 
-    {% if messages %}
+    <!--{% if messages %}
         <script>
         Swal.fire({
           icon: 'error',
@@ -147,6 +147,18 @@
           text: 'Verifica tus datos e intenta nuevamente.'
           })
         </script>
+    {% endif %}-->
+
+    {% if messages %}
+            {% for message in messages %}
+                <script>
+                Swal.fire({
+                  icon: 'error',
+                  title: '¡Usuario no encontrado!',
+                  text: 'Verifica tus datos e intenta nuevamente.'
+                  })
+                </script>
+            {% endfor %}
     {% endif %}
 
       <br>
