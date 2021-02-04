@@ -22,7 +22,7 @@
               Swal.fire({
                 icon: 'error',
                 title: '¡Error!',
-                text: '¡Las contraseñas ingresadas no son correctas!'
+                text: '¡Las contraseñas ingresadas no coinciden!'
               })
               return 0;
             }else{
@@ -140,14 +140,14 @@
     <!-- Carousel wrapper -->
 
     {% if messages %}
-      <script>
+        <script>
         Swal.fire({
           icon: 'error',
           title: '¡Usuario no encontrado!',
-          text: 'Verifica tus datos e intenta nuevamente'
+          text: 'Verifica tus datos e intenta nuevamente.'
           })
         </script>
-     {% endif %}
+    {% endif %}
 
       <br>
     <img src="{% static 'img/nova.png'  %}" class="img-fluid mx-auto d-block rounded" width="127" height="127" align-center>
