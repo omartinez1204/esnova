@@ -88,6 +88,7 @@
                                     <br>
                                      <div class="row ">
                                      <div class="col-md-12">
+                                       <br>
                                              <span class="preguntas"><strong>Material con que esta construida la casa(Paredes):</strong></span>
                                              <br>
 
@@ -131,15 +132,18 @@
                                               <br>
                                                 <br>
                                                     <div class="row ">
+
                                                       <div class="col-md-3 col-sm-3 col-xs-3">
 
                                                       </div>
                                                         <div class="col-md-3 col-sm-3 col-xs-3">
+                                                          <br>
                                                          <span class="preguntas"><strong>Material del piso:</strong></span>
                                                          <input type="text" class="form-control" name="material_piso"/>
                                                         </div>
 
                                                         <div class="col-md-4 col-sm-4 col-xs-4">
+                                                          <br>
                                                          <span class="preguntas"><strong>Material del techo:</strong></span>
                                                          <input type="text" class="form-control" name="material_techo"/>
                                                         </div>
@@ -381,18 +385,129 @@
 
                                                              </div>
                                                             <br>
+                                                            <div class="row justify-content-center">
+                                                               <span class="preguntas"> <strong>No. de personas TOTAL que habitan en la vivienda:</strong></span>
+                                                               <input style="width: 4em" type="number" max="21" min="1" name="personas_habitan" class="form-control" required/>
+                                                             </div>
+                                                             <br>
+
+                                                             <p class="preguntas">Espacios con los que cuenta la vivienda (indique con número):<strong></strong></p>
+
+                                                       <div class="row justify-content-center">
+                                                          <span class="preguntas"><strong>Cuartos</strong></span>
+                                                            <input type="number" max="21" min="1" style="width: 6em" name="cuartos" class="form-control" value=""/>
+
+                                                        </div>
+
+                                                        <div class="row justify-content-center">
+
+                                                          <div class="col-md-4 col-sm-4 col-xs-4">
+
+                                                          </div>
+                                                          <div class="col-md-2 col-sm-2 col-xs-2">
+
+                                                           <span class="preguntas"><strong>Baños</strong></span>
+                                                            <input type="number" max="4" min="1"  name="banios" class="form-control" value=""/>
+                                                          </div>
+                                                          <div class="col-md-2 col-sm-2 col-xs-2">
+
+                                                           <span class="preguntas"><strong>Completos</strong></span>
+                                                            <input type="number" max="2" min="1"  name="banios_tipo1" class="form-control" value=""/>
+                                                          </div>
+                                                          <div class="col-md-2 col-sm-1 col-xs-2">
+
+                                                           <span class="preguntas"><strong>Medios</strong></span>
+                                                            <input type="number" max="2" min="1" name="banios_tipo2" class="form-control" value=""/>
+                                                          </div>
 
 
+                                                         </div>
 
-                                          <div class="row ">
-                                          <div class="col-md-12">
-                                           <br>
-                                           <button class="btn btn-outline-success  btn-lg">Guardar información</button>
-                                          <br>
-                                          </div>
+                                                         <div class="row justify-content-center">
 
-                                         </div>
-                                         <br>
+                                                           <div class="col-md-4 col-sm-4 col-xs-4">
+                                                              <span class="preguntas"><strong>Cocina Tipo:</strong></span>
+                                                           </div>
+                                                           <div class="col-md-2 col-sm-2 col-xs-2">
+
+                                                            <span class="preguntas"><strong>Integral</strong></span>
+                                                             <input type="number" max="2" min="1"  name="cocina_integral" class="form-control" value=""/>
+                                                           </div>
+                                                           <div class="col-md-2 col-sm-2 col-xs-2">
+
+                                                            <span class="preguntas"><strong>Tradicional</strong></span>
+                                                             <input type="number" max="2" min="1"  name="cocina_tradicional" class="form-control" value=""/>
+                                                           </div>
+                                                           <div class="col-md-2 col-sm-1 col-xs-2">
+
+                                                            <span class="preguntas"><strong>Rural (Fogón)</strong></span>
+                                                             <input type="number" max="2" min="1" name="cocina_rural" class="form-control" value=""/>
+                                                           </div>
+
+
+                                                          </div>
+
+                                                          <div class="row justify-content-center">
+                                                             <span class="preguntas"><strong>Comedor (aparte de la cocina)</strong></span>
+                                                               <input type="number" max="21" min="1" style="width: 6em" name="comedor" class="form-control" value=""/>
+
+                                                           </div>
+                                                           <div class="row justify-content-center">
+                                                              <span class="preguntas"><strong>Sala</strong></span>
+                                                                <input type="number" max="21" min="1" style="width: 6em" name="sala" class="form-control" value=""/>
+
+                                                            </div>
+                                                            <div class="row justify-content-center">
+                                                               <span class="preguntas"><strong>Biblioteca</strong></span>
+                                                                 <input type="number" max="21" min="1" style="width: 6em" name="biblioteca" class="form-control" value=""/>
+
+                                                             </div>
+                                                             <div class="row justify-content-center">
+                                                                <span class="preguntas"><strong>Terraza</strong></span>
+                                                                  <input type="number" max="21" min="1" style="width: 6em" name="terraza" class="form-control" value=""/>
+
+                                                              </div>
+                                                              <div class="row justify-content-center">
+                                                                 <span class="preguntas"><strong>Cuarto de Estudio</strong></span>
+                                                                   <input type="number" max="21" min="1" style="width: 6em" name="cuarto_de_estudio" class="form-control" value=""/>
+
+                                                               </div>
+                                                               <div class="row justify-content-center">
+                                                                  <span class="preguntas"><strong>Patio</strong></span>
+                                                                    <input type="number" max="21" min="1" style="width: 6em" name="patio" class="form-control" value=""/>
+
+                                                                </div>
+                                                                <div class="row justify-content-center">
+                                                                   <span class="preguntas"><strong>Cochera</strong></span>
+                                                                     <input type="number" max="21" min="1" style="width: 6em" name="cochera" class="form-control" value=""/>
+
+                                                                 </div>
+                                                                 <div class="row justify-content-center">
+                                                                    <span class="preguntas"><strong>Cuarto de servicio</strong></span>
+                                                                      <input type="number" max="21" min="1" style="width: 6em" name="cuarto_de_servicio" class="form-control" value=""/>
+
+                                                                  </div>
+                                                                  <div class="row justify-content-center">
+                                                                     <span class="preguntas"><strong>Otro(especifique)</strong></span>
+                                                                       <input type="number" max="21" min="1" style="width: 6em" name="otro" class="form-control" value=""/>
+
+                                                                   </div>
+                                                                   <br>
+                                                              <div class="row">
+
+                                                                <span class="preguntas"><strong>Focos existentes en la vivienda (contando lámparas de techo, mesa y patio)</strong></span>
+
+
+                                                              </div>
+                                                        <div class="row ">
+                                                         <div class="col-md-12">
+                                                           <br>
+                                                          <button class="btn btn-outline-success  btn-lg">Guardar información</button>
+                                                        <br>
+                                                        </div>
+
+                                                      </div>
+                                                      <br>
                                     </form>
                             </div>
                         </div>
