@@ -139,13 +139,15 @@
     </div>
     <!-- Carousel wrapper -->
 
-      <div id="contenido">
-        {% if messages %}
-          {%for m in messages %}
-          {% endfor %}
-        {% endif %}
-
-      </div>
+    {% if messages %}
+      <script>
+        Swal.fire({
+          icon: 'error',
+          title: '¡Usuario no encontrado!',
+          text: 'Verifica tus datos e intenta nuevamente'
+          })
+        </script>
+     {% endif %}
 
       <br>
     <img src="{% static 'img/nova.png'  %}" class="img-fluid mx-auto d-block rounded" width="127" height="127" align-center>
