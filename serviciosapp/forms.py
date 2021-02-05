@@ -5,3 +5,8 @@ class ArticuloAlumno(forms.Form):
     class Meta:
         model = Alumno
         fields = '[nombre,articulos]'
+
+class UpArchivos(ModelForm):
+    class Meta:
+        model = subirArchivos
+        fields = '__all__'
