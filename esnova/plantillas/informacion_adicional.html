@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 {% load static %}
 <html lang="en" dir="ltr">
   <head>
@@ -67,7 +68,7 @@
               <div class="row justify-content-center">
 
 
-                           <form action="{%  url 'serviciosapp:obtenerInformacionAdicional' %}" class="needs-validation" >{% csrf_token %}
+                           <form action="" class="needs-validation" >
 
                               <br>
                               <div class="panel panel-default" >
@@ -198,15 +199,15 @@
                                                         <br>
 
                                                         <div class="form-check form-check-inline">
-                                                          <input class="form-check-input" type="radio" name="servicios_publicos" id="inlineRadio17" value="Alumbrado publico"  onclick="enableInput2(this)" required>
+                                                          <input class="form-check-input" type="radio" name="alumbrado" id="inlineRadio17" value="Alumbrado publico"  onclick="enableInput2(this)" required>
                                                           <label class="form-check-label" for="inlineRadio11">Alumbrado Público</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
-                                                          <input class="form-check-input" type="radio" name="servicios_publicos" id="inlineRadio18" value="Pavimentacion"  onclick="enableInput2(this)" required>
+                                                          <input class="form-check-input" type="radio" name="pavimentacion" id="inlineRadio18" value="Pavimentacion"  onclick="enableInput2(this)" required>
                                                           <label class="form-check-label" for="inlineRadio12">Pavimentación</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
-                                                          <input class="form-check-input" type="radio" name="servicios_publicos" id="inlineRadio19" value="Drenaje"  onclick="enableInput2(this)" required>
+                                                          <input class="form-check-input" type="radio" name="drenaje_publico" id="inlineRadio19" value="Drenaje"  onclick="enableInput2(this)" required>
                                                           <label class="form-check-label" for="inlineRadio13">Drenaje</label>
                                                         </div>
 
@@ -214,20 +215,32 @@
 
                                                        </div>
 
+                                                       <div class="row justify-content-center">
+                                                           <span class="preguntas"><strong>Otro Servicio publico</strong></span>
+
+                                                       </div>
+
                                                          <div class="row ">
                                                            <div class="col-md-3 col-sm-3 col-xs-3">
+
                                                            </div>
-                                                                 <div class="col-md-3 col-sm-3 col-xs-3">
+                                                           <div class="col-md-1 col-sm-1 col-xs-1">
+                                                             <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="servicios_publicos" id="otro_servicio" value="Otro (Especifique)" onclick="enableInput2(this)" required>
+                                                               <label class="form-check-label" for="otro_servicio">Si</label>
+                                                             </div>
+                                                           </div>
+                                                                 <div class="col-md-1 col-sm-1 col-xs-1">
                                                                         <div class="form-check form-check-inline">
-                                                                          <input class="form-check-input" type="radio" name="servicios_publicos" id="otro_servicio" value="Otro (Especifique)" onclick="enableInput2(this)">
-                                                                          <label class="form-check-label" for="otro_servicio">Otro (Especifique)</label>
+                                                                          <input class="form-check-input" type="radio" name="servicios_publicos" id="inline2" value="Otro (Especifique)" onclick="enableInput2(this)" required>
+                                                                          <label class="form-check-label" for="otro_servicio">No</label>
                                                                         </div>
+
                                                                  </div>
                                                                  <div class="col-md-3 col-sm-3 col-xs-3">
-                                                                   <input type="text" class="form-control" name="otro_servicio" placeholder="Especificar otro material" required/>
+                                                                   <input type="text" class="form-control" name="otro_servicio" placeholder="Especificar servicio" />
                                                                  </div>
-                                                                 <div class="col-md-3 col-sm-3 col-xs-3">
-                                                                 </div>
+
                                                          </div>
                                                          <br>
                                                          <div class="row ">
@@ -236,44 +249,56 @@
                                                                  <br>
 
                                                                  <div class="form-check form-check-inline">
-                                                                   <input class="form-check-input" type="radio" name="servicios_vivienda" id="inlineRadio20" value="Telefono"  onclick="enableInput3(this)" required>
+                                                                   <input class="form-check-input" type="radio" name="telefono" id="inlineRadio20" value="Telefono"  onclick="enableInput3(this)" required>
                                                                    <label class="form-check-label" for="inlineRadio11">Teléfono</label>
                                                                  </div>
                                                                  <div class="form-check form-check-inline">
-                                                                   <input class="form-check-input" type="radio" name="servicios_vivienda" id="inlineRadio21" value="Television por cable"  onclick="enableInput3(this)" required>
+                                                                   <input class="form-check-input" type="radio" name="television_por_cable" id="inlineRadio21" value="Television por cable"  onclick="enableInput3(this)" required>
                                                                    <label class="form-check-label" for="inlineRadio12">Televisión por cable</label>
                                                                  </div>
                                                                  <div class="form-check form-check-inline">
-                                                                   <input class="form-check-input" type="radio" name="servicios_vivienda" id="inlineRadio22" value="Agua"  onclick="enableInput3(this)" required>
+                                                                   <input class="form-check-input" type="radio" name="agua" id="inlineRadio22" value="Agua"  onclick="enableInput3(this)" required>
                                                                    <label class="form-check-label" for="inlineRadio11">Agua</label>
                                                                  </div>
                                                                  <div class="form-check form-check-inline">
-                                                                   <input class="form-check-input" type="radio" name="servicios_vivienda" id="inlineRadio23" value="Luz"  onclick="enableInput3(this)" required>
+                                                                   <input class="form-check-input" type="radio" name="luz" id="inlineRadio23" value="Luz"  onclick="enableInput3(this)" required>
                                                                    <label class="form-check-label" for="inlineRadio12">Luz</label>
                                                                  </div>
                                                                  <div class="form-check form-check-inline">
-                                                                   <input class="form-check-input" type="radio" name="servicios_vivienda" id="inlineRadio24" value="Drenaje"  onclick="enableInput3(this)" required>
+                                                                   <input class="form-check-input" type="radio" name="drenaje" id="inlineRadio24" value="Drenaje"  onclick="enableInput3(this)" required>
                                                                    <label class="form-check-label" for="inlineRadio13">Drenaje</label>
                                                                  </div>
 
                                                                </div>
 
                                                                 </div>
+                                                                <br>
+                                                                <div class="row justify-content-center">
+                                                                    <span class="preguntas"><strong>Otro Servicio</strong></span>
+
+                                                                </div>
 
                                                                   <div class="row ">
                                                                     <div class="col-md-3 col-sm-3 col-xs-3">
+
                                                                     </div>
-                                                                          <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                    <div class="col-md-1 col-sm-1 col-xs-1">
+                                                                      <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="otros_servicios_vivienda" id="otro_servicio_vivienda" value="Otro (Especifique)" onclick="enableInput3(this)" required>
+                                                                        <label class="form-check-label" for="otro_servicio_vivienda">Si</label>
+                                                                      </div>
+                                                                    </div>
+                                                                          <div class="col-md-1 col-sm-1 col-xs-1">
                                                                                  <div class="form-check form-check-inline">
-                                                                                   <input class="form-check-input" type="radio" name="servicios_vivienda" id="otro_servicio_vivienda" value="Otro (Especifique)" onclick="enableInput3(this)" required>
-                                                                                   <label class="form-check-label" for="otro_servicio_vivienda">Otro (Especifique)</label>
+                                                                                   <input class="form-check-input" type="radio" name="otros_servicios_vivienda" id="inline2" value="Otro (Especifique)" onclick="enableInput3(this)" required>
+                                                                                   <label class="form-check-label" for="otro_servicio_vivienda">No</label>
                                                                                  </div>
+
                                                                           </div>
                                                                           <div class="col-md-3 col-sm-3 col-xs-3">
-                                                                            <input type="text" class="form-control" name="otro_servicio_vivienda" placeholder="Especificar otro material" required/>
+                                                                            <input type="text" class="form-control" name="otro_servicio_vivienda" placeholder="Especificar servicio" />
                                                                           </div>
-                                                                          <div class="col-md-3 col-sm-3 col-xs-3">
-                                                                          </div>
+
                                                                   </div>
                                                                 <br>
                                                                 <div class="row ">
@@ -410,57 +435,56 @@
 
                                                         <div class="row justify-content-center">
 
-                                                          <div class="col-md-4 col-sm-4 col-xs-4">
-
-                                                          </div>
-                                                          <div class="col-md-2 col-sm-2 col-xs-2">
-
                                                            <span class="preguntas"><strong>Baños</strong></span>
-                                                            <input type="number" max="4" min="1"  name="banios" class="form-control" value=""/>
-                                                          </div>
-                                                          <div class="col-md-2 col-sm-2 col-xs-2">
-
-                                                           <span class="preguntas"><strong>Completos</strong></span>
-                                                            <input type="number" max="2" min="1"  name="banios_tipo1" class="form-control" value=""/>
-                                                          </div>
-                                                          <div class="col-md-2 col-sm-1 col-xs-2">
-
-                                                           <span class="preguntas"><strong>Medios</strong></span>
-                                                            <input type="number" max="2" min="1" name="banios_tipo2" class="form-control" value=""/>
-                                                          </div>
-
+                                                            <input type="number" max="4" min="1"  style="width: 6em" name="banios" class="form-control" value=""/>
 
                                                          </div>
 
                                                          <div class="row justify-content-center">
+                                                           <div class="col-md-12">
+                                                             <span class="preguntas"><strong>Baños tipo:</strong></span>
+                                                             <br>
 
-                                                           <div class="col-md-4 col-sm-4 col-xs-4">
-                                                              <span class="preguntas"><strong>Cocina Tipo:</strong></span>
-                                                           </div>
-                                                           <div class="col-md-2 col-sm-2 col-xs-2">
-
-                                                            <span class="preguntas"><strong>Integral</strong></span>
-                                                             <input type="number" max="2" min="1"  name="cocina_integral" class="form-control" value=""/>
-                                                           </div>
-                                                           <div class="col-md-2 col-sm-2 col-xs-2">
-
-                                                            <span class="preguntas"><strong>Tradicional</strong></span>
-                                                             <input type="number" max="2" min="1"  name="cocina_tradicional" class="form-control" value=""/>
-                                                           </div>
-                                                           <div class="col-md-2 col-sm-1 col-xs-2">
-
-                                                            <span class="preguntas"><strong>Rural (Fogón)</strong></span>
-                                                             <input type="number" max="2" min="1" name="cocina_rural" class="form-control" value=""/>
-                                                           </div>
+                                                             <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="banios_tipo" id="inlineRadio6" value="completos" required>
+                                                               <label class="form-check-label" for="inlineRadio5">Completos</label>
+                                                             </div>
 
 
+                                                             <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="banios_tipo" id="inlineRadio6" value="medios" required>
+                                                               <label class="form-check-label" for="inlineRadio5">Medios</label>
+                                                             </div>
+
+                                                         </div>
+
+                                                         </div>
+
+                                                         <div class="row ">
+                                                          <div class="col-md-12">
+                                                            <span class="preguntas"><strong>Cocina Tipo:</strong></span>
+                                                            <br>
+
+                                                          <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="cocina_tipo" id="inlineRadio6" value="integral" required>
+                                                            <label class="form-check-label" for="inlineRadio3">Integral</label>
                                                           </div>
+                                                          <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="cocina_tipo" id="inlineRadio6" value="tradicional" required>
+                                                            <label class="form-check-label" for="inlineRadio4">Tradicional</label>
+                                                          </div>
+                                                          <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="cocina_tipo" id="inlineRadio6" value="rural" required>
+                                                            <label class="form-check-label" for="inlineRadio5">Rural (Fogón)</label>
+                                                          </div>
+                                                          <br>
 
                                                           <div class="row justify-content-center">
 
                                                             <div class="col-xs-2 col-xs-offset-4">
                                                               <div class="checkbox-inline">
                                                                 <label class="checkbox-inline">
+                                                                  <br>
                                                                   <input type="checkbox" name="comedor" value=""><strong>Comedor (aparte de la cocina) </strong></label>
                                                               </div>
                                                             </div>
