@@ -243,16 +243,23 @@
                 }
               }
               function showContent4() {
-                element = document.getElementById("content2");
-                check = document.getElementById("check2");
-                if (check.checked) {
-                    element.style.display='block';
-                }
-                else {
-                    element.style.display='none';
-                }
+               element = document.getElementById("content2");
+               element2 = document.getElementById("content3");
+               element3 = document.getElementById("content4");
+               check = document.getElementById("check2");
+               if (check.checked) {
+                   element.style.display='block';
+                   element2.style.display='none';
+                   element3.style.display='none';
+               }
+               else {
+                   element.style.display='none';
+                   element2.style.display='none';
+                   element3.style.display='none';
 
-              }
+               }
+
+             }
 
               function showContent5() {
                 element = document.getElementById("content3");
