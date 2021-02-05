@@ -94,28 +94,47 @@
                                        <span class="preguntas"><strong>Edad</strong></span>
                                        <input type="number" name="edad" class="form-control" max="99" min="17" required/>
                                       </div>
-                                      <div class="col-md-6 col-sm-6 col-xs-6">
-                                       <span class="preguntas"><strong>Estado Civil</strong></span>
-                                       <input type="text" name="estado_civil" class="form-control" required/>
+                                      <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <p class="preguntas"><strong>Estado civil</strong></p>
+                                          <select name="estado_civil" class="form-control">
+                                            <option value="solter@"selected>Solter@</option>
+                                            <option value="casad@">Casad@</option>
+                                            <option value="viud@">Viud@</option>
+                                            <option value="divorciad@">Divorciad@</option>
+
+                                          </select>
+
                                       </div>
 
 
                                    </div>
                                    <br>
                             <div class="row ">
+                              <div class="col-md-1 col-sm-1 col-xs-1"></div>
                                 <div class="col-md-4 col-sm-4 col-xs-4">
-                                 <span class="preguntas"><strong> Carrera</strong></span>
-                                 <input type="text" name="carrera" class="form-control" required/>
+                                  <div class="row ">
+                                    <p class="preguntas"><strong>Carrera</strong></p>
+
+                                      <select name="carrera" class="form-control">
+                                        <option value="informatica"selected>Licenciatura en informatica</option>
+                                        <option value="agronomia">Ingenieria en Agronomia </option>
+                                        <option value="administracion">Licenciatura en administracion</option>
+
+                                      </select>
+
+
+                              </div>
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-2">
                                  <span class="preguntas"><strong>Semestre</strong></span>
+
                                  <input type="number" name="semestre" class="form-control" max="10" min="1" required/>
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-2">
                                  <span class="preguntas"><strong> Grupo</strong></span>
                                  <input type="text" name="grupo" class="form-control" required/>
                                 </div>
-                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-md-3 col-sm-3 col-xs-3">
                                  <span class="preguntas"><strong>Celular(lada:)</strong></span>
                                  <input type="text" name="celular" class="form-control" required/>
                                 </div>
