@@ -16,8 +16,23 @@
     <script>
           function validarRegistro() {
 
+            var formulario = document.formRegistro;
+            for (var i=0; i<formulario.length; i++) {
+              if(formulario[i].type =='text' || formulario[i].type =='email' || formulario[i].type =='password') {
+                  if (formulario[i].value == null || formulario[i].value.length == 0 || /^\s*$/.test(formulario[i].value)){
+                    Swal.fire({
+                      icon: 'error',
+                      title: '¡Error!',
+                      text: '¡Hacen falta agunos datos!'
+                    })
+                    return 0;
+                  }
+              }
+            }
+
             var pass = document.getElementById('contrasenia').value;
             var confirmPass = document.getElementById('contrasenia2').value;
+
             if(pass != confirmPass) {
               Swal.fire({
                 icon: 'error',
