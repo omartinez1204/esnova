@@ -285,7 +285,7 @@ def obtenerIngresoFamiliar(request):
     return render(request,'gasto_familiar.html', context)
 #formulario 7
 def obtenerGastoFamiliar(request):
-
+    
     id_usuario_actual = int(request.POST['id_usuario'])
     consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
     datosgastofamiliar = gastoFamiliarMensual(usuario_foraneo = consulta_datosPersonales, agua = request.POST['agua'], luz = request.POST['luz'], telefono = request.POST['telefono'],
