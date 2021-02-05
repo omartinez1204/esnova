@@ -180,9 +180,8 @@ def obtenermedios_estudiar(request):
 #formulario numero 4
 def datosdelasPersonasQueDependes(request):
 
-    #id_usuario_actual = int(request.POST['id_usuario'])
-    consulta_datosPersonales = Usuario.objects.get(pk = 1)
-    id_usuario_actual = 1;
+    id_usuario_actual = int(request.POST['id_usuario'])
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
     datosdequienesDependes = datosPersonaDeQuienDepende( usuario_foraneo= consulta_datosPersonales, ap_paterno = request.POST['apellido_paterno'], ap_materno = request.POST['apellido_materno'],
     nombre = request.POST['nombre'], sexo =  request.POST['sexo'], edad = int(request.POST['edad']), estado_civil = request.POST['estado_civil'],
     telefono_fijo = request.POST['telefono'], celular = request.POST['celular'], parentesco = request.POST['parentesco'], calle = request.POST['calle'],
@@ -206,6 +205,7 @@ def datosdelasPersonasQueDependes(request):
     else :
         return render(request,'datos_responsable5.html', context)
 
+#formulario 5
 def obtenerDatos_Responsable(request):
     id_usuario_actual = int(request.POST['id_usuario'])
     consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
@@ -225,28 +225,56 @@ def obtenerDatos_Responsable(request):
     }
 
     return render(request,'ingreso_familiar.html', context)
-
+#formulario 6
 def obtenerIngresoFamiliar(request):
+    v1 = False
     try:
         if  'Si' == request.POST['apoyo_F_E']:
             v1 = True
     except Exception as e:
         v1 = False
 
-    id_usuario_actual = int(request.POST['id_usuario'])
-    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
+    try :
+        ingreso_nombre_1 = float(request.POST['ingreso_nombre_1'])
+    except ValueError:
+        ingreso_nombre_1 = 0.0
+    try :
+        ingreso_nombre_2 = float(request.POST['ingreso_nombre_2'])
+    except ValueError:
+        ingreso_nombre_2 = 0.0
+
+    #id_usuario_actual = int(request.POST['id_usuario'])
+    consulta_datosPersonales = Usuario.objects.get(pk = 1)
+    id_usuario_actual = 1;
+
     if request.POST['apoyo_F_E'] == 'Si':
+
+        if request.POST['tipo_de_apoyo'] == 'Otro':
+            numero_folio_ = ''
+            monto_folio_ = 0
+        else :
+            otro_especifique_ = ''
+            iniciativa_privada_ = ''
+            monto_i_p_ = 0
+
         datosingresofamiliar = ingresoFamiliarMensual(usuario_foraneo =  consulta_datosPersonales, personas_que_trabajan = request.POST['personas_que_trabajan'], ingreso_padre = request.POST['ingreso_padre'],
         ingreso_madre = request.POST['ingreso_madre'], otro_nombre_1 = request.POST['otro_nombre_1'], otro_nombre_2 = request.POST['otro_nombre_2'],
-        ingreso_nombre_1 = request.POST['ingreso_nombre_1'], ingreso_nombre_2 = request.POST['ingreso_nombre_2'], apoyo_F_E = v1, tipo_de_apoyo = request.POST['tipo_de_apoyo'],
-        numero_folio = request.POST['numero_folio'], monto_folio = request.POST['monto_folio'], otro_especifique = request.POST['otro_especifique'],
-        iniciativa_privada = request.POST['iniciativa_privada'], monto_i_p = request.POST['monto_i_p'], numero_persona_dep = request.POST['numero_persona_dep'],
+        ingreso_nombre_1 = ingreso_nombre_1, ingreso_nombre_2 = ingreso_nombre_2, apoyo_F_E = v1, tipo_de_apoyo = request.POST['tipo_de_apoyo'],
+        numero_folio = numero_folio_ , monto_folio = monto_folio_, otro_especifique = otro_especifique_,
+        iniciativa_privada = iniciativa_privada_, monto_i_p = monto_i_p_, numero_persona_dep = request.POST['numero_persona_dep'],
         ingreso_mensual_total = request.POST['ingreso_mensual_total'])
+
     else:
+        numero_folio_ = ''
+        monto_folio_ = 0
+        otro_especifique_ = ''
+        iniciativa_privada_ = ''
+        monto_i_p_ = 0
         datosingresofamiliar = ingresoFamiliarMensual(usuario_foraneo =  consulta_datosPersonales, personas_que_trabajan = request.POST['personas_que_trabajan'], ingreso_padre = request.POST['ingreso_padre'],
         ingreso_madre = request.POST['ingreso_madre'], otro_nombre_1 = request.POST['otro_nombre_1'], otro_nombre_2 = request.POST['otro_nombre_2'],
-        ingreso_nombre_1 = request.POST['ingreso_nombre_1'], ingreso_nombre_2 = request.POST['ingreso_nombre_2'], apoyo_F_E = v1,
-        iniciativa_privada = request.POST['iniciativa_privada'], monto_i_p = request.POST['monto_i_p'], numero_persona_dep = request.POST['numero_persona_dep'],
+        ingreso_nombre_1 = ingreso_nombre_1, ingreso_nombre_2 = ingreso_nombre_2, apoyo_F_E = v1, tipo_de_apoyo = request.POST['tipo_de_apoyo'],
+        numero_folio = numero_folio_ , monto_folio = monto_folio_, otro_especifique = otro_especifique_,
+        iniciativa_privada = iniciativa_privada_, monto_i_p = monto_i_p_, numero_persona_dep = request.POST['numero_persona_dep'],
         ingreso_mensual_total = request.POST['ingreso_mensual_total'])
 
     datosingresofamiliar.save()
@@ -255,7 +283,7 @@ def obtenerIngresoFamiliar(request):
         'id_usuario_actual':id_usuario_actual,
     }
     return render(request,'gasto_familiar.html', context)
-
+#formulario 7
 def obtenerGastoFamiliar(request):
 
     id_usuario_actual = int(request.POST['id_usuario'])
