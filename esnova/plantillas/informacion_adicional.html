@@ -68,7 +68,7 @@
               <div class="row justify-content-center">
 
 
-                           <form action="" class="needs-validation" >
+                            <form action="{%  url 'serviciosapp:obtenerInformacionAdicional' %}" class="credit-card-div" method="post">{% csrf_token %}
 
                               <br>
                               <div class="panel panel-default" >
@@ -103,19 +103,19 @@
                                              <br>
 
                                              <div class="form-check form-check-inline">
-                                               <input class="form-check-input" type="radio" name="inlineRadioOptions_3" id="inlineRadio11" value="Adobe"  onclick="enableInput(this)" required>
+                                               <input class="form-check-input" type="radio" name="material_paredes" id="inlineRadio11" value="Adobe"  onclick="enableInput(this)" required>
                                                <label class="form-check-label" for="inlineRadio11">Adobe</label>
                                              </div>
                                              <div class="form-check form-check-inline">
-                                               <input class="form-check-input" type="radio" name="inlineRadioOptions_3" id="inlineRadio12" value="Lamina"  onclick="enableInput(this)" required>
+                                               <input class="form-check-input" type="radio" name="material_paredes" id="inlineRadio12" value="Lamina"  onclick="enableInput(this)" required>
                                                <label class="form-check-label" for="inlineRadio12">Lamina</label>
                                              </div>
                                              <div class="form-check form-check-inline">
-                                               <input class="form-check-input" type="radio" name="inlineRadioOptions_3" id="inlineRadio13" value="Madera"  onclick="enableInput(this)" required>
+                                               <input class="form-check-input" type="radio" name="material_paredes" id="inlineRadio13" value="Madera"  onclick="enableInput(this)" required>
                                                <label class="form-check-label" for="inlineRadio13">Madera</label>
                                              </div>
                                              <div class="form-check form-check-inline">
-                                               <input class="form-check-input" type="radio" name="inlineRadioOptions_3" id="inlineRadio13" value="Concreto"  onclick="enableInput(this)" required>
+                                               <input class="form-check-input" type="radio" name="material_paredes" id="inlineRadio13" value="Concreto"  onclick="enableInput(this)" required>
                                                <label class="form-check-label" for="inlineRadio13">Concreto</label>
                                              </div>
 
@@ -129,7 +129,7 @@
                                                 </div>
                                                       <div class="col-md-3 col-sm-3 col-xs-3">
                                                              <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="inlineRadioOptions_3" id="otro_material" value="Otro (Especifique)" onclick="enableInput(this)" >
+                                                               <input class="form-check-input" type="radio" name="material_paredes" id="otro_material" value="Otro (Especifique)" onclick="enableInput(this)" >
                                                                <label class="form-check-label" for="otro_material">Otro (Especifique)</label>
                                                              </div>
                                                       </div>
