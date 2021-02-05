@@ -178,7 +178,7 @@ class datosDelResponsable(models.Model):
         self.region_empresa, self.estado_empresa)
 
 
-
+#formulario 6
 class ingresoFamiliarMensual(models.Model):
     usuario_foraneo = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     personas_que_trabajan = models.IntegerField(default=0)
