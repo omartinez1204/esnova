@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table>
+      {% for imagen in imagenes %}
+        <tr>
+          <td><label for="">Titulo: </label></td>
+          <td>{{imagen.titulo}}</td>
+          <td><img width="50" height="60" src=“../media/{{imagen.imagen}}"></td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  </body>
+</html>

@@ -293,3 +293,8 @@ class informacionSocioEconomica(models.Model):
         self.tipo_negocio, self.otros_bienes_especifique, self.servicios_asistencia_medica, self.otros_servicios, self.apoyo_dependencia,
         self.en_especie, self.monto_apoyo, self.dependencia_empresa, self.periodo_apoyo
         )
+class subirArchivos(models.Model):
+    titulo = models.CharField(max_length=30)
+    media = models.FileField(upload_to='myfolder/',blank=True, null=True)
+    def __str__(self):
+        return '{0}'.format(self.titulo)

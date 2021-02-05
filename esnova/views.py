@@ -20,8 +20,31 @@ def gastos_solicitante(request):
 def dependencia(request):
     return render(request, 'dependencias.html')
 
+def archivos(request):
+    if request.method == 'POST':
+        form = UpArchivos(request.POST or None, request.FILES or None)
+        if form.is_valid():
+            form.save()
+            form = UpArchivos()
+            return render(request,'miapphtml/anexar_documentacion.html',{'form':form})
+    else:
+        form = UpArchivos()
+    return render(request,'miapphtml/anexar_documentacion.html',{'form':form})
+
+def mostrar_archivos(request):
+    print("solicitando todos los doxumentos")
+    imagenes = subirArchivos.objects.all()
+    context = {
+        'imagenes':imagenes
+    }
+    return render(request,'miapphtml/archivos.html',context)
+
+
+def anexar_documentos2(request):
+    return render(request, 'archivos.html')
+
 def anexar_documentos(request):
-    return render(request, 'anexar_documentacion.html')
+        return render(request, 'anexar_documentacion.html')
 
 def datos_personas_dependo(request):
     return render(request, 'datos_personas_dependo.html')
