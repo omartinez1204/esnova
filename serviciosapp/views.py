@@ -290,8 +290,8 @@ def obtenerGastoFamiliar(request):
     consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
     datosgastofamiliar = gastoFamiliarMensual(usuario_foraneo = consulta_datosPersonales, agua = request.POST['agua'], luz = request.POST['luz'], telefono = request.POST['telefono'],
     gas = request.POST['gas'], educacion = request.POST['educacion'], transporte = request.POST['transporte'], renta = request.POST['renta'], television_por_cable = request.POST['television_por_cable'],
-    internet = request.POST['internet'], otros_1 = request.POST['otros_1'], otros_2 = request.POST['otros_2'], gasto_alimentacion = request.POST['gasto_alimentacion'], gastos_vestido = request.POST['gastos_vestido'],
-    gastos_servicios_medicos = request.POST['gastos_servicios_medicos'], gasto_diversion = request.POST['gasto_diversion'], otros_gastos_1 = request.POST['otros_gastos_1'], otros_gastos_2 = request.POST['otros_gastos_2'],
+    internet = request.POST['internet'], nombre_gasto_1 = request.POST['Otros_1_nombre'], otros_gastos_1 = request.POST['otros_1'], gasto_alimentacion = request.POST['gasto_alimentacion'], gastos_vestido = request.POST['gastos_vestido'],
+    gastos_servicios_medicos = request.POST['gastos_servicios_medicos'], gasto_diversion = request.POST['gasto_diversion'], nombre_gasto_2 = request.POST['otros_gastos_1_nombre'], otros_gastos_2 = request.POST['otros_gastos_1'],
     total_gastos = request.POST['total_gastos'])
 
     datosgastofamiliar.save()
