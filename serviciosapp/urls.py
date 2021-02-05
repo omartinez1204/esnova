@@ -14,4 +14,5 @@ urlpatterns = [
     path('obtenerIngresoFamiliar/>',views.obtenerIngresoFamiliar, name= "obtenerIngresoFamiliar"),
     path('obtenerGastoFamiliar/>',views.obtenerGastoFamiliar, name= "obtenerGastoFamiliar"),
     path('obtenerPersonasQueDependen/>',views.obtenerGastoFamiliar, name= "obtenerPersonasQueDependen"),
+    path('obtenerInformacionAdicional/>',views.obtenerInformacionAdicional, name= "obtenerInformacionAdicional"),
 ]

@@ -52,7 +52,9 @@ def iniciar(request):
                 'usuario':u
             }
             return render(request, 'datos_solicitante.html', context)
-    return HttpResponseRedirect('/login')
+
+    messages.error(request, 'Usuario no encontrado')
+    return HttpResponseRedirect('/')
 
 def registrar(request):
     m=request.POST['matricula']

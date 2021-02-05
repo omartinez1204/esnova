@@ -52,13 +52,22 @@
             }
             document.getElementsByName(index.id)[0].disabled=false;
           }
+          function enableInput4(index) {
+            var input1=document.querySelectorAll("input[name=otros_servicios]");
+            for(var i=0;i<input1.length;i++)
+            {
+              input1[i].disabled=true;
+
+            }
+            document.getElementsByName(index.id)[0].disabled=false;
+          }
       </script>
 
         <div class="container text-center justify-content-center" >
               <div class="row justify-content-center">
 
 
-                           <form action="" class="needs-validation" >
+                           <form action="{%  url 'serviciosapp:obtenerInformacionAdicional' %}" class="needs-validation" >{% csrf_token %}
 
                               <br>
                               <div class="panel panel-default" >
@@ -82,7 +91,7 @@
                                     <input class="form-check-input" type="radio" name="casa_familiar" id="inlineRadio5" value="Prestada" required>
                                     <label class="form-check-label" for="inlineRadio5">Prestada</label>
                                   </div>
-
+                                   </div>
 
                                    </div>
                                     <br>
@@ -119,7 +128,7 @@
                                                 </div>
                                                       <div class="col-md-3 col-sm-3 col-xs-3">
                                                              <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="inlineRadioOptions_3" id="otro_material" value="Otro (Especifique)" onclick="enableInput(this)" required>
+                                                               <input class="form-check-input" type="radio" name="inlineRadioOptions_3" id="otro_material" value="Otro (Especifique)" onclick="enableInput(this)" >
                                                                <label class="form-check-label" for="otro_material">Otro (Especifique)</label>
                                                              </div>
                                                       </div>
@@ -210,7 +219,7 @@
                                                            </div>
                                                                  <div class="col-md-3 col-sm-3 col-xs-3">
                                                                         <div class="form-check form-check-inline">
-                                                                          <input class="form-check-input" type="radio" name="servicios_publicos" id="otro_servicio" value="Otro (Especifique)" onclick="enableInput2(this)" required>
+                                                                          <input class="form-check-input" type="radio" name="servicios_publicos" id="otro_servicio" value="Otro (Especifique)" onclick="enableInput2(this)">
                                                                           <label class="form-check-label" for="otro_servicio">Otro (Especifique)</label>
                                                                         </div>
                                                                  </div>
@@ -448,57 +457,317 @@
                                                           </div>
 
                                                           <div class="row justify-content-center">
-                                                             <span class="preguntas"><strong>Comedor (aparte de la cocina)</strong></span>
-                                                               <input type="number" max="21" min="1" style="width: 6em" name="comedor" class="form-control" value=""/>
+
+                                                            <div class="col-xs-2 col-xs-offset-4">
+                                                              <div class="checkbox-inline">
+                                                                <label class="checkbox-inline">
+                                                                  <input type="checkbox" name="comedor" value=""><strong>Comedor (aparte de la cocina) </strong></label>
+                                                              </div>
+                                                            </div>
 
                                                            </div>
+                                                           <br>
                                                            <div class="row justify-content-center">
-                                                              <span class="preguntas"><strong>Sala</strong></span>
-                                                                <input type="number" max="21" min="1" style="width: 6em" name="sala" class="form-control" value=""/>
-
-                                                            </div>
-                                                            <div class="row justify-content-center">
-                                                               <span class="preguntas"><strong>Biblioteca</strong></span>
-                                                                 <input type="number" max="21" min="1" style="width: 6em" name="biblioteca" class="form-control" value=""/>
-
-                                                             </div>
-                                                             <div class="row justify-content-center">
-                                                                <span class="preguntas"><strong>Terraza</strong></span>
-                                                                  <input type="number" max="21" min="1" style="width: 6em" name="terraza" class="form-control" value=""/>
-
-                                                              </div>
-                                                              <div class="row justify-content-center">
-                                                                 <span class="preguntas"><strong>Cuarto de Estudio</strong></span>
-                                                                   <input type="number" max="21" min="1" style="width: 6em" name="cuarto_de_estudio" class="form-control" value=""/>
-
+                                                             <div class="col-xs-2 col-xs-offset-4">
+                                                               <div class="checkbox-inline">
+                                                                 <label class="checkbox-inline">
+                                                                   <input type="checkbox" name="sala" value=""><strong>Sala </strong></label>
                                                                </div>
-                                                               <div class="row justify-content-center">
-                                                                  <span class="preguntas"><strong>Patio</strong></span>
-                                                                    <input type="number" max="21" min="1" style="width: 6em" name="patio" class="form-control" value=""/>
+                                                             </div>
+                                                            </div>
+                                                            <br>
 
+                                                            <div class="row checkbox-row">
+
+                                                              <div class="col-xs-2 col-xs-offset-4">
+                                                                <div class="checkbox-inline">
+                                                                  <label class="checkbox-inline">
+                                                                    <input type="checkbox" name="biblioteca" value=""><strong>Biblioteca </strong></label>
                                                                 </div>
-                                                                <div class="row justify-content-center">
-                                                                   <span class="preguntas"><strong>Cochera</strong></span>
-                                                                     <input type="number" max="21" min="1" style="width: 6em" name="cochera" class="form-control" value=""/>
+                                                              </div>
+                                                             </div>
+                                                             <br>
 
+                                                             <div class="row justify-content-center">
+                                                               <div class="col-xs-2 col-xs-offset-4">
+                                                                 <div class="checkbox-inline">
+                                                                   <label class="checkbox-inline">
+                                                                     <input type="checkbox" name="terraza" value=""><strong>Terraza </strong></label>
                                                                  </div>
-                                                                 <div class="row justify-content-center">
-                                                                    <span class="preguntas"><strong>Cuarto de servicio</strong></span>
-                                                                      <input type="number" max="21" min="1" style="width: 6em" name="cuarto_de_servicio" class="form-control" value=""/>
-
+                                                               </div>
+                                                              </div>
+                                                              <br>
+                                                              <div class="row justify-content-center">
+                                                                <div class="col-xs-2 col-xs-offset-4">
+                                                                  <div class="checkbox-inline">
+                                                                    <label class="checkbox-inline">
+                                                                      <input type="checkbox" name="cuarto_estudio" value=""><strong>Cuarto de Estudio </strong></label>
                                                                   </div>
+                                                                </div>
+                                                               </div>
+                                                               <br>
+                                                               <div class="row justify-content-center">
+                                                                 <div class="col-xs-2 col-xs-offset-4">
+                                                                   <div class="checkbox-inline">
+                                                                     <label class="checkbox-inline">
+                                                                       <input type="checkbox" name="patio" value=""><strong>Patio </strong></label>
+                                                                   </div>
+                                                                 </div>
+                                                                </div>
+                                                                <br>
+
+                                                                <div class="row justify-content-center">
+                                                                  <div class="col-xs-2 col-xs-offset-4">
+                                                                    <div class="checkbox-inline">
+                                                                      <label class="checkbox-inline">
+                                                                        <input type="checkbox" name="cochera" value=""><strong>Cochera </strong></label>
+                                                                    </div>
+                                                                  </div>
+                                                                 </div>
+                                                                 <br>
+                                                                 <div class="row justify-content-center">
+                                                                   <div class="col-xs-2 col-xs-offset-4">
+                                                                     <div class="checkbox-inline">
+                                                                       <label class="checkbox-inline">
+                                                                         <input type="checkbox" name="cuarto_servicio" value=""><strong>Cuarto de Servicio </strong></label>
+                                                                     </div>
+                                                                   </div>
+                                                                  </div>
+                                                                  <br>
+
                                                                   <div class="row justify-content-center">
-                                                                     <span class="preguntas"><strong>Otro(especifique)</strong></span>
-                                                                       <input type="number" max="21" min="1" style="width: 6em" name="otro" class="form-control" value=""/>
+                                                                     <span class=""><strong>Otro(especifique)</strong></span>
+                                                                       <input type="text"  style="width: 6em" name="otro" class="form-control" value=""/>
 
                                                                    </div>
                                                                    <br>
-                                                              <div class="row">
+                                                                   <div class="row ">
+                                                                    <div class="col-md-12">
+                                                                      <span class="preguntas"><strong>Focos existentes en la vivienda (contando lámparas de techo, mesa y patio):</strong></span>
+                                                                      <br>
 
-                                                                <span class="preguntas"><strong>Focos existentes en la vivienda (contando lámparas de techo, mesa y patio)</strong></span>
+                                                                    <div class="form-check form-check-inline">
+                                                                      <input class="form-check-input" type="radio" name="focos" id="inlineRadio6" value="3_o_menos" required>
+                                                                      <label class="form-check-label" for="inlineRadio3">3 ó menos</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                      <input class="form-check-input" type="radio" name="focos" id="inlineRadio6" value="4_a_8" required>
+                                                                      <label class="form-check-label" for="inlineRadio4">4 a 8</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                      <input class="form-check-input" type="radio" name="focos" id="inlineRadio6" value="9_a_13" required>
+                                                                      <label class="form-check-label" for="inlineRadio5">9 a 13</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                      <input class="form-check-input" type="radio" name="focos" id="inlineRadio6" value="14_a_18" required>
+                                                                      <label class="form-check-label" for="inlineRadio3">14 a 18</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                      <input class="form-check-input" type="radio" name="focos" id="inlineRadio6" value="18_a_23" required>
+                                                                      <label class="form-check-label" for="inlineRadio4">18 a 23</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                      <input class="form-check-input" type="radio" name="focos" id="inlineRadio6" value="24_o_mas" required>
+                                                                      <label class="form-check-label" for="inlineRadio5">24 ó mas</label>
+                                                                    </div>
+                                                                     </div>
+
+                                                                     </div>
 
 
-                                                              </div>
+                                                                     <br>
+                                                                     <div class="row ">
+                                                                     <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                     <p  class="preguntas"><strong> ¿Cuenta con automóvil (propio o familiar)?  </strong></p>
+                                                                     <div class="radio">
+                                                                     <input class="form-check-input" type="radio" name="automovil" id="check" value="1"   onclick="showContent()">
+                                                                     <label class="form-check-label" for="flexRadioDefault3">
+                                                                       Si
+                                                                     </label>
+                                                                     <input class="form-check-input" type="radio" name="automovil" id="check" value="0"   onclick="showContent2()">
+                                                                     <label class="form-check-label" for="flexRadioDefault3">
+                                                                        No
+                                                                     </label>
+                                                                     </div>
+
+                                                                     </div>
+                                                                    </div>
+                                                                    <br>
+                                                                    <div id="content" style="display: none;">
+                                                                      <div class="row justify-content-center">
+
+
+                                                                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                              <span class="preguntas"> <strong>Marca</strong></span>
+                                                                            <input type="text" name="personas_dependientes" value="" class="form-control" id="texto1"/>
+                                                                           </div>
+                                                                           <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                             <span class="preguntas"> <strong>Modelo</strong></span>
+                                                                           <input type="text" name="modelo" value="" class="form-control" id="texto2"/>
+                                                                          </div>
+                                                                          <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                            <span class="preguntas"> <strong>Año</strong></span>
+                                                                          <input type="number" max="2022" min="1990" name="anio" value="" class="form-control" id="texto3"/>
+                                                                         </div>
+                                                                        </div>
+
+                                                                      </div>
+                                                                      <br>
+                                                                      <div class="row ">
+                                                                       <div class="col-md-12">
+                                                                         <span class="preguntas"><strong>En caso de que la persona de quien depende económicamente sea productor agropecuario, especifique tipo de cultivo y/o tipo de
+                                                                          ganado:</strong></span>
+                                                                         <br>
+
+                                                                       <div class="form-check form-check-inline">
+
+                                                                         <input class="form-check-input" type="radio" name="tipo_cultivo" id="inlineRadio6" value="rancho" required>
+                                                                         <label class="form-check-label" for="inlineRadio3">Rancho</label>
+                                                                       </div>
+                                                                       <div class="form-check form-check-inline">
+                                                                         <input class="form-check-input" type="radio" name="tipo_cultivo" id="inlineRadio6" value="parcela" required>
+                                                                         <label class="form-check-label" for="inlineRadio4">Parcela</label>
+                                                                       </div>
+
+
+                                                                        </div>
+
+                                                                        </div>
+
+                                                                      <br>
+
+
+                                                                      <div class="row justify-content-center">
+                                                                         <span class="preguntas"><strong>Implementos agrícolas (Ejemplo: Tractor, vertedera, arado, rastra, etc.): </strong></span>
+                                                                           <input type="text"  style="width: 16em" name="otro" class="form-control" value=""/>
+
+                                                                       </div>
+                                                                  <br>
+                                                                  <div class="row ">
+                                                                   <div class="col-md-12">
+                                                                     <span class="preguntas"><strong>Otros bienes, patrimonio familiar:</strong></span>
+                                                                     <br>
+
+                                                                   <div class="form-check form-check-inline">
+                                                                     <input class="form-check-input" type="radio" name="otros_bienes" id="inlineRadio6" value="ganado" required>
+                                                                     <label class="form-check-label" for="inlineRadio3">Ganado</label>
+                                                                   </div>
+                                                                   <div class="form-check form-check-inline">
+                                                                     <input class="form-check-input" type="radio" name="otros_bienes" id="inlineRadio6" value="terreno" required>
+                                                                     <label class="form-check-label" for="inlineRadio4">Terreno (s)</label>
+                                                                   </div>
+                                                                   <div class="form-check form-check-inline">
+                                                                     <input class="form-check-input" type="radio" name="otros_bienes" id="inlineRadio6" value="casa" required>
+                                                                     <label class="form-check-label" for="inlineRadio5">Casa (s)</label>
+                                                                   </div>
+                                                                   <div class="form-check form-check-inline">
+                                                                     <input class="form-check-input" type="radio" name="otros_bienes" id="inlineRadio6" value="departamento" required>
+                                                                     <label class="form-check-label" for="inlineRadio3">Departamento (s)</label>
+                                                                   </div>
+
+                                                                    </div>
+
+                                                                    </div>
+                                                                    <br>
+
+                                                                    <div class="row justify-content-center">
+                                                                      <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                       <span class="preguntas"><strong>Negocio: </strong></span>
+                                                                         <input type="text" name="negocio" class="form-control" value=""/>
+                                                                         </div>
+                                                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                          <span class="preguntas"><strong>Tipo de Negocio: </strong></span>
+                                                                            <input type="text" name="tipo_negocio" class="form-control" value=""/>
+                                                                    </div>
+                                                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                        <span class="preguntas"><strong>Otros (especifique): </strong></span>
+                                                                       <input type="text" name="otros_bienes_especifique" class="form-control" value=""/>
+                                                                      </div>
+
+                                                                     </div>
+                                                                     <br>
+                                                                     <div class="row ">
+                                                                     <div class="col-md-12">
+                                                                             <span class="preguntas"><strong>Servicios con los que cuenta la vivienda:</strong></span>
+                                                                             <br>
+
+                                                                             <div class="form-check form-check-inline">
+                                                                               <input class="form-check-input" type="radio" name="servicios_asistencia_medica" id="inlineRadio20" value="imss"  onclick="enableInput4(this)" required>
+                                                                               <label class="form-check-label" for="inlineRadio11">IMSS</label>
+                                                                             </div>
+                                                                             <div class="form-check form-check-inline">
+                                                                               <input class="form-check-input" type="radio" name="servicios_asistencia_medica" id="inlineRadio21" value="issste"  onclick="enableInput4(this)" required>
+                                                                               <label class="form-check-label" for="inlineRadio12">ISSSTE</label>
+                                                                             </div>
+                                                                             <div class="form-check form-check-inline">
+                                                                               <input class="form-check-input" type="radio" name="servicios_asistencia_medica" id="inlineRadio22" value="pemex"  onclick="enableInput4(this)" required>
+                                                                               <label class="form-check-label" for="inlineRadio11">Servicios prestados por PEMEX</label>
+                                                                             </div>
+                                                                             <div class="form-check form-check-inline">
+                                                                               <input class="form-check-input" type="radio" name="servicios_asistencia_medica" id="inlineRadio23" value="ssa"  onclick="enableInput4(this)" required>
+                                                                               <label class="form-check-label" for="inlineRadio12">SSA</label>
+                                                                             </div>
+                                                                             <div class="form-check form-check-inline">
+                                                                               <input class="form-check-input" type="radio" name="servicios_asistencia_medica" id="inlineRadio24" value="particulares"  onclick="enableInput4(this)" required>
+                                                                               <label class="form-check-label" for="inlineRadio13">Particulares</label>
+                                                                             </div>
+
+                                                                           </div>
+
+                                                                            </div>
+
+                                                                            <div class="row ">
+                                                                              <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                              </div>
+                                                                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                                           <div class="form-check form-check-inline">
+                                                                                             <input class="form-check-input" type="radio" name="servicios_asistencia_medica" id="otros_servicios" value="Otro (Especifique)" onclick="enableInput4(this)" required>
+                                                                                             <label class="form-check-label" for="otros_servicios">Otro (Especifique)</label>
+                                                                                           </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                                      <input type="text" class="form-control"  value="" name="otros_servicios" placeholder="Especificar otro servicios" />
+                                                                                    </div>
+                                                                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                                    </div>
+                                                                            </div>
+                                                                            <br>
+                                                                            <div class="row ">
+                                                                             <div class="col-md-12">
+                                                                               <span class="preguntas"><strong>¿Cuenta con apoyo de alguna dependencia o empresa para realizar sus estudios?</strong></span>
+                                                                               <br>
+
+                                                                             <div class="form-check form-check-inline">
+                                                                               <input class="form-check-input" type="radio" name="apoyo_dependencia" id="inlineRadio6" value="1" required>
+                                                                               <label class="form-check-label" for="inlineRadio3">Economico</label>
+                                                                             </div>
+                                                                           </div>
+                                                                         </div>
+                                                                         <br>
+                                                                         <div class="row justify-content-center">
+                                                                           <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                            <span class="preguntas"><strong>En especie (especifique): </strong></span>
+                                                                              <input type="text" name="en_especie" class="form-control" value=""/>
+                                                                              </div>
+                                                                         <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                               <span class="preguntas"><strong>Monto: </strong></span>
+                                                                                 <input type="text" name="monto_apoyo" class="form-control" onkeypress="return filterFloat(event,this);" placeholder="$" value=""/>
+                                                                         </div>
+                                                                         <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                             <span class="preguntas"><strong>Dependencia/Empresa: </strong></span>
+                                                                            <input type="text" name="dependencia_empresa" class="form-control" value=""/>
+                                                                           </div>
+
+                                                                           <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                               <span class="preguntas"><strong>Periodo de apoyo:  </strong></span>
+                                                                              <input type="text" name="periodo_apoyo" class="form-control" value=""/>
+                                                                             </div>
+
+                                                                          </div>
+                                                                          <br>
+
+
+
                                                         <div class="row ">
                                                          <div class="col-md-12">
                                                            <br>
@@ -533,6 +802,13 @@
               input3[i].disabled=true;
 
             }
+
+            var input4=document.querySelectorAll("input[name=otros_servicios]");
+            for(var i=0;i<input1.length;i++)
+            {
+              input4[i].disabled=true;
+
+            }
           </script>
 
           <script>
@@ -557,6 +833,70 @@
               });
             }, false);
           })();
+          </script>
+
+          <script type="text/javascript">
+
+          function showContent() {
+            element = document.getElementById("content");
+            check = document.getElementById("check");
+            if (check.checked) {
+                element.style.display='block';
+            }
+            else {
+                element.style.display='none';
+            }
+          }
+          function showContent2() {
+          element = document.getElementById("content");
+          check = document.getElementById("check");
+          if (check.checked) {
+              element.style.display='none';
+          }
+          else {
+              element.style.display='none';
+          }
+          document.getElementById("texto1").value='';
+          document.getElementById("texto2").value='';
+          document.getElementById("texto3").value='';
+          }
+
+          function filterFloat(evt,input){
+              // Backspace = 8, Enter = 13, ‘0′ = 48, ‘9′ = 57, ‘.’ = 46, ‘-’ = 43
+              var key = window.Event ? evt.which : evt.keyCode;
+              var chark = String.fromCharCode(key);
+              var tempValue = input.value+chark;
+              if(key >= 48 && key <= 57){
+                  if(filter(tempValue)=== false){
+                      return false;
+                  }else{
+                      return true;
+                  }
+              }else{
+                    if(key == 8 || key == 13 || key == 0) {
+                        return true;
+                    }else if(key == 46){
+                          if(filter(tempValue)=== false){
+                              return false;
+                          }else{
+                              return true;
+                          }
+                    }else{
+                        return false;
+                    }
+              }
+          }
+          function filter(__val__){
+              var preg = /^([0-9]+\.?[0-9]{0,2})$/;
+              if(preg.test(__val__) === true){
+                  return true;
+              }else{
+                 return false;
+              }
+
+          }
+
+
           </script>
 
   </body>
