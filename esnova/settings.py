@@ -122,4 +122,4 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, "/esnova/static")
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "/esnova/media")
-NEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
