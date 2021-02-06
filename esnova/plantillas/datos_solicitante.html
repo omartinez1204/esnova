@@ -13,7 +13,7 @@
       {% block header %}
       {% include 'subPlantillas/header.html' %}
       {% endblock %}
-      <h2 class="text-center">Datos Personales</h2>
+      <h2 class="text-center">1.-Datos Personales</h2>
       <script>
           function enableInput(index) {
           	var input1=document.querySelectorAll("input[name=residencia_distinta1]");
@@ -24,6 +24,8 @@
           	document.getElementsByName(index.id)[0].disabled=false;
           }
       </script>
+
+      
         <div class="container text-center justify-content-center" >
 
               <div class="row justify-content-center">
@@ -94,26 +96,24 @@
                                        <span class="preguntas"><strong>Edad</strong></span>
                                        <input type="number" name="edad" class="form-control" max="99" min="17" required/>
                                       </div>
-                                      <div class="col-md-4 col-sm-4 col-xs-4">
-                                        <p class="preguntas"><strong>Estado civil</strong></p>
-                                          <select name="estado_civil" class="form-control">
-                                            <option value="solter@"selected>Solter@</option>
-                                            <option value="casad@">Casad@</option>
-                                            <option value="viud@">Viud@</option>
-                                            <option value="divorciad@">Divorciad@</option>
 
-                                          </select>
-
+                                      <div class="col-md-3 col-sm-3 col-xs-3">
+                                        <span class="preguntas"><strong> Estado Civil</strong></span>
+                                        <select name="estado_civil" class="form-control">
+                                          <option value="soltero"selected>Soltero</option>
+                                          <option value="casado">Casado</option>
+                                          <option value="viudo">Viudo</option>
+                                          <option value="divorciado">Divorciado</option>
+                                          <option value="divorciado">Union libre</option>
+                                        </select>
                                       </div>
-
-
                                    </div>
                                    <br>
                             <div class="row ">
                               <div class="col-md-1 col-sm-1 col-xs-1"></div>
                                 <div class="col-md-4 col-sm-4 col-xs-4">
                                   <div class="row ">
-                                    <p class="preguntas"><strong>Carrera</strong></p>
+                                    <span class="preguntas"><strong>Carrera</strong></span>
 
                                       <select name="carrera" class="form-control">
                                         <option value="informatica"selected>Licenciatura en informatica</option>
@@ -136,7 +136,7 @@
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-3">
                                  <span class="preguntas"><strong>Celular(lada:)</strong></span>
-                                 <input type="text" name="celular" class="form-control" required/>
+                                 <input type="text" name="celular" size="10" class="form-control" required/>
                                 </div>
 
                               </div>
@@ -211,7 +211,9 @@
                                <br>
                                <div class="row ">
                                    <div class="col-md-12">
-                                   <button class="btn btn-outline-success  btn-lg">Guardar</button>
+                                   <!--<button class="btn btn-outline-success  btn-lg">Guardar</button>-->
+                                   <input type="button" class="btn btn-outline-success btn-lg" value="Registrarme" onclick="validarInformacion()">
+
                                    </div>
 
                                  </div>
