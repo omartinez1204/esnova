@@ -250,25 +250,47 @@ class informacionSocioEconomica(models.Model):
     material_piso = models.CharField(max_length = 30)
     material_techo = models.CharField(max_length = 30)
     tipo_vivienda = models.CharField(max_length = 30)
-    servicios_publicos = models.CharField(max_length = 30)
-    servicios_vivienda = models.TextField(null=True)
-    casa_cuenta_con = models.TextField(null=True)
+    alumbrado_publico = models.BooleanField(default=False)
+    pavimentacion = models.BooleanField(default=False)
+    drenaje_publico = models.BooleanField(default=False)
+    otro_servicio = models.CharField(max_length = 30)
+    telefono = models.BooleanField(default=False)
+    television_por_cable = models.BooleanField(default=False)
+    agua = models.BooleanField(default=False)
+    luz = models.BooleanField(default=False)
+    drenaje = models.BooleanField(default=False)
+    otro_servicio_vivienda = models.CharField(max_length = 30)
+    calentador_de_gas = models.BooleanField(default=False)
+    aire_acondicionado = models.BooleanField(default=False)
+    estufa_de_gas = models.BooleanField(default=False)
+    lavadora = models.BooleanField(default=False)
+    refrigerador = models.BooleanField(default=False)
+    televisor = models.BooleanField(default=False)
+    microondas = models.BooleanField(default=False)
+    dvd = models.BooleanField(default=False)
+    equipo_de_sonido = models.BooleanField(default=False)
+    computadora_de_escritorio = models.BooleanField(default=False)
+    aspiradora = models.BooleanField(default=False)
+    videocamara = models.BooleanField(default=False)
+    podadora = models.BooleanField(default=False)
+    laptop = models.BooleanField(default=False)
+    videojuegos = models.BooleanField(default=False)
     personas_habitan = models.IntegerField(default=0)
     cuartos = models.IntegerField(default=0)
     banios = models.IntegerField(default=0)
     banios_tipo = models.CharField(max_length = 30)
     cocina_tipo = models.CharField(max_length = 30)
-    comedor = models.BooleanField()
-    sala = models.BooleanField()
-    biblioteca = models.BooleanField()
-    terraza = models.BooleanField()
-    cuarto_estudio = models.BooleanField()
-    patio = models.BooleanField()
-    cochera = models.BooleanField()
-    cuarto_servicio = models.BooleanField()
+    comedor = models.BooleanField(default=False)
+    sala = models.BooleanField(default=False)
+    biblioteca = models.BooleanField(default=False)
+    terraza = models.BooleanField(default=False)
+    cuarto_estudio = models.BooleanField(default=False)
+    patio = models.BooleanField(default=False)
+    cochera = models.BooleanField(default=False)
+    cuarto_servicio = models.BooleanField(default=False)
     otro = models.CharField(max_length = 30)
     focos = models.CharField(max_length = 30)
-    automovil = models.BooleanField()
+    automovil = models.BooleanField(default=False)
     marca = models.CharField(max_length = 30)
     modelo = models.CharField(max_length = 30)
     anio = models.IntegerField(default=0)
@@ -279,17 +301,21 @@ class informacionSocioEconomica(models.Model):
     otros_bienes_especifique = models.CharField(max_length = 30)
     servicios_asistencia_medica = models.TextField(null=True)
     otros_servicios = models.CharField(max_length = 30)
-    apoyo_dependencia = models.BooleanField()
+    apoyo_dependencia = models.BooleanField(default=False)
     en_especie = models.CharField(max_length = 30)
-    monto_apoyo = models.FloatField()
+    monto_apoyo = models.FloatField(default=False)
     dependencia_empresa = models.CharField(max_length = 30)
     periodo_apoyo = models.CharField(max_length = 30)
     def __str__(self):
-        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}{21}{22}{23}{24}{25}{26}{27}{28}{29}{30}{31}{32}{33}{34}{35}{36}{37}{38}'.format(
-        self.casa_familiar, self.material_paredes, self.material_piso, self.material_techo, self.tipo_vivienda, self.servicios_publicos,
-        self.servicios_vivienda, self.casa_cuenta_con, self.personas_habitan, self.cuartos, self.banios, self.banios_tipo, self.cocina_tipo,
+        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}{21}{22}{23}{24}{25}{26}{27}{28}{29}{30}{31}{32}{33}{34}{35}{36}{37}{38}{39}{40}{41}{42}{43}{44}{45}{46}{47}{48}{49}{50}{51}{52}{53}{54}{55}{56}{57}{58}{59}{60}'.format(
+        self.casa_familiar, self.material_paredes, self.material_piso, self.material_techo, self.tipo_vivienda, self.alumbrado_publico,
+        self.pavimentacion, self.drenaje_publico, self.otro_servicio, self.telefono, self.television_por_cable, self.agua, self.luz,
+        self.drenaje, self.otro_servicio_vivienda, self.calentador_de_gas, self.aire_acondicionado, self.estufa_de_gas, self.lavadora,
+        self.refrigerador, self.televisor, self.microondas, self.dvd, self.equipo_de_sonido, self.computadora_de_escritorio, self.aspiradora,
+        self.videocamara, self.podadora, self.laptop, self.videojuegos,
+        self.personas_habitan, self.cuartos, self.banios, self.banios_tipo, self.cocina_tipo,
         self.comedor, self.sala, self.biblioteca, self.terraza, self.cuarto_estudio, self.patio, self.cochera, self.cuarto_servicio,
-        self.otro, self.focos, self.automovil, self.marca, self. modelo, self.anio, self. tipo_cultivo, self.otros_bienes, self.negocio,
+        self.otro, self.focos, self.automovil, self.marca, self.modelo, self.anio, self.tipo_cultivo, self.otros_bienes, self.negocio,
         self.tipo_negocio, self.otros_bienes_especifique, self.servicios_asistencia_medica, self.otros_servicios, self.apoyo_dependencia,
         self.en_especie, self.monto_apoyo, self.dependencia_empresa, self.periodo_apoyo
         )

@@ -445,3 +445,247 @@ def imagenes(request):
         'imagenes':imagenes
     }
     return render(request,'serviciosapp/archivos.html',context)
+
+def obtenerInformacionAdicional(request):
+    consulta_datosPersonales = Usuario.objects.get(pk = 1)
+
+    v1 = False
+    v2 = False
+    v3 = False
+    v4 = False
+    v5 = False
+    v6 = False
+    v7 = False
+    v8 = False
+    v9 = False
+    v10 = False
+    v11 = False
+    v12 = False
+    v13 = False
+    v14 = False
+    v15 = False
+    v16 = False
+    v17 = False
+    v18 = False
+    v19 = False
+    v20 = False
+    v21 = False
+    v22 = False
+    v23 = False
+    v24 = False
+    v25 = False
+    v26 = False
+    v27 = False
+    v28 = False
+    v29 = False
+    v30 = False
+    v31 = False
+    v32 = False
+    v33 = False
+
+    try:
+        if  'True' == request.POST['alumbrado_publico']:
+            v1 = True
+    except Exception as e:
+        v1 = False
+    try:
+        if  request.POST['pavimentacion'] == 'True':
+            v2 = True
+    except Exception as e:
+        v2 = False
+    try:
+        if  request.POST['drenaje_publico'] == 'True':
+            v3 = True
+    except Exception as e:
+        v3 = False
+
+    try:
+        if  request.POST['telefono'] == 'True':
+            v4 = True
+    except Exception as e:
+        v4 = False
+
+    try:
+        if  request.POST['television_por_cable'] == 'True':
+            v5 = True
+    except Exception as e:
+        v5 = False
+
+    try:
+        if  request.POST['agua'] == 'True':
+            v6 = True
+    except Exception as e:
+        v6 = False
+    try:
+        if  request.POST['luz'] == 'True':
+            v7 = True
+    except Exception as e:
+        v7 = False
+
+    try:
+        if  request.POST['drenaje'] == 'True':
+            v8 = True
+    except Exception as e:
+        v8 = False
+    try:
+        if  request.POST['calentador_de_gas'] == 'True':
+            v9 = True
+    except Exception as e:
+        v9 = False
+    try:
+        if  'True' == request.POST['aire_acondicionado']:
+            v10 = True
+    except Exception as e:
+        v10 = False
+    try:
+        if  request.POST['estufa_de_gas'] == 'True':
+            v11 = True
+    except Exception as e:
+        v11 = False
+    try:
+        if  request.POST['lavadora'] == 'True':
+            v12 = True
+    except Exception as e:
+        v12 = False
+
+    try:
+        if  request.POST['refrigerador'] == 'True':
+            v13 = True
+    except Exception as e:
+        v13 = False
+
+    try:
+        if  request.POST['televisor'] == 'True':
+            v14 = True
+    except Exception as e:
+        v14 = False
+
+    try:
+        if  request.POST['microondas'] == 'True':
+            v15 = True
+    except Exception as e:
+        v15 = False
+    try:
+        if  request.POST['dvd'] == 'True':
+            v16 = True
+    except Exception as e:
+        v16 = False
+
+    try:
+        if  request.POST['equipo_de_sonido'] == 'True':
+            v17 = True
+    except Exception as e:
+        v17 = False
+    try:
+        if  request.POST['computadora_de_escritorio'] == 'True':
+            v18 = True
+    except Exception as e:
+        v18 = False
+    try:
+        if  request.POST['aspiradora'] == 'True':
+            v19 = True
+    except Exception as e:
+        v19 = False
+    try:
+        if  'True' == request.POST['videocamara']:
+            v20 = True
+    except Exception as e:
+        v20 = False
+
+    try:
+        if  request.POST['podadora'] == 'True':
+            v21 = True
+    except Exception as e:
+        v21 = False
+    try:
+        if  request.POST['laptop'] == 'True':
+            v22 = True
+    except Exception as e:
+        v22 = False
+
+    try:
+        if  request.POST['videojuegos'] == 'True':
+            v23 = True
+    except Exception as e:
+        v23 = False
+
+    try:
+        if  'True' == request.POST['comedor']:
+            v24 = True
+    except Exception as e:
+        v24 = False
+
+    try:
+        if  request.POST['sala'] == 'True':
+            v25 = True
+    except Exception as e:
+        v25 = False
+    try:
+        if  request.POST['biblioteca'] == 'True':
+            v26 = True
+    except Exception as e:
+        v26 = False
+
+    try:
+        if  request.POST['terraza'] == 'True':
+            v27 = True
+    except Exception as e:
+        v27 = False
+
+    try:
+        if  request.POST['cuarto_estudio'] == 'True':
+            v28 = True
+    except Exception as e:
+        v28 = False
+
+    try:
+        if  request.POST['patio'] == 'True':
+            v29 = True
+    except Exception as e:
+        v29 = False
+    try:
+        if  request.POST['cochera'] == 'True':
+            v30 = True
+    except Exception as e:
+        v30 = False
+
+    try:
+        if  request.POST['cuarto_servicio'] == 'True':
+            v31 = True
+    except Exception as e:
+        v31 = False
+    try:
+        if  request.POST['automovil'] == 'True':
+            v32 = True
+    except Exception as e:
+        v32 = False
+    try:
+        if  request.POST['apoyo_dependencia'] == 'True':
+            v33 = True
+    except Exception as e:
+        v33 = False
+    try :
+        anio_ = int(request.POST['anio'])
+    except ValueError:
+        anio_ = 0
+    try :
+        monto_apoyo_ = float(request.POST['monto_apoyo'])
+    except ValueError:
+        monto_apoyo_ = 0.0
+
+    datosInformacionAdicional = informacionSocioEconomica(usuario_fore = consulta_datosPersonales, casa_familiar = request.POST['casa_familiar'], material_paredes = request.POST['material_paredes'], material_piso = request.POST['material_piso'],
+    material_techo = request.POST['material_techo'], tipo_vivienda = request.POST['tipo_vivienda'], alumbrado_publico = v1, pavimientacion = v2, drenaje_publico = v3, otro_servicio = request.POST['otro_servicio'],
+    telefono = v4, television_por_cable = v5, agua = v6, luz = v7, drenaje =v8, otro_servicio_vivienda = request.POST['otro_servicio_vivienda'], calentador_de_gas = v9, aire_acondicionado = v10, estufa_de_gas = v11, lavadora = v12, refrigerador = v13,
+    televisor = v14, microondas = v15, dvd = v16, equipo_de_sonido = v17, computadora_de_escritorio = v18, aspiradora = v19, videocamara = v20, podadora = v21, laptop = v22, videojuegos = v23,
+    personas_habitan = request.POST['personas_habitan'], cuartos = request.POST['cuartos'], banios = request.POST['material_techo'], banios_tipo = request.POST['banios_tipo'],
+    cocina_tipo = request.POST['cocina_tipo'], comedor = v24, sala = v25, biblioteca = v26, terraza = v27, cuarto_estudio = v28, patio = v29, cochera = v30, cuarto_servicio = v31, otro = request.POST['otro'], focos = request.POST['focos'],
+    automovil = v32, marca = request.POST['marca'], modelo = request.POST['modelo'], anio = anio_, tipo_cultivo = request.POST['tipo_cultivo'], otros_bienes = request.POST['otros_bienes'],
+    negocio = request.POST['negocio'], tipo_negocio = request.POST['tipo_negocio'], otros_bienes_especifique = request.POST['otros_bienes_especifique'], servicios_asistencia_medica = request.POST['servicios_asistencia_medica'],
+    otros_servicios = request.POST['otros_servicios'], apoyo_dependencia = v33, en_especie = request.POST['en_especie'], monto_apoyo = monto_apoyo_, dependencia_empresa = request.POST['dependencia_empresa'],
+    periodo_apoyo = request.POST['periodo_apoyo'])
+
+    datosInformacionAdicional.save()
+    context = {
+        'datosInformacionAdicional':datosInformacionAdicional,
+    }
+    return render(request,'temporal.html', context)
