@@ -25,11 +25,12 @@
           }
       </script>
 
-      
-        <div class="container text-center justify-content-center" >
+
+
+      <div class="container text-center justify-content-center" >
 
               <div class="row justify-content-center">
-                           <form action="{%  url 'serviciosapp:obtenerDatos_Solicitante' %}" class="credit-card-div" method="post">{% csrf_token %}
+                           <form name="form_datos_solicitante" action="{%  url 'serviciosapp:obtenerDatos_Solicitante' %}" class="credit-card-div" method="post">{% csrf_token %}
                              {{ form.as_p }}
                               <br>
                               <div class="panel panel-default" >
@@ -136,7 +137,7 @@
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-3">
                                  <span class="preguntas"><strong>Celular(lada:)</strong></span>
-                                 <input type="text" name="celular" size="10" class="form-control" required/>
+                                 <input type="text" name="celular" class="form-control" required/>
                                 </div>
 
                               </div>
@@ -150,14 +151,14 @@
                               <div class="col-md-12 col-sm-12 col-xs-12">
                               <span  class="preguntas"><strong>Su estancia en la universidad, implica residencia distinta a la familiar: </strong></span>
                               <div class="radio">
-                              <input class="form-check-input" type="radio" name="residencia_distinta" id="check" value="Si"  onclick="javascript:showContent()">
-                              <label class="form-check-label" for="residencia_distinta1">
-                                Si
-                              </label>
-                              <input class="form-check-input" type="radio" name="residencia_distinta" id="check" value="No"  onclick="javascript:showContent2()">
-                              <label class="form-check-label" for="flexRadioDefault2">
-                                 No
-                              </label>
+                                <input class="form-check-input" type="radio" name="residencia_distinta" id="check" value="Si"  onclick="javascript:showContent()">
+                                <label class="form-check-label" for="residencia_distinta1">
+                                  Si
+                                </label>
+                                <input class="form-check-input" type="radio" name="residencia_distinta" id="check" value="No"  onclick="javascript:showContent2()">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                   No
+                                </label>
                               </div>
 
                               </div>
@@ -212,8 +213,7 @@
                                <div class="row ">
                                    <div class="col-md-12">
                                    <!--<button class="btn btn-outline-success  btn-lg">Guardar</button>-->
-                                   <input type="button" class="btn btn-outline-success btn-lg" value="Registrarme" onclick="validarInformacion()">
-
+                                   <input type="button" class="btn btn-primary btn-block mb-3" value="Registrarme" onclick="validarInformacion()">
                                    </div>
 
                                  </div>
@@ -223,6 +223,52 @@
                           </form>
               </div>
           </div>
+
+          <script>
+
+            let texto1 = document.querySelector('#texto1');
+            let texto2 = document.querySelector('#texto2');
+            let texto3 = document.querySelector('#texto3');
+            let texto4 = document.querySelector('#texto4');
+            let texto5 = document.querySelector('#texto5');
+            let texto6 = document.querySelector('#texto6');
+            let texto7 = document.querySelector('#texto7');
+            let verificacion_ = document.querySelector('#check');
+
+
+              function validarInformacion() {
+
+                for(i=0;i<document.form_datos_solicitante.residencia_distinta.length;i++){
+                  if(document.form_datos_solicitante.residencia_distinta[i].checked) {
+                    marcado=i;
+                  }
+                }
+                if (document.form_datos_solicitante.residencia_distinta[marcado].value == "Si") {
+
+                  if ( (texto1.value != null && texto1.value.length != 0) && (texto2.value != null && texto2.value.length != 0) &&
+                      (texto3.value != null && texto3.value.length != 0) && (texto4.value != null && texto4.value.length != 0) &&
+                      (texto5.value != null && texto5.value.length != 0) && (texto6.value != null && texto6.value.length != 0) &&
+                      (texto7.value != null && texto7.value.length != 0)   ){
+                      document.form_datos_solicitante.submit();
+                  }else{
+                      Swal.fire({
+                      icon: 'error',
+                      title: '¡Error!',
+                      text: '¡Hacen falta agunos datos!'
+                    })
+                    document.form_datos_solicitante.estado.focus({preventScroll:false});
+                    return 0;
+                  }
+                }else{
+
+                  document.form_datos_solicitante.submit();
+                }
+              }
+
+
+
+
+          </script>
 
 
           <script>
@@ -234,62 +280,35 @@
           </script>
 
       <script type="text/javascript">
-    function showContent() {
-        element = document.getElementById("content");
-        check = document.getElementById("check");
-        if (check.checked) {
-            element.style.display='block';
-        }
-        else {
-            element.style.display='none';
-        }
-    }
-    function showContent2() {
-      element = document.getElementById("content");
-      check = document.getElementById("check");
-      if (check.checked) {
-          element.style.display='none';
-      }
-      else {
-          element.style.display='none';
-      }
-      document.getElementById("texto1").value='';
-      document.getElementById("texto2").value='';
-      document.getElementById("texto3").value='';
-      document.getElementById("texto4").value='';
-      document.getElementById("texto5").value='';
-      document.getElementById("texto6").value='';
-      document.getElementById("texto7").value='';
-    }
+          function showContent() {
+              element = document.getElementById("content");
+              check = document.getElementById("check");
+              if (check.checked) {
+                  element.style.display='block';
+              }
+              else {
+                  element.style.display='none';
+              }
+          }
+          function showContent2() {
+            element = document.getElementById("content");
+            check = document.getElementById("check");
+            if (check.checked) {
+                element.style.display='none';
+            }
+            else {
+                element.style.display='none';
+            }
+            document.getElementById("texto1").value='';
+            document.getElementById("texto2").value='';
+            document.getElementById("texto3").value='';
+            document.getElementById("texto4").value='';
+            document.getElementById("texto5").value='';
+            document.getElementById("texto6").value='';
+            document.getElementById("texto7").value='';
+          }
 
-</script>
-
-          <script>
-          (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-              var forms = document.getElementsByClassName('needs-validation');
-              var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                  if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    Swal.fire({
-                      icon: 'error',
-                      title: '¡Ups!',
-                      text: 'Te faltaron algunos datos por rellenar.',
-                      footer: 'Verifica el formulario e intena nuevamente.'
-                    })
-                  }
-                  form.classList.add('was-validated');
-                }, false);
-              });
-            }, false);
-          })();
-          </script>
-
-
-
+      </script>
   </body>
 
 </html>
