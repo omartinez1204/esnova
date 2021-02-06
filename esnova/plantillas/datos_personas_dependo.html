@@ -24,7 +24,7 @@
             <div class="co2-md-1 col-sm-1 col-xs-1">
             </div>
             <div class="co2-md-10 col-sm-10 col-xs-10">
-              <h2 class="text-center titulos" style="color: #34495E;">8.- Datos de personas que dependen economicamente del ingreso mensual reportado.</h2>
+              <h2 class="text-center titulos" style="color: #34495E;">8.- DATOS DE PERSONAS QUE DEPENDEN ECONOMICAMIENTE DEL INGRESO MENSUAL REPORTADO</h2>
               <hr>
             </div>
             <div class="co2-md-1 col-sm-1 col-xs-1">
@@ -179,6 +179,12 @@
                                     <td><input type="button" class="borrar btn btn-danger" value="Eliminar" /></td>
                                   </tr>`;
                         tablaPersonas.innerHTML += template;
+
+                        nombre.value = "";
+                        edad.value = "";
+                        parentesco.value = "";
+                        tipoComprobante.value = "";
+                        observaciones.value = "";
                   }else{
                     Swal.fire({
                       icon: 'error',
@@ -187,11 +193,6 @@
                       footer: 'Verifica el formulario de personas e intenta nuevamente.'
                     })
                   }
-                  nombre.value = "";
-                  edad.value = "";
-                  parentesco.value = "";
-                  tipoComprobante.value = "";
-                  observaciones.value = "";
             });
     </script>
 
