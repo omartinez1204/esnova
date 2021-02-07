@@ -26,203 +26,220 @@
       </script>
 
 
+      <div class="row">
+        <div class="col-md-1 col-sm-1 col-xs-1"></div>
+        <div class="col-md-10 col-sm-10 col-xs-10">
 
-      <div class="container text-center justify-content-center" >
+          <div class="container   justify-content-center" >
+                <form name="form_datos_solicitante" action="{%  url 'serviciosapp:obtenerDatos_Solicitante' %}" class="credit-card-div" method="post">{% csrf_token %}
+                      {{ form.as_p }}
+                      <br>
+                      <div class="panel panel-default" >
 
-              <div class="row justify-content-center">
-                           <form name="form_datos_solicitante" action="{%  url 'serviciosapp:obtenerDatos_Solicitante' %}" class="credit-card-div" method="post">{% csrf_token %}
-                             {{ form.as_p }}
-                              <br>
-                              <div class="panel panel-default" >
-                              <div class="panel-heading">
-
+                            <div class="panel-heading">
                                 <div class="row ">
-                                  <div class="col-md-9 col-sm-9 col-xs-9">
-                                   <span ></span>
-                                      <input id="prodId" name="id_usuario" type="hidden" value="{{usuario.pk}}">
-                                  </div>
-
-                                  <div class="col-md-3 col-sm-3 col-xs-3">
-                                  <span class="preguntas"><strong>Solicita Beca Alimentaria</strong> </span>
-                                  <div class="radio">
-                                  <input class="form-check-input" type="radio" name="solicita_beca_alimentaria" id="flexRadioDefault1" value="si">
-                                  <label class="form-check-label" for="flexRadioDefault1">
-                                    Si
-                                  </label>
-                                  <input class="form-check-input" type="radio" name="solicita_beca_alimentaria" id="flexRadioDefault2" value="no" checked>
-                                  <label class="form-check-label" for="flexRadioDefault2">
-                                     No
-                                  </label>
-                                  </div>
-
-                                  </div>
-                               </div>
-                              <br>
-                               <div class="row ">
-
-
-                                    <div class="col-md-4 col-sm-4 col-xs-4">
-                                     <span class="preguntas"> <strong>Apellido Paterno</strong></span>
-                                     <input type="text" id="apellido_paterno" name="apellido_paterno" class="form-control" required/>
-                                    </div>
-                                    <div class="col-md-4 col-sm-4 col-xs-4">
-                                     <span class="preguntas"><strong> Apellido Materno</strong></span>
-                                     <input type="text" id="apellido_materno"name="apellido_materno" class="form-control" required/>
-                                    </div>
-                                    <div class="col-md-4 col-sm-4 col-xs-4">
-                                     <span class="preguntas"><strong> Nombre</strong></span>
-                                     <input type="text" id="nombre" name="nombre" class="form-control" required/>
-                                    </div>
-
-                                 </div>
-                                 <br>
-                                 <div class="row ">
-
-                                      <div class="col-md-4 col-sm-4 col-xs-4">
-                                       <span class="preguntas"><strong> Sexo</strong></span>
-
-                                       <div class="radio">
-                                       <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault1" value="M"   >
-                                       <label class="form-check-label" for="flexRadioDefault1">
-                                         M
-                                       </label>
-                                       <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault2" value="F" checked>
-                                       <label class="form-check-label" for="flexRadioDefault2">
-                                          F
-                                       </label>
-                                       </div>
-
-                                      </div>
-                                      <div class="col-md-2 col-sm-2 col-xs-2">
-                                       <span class="preguntas"><strong>Edad</strong></span>
-                                       <input type="number" id="edad" name="edad" class="form-control" max="99" min="17" required/>
+                                      <div class="col-md-9 col-sm-9 col-xs-9">
+                                       <span ></span>
+                                          <input id="prodId" name="id_usuario" type="hidden" value="{{usuario.pk}}">
                                       </div>
 
                                       <div class="col-md-3 col-sm-3 col-xs-3">
-                                        <span class="preguntas"><strong> Estado Civil</strong></span>
-                                        <select id="estado_civil"name="estado_civil" class="form-control">
-                                          <option value="soltero"selected>Soltero</option>
-                                          <option value="casado">Casado</option>
-                                          <option value="viudo">Viudo</option>
-                                          <option value="divorciado">Divorciado</option>
-                                          <option value="divorciado">Union libre</option>
-                                        </select>
+                                      <span class="preguntas"><strong>Solicita Beca Alimentaria:</strong> </span>
+                                      <div class="radio">
+                                      <input class="form-check-input" type="radio" name="solicita_beca_alimentaria" id="flexRadioDefault1" value="si">
+                                      <label class="form-check-label" for="flexRadioDefault1">
+                                        Si
+                                      </label>
+                                      <input class="form-check-input" type="radio" name="solicita_beca_alimentaria" id="flexRadioDefault2" value="no" checked>
+                                      <label class="form-check-label" for="flexRadioDefault2">
+                                         No
+                                      </label>
                                       </div>
+
+                                      </div>
+                                </div>
+                                <br>
+                                <div class="row ">
+                                        <div class="col-md-4 col-sm-4 col-xs-4 ">
+                                            <span class="preguntas"><strong> Apellido Paterno:</strong></span>
+                                            <input type="text" id="apellido_paterno" name="apellido_paterno" class="form-control" required/>
+                                          </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                         <span class="preguntas"><strong> Apellido Materno:</strong></span>
+                                         <input type="text" id="apellido_materno"name="apellido_materno" class="form-control" required/>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                         <span class="preguntas"><strong> Nombre:</strong></span>
+                                         <input type="text" id="nombre" name="nombre" class="form-control" required/>
+                                        </div>
+                                </div>
+                                     <br>
+                                     <div class="row ">
+
+                                          <div class="col-md-4 col-sm-4 col-xs-4">
+                                           <span class="preguntas"><strong> Sexo:</strong></span>
+
+                                           <div class="radio">
+                                           <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault1" value="M"   >
+                                           <label class="form-check-label" for="flexRadioDefault1">
+                                             M
+                                           </label>
+                                           <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault2" value="F" checked>
+                                           <label class="form-check-label" for="flexRadioDefault2">
+                                              F
+                                           </label>
+                                           </div>
+
+                                          </div>
+                                          <div class="col-md-4 col-sm-4 col-xs-4">
+                                           <span class="preguntas text-right"><strong>Edad:</strong></span>
+                                           <input type="number" id="edad" name="edad" class="form-control" max="99" min="17" required/>
+                                          </div>
+
+                                          <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <span class="preguntas"><strong> Estado Civil:</strong></span>
+                                            <select id="estado_civil"name="estado_civil" class="form-control">
+                                              <option value="soltero"selected>Soltero</option>
+                                              <option value="casado">Casado</option>
+                                              <option value="viudo">Viudo</option>
+                                              <option value="divorciado">Divorciado</option>
+                                              <option value="divorciado">Union libre</option>
+                                            </select>
+                                          </div>
+                                       </div>
+                                       <br>
+                                <div class="row ">
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <span class="preguntas"><strong>Carrera</strong></span>
+                                          <select id="carrera" name="carrera" class="form-control">
+                                            <option value="informatica"selected>Licenciatura en informatica</option>
+                                            <option value="agronomia">Ingenieria en Agronomia </option>
+                                            <option value="administracion">Licenciatura en administracion</option>
+                                          </select>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                     <span class="preguntas"><strong>Semestre</strong></span>
+                                     <input id="semestre" type="number" name="semestre" class="form-control" max="10" min="1" required/>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                     <span class="preguntas"><strong> Grupo</strong></span>
+                                     <input id="grupo" type="text" name="grupo" class="form-control" required/>
+                                    </div>
+
+
+                                  </div>
+                                  <br>
+                                <div class="row">
+                                  <div class="col-md-4 col-sm-4 col-xs-4">
+                                   <span class="preguntas"><strong>Celular(lada:)</strong></span>
+                                   <input type="text" id="celular" maxlength="10" name="celular" class="form-control" required/>
+                                  </div>
+                                  <div class="col-md-8 col-sm-8 col-xs-8">
+
+                                   <span class="preguntas" > <strong>Además del idioma español, ¿Qué otro idioma, lenguaje o dialecto habla?</strong></span>
+                                   <input type="text" id="otro_idioma" name="otro_idioma" class="form-control" required/>
+
+
+                                  </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                  <div class="col-md-8 col-sm-8 col-xs-8">
+                                  <span  class="preguntas"><strong>Su estancia en la universidad, implica residencia distinta a la familiar: </strong></span>
+                                  <div class="radio">
+                                    <input class="form-check-input" type="radio" name="residencia_distinta" id="check" value="Si"  onclick="javascript:showContent()">
+                                    <label class="form-check-label" for="residencia_distinta1">
+                                      Si
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="residencia_distinta" id="check" value="No"  onclick="javascript:showContent2()">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                       No
+                                    </label>
+                                  </div>
+
+                                  </div>
+                                </div>
+                                <br><br>
+                                <div class="row ">
+
+                               <br>
+                              <div class="bg-light border rounded" id="content" style="display: none;">
+
+                                 <div class="row ">
+
+                                   <div class="col-md-12">
+                                       <span  class="subtitulos"><strong>Domicilio donde vivirá mientras estudia:</strong> </span>
+                                   </div>
+                                 </div>
+                                 <div class="row ">
+                                     <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <span class="preguntas"><strong> Calle</strong></span>
+                                      <input type="text" name="calle" class="form-control" value="" id="texto1"/>
+                                     </div>
+                                     <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <span class="preguntas"><strong>Numero</strong></span>
+                                      <input type="number" name="numero_calle" min="0" value="" class="form-control" id="texto2"/>
+                                     </div>
+                                     <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <span class="preguntas"><strong>Colonia o barrio</strong></span>
+                                      <input type="text" name="barrio" class="form-control" value="" id="texto3"/>
+                                     </div>
+
+
                                    </div>
                                    <br>
-                            <div class="row ">
-                              <div class="col-md-1 col-sm-1 col-xs-1"></div>
-                                <div class="col-md-4 col-sm-4 col-xs-4">
-                                  <div class="row ">
-                                    <span class="preguntas"><strong>Carrera</strong></span>
+                                   <div class="row ">
 
-                                      <select id="carrera" name="carrera" class="form-control">
-                                        <option value="informatica"selected>Licenciatura en informatica</option>
-                                        <option value="agronomia">Ingenieria en Agronomia </option>
-                                        <option value="administracion">Licenciatura en administracion</option>
+                                     <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <span class="preguntas"><strong>Municipio:</strong></span>
+                                      <input type="text" name="municipio" class="form-control" value="" id="texto4"/>
+                                       </div>
+                                       <div class="col-md-3 col-sm-3 col-xs-3">
+                                        <span class="preguntas"><strong> Estado</strong></span>
+                                        <input type="text" name="estado" class="form-control" value="" id="texto5"/>
+                                       </div>
+                                       <div class="co6-md-5 col-sm-5 col-xs-5">
+                                        <span class="preguntas"><strong>Nombre de la casa de huésped o del propietario(si la residencia es distinta a la familiar:</strong></span>
+                                        <input type="text" name="propietario" class="form-control" value="" id="texto6"/>
+                                       </div>
 
-                                      </select>
+                                     </div>
+                                     <div class="row">
+                                       <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <span class="preguntas"><strong>Parentesco</strong></span>
+                                        <input type="text" name="parentesco" class="form-control" value="" id="texto7"/>
+                                        </div>
+                                     </div>
 
 
-                              </div>
-                                </div>
-                                <div class="col-md-2 col-sm-2 col-xs-2">
-                                 <span class="preguntas"><strong>Semestre</strong></span>
-
-                                 <input id="semestre" type="number" name="semestre" class="form-control" max="10" min="1" required/>
-                                </div>
-                                <div class="col-md-2 col-sm-2 col-xs-2">
-                                 <span class="preguntas"><strong> Grupo</strong></span>
-                                 <input id="grupo" type="text" name="grupo" class="form-control" required/>
-                                </div>
-                                <div class="col-md-3 col-sm-3 col-xs-3">
-                                 <span class="preguntas"><strong>Celular(lada:)</strong></span>
-                                 <input type="text" id="celular" name="celular" class="form-control" required/>
-                                </div>
 
                               </div>
-                              <br>
-                            <div class="row ">
-                              <div class="col-md-6 col-sm-6 col-xs-6">
+                                   <br>
+                                   <div class="row ">
+                                       <div class="col-md-12">
+                                       <!--<button class="btn btn-outline-success  btn-lg">Guardar</button>-->
+                                       <input type="button" class="btn btn-primary btn-block mb-3" value="Registrarme" onclick="validarInformacion()">
+                                       </div>
 
-                               <span class="preguntas" > <strong>Además del idioma español, ¿Qué otro idioma, lenguaje o dialecto habla?</strong></span>
-                               <input type="text" id="otro_idioma" name="otro_idioma" class="form-control" required/>
+                                    </div>
 
-                              <div class="col-md-12 col-sm-12 col-xs-12">
-                              <span  class="preguntas"><strong>Su estancia en la universidad, implica residencia distinta a la familiar: </strong></span>
-                              <div class="radio">
-                                <input class="form-check-input" type="radio" name="residencia_distinta" id="check" value="Si"  onclick="javascript:showContent()">
-                                <label class="form-check-label" for="residencia_distinta1">
-                                  Si
-                                </label>
-                                <input class="form-check-input" type="radio" name="residencia_distinta" id="check" value="No"  onclick="javascript:showContent2()">
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                   No
-                                </label>
-                              </div>
-
-                              </div>
-                           </div>
-                           <br>
-                            <div id="content" style="display: none;">
-
-                           <div class="row ">
-                             <div class="col-md-12">
-                                 <span  class="subtitulos"><strong>Domicilio donde vivirá mientras estudia:</strong> </span>
-                             </div>
-                           </div>
-                           <div class="row ">
-                               <div class="col-md-3 col-sm-3 col-xs-3">
-                                <span class="preguntas"><strong> Calle</strong></span>
-                                <input type="text" name="calle" class="form-control" value="" id="texto1"/>
-                               </div>
-                               <div class="col-md-1 col-sm-1 col-xs-1">
-                                <span class="preguntas"><strong>Numero</strong></span>
-                                <input type="number" name="numero_calle" min="0" value="" class="form-control" id="texto2"/>
-                               </div>
-                               <div class="col-md-4 col-sm-4 col-xs-4">
-                                <span class="preguntas"><strong>Colonia o barrio</strong></span>
-                                <input type="text" name="barrio" class="form-control" value="" id="texto3"/>
-                               </div>
-                               <div class="col-md-4 col-sm-4 col-xs-4">
-                                <span class="preguntas"><strong>Municipio:</strong></span>
-                                <input type="text" name="municipio" class="form-control" value="" id="texto4"/>
-                                 </div>
-
-                             </div>
-                             <br>
-                             <div class="row ">
-                                 <div class="col-md-3 col-sm-3 col-xs-3">
-                                  <span class="preguntas"><strong> Estado</strong></span>
-                                  <input type="text" name="estado" class="form-control" value="" id="texto5"/>
-                                 </div>
-                                 <div class="co6-md-7 col-sm-7 col-xs-7">
-                                  <span class="preguntas"><strong>Nombre de la casa de huésped o del propietario(si la residencia es distinta a la familiar:</strong></span>
-                                  <input type="text" name="propietario" class="form-control" value="" id="texto6"/>
-                                 </div>
-                                 <div class="col-md-2 col-sm-2 col-xs-2">
-                                  <span class="preguntas"><strong>Parentesco</strong></span>
-                                  <input type="text" name="parentesco" class="form-control" value="" id="texto7"/>
                                   </div>
-                               </div>
+                                  <div class="row">
 
+                                  </div>
 
-
-                             </div>
-                               <br>
-                               <div class="row ">
-                                   <div class="col-md-12">
-                                   <!--<button class="btn btn-outline-success  btn-lg">Guardar</button>-->
-                                   <input type="button" class="btn btn-primary btn-block mb-3" value="Registrarme" onclick="validarInformacion()">
-                                   </div>
-
-                                 </div>
-
-                              </div>
-                              </div>
-                          </form>
+                                  </div>
+                        </div>
+                  </form>
               </div>
-          </div>
+
+        </div>
+        <!--Final de la columna principal-->
+        <div class="col-md-1 col-sm-1 col-xs-1"></div>
+
+      </div>
+
 
           <script>
 
@@ -259,30 +276,47 @@
 
                 for(i=0;i<document.form_datos_solicitante.sexo.length;i++){
                   if(document.form_datos_solicitante.sexo[i].checked) {
-                    marcado=i;
+                    marcado2=i;
                   }
                 }
+                if (document.form_datos_solicitante.residencia_distinta[marcado].value != 0 &&  document.form_datos_solicitante.sexo[marcado2].value != null &&
+                  (ap_paterno.value != null && ap_paterno.value.length != 0) && (ap_materno.value != null && ap_materno.value.length != 0) &&
+                  (nombre.value != null && nombre.value.length != 0) && (edad.value != 0 && ap_materno.value.length != 0) && (estado_civi.value != null && estado_civi.value.length != 0) &&
+                  (carrera.value != null && carrera.value.length != 0) && (semestre.value != 0 && semestre.value.length != 0) && (grupo.value != null && grupo.value.length != 0) &&
+                  (celular.value != null && celular.value.length != 0) &&   (idioma.value != null && idioma.value.length != 0)
+                ) {
 
-                if (document.form_datos_solicitante.residencia_distinta[marcado].value == "Si") {
+                  if (document.form_datos_solicitante.residencia_distinta[marcado].value == "Si") {
 
-                  if ( (texto1.value != null && texto1.value.length != 0) && (texto2.value != null && texto2.value.length != 0) &&
-                      (texto3.value != null && texto3.value.length != 0) && (texto4.value != null && texto4.value.length != 0) &&
-                      (texto5.value != null && texto5.value.length != 0) && (texto6.value != null && texto6.value.length != 0) &&
-                      (texto7.value != null && texto7.value.length != 0)   ){
-                      document.form_datos_solicitante.submit();
-                  }else{
+                    if ( (texto1.value != null && texto1.value.length != 0) && (texto2.value != null && texto2.value.length != 0) &&
+                        (texto3.value != null && texto3.value.length != 0) && (texto4.value != null && texto4.value.length != 0) &&
+                        (texto5.value != null && texto5.value.length != 0) && (texto6.value != null && texto6.value.length != 0) &&
+                        (texto7.value != null && texto7.value.length != 0)   ){
+                        document.form_datos_solicitante.submit();
+                    }else{
                       Swal.fire({
-                      icon: 'error',
-                      title: '¡Error!',
-                      text: '¡Hacen falta agunos datos!'
-                    })
-                    document.form_datos_solicitante.estado.focus({preventScroll:false});
-                    return 0;
-                  }
-                }else{
+                        icon: 'error',
+                        text: '¡Hacen falta agunos datos en el segundo formulario!'
+                      })
+                      document.form_datos_solicitante.estado.focus({preventScroll:false});
+                      return 0;
+                    }
+                  }else{
 
-                  document.form_datos_solicitante.submit();
+                    document.form_datos_solicitante.submit();
+                  }
+
+                }else {
+                  Swal.fire({
+                    icon: 'error',
+                    text: '¡Hacen falta agunos datos en el primer formulario!'
+                  })
+                  document.form_datos_solicitante.estado.focus({preventScroll:false});
+                  return 0;
+
                 }
+
+
               }
 
 

@@ -304,9 +304,7 @@ def obtenerGastoFamiliar(request):
 def obtenerPersonasQueDependen(request):
     consulta_datosPersonales = Usuario.objects.get(pk = 1)
 
-    datospersonasquedependen = personasQueDependenDelIngresoMensual(usuario_fore = consulta_datosPersonales, numero_hermanos = request.POST['numero_hermanos'],
-    nombres_personas = request.POST['nombres_personas'], edades_personas = request.POST['edades_personas'], parentescos_personas = request.POST['parentescos_personas'], tipo_comprobante_personas = request.POST['tipo_comprobante_personas'],
-    observaciones = request.POST['observaciones'])
+    datospersonasquedependen = personasQueDependenDelIngresoMensual(usuario_fore = consulta_datosPersonales, numero_hermanos = request.POST['numero_hermanos'])
 
     datospersonasquedependen.save()
     context = {
