@@ -63,15 +63,15 @@
 
                                     <div class="col-md-4 col-sm-4 col-xs-4">
                                      <span class="preguntas"> <strong>Apellido Paterno</strong></span>
-                                     <input type="text" name="apellido_paterno" class="form-control" required/>
+                                     <input type="text" id="apellido_paterno" name="apellido_paterno" class="form-control" required/>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-4">
                                      <span class="preguntas"><strong> Apellido Materno</strong></span>
-                                     <input type="text" name="apellido_materno" class="form-control" required/>
+                                     <input type="text" id="apellido_materno"name="apellido_materno" class="form-control" required/>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-4">
                                      <span class="preguntas"><strong> Nombre</strong></span>
-                                     <input type="text" name="nombre" class="form-control" required/>
+                                     <input type="text" id="nombre" name="nombre" class="form-control" required/>
                                     </div>
 
                                  </div>
@@ -95,12 +95,12 @@
                                       </div>
                                       <div class="col-md-2 col-sm-2 col-xs-2">
                                        <span class="preguntas"><strong>Edad</strong></span>
-                                       <input type="number" name="edad" class="form-control" max="99" min="17" required/>
+                                       <input type="number" id="edad" name="edad" class="form-control" max="99" min="17" required/>
                                       </div>
 
                                       <div class="col-md-3 col-sm-3 col-xs-3">
                                         <span class="preguntas"><strong> Estado Civil</strong></span>
-                                        <select name="estado_civil" class="form-control">
+                                        <select id="estado_civil"name="estado_civil" class="form-control">
                                           <option value="soltero"selected>Soltero</option>
                                           <option value="casado">Casado</option>
                                           <option value="viudo">Viudo</option>
@@ -116,7 +116,7 @@
                                   <div class="row ">
                                     <span class="preguntas"><strong>Carrera</strong></span>
 
-                                      <select name="carrera" class="form-control">
+                                      <select id="carrera" name="carrera" class="form-control">
                                         <option value="informatica"selected>Licenciatura en informatica</option>
                                         <option value="agronomia">Ingenieria en Agronomia </option>
                                         <option value="administracion">Licenciatura en administracion</option>
@@ -129,15 +129,15 @@
                                 <div class="col-md-2 col-sm-2 col-xs-2">
                                  <span class="preguntas"><strong>Semestre</strong></span>
 
-                                 <input type="number" name="semestre" class="form-control" max="10" min="1" required/>
+                                 <input id="semestre" type="number" name="semestre" class="form-control" max="10" min="1" required/>
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-2">
                                  <span class="preguntas"><strong> Grupo</strong></span>
-                                 <input type="text" name="grupo" class="form-control" required/>
+                                 <input id="grupo" type="text" name="grupo" class="form-control" required/>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-3">
                                  <span class="preguntas"><strong>Celular(lada:)</strong></span>
-                                 <input type="text" name="celular" class="form-control" required/>
+                                 <input type="text" id="celular" name="celular" class="form-control" required/>
                                 </div>
 
                               </div>
@@ -146,7 +146,7 @@
                               <div class="col-md-6 col-sm-6 col-xs-6">
 
                                <span class="preguntas" > <strong>Además del idioma español, ¿Qué otro idioma, lenguaje o dialecto habla?</strong></span>
-                               <input type="text" name="otro_idioma" class="form-control" required/>
+                               <input type="text" id="otro_idioma" name="otro_idioma" class="form-control" required/>
 
                               <div class="col-md-12 col-sm-12 col-xs-12">
                               <span  class="preguntas"><strong>Su estancia en la universidad, implica residencia distinta a la familiar: </strong></span>
@@ -235,14 +235,34 @@
             let texto7 = document.querySelector('#texto7');
             let verificacion_ = document.querySelector('#check');
 
+            let ap_paterno = document.querySelector("#apellido_paterno");
+            let ap_materno = document.querySelector("#apellido_materno");
+            let nombre = document.querySelector("#nombre");
+            let edad = document.querySelector("#edad");
+            let estado_civi  = document.querySelector("#estado_civil");
+            let carrera = document.querySelector("#carrera");
+            let semestre = document.querySelector("#semestre");
+            let grupo = document.querySelector("#grupo");
+            let celular = document.querySelector("#celular");
+            let idioma = document.querySelector("#otro_idioma");
+
+
+
+
 
               function validarInformacion() {
-
                 for(i=0;i<document.form_datos_solicitante.residencia_distinta.length;i++){
                   if(document.form_datos_solicitante.residencia_distinta[i].checked) {
                     marcado=i;
                   }
                 }
+
+                for(i=0;i<document.form_datos_solicitante.sexo.length;i++){
+                  if(document.form_datos_solicitante.sexo[i].checked) {
+                    marcado=i;
+                  }
+                }
+
                 if (document.form_datos_solicitante.residencia_distinta[marcado].value == "Si") {
 
                   if ( (texto1.value != null && texto1.value.length != 0) && (texto2.value != null && texto2.value.length != 0) &&

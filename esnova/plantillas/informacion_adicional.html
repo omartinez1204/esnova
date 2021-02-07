@@ -35,24 +35,7 @@
           	}
           	document.getElementsByName(index.id)[0].disabled=false;
           }
-          function enableInput2(index) {
-            var input1=document.querySelectorAll("input[name=otro_servicio]");
-            for(var i=0;i<input1.length;i++)
-            {
-              input1[i].disabled=true;
 
-            }
-            document.getElementsByName(index.id)[0].disabled=false;
-          }
-          function enableInput3(index) {
-            var input1=document.querySelectorAll("input[name=otro_servicio_vivienda]");
-            for(var i=0;i<input1.length;i++)
-            {
-              input1[i].disabled=true;
-
-            }
-            document.getElementsByName(index.id)[0].disabled=false;
-          }
           function enableInput4(index) {
             var input1=document.querySelectorAll("input[name=otros_servicios]");
             for(var i=0;i<input1.length;i++)
@@ -202,20 +185,20 @@
 
                                                                <div class="col-md-2 col-sm-2 col-xs-2">
                                                                  <div class="form-check">
-                                                                 <input type="checkbox" name="alumbrado" class="form-check-input" value="Alumbrado Público">
+                                                                 <input type="checkbox" name="alumbrado_publico" class="form-check-input" value="True">
                                                                  <label class="form-check-label" for="exampleCheck1"><strong>Alumbrado Público</strong></label>
                                                                  </div>
                                                                </div>
 
                                                                <div class="col-md-3 col-sm-3 col-xs-3">
                                                                  <div class="form-check">
-                                                                 <input type="checkbox" name="pavimentacion" class="form-check-input" value="Pavimentación">
+                                                                 <input type="checkbox" name="pavimentacion" class="form-check-input" value="True">
                                                                  <label class="form-check-label" for="exampleCheck1"><strong>Pavimentación</strong></label>
                                                                  </div>
                                                                </div>
                                                                <div class="col-md-2 col-sm-2 col-xs-2">
                                                                  <div class="form-check">
-                                                                 <input type="checkbox" name="drenaje_publico" class="form-check-input" value="Drenaje">
+                                                                 <input type="checkbox" name="drenaje_publico" class="form-check-input" value="True">
                                                                  <label class="form-check-label" for="exampleCheck1"><strong>Drenaje</strong></label>
                                                                  </div>
                                                                </div>
@@ -225,28 +208,10 @@
                                                               </div>
 
                                                        <div class="row justify-content-center">
-                                                           <span class="preguntas"><strong>Otro Servicio publico</strong></span>
 
-                                                       </div>
 
-                                                         <div class="row ">
-                                                           <div class="col-md-3 col-sm-3 col-xs-3">
-
-                                                           </div>
-                                                           <div class="col-md-1 col-sm-1 col-xs-1">
-                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="servicios_publicos" id="otro_servicio" value="Otro (Especifique)" onclick="enableInput2(this)" required>
-                                                               <label class="form-check-label" for="otro_servicio">Si</label>
-                                                             </div>
-                                                           </div>
-                                                                 <div class="col-md-1 col-sm-1 col-xs-1">
-                                                                        <div class="form-check form-check-inline">
-                                                                          <input class="form-check-input" type="radio" name="servicios_publicos" id="inline2" value="Otro (Especifique)" onclick="enableInput2(this)" required>
-                                                                          <label class="form-check-label" for="otro_servicio">No</label>
-                                                                        </div>
-
-                                                                 </div>
                                                                  <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                    <span class="preguntas"><strong>Otro Servicio publico</strong></span>
                                                                    <input type="text" class="form-control" name="otro_servicio" value="" placeholder="Especificar servicio" />
                                                                  </div>
 
@@ -260,32 +225,32 @@
 
                                                                  <div class="col-md-2 col-sm-2 col-xs-2">
                                                                    <div class="form-check">
-                                                                   <input type="checkbox" name="telefono" class="form-check-input" value="Teléfono">
+                                                                   <input type="checkbox" name="telefono" class="form-check-input" value="True">
                                                                    <label class="form-check-label" for="exampleCheck1"><strong>Teléfono</strong></label>
                                                                    </div>
                                                                  </div>
 
                                                                  <div class="col-md-2 col-sm-2 col-xs-2">
                                                                    <div class="form-check">
-                                                                   <input type="checkbox" name="television_por_cable" class="form-check-input" value="Televisión por cable">
+                                                                   <input type="checkbox" name="television_por_cable" class="form-check-input" value="True">
                                                                    <label class="form-check-label" for="exampleCheck1"><strong>Televisión por cable</strong></label>
                                                                    </div>
                                                                  </div>
                                                                  <div class="col-md-2 col-sm-2 col-xs-2">
                                                                    <div class="form-check">
-                                                                   <input type="checkbox" name="agua" class="form-check-input" value="Agua">
+                                                                   <input type="checkbox" name="agua" class="form-check-input" value="True">
                                                                    <label class="form-check-label" for="exampleCheck1"><strong>Agua</strong></label>
                                                                    </div>
                                                                  </div>
                                                                  <div class="col-md-2 col-sm-2 col-xs-2">
                                                                    <div class="form-check">
-                                                                   <input type="checkbox" name="luz" class="form-check-input" value="Luz">
+                                                                   <input type="checkbox" name="luz" class="form-check-input" value="True">
                                                                    <label class="form-check-label" for="exampleCheck1"><strong>Luz</strong></label>
                                                                    </div>
                                                                  </div>
                                                                  <div class="col-md-2 col-sm-2 col-xs-2">
                                                                    <div class="form-check">
-                                                                   <input type="checkbox" name="drenaje" class="form-check-input" value="Drenaje">
+                                                                   <input type="checkbox" name="drenaje" class="form-check-input" value="True">
                                                                    <label class="form-check-label" for="exampleCheck1"><strong>Drenaje</strong></label>
                                                                    </div>
                                                                  </div>
@@ -294,32 +259,15 @@
                                                                 </div>
 
                                                                 <div class="row justify-content-center">
-                                                                    <span class="preguntas"><strong>Otro Servicio</strong></span>
 
-                                                                </div>
 
-                                                                  <div class="row ">
-                                                                    <div class="col-md-3 col-sm-3 col-xs-3">
-
-                                                                    </div>
-                                                                    <div class="col-md-1 col-sm-1 col-xs-1">
-                                                                      <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="otros_servicios_vivienda" id="otro_servicio_vivienda" value="Otro (Especifique)" onclick="enableInput3(this)" required>
-                                                                        <label class="form-check-label" for="otro_servicio_vivienda">Si</label>
-                                                                      </div>
-                                                                    </div>
-                                                                          <div class="col-md-1 col-sm-1 col-xs-1">
-                                                                                 <div class="form-check form-check-inline">
-                                                                                   <input class="form-check-input" type="radio" name="otros_servicios_vivienda" id="inline2" value="Otro (Especifique)" onclick="enableInput3(this)" required>
-                                                                                   <label class="form-check-label" for="otro_servicio_vivienda">No</label>
-                                                                                 </div>
-
-                                                                          </div>
                                                                           <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                             <span class="preguntas"><strong>Otro Servicio</strong></span>
                                                                             <input type="text" class="form-control" name="otro_servicio_vivienda" value="" placeholder="Especificar servicio" />
                                                                           </div>
 
                                                                   </div>
+
                                                                 <br>
                                                                 <div class="row ">
 
@@ -330,25 +278,25 @@
 
                                                                       <div class="col-md-4 col-sm-4 col-xs-4">
                                                                         <div class="form-check">
-                                                                        <input type="checkbox" name="calentador_de_gas" class="form-check-input" value="Calentador de Gas">
+                                                                        <input type="checkbox" name="calentador_de_gas" class="form-check-input" value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>Calentador de gas</strong></label>
                                                                         </div>
                                                                       </div>
                                                                       <div class="col-md-4 col-sm-4 col-xs-4">
                                                                         <div class="form-check">
-                                                                        <input type="checkbox" name="aire_acondicionado" class="form-check-input"  value="Aire acondicionado">
+                                                                        <input type="checkbox" name="aire_acondicionado" class="form-check-input"  value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>Aire acondicionado</strong></label>
                                                                         </div>
                                                                       </div>
                                                                       <div class="col-md-2 col-sm-2 col-xs-2">
                                                                         <div class="form-check">
-                                                                        <input type="checkbox" name="estufa_de_gas" class="form-check-input"  value="Estufa de Gas">
+                                                                        <input type="checkbox" name="estufa_de_gas" class="form-check-input"  value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>Estufa de gas</strong></label>
                                                                         </div>
                                                                       </div>
                                                                       <div class="col-md-2 col-sm-2 col-xs-2">
                                                                         <div class="form-check">
-                                                                        <input type="checkbox" name="lavadora" class="form-check-input"  value="Lavadora">
+                                                                        <input type="checkbox" name="lavadora" class="form-check-input"  value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>Lavadora</strong></label>
                                                                         </div>
                                                                       </div>
@@ -361,25 +309,25 @@
 
                                                                       <div class="col-md-4 col-sm-4 col-xs-4">
                                                                         <div class="form-check">
-                                                                        <input type="checkbox" name="refrigerador" class="form-check-input" value="Refrigerador">
+                                                                        <input type="checkbox" name="refrigerador" class="form-check-input" value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>Refrigerador</strong></label>
                                                                         </div>
                                                                       </div>
                                                                       <div class="col-md-2 col-sm-2 col-xs-2">
                                                                         <div class="form-check">
-                                                                        <input type="checkbox" name="televisor" class="form-check-input"  value="Televisor">
+                                                                        <input type="checkbox" name="televisor" class="form-check-input"  value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>Televisor</strong></label>
                                                                         </div>
                                                                       </div>
                                                                       <div class="col-md-4 col-sm-4 col-xs-4">
                                                                         <div class="form-check">
-                                                                        <input type="checkbox" name="microondas" class="form-check-input"  value="Horno de Microondas">
+                                                                        <input type="checkbox" name="microondas" class="form-check-input"  value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>Horno de Microondas</strong></label>
                                                                         </div>
                                                                       </div>
                                                                       <div class="col-md-2 col-sm-2 col-xs-2">
                                                                         <div class="form-check">
-                                                                        <input type="checkbox" name="dvd" class="form-check-input"  value="DVD">
+                                                                        <input type="checkbox" name="dvd" class="form-check-input"  value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>DVD/Blu-ray</strong></label>
                                                                         </div>
                                                                       </div>
@@ -390,25 +338,25 @@
 
                                                                         <div class="col-md-4 col-sm-4 col-xs-4">
                                                                           <div class="form-check">
-                                                                          <input type="checkbox" name="equipo_de_sonido" class="form-check-input" value="Equipo de sonido">
+                                                                          <input type="checkbox" name="equipo_de_sonido" class="form-check-input" value="True">
                                                                           <label class="form-check-label" for="exampleCheck1"><strong>Equipo de sonido</strong></label>
                                                                           </div>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4">
                                                                           <div class="form-check">
-                                                                          <input type="checkbox" name="computadora_de_escritorio" class="form-check-input"  value="Computadora de escritorio">
+                                                                          <input type="checkbox" name="computadora_de_escritorio" class="form-check-input"  value="True">
                                                                           <label class="form-check-label" for="exampleCheck1"><strong>Computadora de escritorio </strong></label>
                                                                           </div>
                                                                         </div>
                                                                         <div class="col-md-2 col-sm-2 col-xs-2">
                                                                           <div class="form-check">
-                                                                          <input type="checkbox" name="aspiradora" class="form-check-input"  value="Aspiradora">
+                                                                          <input type="checkbox" name="aspiradora" class="form-check-input"  value="True">
                                                                           <label class="form-check-label" for="exampleCheck1"><strong>Aspiradora</strong></label>
                                                                           </div>
                                                                         </div>
                                                                         <div class="col-md-2 col-sm-2 col-xs-2">
                                                                           <div class="form-check">
-                                                                          <input type="checkbox" name="videocamara" class="form-check-input"  value="Videocamara">
+                                                                          <input type="checkbox" name="videocamara" class="form-check-input"  value="True">
                                                                           <label class="form-check-label" for="exampleCheck1"><strong>Videocámara</strong></label>
                                                                           </div>
                                                                         </div>
@@ -418,19 +366,19 @@
                                                               <div class="row ">
                                                                 <div class="col-md-3 col-sm-3 col-xs-3">
                                                                   <div class="form-check">
-                                                                  <input type="checkbox" name="podadora" class="form-check-input"   value="Podadora">
+                                                                  <input type="checkbox" name="podadora" class="form-check-input"   value="True">
                                                                   <label class="form-check-label" for="exampleCheck1"><strong>Podadora</strong></label>
                                                                   </div>
                                                                 </div>
                                                                   <div class="col-md-3 col-sm-3 col-xs-3">
                                                                   <div class="form-check">
-                                                                  <input type="checkbox" name="laptop" class="form-check-input"   value="Laptop">
+                                                                  <input type="checkbox" name="laptop" class="form-check-input"   value="True">
                                                                   <label class="form-check-label" for="exampleCheck1"><strong>Laptop</strong></label>
                                                                   </div>
                                                                 </div>
                                                                   <div class="col-md-3 col-sm-3 col-xs-3">
                                                                   <div class="form-check">
-                                                                  <input type="checkbox" name="videojuegos" class="form-check-input"   value="Videojuegos">
+                                                                  <input type="checkbox" name="videojuegos" class="form-check-input"   value="True">
                                                                   <label class="form-check-label" for="exampleCheck1"><strong>Videojuegos</strong></label>
                                                                   </div>
                                                                 </div>
@@ -526,7 +474,7 @@
                                                               <div class="col-xs-2 col-xs-offset-4">
                                                                 <div class="checkbox-inline">
                                                                   <label class="checkbox-inline">
-                                                                    <input type="checkbox" name="biblioteca" value=""><strong>Biblioteca </strong></label>
+                                                                    <input type="checkbox" name="biblioteca" value="True"><strong>Biblioteca </strong></label>
                                                                 </div>
                                                               </div>
                                                              </div>
@@ -536,7 +484,7 @@
                                                                <div class="col-xs-2 col-xs-offset-4">
                                                                  <div class="checkbox-inline">
                                                                    <label class="checkbox-inline">
-                                                                     <input type="checkbox" name="terraza" value=""><strong>Terraza </strong></label>
+                                                                     <input type="checkbox" name="terraza" value="True"><strong>Terraza </strong></label>
                                                                  </div>
                                                                </div>
                                                               </div>
@@ -545,7 +493,7 @@
                                                                 <div class="col-xs-2 col-xs-offset-4">
                                                                   <div class="checkbox-inline">
                                                                     <label class="checkbox-inline">
-                                                                      <input type="checkbox" name="cuarto_estudio" value=""><strong>Cuarto de Estudio </strong></label>
+                                                                      <input type="checkbox" name="cuarto_estudio" value="True"><strong>Cuarto de Estudio </strong></label>
                                                                   </div>
                                                                 </div>
                                                                </div>
@@ -554,7 +502,7 @@
                                                                  <div class="col-xs-2 col-xs-offset-4">
                                                                    <div class="checkbox-inline">
                                                                      <label class="checkbox-inline">
-                                                                       <input type="checkbox" name="patio" value=""><strong>Patio </strong></label>
+                                                                       <input type="checkbox" name="patio" value="True"><strong>Patio </strong></label>
                                                                    </div>
                                                                  </div>
                                                                 </div>
@@ -564,7 +512,7 @@
                                                                   <div class="col-xs-2 col-xs-offset-4">
                                                                     <div class="checkbox-inline">
                                                                       <label class="checkbox-inline">
-                                                                        <input type="checkbox" name="cochera" value=""><strong>Cochera </strong></label>
+                                                                        <input type="checkbox" name="cochera" value="True"><strong>Cochera </strong></label>
                                                                     </div>
                                                                   </div>
                                                                  </div>
@@ -573,7 +521,7 @@
                                                                    <div class="col-xs-2 col-xs-offset-4">
                                                                      <div class="checkbox-inline">
                                                                        <label class="checkbox-inline">
-                                                                         <input type="checkbox" name="cuarto_servicio" value=""><strong>Cuarto de Servicio </strong></label>
+                                                                         <input type="checkbox" name="cuarto_servicio" value="True"><strong>Cuarto de Servicio </strong></label>
                                                                      </div>
                                                                    </div>
                                                                   </div>
@@ -845,19 +793,6 @@
 
             }
 
-            var input2=document.querySelectorAll("input[name=otro_servicio]");
-            for(var i=0;i<input1.length;i++)
-            {
-              input2[i].disabled=true;
-
-            }
-
-            var input3=document.querySelectorAll("input[name=otro_servicio_vivienda]");
-            for(var i=0;i<input1.length;i++)
-            {
-              input3[i].disabled=true;
-
-            }
 
             var input4=document.querySelectorAll("input[name=otros_servicios]");
             for(var i=0;i<input1.length;i++)
