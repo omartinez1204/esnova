@@ -314,119 +314,6 @@ def obtenerPersonasQueDependen(request):
     }
     return render(request,'temporal.html', context)
 
-def obtenerInformacionAdicional(request):
-    consulta_datosPersonales = Usuario.objects.get(pk = 1)
-
-    v1 = False
-    v2 = False
-    v3 = False
-    v4 = False
-    v5 = False
-    v6 = False
-    v7 = False
-    v8 = False
-    v9 = False
-    v10 = False
-    try:
-        if  'True' == request.POST['comedor']:
-            v1 = True
-    except Exception as e:
-        v1 = False
-
-    try:
-        if  request.POST['sala'] == 'True':
-            v2 = True
-    except Exception as e:
-        v2 = False
-    try:
-        if  request.POST['biblioteca'] == 'True':
-            v3 = True
-    except Exception as e:
-        v3 = False
-
-    try:
-        if  request.POST['terraza'] == 'True':
-            v4 = True
-    except Exception as e:
-        v4 = False
-
-    try:
-        if  request.POST['cuarto_estudio'] == 'True':
-            v5 = True
-    except Exception as e:
-        v5 = False
-
-    try:
-        if  request.POST['patio'] == 'True':
-            v6 = True
-    except Exception as e:
-        v6 = False
-    try:
-        if  request.POST['cochera'] == 'True':
-            v7 = True
-    except Exception as e:
-        v7 = False
-
-    try:
-        if  request.POST['cuarto_servicio'] == 'True':
-            v8 = True
-    except Exception as e:
-        v8 = False
-    try:
-        if  request.POST['automovil'] == 'True':
-            v9 = True
-    except Exception as e:
-        v9 = False
-    try:
-        if  request.POST['apoyo_dependencia'] == 'True':
-            v10 = True
-    except Exception as e:
-        v10 = False
-
-    if v9 == True:
-        if v10 == True:
-            datosInformacionAdicional = informacionSocioEconomica(usuario_fore = consulta_datosPersonales, casa_familiar = request.POST['casa_familiar'], material_paredes = request.POST['material_paredes'], material_piso = request.POST['material_piso'],
-            material_techo = request.POST['material_techo'], tipo_vivienda = request.POST['tipo_vivienda'], servicios_publicos = request.POST['servicios_publicos'], servicios_vivienda = request.POST['servicios_vivienda'],
-            casa_cuenta_con = request.POST['casa_cuenta_con'], personas_habitan = request.POST['personas_habitan'], cuartos = request.POST['cuartos'], banios = request.POST['material_techo'], banios_tipo = request.POST['banios_tipo'],
-            cocina_tipo = request.POST['cocina_tipo'], comedor = v1, sala = v2, biblioteca = v3, terraza = v4, cuarto_estudio = v5, patio = v6, cochera = v7, cuarto_servicio = v8, otro = request.POST['otro'], focos = request.POST['focos'],
-            automovil = v9, marca = request.POST['marca'], modelo = request.POST['modelo'], anio = request.POST['anio'], tipo_cultivo = request.POST['tipo_cultivo'], otros_bienes = request.POST['otros_bienes'],
-            negocio = request.POST['negocio'], tipo_negocio = request.POST['tipo_negocio'], otros_bienes_especifique = request.POST['otros_bienes_especifique'], servicios_asistencia_medica = request.POST['servicios_asistencia_medica'],
-            otros_servicios = request.POST['otros_servicios'], apoyo_dependencia = v10, en_especie = request.POST['en_especie'], monto_apoyo = request.POST['monto_apoyo'], dependencia_empresa = request.POST['dependencia_empresa'],
-            periodo_apoyo = request.POST['periodo_apoyo'])
-        else:
-            datosInformacionAdicional = informacionSocioEconomica(usuario_fore = consulta_datosPersonales, casa_familiar = request.POST['casa_familiar'], material_paredes = request.POST['material_paredes'], material_piso = request.POST['material_piso'],
-            material_techo = request.POST['material_techo'], tipo_vivienda = request.POST['tipo_vivienda'], servicios_publicos = request.POST['servicios_publicos'], servicios_vivienda = request.POST['servicios_vivienda'],
-            casa_cuenta_con = request.POST['casa_cuenta_con'], personas_habitan = request.POST['personas_habitan'], cuartos = request.POST['cuartos'], banios = request.POST['material_techo'], banios_tipo = request.POST['banios_tipo'],
-            cocina_tipo = request.POST['cocina_tipo'], comedor = v1, sala = v2, biblioteca = v3, terraza = v4, cuarto_estudio = v5, patio = v6, cochera = v7, cuarto_servicio = v8, otro = request.POST['otro'], focos = request.POST['focos'],
-            automovil = v9, marca = request.POST['marca'], modelo = request.POST['modelo'], anio = request.POST['anio'], tipo_cultivo = request.POST['tipo_cultivo'], otros_bienes = request.POST['otros_bienes'],
-            negocio = request.POST['negocio'], tipo_negocio = request.POST['tipo_negocio'], otros_bienes_especifique = request.POST['otros_bienes_especifique'], servicios_asistencia_medica = request.POST['servicios_asistencia_medica'],
-            otros_servicios = request.POST['otros_servicios'], apoyo_dependencia = v10)
-    else:
-        if v10 == True:
-            datosInformacionAdicional = informacionSocioEconomica(usuario_fore = consulta_datosPersonales, casa_familiar = request.POST['casa_familiar'], material_paredes = request.POST['material_paredes'], material_piso = request.POST['material_piso'],
-            material_techo = request.POST['material_techo'], tipo_vivienda = request.POST['tipo_vivienda'], servicios_publicos = request.POST['servicios_publicos'], servicios_vivienda = request.POST['servicios_vivienda'],
-            casa_cuenta_con = request.POST['casa_cuenta_con'], personas_habitan = request.POST['personas_habitan'], cuartos = request.POST['cuartos'], banios = request.POST['material_techo'], banios_tipo = request.POST['banios_tipo'],
-            cocina_tipo = request.POST['cocina_tipo'], comedor = v1, sala = v2, biblioteca = v3, terraza = v4, cuarto_estudio = v5, patio = v6, cochera = v7, cuarto_servicio = v8, otro = request.POST['otro'], focos = request.POST['focos'],
-            automovil = v9, tipo_cultivo = request.POST['tipo_cultivo'], otros_bienes = request.POST['otros_bienes'],
-            negocio = request.POST['negocio'], tipo_negocio = request.POST['tipo_negocio'], otros_bienes_especifique = request.POST['otros_bienes_especifique'], servicios_asistencia_medica = request.POST['servicios_asistencia_medica'],
-            otros_servicios = request.POST['otros_servicios'], apoyo_dependencia = v10, en_especie = request.POST['en_especie'], monto_apoyo = request.POST['monto_apoyo'], dependencia_empresa = request.POST['dependencia_empresa'],
-            periodo_apoyo = request.POST['periodo_apoyo'])
-        else:
-            datosInformacionAdicional = informacionSocioEconomica(usuario_fore = consulta_datosPersonales, casa_familiar = request.POST['casa_familiar'], material_paredes = request.POST['material_paredes'], material_piso = request.POST['material_piso'],
-            material_techo = request.POST['material_techo'], tipo_vivienda = request.POST['tipo_vivienda'], servicios_publicos = request.POST['servicios_publicos'], servicios_vivienda = request.POST['servicios_vivienda'],
-            casa_cuenta_con = request.POST['casa_cuenta_con'], personas_habitan = request.POST['personas_habitan'], cuartos = request.POST['cuartos'], banios = request.POST['material_techo'], banios_tipo = request.POST['banios_tipo'],
-            cocina_tipo = request.POST['cocina_tipo'], comedor = v1, sala = v2, biblioteca = v3, terraza = v4, cuarto_estudio = v5, patio = v6, cochera = v7, cuarto_servicio = v8, otro = request.POST['otro'], focos = request.POST['focos'],
-            automovil = v9, tipo_cultivo = request.POST['tipo_cultivo'], otros_bienes = request.POST['otros_bienes'],
-            negocio = request.POST['negocio'], tipo_negocio = request.POST['tipo_negocio'], otros_bienes_especifique = request.POST['otros_bienes_especifique'], servicios_asistencia_medica = request.POST['servicios_asistencia_medica'],
-            otros_servicios = request.POST['otros_servicios'], apoyo_dependencia = v10)
-
-    datosInformacionAdicional.save()
-    context = {
-        'datosInformacionAdicional':datosInformacionAdicional,
-    }
-    return render(request,'temporal.html', context)
-
-
 def archivos(request):
     if request.method == 'POST':
         form = UpArchivos(request.POST or None, request.FILES or None)
@@ -484,7 +371,7 @@ def obtenerInformacionAdicional(request):
     v33 = False
 
     try:
-        if  'True' == request.POST['alumbrado_publico']:
+        if  'True' == request.POST['alumbrado']:
             v1 = True
     except Exception as e:
         v1 = False
@@ -674,10 +561,10 @@ def obtenerInformacionAdicional(request):
         monto_apoyo_ = 0.0
 
     datosInformacionAdicional = informacionSocioEconomica(usuario_fore = consulta_datosPersonales, casa_familiar = request.POST['casa_familiar'], material_paredes = request.POST['material_paredes'], material_piso = request.POST['material_piso'],
-    material_techo = request.POST['material_techo'], tipo_vivienda = request.POST['tipo_vivienda'], alumbrado_publico = v1, pavimientacion = v2, drenaje_publico = v3, otro_servicio = request.POST['otro_servicio'],
+    material_techo = request.POST['material_techo'], tipo_vivienda = request.POST['tipo_vivienda'], alumbrado_publico = v1, pavimentacion = v2, drenaje_publico = v3, otro_servicio = request.POST['otro_servicio'],
     telefono = v4, television_por_cable = v5, agua = v6, luz = v7, drenaje =v8, otro_servicio_vivienda = request.POST['otro_servicio_vivienda'], calentador_de_gas = v9, aire_acondicionado = v10, estufa_de_gas = v11, lavadora = v12, refrigerador = v13,
     televisor = v14, microondas = v15, dvd = v16, equipo_de_sonido = v17, computadora_de_escritorio = v18, aspiradora = v19, videocamara = v20, podadora = v21, laptop = v22, videojuegos = v23,
-    personas_habitan = request.POST['personas_habitan'], cuartos = request.POST['cuartos'], banios = request.POST['material_techo'], banios_tipo = request.POST['banios_tipo'],
+    personas_habitan = request.POST['personas_habitan'], cuartos = request.POST['cuartos'], banios = request.POST['banios'], banios_tipo = request.POST['banios_tipo'],
     cocina_tipo = request.POST['cocina_tipo'], comedor = v24, sala = v25, biblioteca = v26, terraza = v27, cuarto_estudio = v28, patio = v29, cochera = v30, cuarto_servicio = v31, otro = request.POST['otro'], focos = request.POST['focos'],
     automovil = v32, marca = request.POST['marca'], modelo = request.POST['modelo'], anio = anio_, tipo_cultivo = request.POST['tipo_cultivo'], otros_bienes = request.POST['otros_bienes'],
     negocio = request.POST['negocio'], tipo_negocio = request.POST['tipo_negocio'], otros_bienes_especifique = request.POST['otros_bienes_especifique'], servicios_asistencia_medica = request.POST['servicios_asistencia_medica'],
