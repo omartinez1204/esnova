@@ -314,25 +314,6 @@ def obtenerPersonasQueDependen(request):
     }
     return render(request,'temporal.html', context)
 
-def archivos(request):
-    if request.method == 'POST':
-        form = UpArchivos(request.POST or None, request.FILES or None)
-        if form.is_valid():
-            form.save()
-            form = UpArchivos()
-            return render(request,'serviciosapp/anexar_documentacion.html',{'form':form})
-    else:
-        form = UpArchivos()
-    return render(request,'serviciosapp/anexar_documentacion.html',{'form':form})
-
-def imagenes(request):
-    print("solicitando todos los doxumentos")
-    imagenes = subirArchivos.objects.all()
-    context = {
-        'imagenes':imagenes
-    }
-    return render(request,'serviciosapp/archivos.html',context)
-
 def obtenerInformacionAdicional(request):
     consulta_datosPersonales = Usuario.objects.get(pk = 1)
 
@@ -576,3 +557,22 @@ def obtenerInformacionAdicional(request):
         'datosInformacionAdicional':datosInformacionAdicional,
     }
     return render(request,'temporal.html', context)
+
+def archivos(request):
+    if request.method == 'POST':
+        form = UpArchivos(request.POST or None, request.FILES or None)
+        if form.is_valid():
+            form.save()
+            form = UpArchivos()
+            return render(request,'serviciosapp/anexar_documentacion.html',{'form':form})
+    else:
+        form = UpArchivos()
+    return render(request,'serviciosapp/anexar_documentacion.html',{'form':form})
+
+def imagenes(request):
+    print("solicitando todos los doxumentos")
+    imagenes = subirArchivos.objects.all()
+    context = {
+        'imagenes':imagenes
+    }
+    return render(request,'serviciosapp/archivos.html',context)
