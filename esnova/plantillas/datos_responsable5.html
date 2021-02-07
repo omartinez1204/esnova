@@ -413,12 +413,19 @@
                   if (form.checkValidity() === false) {
                     event.preventDefault();
                     event.stopPropagation();
-                    Swal.fire({
+                    /*Swal.fire({
                       icon: 'error',
                       title: '¡Ups!',
                       text: 'Te faltaron algunos datos por rellenar.',
                       footer: 'Verifica el formulario e intenta nuevamente.'
-                    })
+                    })*/
+                    Swal.fire({
+                    position: 'top',
+                    icon: 'error',
+                    title: 'Faltan algunos datos por rellenar.',
+                    showConfirmButton: false,
+                    timer: 1200
+                  })
                   }
                   form.classList.add('was-validated');
                 }, false);
