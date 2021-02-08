@@ -547,7 +547,7 @@ def obtenerInformacionAdicional(request):
     cocina_tipo = request.POST['cocina_tipo'], comedor = v24, sala = v25, biblioteca = v26, terraza = v27, cuarto_estudio = v28, patio = v29, cochera = v30, cuarto_servicio = v31, otro = request.POST['otro'], focos = request.POST['focos'],
     automovil = v32, marca = request.POST['marca'], modelo = request.POST['modelo'], anio = anio_, tipo_cultivo = request.POST['tipo_cultivo'], otros_bienes = request.POST['otros_bienes'],
     negocio = request.POST['negocio'], tipo_negocio = request.POST['tipo_negocio'], otros_bienes_especifique = request.POST['otros_bienes_especifique'], servicios_asistencia_medica = request.POST['servicios_asistencia_medica'],
-    otros_servicios = request.POST['otros_servicios'], apoyo_dependencia = v33, en_especie = request.POST['en_especie'], monto_apoyo = monto_apoyo_, dependencia_empresa = request.POST['dependencia_empresa'],
+    apoyo_dependencia = v33, en_especie = request.POST['en_especie'], monto_apoyo = monto_apoyo_, dependencia_empresa = request.POST['dependencia_empresa'],
     periodo_apoyo = request.POST['periodo_apoyo'])
 
     datosInformacionAdicional.save()

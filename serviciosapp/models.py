@@ -301,14 +301,13 @@ class informacionSocioEconomica(models.Model):
     tipo_negocio = models.CharField(max_length = 30)
     otros_bienes_especifique = models.CharField(max_length = 30)
     servicios_asistencia_medica = models.TextField(null=True)
-    otros_servicios = models.CharField(max_length = 30)
     apoyo_dependencia = models.BooleanField(default=False)
     en_especie = models.CharField(max_length = 30)
     monto_apoyo = models.FloatField(default=False)
     dependencia_empresa = models.CharField(max_length = 30)
     periodo_apoyo = models.CharField(max_length = 30)
     def __str__(self):
-        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}{21}{22}{23}{24}{25}{26}{27}{28}{29}{30}{31}{32}{33}{34}{35}{36}{37}{38}{39}{40}{41}{42}{43}{44}{45}{46}{47}{48}{49}{50}{51}{52}{53}{54}{55}{56}{57}{58}{59}{60}'.format(
+        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}{21}{22}{23}{24}{25}{26}{27}{28}{29}{30}{31}{32}{33}{34}{35}{36}{37}{38}{39}{40}{41}{42}{43}{44}{45}{46}{47}{48}{49}{50}{51}{52}{53}{54}{55}{56}{57}{58}{59}'.format(
         self.casa_familiar, self.material_paredes, self.material_piso, self.material_techo, self.tipo_vivienda, self.alumbrado_publico,
         self.pavimentacion, self.drenaje_publico, self.otro_servicio, self.telefono, self.television_por_cable, self.agua, self.luz,
         self.drenaje, self.otro_servicio_vivienda, self.calentador_de_gas, self.aire_acondicionado, self.estufa_de_gas, self.lavadora,
@@ -317,7 +316,7 @@ class informacionSocioEconomica(models.Model):
         self.personas_habitan, self.cuartos, self.banios, self.banios_tipo, self.cocina_tipo,
         self.comedor, self.sala, self.biblioteca, self.terraza, self.cuarto_estudio, self.patio, self.cochera, self.cuarto_servicio,
         self.otro, self.focos, self.automovil, self.marca, self.modelo, self.anio, self.tipo_cultivo, self.otros_bienes, self.negocio,
-        self.tipo_negocio, self.otros_bienes_especifique, self.servicios_asistencia_medica, self.otros_servicios, self.apoyo_dependencia,
+        self.tipo_negocio, self.otros_bienes_especifique, self.servicios_asistencia_medica, self.apoyo_dependencia,
         self.en_especie, self.monto_apoyo, self.dependencia_empresa, self.periodo_apoyo
         )
 class subirArchivos(models.Model):
