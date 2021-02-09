@@ -47,8 +47,8 @@
           }
       </script>
 
-        <div class="container text-center justify-content-center" >
-              <div class="row justify-content-center">
+        <div class="container justify-content-center" >
+
 
 
                             <form action="{%  url 'serviciosapp:obtenerInformacionAdicional' %}" class="credit-card-div" method="post">{% csrf_token %}
@@ -109,15 +109,13 @@
                                             </div>
 
                                               <div class="row ">
-                                                <div class="col-md-3 col-sm-3 col-xs-3">
-                                                </div>
+
                                                       <div class="col-md-3 col-sm-3 col-xs-3">
                                                              <div class="form-check form-check-inline">
                                                                <input class="form-check-input" type="radio" name="material_paredes" id="otro_material" value="Otro (Especifique)" onclick="enableInput(this)" >
                                                                <label class="form-check-label" for="otro_material">Otro (Especifique)</label>
                                                              </div>
-                                                      </div>
-                                                      <div class="col-md-3 col-sm-3 col-xs-3">
+
                                                         <input type="text" class="form-control" name="otro_material" placeholder="Especificar otro material" required/>
                                                       </div>
                                                       <div class="col-md-3 col-sm-3 col-xs-3">
@@ -127,17 +125,15 @@
                                                 <br>
                                                     <div class="row ">
 
-                                                      <div class="col-md-3 col-sm-3 col-xs-3">
 
-                                                      </div>
                                                         <div class="col-md-3 col-sm-3 col-xs-3">
-                                                          <br>
+
                                                          <span class="preguntas"><strong>Material del piso:</strong></span>
                                                          <input type="text" class="form-control" name="material_piso"/>
                                                         </div>
 
                                                         <div class="col-md-4 col-sm-4 col-xs-4">
-                                                          <br>
+
                                                          <span class="preguntas"><strong>Material del techo:</strong></span>
                                                          <input type="text" class="form-control" name="material_techo"/>
                                                         </div>
@@ -181,10 +177,10 @@
                                                        <div class="row ">
 
                                                                <span class="preguntas"><strong>Servicios públicos:</strong></span>
-                                                               <br>
-                                                               <div class="col-md-3 col-sm-3 col-xs-3"></div>
 
-                                                               <div class="col-md-2 col-sm-2 col-xs-2">
+
+
+                                                               <div class="col-md-3 col-sm-3 col-xs-3">
                                                                  <div class="form-check">
                                                                  <input type="checkbox" name="alumbrado_publico" class="form-check-input" value="True">
                                                                  <label class="form-check-label" for="exampleCheck1"><strong>Alumbrado Público</strong></label>
@@ -204,14 +200,14 @@
                                                                  </div>
                                                                </div>
 
-                                                                <div class="col-md-2 col-sm-2 col-xs-2"></div>
+
 
                                                               </div>
 
-                                                       <div class="row justify-content-center">
+                                                       <div class="row">
 
 
-                                                                 <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                 <div class="col-md-4 col-sm-4 col-xs-4">
                                                                     <span class="preguntas"><strong>Otro Servicio publico</strong></span>
                                                                    <input type="text" class="form-control" name="otro_servicio" value="" placeholder="Especificar servicio" />
                                                                  </div>
@@ -222,7 +218,6 @@
 
                                                                  <span class="preguntas"><strong>Servicios con los que cuenta la vivienda:</strong></span>
                                                                  <br>
-                                                                 <div class="col-md-1 col-sm-1 col-xs-1"></div>
 
                                                                  <div class="col-md-2 col-sm-2 col-xs-2">
                                                                    <div class="form-check">
@@ -259,7 +254,7 @@
 
                                                                 </div>
 
-                                                                <div class="row justify-content-center">
+                                                                <div class="row">
 
 
                                                                           <div class="col-md-3 col-sm-3 col-xs-3">
@@ -274,28 +269,28 @@
 
                                                                    <span class="preguntas"><strong>La casa familiar cuenta con:</strong></span>
                                                                    </div>
-                                                                   <br>
+
                                                                 <div class="row ">
 
-                                                                      <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                      <div class="col-md-3 col-sm-3 col-xs-3">
                                                                         <div class="form-check">
                                                                         <input type="checkbox" name="calentador_de_gas" class="form-check-input" value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>Calentador de gas</strong></label>
                                                                         </div>
                                                                       </div>
-                                                                      <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                      <div class="col-md-3 col-sm-3 col-xs-3">
                                                                         <div class="form-check">
                                                                         <input type="checkbox" name="aire_acondicionado" class="form-check-input"  value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>Aire acondicionado</strong></label>
                                                                         </div>
                                                                       </div>
-                                                                      <div class="col-md-2 col-sm-2 col-xs-2">
+                                                                      <div class="col-md-3 col-sm-3 col-xs-3">
                                                                         <div class="form-check">
                                                                         <input type="checkbox" name="estufa_de_gas" class="form-check-input"  value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>Estufa de gas</strong></label>
                                                                         </div>
                                                                       </div>
-                                                                      <div class="col-md-2 col-sm-2 col-xs-2">
+                                                                      <div class="col-md-3 col-sm-3 col-xs-3">
                                                                         <div class="form-check">
                                                                         <input type="checkbox" name="lavadora" class="form-check-input"  value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>Lavadora</strong></label>
@@ -303,30 +298,30 @@
                                                                       </div>
 
                                                                   </div>
-                                                                  <br>
+
 
 
                                                                 <div class="row ">
 
-                                                                      <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                      <div class="col-md-3 col-sm-3 col-xs-3">
                                                                         <div class="form-check">
                                                                         <input type="checkbox" name="refrigerador" class="form-check-input" value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>Refrigerador</strong></label>
                                                                         </div>
                                                                       </div>
-                                                                      <div class="col-md-2 col-sm-2 col-xs-2">
+                                                                      <div class="col-md-3 col-sm-3 col-xs-3">
                                                                         <div class="form-check">
                                                                         <input type="checkbox" name="televisor" class="form-check-input"  value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>Televisor</strong></label>
                                                                         </div>
                                                                       </div>
-                                                                      <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                      <div class="col-md-3 col-sm-3 col-xs-3">
                                                                         <div class="form-check">
                                                                         <input type="checkbox" name="microondas" class="form-check-input"  value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>Horno de Microondas</strong></label>
                                                                         </div>
                                                                       </div>
-                                                                      <div class="col-md-2 col-sm-2 col-xs-2">
+                                                                      <div class="col-md-3 col-sm-3 col-xs-3">
                                                                         <div class="form-check">
                                                                         <input type="checkbox" name="dvd" class="form-check-input"  value="True">
                                                                         <label class="form-check-label" for="exampleCheck1"><strong>DVD/Blu-ray</strong></label>
@@ -337,25 +332,25 @@
 
                                                                   <div class="row ">
 
-                                                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                        <div class="col-md-3 col-sm-3 col-xs-3">
                                                                           <div class="form-check">
                                                                           <input type="checkbox" name="equipo_de_sonido" class="form-check-input" value="True">
                                                                           <label class="form-check-label" for="exampleCheck1"><strong>Equipo de sonido</strong></label>
                                                                           </div>
                                                                         </div>
-                                                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                        <div class="col-md-3 col-sm-3 col-xs-3">
                                                                           <div class="form-check">
                                                                           <input type="checkbox" name="computadora_de_escritorio" class="form-check-input"  value="True">
                                                                           <label class="form-check-label" for="exampleCheck1"><strong>Computadora de escritorio </strong></label>
                                                                           </div>
                                                                         </div>
-                                                                        <div class="col-md-2 col-sm-2 col-xs-2">
+                                                                        <div class="col-md-3 col-sm-3 col-xs-3">
                                                                           <div class="form-check">
                                                                           <input type="checkbox" name="aspiradora" class="form-check-input"  value="True">
                                                                           <label class="form-check-label" for="exampleCheck1"><strong>Aspiradora</strong></label>
                                                                           </div>
                                                                         </div>
-                                                                        <div class="col-md-2 col-sm-2 col-xs-2">
+                                                                        <div class="col-md-3 col-sm-3 col-xs-3">
                                                                           <div class="form-check">
                                                                           <input type="checkbox" name="videocamara" class="form-check-input"  value="True">
                                                                           <label class="form-check-label" for="exampleCheck1"><strong>Videocámara</strong></label>
@@ -388,7 +383,7 @@
 
                                                              </div>
                                                             <br>
-                                                            <div class="row justify-content-center">
+                                                            <div class="row">
                                                                <span class="preguntas"> <strong>No. de personas TOTAL que habitan en la vivienda:</strong></span>
                                                                <input style="width: 4em" type="number" max="21" min="1" name="personas_habitan" class="form-control" required/>
                                                              </div>
@@ -396,20 +391,20 @@
 
                                                              <p class="preguntas">Espacios con los que cuenta la vivienda (indique con número):<strong></strong></p>
 
-                                                       <div class="row justify-content-center">
+                                                       <div class="row">
                                                           <span class="preguntas"><strong>Cuartos</strong></span>
                                                             <input type="number" max="21" min="1" style="width: 6em" name="cuartos" class="form-control" value=""/>
 
                                                         </div>
 
-                                                        <div class="row justify-content-center">
+                                                        <div class="row">
 
                                                            <span class="preguntas"><strong>Baños</strong></span>
                                                             <input type="number" max="4" min="1"  style="width: 6em" name="banios" class="form-control" value=""/>
 
                                                          </div>
 
-                                                         <div class="row justify-content-center">
+                                                         <div class="row">
                                                            <div class="col-md-12">
                                                              <span class="preguntas"><strong>Baños tipo:</strong></span>
                                                              <br>
@@ -587,7 +582,7 @@
                                                                     </div>
                                                                     <br>
                                                                     <div id="content" style="display: none;">
-                                                                      <div class="row justify-content-center">
+                                                                      <div class="row">
 
 
                                                                             <div class="col-md-3 col-sm-3 col-xs-3">
@@ -634,7 +629,7 @@
                                                                       <br>
 
 
-                                                                      <div class="row justify-content-center">
+                                                                      <div class="row">
                                                                          <span class="preguntas"><strong>Implementos agrícolas (Ejemplo: Tractor, vertedera, arado, rastra, etc.): </strong></span>
                                                                            <input type="text"  style="width: 16em" name="otro" class="form-control" value=""/>
 
@@ -671,7 +666,7 @@
                                                                     </div>
                                                                     <br>
 
-                                                                    <div class="row justify-content-center">
+                                                                    <div class="row">
                                                                       <div class="col-md-3 col-sm-3 col-xs-3">
                                                                        <span class="preguntas"><strong>Negocio: </strong></span>
                                                                          <input type="text" name="negocio" class="form-control" value=""/>
@@ -718,15 +713,13 @@
                                                                             </div>
 
                                                                             <div class="row ">
-                                                                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                                                              </div>
+
                                                                                     <div class="col-md-3 col-sm-3 col-xs-3">
                                                                                            <div class="form-check form-check-inline">
                                                                                              <input class="form-check-input" type="radio" name="servicios_asistencia_medica" id="otros_servicios" value="Otro (Especifique)" onclick="enableInput4(this)">
                                                                                              <label class="form-check-label" for="otros_servicios">Otro (Especifique)</label>
                                                                                            </div>
-                                                                                    </div>
-                                                                                    <div class="col-md-3 col-sm-3 col-xs-3">
+
                                                                                       <input type="text" class="form-control"  value="" name="otros_servicios" placeholder="Especificar otro servicios">
                                                                                     </div>
                                                                                     <div class="col-md-3 col-sm-3 col-xs-3">
@@ -773,8 +766,8 @@
 
 
 
-                                                        <div class="row ">
-                                                         <div class="col-md-12">
+                                                        <div class="row justify-content-center">
+                                                         <div class="col text-center">
                                                            <br>
                                                           <button class="btn btn-outline-success  btn-lg">Guardar información</button>
                                                         <br>
@@ -783,7 +776,7 @@
                                                       </div>
                                                       <br>
                                     </form>
-                            </div>
+
                         </div>
            <script>
 
