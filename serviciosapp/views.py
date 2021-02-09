@@ -34,8 +34,9 @@ def obtenerDatos_Solicitante(request):
     }
     return render(request,'Gastos_Solicitante.html',context)
 
+#segundo formulario
 def obtenerGastos_Solicitante(request):
-    id_usuario_actual = int(request.POST['id_usuario'])
+    #id_usuario_actual = int(request.POST['id_usuario'])
     consulta_datosPersonales = Usuario.objects.get(pk = 1)
 
     v1 = True
