@@ -51,20 +51,20 @@ function showContent5() {
   if (check=='Motocicleta') {
       element.style.display='block';
       element2.style.display='none';
-      document.getElementById("texto10").value=check;
+      document.getElementById("texto10").value='';
 
   } else   if (check=='Automóvil') {
         element.style.display='block';
         element2.style.display='none';
-        document.getElementById("texto10").value=check;
+        document.getElementById("texto10").value='';
     }else   if (check=='otro') {
           element2.style.display='block';
           element.style.display='none';
-          document.getElementById("texto10").value='';
           document.getElementById("texto4").value='';
       }else {
       element.style.display='none';
-      document.getElementById("texto10").value=check;
+      element2.style.display='none';
+      document.getElementById("texto10").value='';
       document.getElementById("texto4").value='';
   }
 
