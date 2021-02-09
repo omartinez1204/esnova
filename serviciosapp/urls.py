@@ -13,6 +13,6 @@ urlpatterns = [
     path('obtenerDatos_Responsable/>',views.obtenerDatos_Responsable, name= "obtenerDatos_Responsable"),
     path('obtenerIngresoFamiliar/>',views.obtenerIngresoFamiliar, name= "obtenerIngresoFamiliar"),
     path('obtenerGastoFamiliar/>',views.obtenerGastoFamiliar, name= "obtenerGastoFamiliar"),
-    path('obtenerPersonasQueDependen/>',views.obtenerGastoFamiliar, name= "obtenerPersonasQueDependen"),
+    path('obtenerPersonasQueDependen/>',views.obtenerPersonasQueDependen, name= "obtenerPersonasQueDependen"),
     path('obtenerInformacionAdicional/>',views.obtenerInformacionAdicional, name= "obtenerInformacionAdicional"),
 ]
