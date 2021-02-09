@@ -103,7 +103,7 @@
                                   <br>
                                   <div class="row">
                                       <div class="co2-md-12 col-sm-12 col-xs-12">
-                                          <table class="table">
+                                          <table class="table" id="table">
                                               <thead style="background: #0B5345; color: #FFFFFF;">
                                                 <tr>
                                                   <th scope="col">Nombre</th>
@@ -176,7 +176,7 @@
 
                     let template = `
                                   <tr>
-                                    <td>${n}</td>
+                                    <td class="nombre">${n}</td>
                                     <td>${e}</td>
                                     <td>${p}</td>
                                     <td>${tc}</td>
@@ -206,8 +206,62 @@
             $(document).on('click', '.borrar', function (event) {
                 event.preventDefault();
                 $(this).closest('tr').remove();
+                /*var nombres = "";
+                $(this).parents("tr").find(".nombre").each(function() {
+                  nombres += $(this).html() + "\n";
+                });
+                alert(nombres);*/
+                t_nombre.value = "";
+                t_edad.value = "";
+                t_parentesco.value = "";
+                t_comprobante.value = "";
+                t_observaciones.value = "";
+                for(var i=1;i < document.getElementById('table').rows.length; i++){
+                        for (var j=0; j<=4; j++){
+                              if(j==0){
+                                t_nombre.value = t_nombre.value + document.getElementById('table').rows[i].cells[j].innerHTML +"╣";
+                              }
+                              if(j==1){
+                                t_edad.value = t_edad.value + document.getElementById('table').rows[i].cells[j].innerHTML +"╣";
+                              }
+                              if(j==2){
+                                t_parentesco.value = t_parentesco.value + document.getElementById('table').rows[i].cells[j].innerHTML +"╣";
+                              }
+                              if(j==3){
+                                t_comprobante.value = t_comprobante.value + document.getElementById('table').rows[i].cells[j].innerHTML +"╣";
+                              }
+                              if(j==4){
+                                t_observaciones.value = t_observaciones.value + document.getElementById('table').rows[i].cells[j].innerHTML +"╣";
+                              }
+                               //nombres = nombres + document.getElementById('table').rows[i].cells[j].innerHTML + ", ";
+                        }
+                        //nombres = nombres + "\n";
+                }
+                //alert(nombres);
+
+                /*for (var i=0;i < document.getElementById('table').rows.length -1; i++){
+                       nombres += $(this).parents("tr").find(".nombre")[i].innerHTML;
+                       nombres += $(this).html() + "\n";
+                       alert(nombres);
+               }*/
+
+
+
+                /*for (var i = 0, row; row = table.rows[i]; i++) {
+
+                  nombres += $(this).parents("tr").find(".nombre")[i].innerHTML;
+                  alert(row);
+                  /*for (var j = 0, col; col = row.cells[j]; j++) {
+                    alert("nombres");
+                     nombres += $(this).parents("tr").find(".nombre")[i].innerHTML;
+                  }*/
+                //}
+
+                //alert(nombres);
+
             });
         });
+
     </script>
 
     <script>
