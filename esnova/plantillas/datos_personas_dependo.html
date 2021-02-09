@@ -85,11 +85,10 @@
                                 <form class="" action="{%  url 'serviciosapp:obtenerPersonasQueDependen' %}" method="post">{% csrf_token %}
 
                                   <input name="t_nombre" id="t_nombre" type="hidden">
-                                  <input name="t_edad" id="t_edad">
-                                  <input name="t_parentesco" id="t_parentesco">
-                                  <input name="t_comprobante" id="t_comprobante">
-                                  <input name="t_observaciones" id="t_observaciones">
-
+                                  <input name="t_edad" id="t_edad" type="hidden">
+                                  <input name="t_parentesco" id="t_parentesco" type="hidden">
+                                  <input name="t_comprobante" id="t_comprobante" type="hidden">
+                                  <input name="t_observaciones" id="t_observaciones" type="hidden">
 
                                   <div class="row ">
                                       <div class="col-md-12 col-sm-12 col-xs-12">
@@ -169,11 +168,11 @@
                     let tc = tipoComprobante.value;
                     let o = observaciones.value;
 
-                    t_nombre.value = t_nombre.value +"╣"+ n;
-                    t_edad.value = t_edad.value +"╣"+ e;
-                    t_parentesco.value = t_parentesco.value +"╣"+ p;
-                    t_comprobante.value = t_comprobante.value +"╣"+ tc;
-                    t_observaciones.value = t_observaciones.value +"╣"+ o;
+                    t_nombre.value = t_nombre.value + n+"╣";
+                    t_edad.value = t_edad.value + e+"╣";
+                    t_parentesco.value = t_parentesco.value + p+"╣";
+                    t_comprobante.value = t_comprobante.value + tc+"╣";
+                    t_observaciones.value = t_observaciones.value + o+" ╣";
 
                     let template = `
                                   <tr>
