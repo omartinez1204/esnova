@@ -389,62 +389,70 @@
                 if (document.form_datos_gastos.jefe_de_familia[i].checked) {
                   marcador6 = i;}
             }
-
-
+            var bandera_radios = false;
+            var bandera_gastos_medicos = false;
+            var bandera_vehiculo_propio = false;
+            //para saber si los radio han sido llenados
             if (marcador != -1 && marcador1 != -1 &&marcador2 != -1 &&marcador3 != -1 &&marcador4 != -1 && marcador5 != -1 && marcador6 !=-1) {
               alert("Validar informacion"+gastos_adicionales.value+causa.value+cant_personas_renta.value+document.form_datos_gastos.gastos_medicos[marcador].value+"  tiene celular ? "+
               document.form_datos_gastos.celular[marcador1].value+document.form_datos_gastos.camara_fotografica[marcador2].value+document.form_datos_gastos.reproductor_de_audio[marcador3].value+
               document.form_datos_gastos.tableta_electronica[marcador4].value+document.form_datos_gastos.trabaja[marcador5].value+document.form_datos_gastos.jefe_de_familia[marcador6].value);
-
-              if (document.form_datos_gastos.gastos_medicos[marcador].value=="Si") {
-                if( (gastos_adicionales.value != null && gastos_adicionales.value.length != 0) && (causa.value != null && causa.value.length != 0) ){
-                  if (seleccion.value=="Motocicleta" || seleccion.value== "Automóvil propio") {
-                      if (datos_transporte_propio.value != null && datos_transporte_propio.value.length !=0) {
-
-                        if (document.form_datos_gastos.celular[marcador1].value == "Si" ) {
-                            if ( (celular_marca.value != null && celular_marca.value.length != 0) && (celular_modelo.value != null && celular_modelo.value.length != 0) ) {
-
-                            }else {
-                              Swal.fire({
-                                icon: 'error',
-                                text: '¡Por favor especifique marca y modelo!'
-                              })
-                            }
-                        }
-
-                      }else {
-                        Swal.fire({
-                          icon: 'error',
-                          text: '¡Indica marca modelo y año de tu vehículo!'
-                        })
-                      }
-                  }else{
-                    if (document.form_datos_gastos.celular[marcador1].value == "Si" ) {
-                        if ( (celular_marca.value != null && celular_marca.value.length != 0) && (celular_modelo.value != null && celular_modelo.value.length != 0) ) {
-
-                        }else {
-                          Swal.fire({
-                            icon: 'error',
-                            text: '¡Por favor especifique marca y modelo del celular!'
-                          })
-                        }
-                    }
-                  }
-
-                }else {
-                  Swal.fire({
-                    icon: 'error',
-                    text: '¡Causa y mononto de gastos adicionales no ha sido rellenado!'
-                  })
-                }
-              }
+              bandera_radios = true;
             }else {
+              bandera_radios = false;
               Swal.fire({
                 icon: 'error',
                 text: '¡Por favor asegurate de rellenar todos los botones !'
               })
             }
 
+            //saber si hay gastos medicos
+            if (document.form_datos_gastos.gastos_medicos[marcador].value=="Si") {
+              if( (gastos_adicionales.value != null && gastos_adicionales.value.length != 0) && (causa.value != null && causa.value.length != 0) ){
+                bandera_gastos_medicos = true;
+              }else {
+                Swal.fire({
+                  icon: 'error',
+                  text: '¡Causa y mononto de gastos adicionales no ha sido rellenado!'
+                })
+              }
+            }else {
+              bandera_gastos_medicos = false;
+            }
+
+            //para saber si tienen cvehículo propio
+            if (seleccion.value=="Motocicleta" || seleccion.value== "Automóvil propio") {
+                if (datos_transporte_propio.value != null && datos_transporte_propio.value.length !=0) {
+                    bandera_vehiculo_propio=true;
+                }else {
+                  bandera_vehiculo_propio=false;
+                  Swal.fire({
+                    icon: 'error',
+                    text: '¡Indica marca modelo y año de tu vehículo!'
+                  })
+                }
+            }else{
+
+            }
+
+            //Para conocer si tiene celular propio
+            if (document.form_datos_gastos.celular[marcador1].value == "Si" ) {
+                if ( (celular_marca.value != null && celular_marca.value.length != 0) && (celular_modelo.value != null && celular_modelo.value.length != 0) ) {
+
+                }else {
+                  Swal.fire({
+                    icon: 'error',
+                    text: '¡Por favor especifique marca y modelo!'
+                  })
+                }
+            }
+
+            //Para conocer si trabaja o no
+            if (document.form_datos_gastos.trabaja[marcador4].value == "Si" ) {
+
+            }else if (document.form_datos_gastos.trabaja[marcador4].value == "No") {
+
+            }
 
 
           } catch (e) {
