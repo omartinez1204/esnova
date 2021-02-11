@@ -72,8 +72,14 @@
                                        <input type="number" id="texto4" class="form-control" name="edad" max="100" min="17"/>
                                       </div>
                                       <div class="col-md-4 col-sm-4 col-xs-4">
-                                       <span class="preguntas"><strong>Estado Civil:</strong></span>
-                                       <input type="text" id="texto5" class="form-control" name="estado_civil" />
+                                        <span class="preguntas"><strong> Estado Civil:</strong></span>
+                                        <select id="texto5" name="estado_civil" class="form-control">
+                                          <option value="soltero"selected>Soltero</option>
+                                          <option value="casado">Casado</option>
+                                          <option value="viudo">Viudo</option>
+                                          <option value="divorciado">Divorciado</option>
+                                          <option value="divorciado">Union libre</option>
+                                        </select>
                                       </div>
 
                                   </div>
@@ -102,7 +108,7 @@
                                  </div>
                                  <div class="col-md-1 col-sm-1 col-xs-1">
                                   <span class="preguntas"><strong>Numero:</strong></span>
-                                  <input type="text" id="texto9" class="form-control" name="numero" max="1000" min="1"/>
+                                  <input type="number" id="texto9" class="form-control" name="numero" max="1000" min="1"/>
                                  </div>
                                  <div class="col-md-4 col-sm-4 col-xs-4">
                                   <span class="preguntas"><strong>Colonia o barrio:</strong></span>
@@ -285,7 +291,7 @@
                                                       </div>
                                                       <div class="col-md-1 col-sm-1 col-xs-1">
                                                        <span class="preguntas"><strong>Numero:</strong></span>
-                                                       <input type="text" class="form-control" name="numero_empresa" max="1000" min="1"/>
+                                                       <input type="number" id="14" class="form-control" name="numero_empresa" value="0" max="1000" min="1"/>
                                                       </div>
                                                       <div class="col-md-4 col-sm-4 col-xs-4">
                                                        <span class="preguntas"><strong>Colonia o barrio:</strong></span>
@@ -340,7 +346,7 @@
                                                             </div>
                                                               <div class="co2-md-2 col-sm-2 col-xs-2">
                                                                <span class="preguntas"><strong>Edad:</strong></span>
-                                                               <input type="number" class="form-control" name="edad_tercero" max="50" min="17" value="18"/>
+                                                               <input type="number" id="15" class="form-control" name="edad_tercero" max="100" min="17" value="18"/>
                                                               </div>
                                                               <div class="col-md-4 col-sm-4 col-xs-4">
                                                                <span class="preguntas"><strong>Parentesco:</strong></span>
@@ -412,9 +418,9 @@
             let texto13 = document.querySelector('#texto13');
             function validarInformacion() {
               if ( (texto1.value != null && texto1.value.length != 0) && (texto2.value != null && texto2.value.length != 0) &&
-                  (texto3.value != null && texto3.value.length != 0) && (texto4.value != null && texto4.value.length != 0) &&
+                  (texto3.value != null && texto3.value.length != 0) && (texto4.value != 0 && texto4.value.length != 0) &&
                   (texto5.value != null && texto5.value.length != 0) && (texto6.value != null && texto6.value.length != 0) &&
-                  (texto7.value != null && texto7.value.length != 0) && (texto8.value != null && texto8.value.length != 0) && (texto9.value != null && texto9.value.length != 0) &&
+                  (texto7.value != null && texto7.value.length != 0) && (texto8.value != null && texto8.value.length != 0) && (texto9.value != 0 && texto9.value.length != 0) &&
                       (texto10.value != null && texto10.value.length != 0) && (texto11.value != null && texto11.value.length != 0) &&
                       (texto12.value != null && texto12.value.length != 0) && (texto13.value != null && texto13.value.length != 0)   ){
                   document.form_dependencias.submit();
