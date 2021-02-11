@@ -81,6 +81,9 @@ function showContent6() {
   else {
       element.style.display='none';
   }
+   $('#texto5').prop("required", true);
+   $('#texto6').prop("required", true);
+   $('#texto7').prop("required", true);
 }
 function showContent7() {
 element = document.getElementById("content4");
@@ -94,6 +97,9 @@ else {
 document.getElementById("texto5").value='';
 document.getElementById("texto6").value='';
 document.getElementById("texto7").value='';
+$('#texto5').removeAttr("required");
+$('#texto6').removeAttr("required");
+$('#texto7').removeAttr("required");
 }
 
 function showContent8() {
