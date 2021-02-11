@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/estilos.css'  %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
   </head>
   <body>
       {% block header %}
@@ -16,7 +20,7 @@
         <div class="container text-center justify-content-center" >
               <div class="row justify-content-center">
 
-                        <form action="{%  url 'serviciosapp:obtenermedios_estudiar' %}" class="credit-card-div" method="post">{% csrf_token %}
+                        <form action="{%  url 'serviciosapp:obtenermedios_estudiar' %}" class="credit-card-div needs-validation" novalidate  method="post">{% csrf_token %}
                           {{ form.as_p }}
                               <br>
                               <div class="panel panel-default" >
@@ -121,7 +125,36 @@
                           </form>
               </div>
           </div>
-
+          <script>
+          (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+              var forms = document.getElementsByClassName('needs-validation');
+              var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                  if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    /*Swal.fire({
+                      icon: 'error',
+                      title: '¡Ups!',
+                      text: 'Te faltaron algunos datos por rellenar.',
+                      footer: 'Verifica el formulario e intenta nuevamente.'
+                    })*/
+                    Swal.fire({
+                    position: 'top',
+                    icon: 'error',
+                    title: 'Faltan algunos datos por rellenar.',
+                    showConfirmButton: false,
+                    timer: 1200
+                  })
+                  }
+                  form.classList.add('was-validated');
+                }, false);
+              });
+            }, false);
+          })();
+          </script>
 
   </body>
 

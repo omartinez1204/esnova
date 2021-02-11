@@ -82,12 +82,18 @@ def obtenerGastos_Solicitante(request):
     if request.POST["trabaja"]:
         ingreso_mensual_ = 0
 
+    if not request.POST["personas_dependientes"]:
+        personas_dependientes_ = 0
+    else:
+        personas_dependientes_ = request.POST["personas_dependientes"]
+
+
     datosGastosSolicitante = gastosDelSolicitante(usuario_foraneo  = consulta_datosPersonales,gastos_mensuales = request.POST['gastos_mensuales'], gastos_adicionales = gastos_adicionales_,
     cant_personas_renta = cant_personas_renta_ , renta_mensual = renta_mensual_ , cant_familiares_renta = cant_familiares_renta_ ,
     parentesco_arrentador = parentesco_arrentador_ , medio_de_transporte = request.POST['medio_de_transporte'], datos_transporte_propio = request.POST['datos_transporte_propio'],
     celular = request.POST['celular'], celular_marca =request.POST['celular_marca'], celular_modelo = request.POST['celular_modelo'], camara_fotografica = v1, reproductor_de_audio = v2,
     tableta_electronica = v3, centro_de_trabajo = request.POST['centro_de_trabajo'], ingreso_mensual =  ingreso_mensual_ , datos_trabajo = request.POST['datos_trabajo'],
-    jefe_de_familia = request.POST['jefe_de_familia'], personas_dependientes = request.POST['personas_dependientes'])
+    jefe_de_familia = request.POST['jefe_de_familia'], personas_dependientes = personas_dependientes_)
     datosGastosSolicitante.save()
 
     context = {
