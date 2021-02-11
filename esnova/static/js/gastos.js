@@ -81,6 +81,7 @@ function showContent6() {
   else {
       element.style.display='none';
   }
+   $('#texto6').prop("required", true);
 }
 function showContent7() {
 element = document.getElementById("content4");
