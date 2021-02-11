@@ -20,15 +20,15 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="co2-md-12 col-sm-12 col-xs-12" style="font-family: 'Montserrat', sans-serif; color: #0E6251;" >
+                <p style="font-family: 'Montserrat', sans-serif; color: #0E6251;" >
                   Por favor seleccione una imagen o un archivo pdf para anexar su documentacion
-                </div>
+                </p>
               </div>
               <br>
                <form action="{% url 'serviciosapp:archivos'%}" method="post"
                  enctype="multipart/form-data">{% csrf_token %}
 
-                          <table class="centrada">
+                          <table style="  margin-left: auto;  margin-right: auto;">
                             {{form.as_table}}
 
                               <tr>
@@ -37,6 +37,57 @@
                               <tr>
                                   <th><input type="file" name="archivo" class="form-control btn-secondary"></th>
                               </tr>
+
+                              <tr>
+
+                                  <th style="color: #0E6251;">NOTA: Se deberá anexar la siguiente documentación: </th>
+                              </tr>
+                              <tr><th><br></th></tr>
+
+                              <tr>
+                                  <th style="color: #566573;">¬Copia del último recibo de apoyos de la familia del programa PROSPERA (en caso de pertenecer al programa). </th>
+                              </tr>
+                              <tr>
+                                  <th style="color: #566573;">¬Copia del comprobante de ingresos económicos mensuales por cada integrante que aporte al gasto del hogar (no
+                                  anterior a 3 meses).</th>
+                              </tr>
+                              <tr>
+                                  <th style="color: #566573;">Ejemplo: Recibo de nómina (si el pago es quincenal, 2 quincenas consecutivas), Constancia emitida
+                                  por la autoridad correspondiente de</th>
+                              </tr>
+                              <tr>
+                                  <th style="color: #566573;">su municipio o localidad debidamente firmada y sellada, Oficio emitido por el patrón  debidamente firmado y sellado más copia de la</th>
+                              </tr>
+                              <tr>
+                                  <th style="color: #566573;">identificación del patrón, etc.</th>
+                              </tr>
+                              <tr>
+                                  <th style="color: #566573;">¬Copia del comprobante de: agua, luz y teléfono (en caso de contar con el servicio y no anterior a 3 meses).</th>
+                              </tr>
+                              <tr>
+                                  <th style="color: #566573;">¬Punto 8. Copia de comprobante de dependientes del ingreso familiar: Dependientes que estudien, comprobante reciente de estudios </th>
+                              </tr>
+                              <tr>
+                                  <th style="color: #566573;"> (Constancia, Credencial, Inscripción); mayores de 18 años que no estudien, credencial de elector; menores de 18 años que no estudien, </th>
+                              </tr>
+                              <tr>
+                                  <th style="color: #566573;"> acta de nacimiento.</th>
+                              </tr>
+                              <tr>
+                                  <th style="color: #566573;">¬Anexar más de dos croquis en caso de ser domicilios diferentes (Formato del croquis de localización del domicilio familiar):</th>
+                              </tr>
+                              <tr>
+                                  <th style="color: #566573;"> Del Punto 1, lugar en donde habita el solicitante.</th>
+                              </tr>
+                              <tr>
+                                  <th style="color: #566573;"> Del Punto 4, lugar en donde habita(n) la(s) persona(s) de quién depende económicamente.</th>
+                              </tr>
+                              <tr>
+                                  <th style="color: #566573;"> Del Punto 5, lugar en donde habita el responsable.</th>
+                              </tr>
+
+
+
 
                               <tr>
                                   <th>
