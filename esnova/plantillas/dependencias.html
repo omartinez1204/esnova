@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/estilos_dependencias.css'  %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   </head>
   <body>
       {% block header %}
@@ -21,7 +21,7 @@
         <div class="container text-center justify-content-center" >
               <div class="row justify-content-center">
 
-                        <form action="{%  url 'serviciosapp:datosdelasPersonasQueDependes' %}" class="credit-card-div" method="post">{% csrf_token %}
+                        <form name="form_dependencias" action="{%  url 'serviciosapp:datosdelasPersonasQueDependes' %}" class="credit-card-div" method="post">{% csrf_token %}
                           {{ form.as_p }}
                               <br>
                               <div class="panel panel-default" >
@@ -38,15 +38,15 @@
                                     <div class="col-md-4 col-sm-4 col-xs-4">
                                      <span class="preguntas"><strong>Apellido Paterno:</strong></span>
                                      <input id="prodId" name="id_usuario" type="hidden" value="{{id_usuario_actual}}">
-                                     <input type="text" class="form-control" value="" name="apellido_paterno"/>
+                                     <input type="text" id="texto1" class="form-control" value="" name="apellido_paterno"/>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-4">
                                      <span class="preguntas"><strong>Apellido Materno:</strong></span>
-                                     <input type="text" class="form-control" name="apellido_materno" value=""/>
+                                     <input type="text" id="texto2" class="form-control" name="apellido_materno" value=""/>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-4">
                                      <span class="preguntas"><strong>Nombre(s):</strong></span>
-                                     <input type="text" class="form-control" name="nombre" value/>
+                                     <input type="text" id="texto3" class="form-control" name="nombre" value/>
                                     </div>
 
                                 </div>
@@ -69,11 +69,11 @@
                                       </div>
                                       <div class="co2-md-2 col-sm-2 col-xs-2">
                                        <span class="preguntas"><strong>Edad:</strong></span>
-                                       <input type="number" class="form-control" name="edad" max="50" min="17"/>
+                                       <input type="number" id="texto4" class="form-control" name="edad" max="100" min="17"/>
                                       </div>
                                       <div class="col-md-4 col-sm-4 col-xs-4">
                                        <span class="preguntas"><strong>Estado Civil:</strong></span>
-                                       <input type="text" class="form-control" name="estado_civil" />
+                                       <input type="text" id="texto5" class="form-control" name="estado_civil" />
                                       </div>
 
                                   </div>
@@ -86,11 +86,11 @@
 
                                 <div class="col-md-4 col-sm-4 col-xs-4">
                                  <span class="preguntas"><strong>Celular:</strong></span>
-                                 <input type="text" class="form-control" name="celular"/>
+                                 <input type="text" id="texto6" class="form-control" name="celular"/>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4">
                                  <span class="preguntas"><strong>Parentesco:</strong></span>
-                                 <input type="text" class="form-control" name="parentesco"/>
+                                 <input type="text" id="texto7" class="form-control" name="parentesco"/>
                                 </div>
 
                               </div>
@@ -98,15 +98,15 @@
                              <div class="row ">
                                  <div class="col-md-7 col-sm-7 col-xs-7">
                                   <span class="preguntas"><strong>Calle:</strong></span>
-                                  <input type="text" class="form-control" name="calle"/>
+                                  <input type="text" id="texto8" class="form-control" name="calle"/>
                                  </div>
                                  <div class="col-md-1 col-sm-1 col-xs-1">
                                   <span class="preguntas"><strong>Numero:</strong></span>
-                                  <input type="text" class="form-control" name="numero" max="1000" min="1"/>
+                                  <input type="text" id="texto9" class="form-control" name="numero" max="1000" min="1"/>
                                  </div>
                                  <div class="col-md-4 col-sm-4 col-xs-4">
                                   <span class="preguntas"><strong>Colonia o barrio:</strong></span>
-                                  <input type="text" class="form-control" name="colonia"/>
+                                  <input type="text" id="texto10" class="form-control" name="colonia"/>
                                  </div>
 
                                </div>
@@ -114,16 +114,16 @@
                                <div class="row ">
                                    <div class="col-md-4 col-sm-4 col-xs-4">
                                     <span class="preguntas"><strong>Municipio:</strong></span>
-                                    <input type="text" class="form-control" name="municipio"/>
+                                    <input type="text" id="texto11" class="form-control" name="municipio"/>
                                    </div>
 
                                    <div class="col-md-4 col-sm-4 col-xs-4">
                                     <span class="preguntas"><strong>Region:</strong></span>
-                                    <input type="text" class="form-control" name="region"/>
+                                    <input type="text" id="texto12" class="form-control" name="region"/>
                                    </div>
                                    <div class="col-md-4 col-sm-4 col-xs-4">
                                     <span class="preguntas"><strong>Estado:</strong></span>
-                                    <input type="text" class="form-control" name="estado"/>
+                                    <input type="text" id="texto13" class="form-control" name="estado"/>
                                    </div>
 
                                  </div>
@@ -194,10 +194,6 @@
                                              <input class="form-check-input" type="radio" name="ocupacion" id="inlineRadio5" value="Empleado empresa ejidal o comunal">
                                              <label class="form-check-label" for="inlineRadio5">Empleado empresa ejidal o comunal</label>
                                            </div>
-                                           <div class="form-check form-check-inline">
-                                             <input class="form-check-input" type="radio" name="ocupacion" id="inlineRadio5" value="Empleado empresa ejidal o comunal">
-                                             <label class="form-check-label" for="inlineRadio5">Empleado empresa ejidal o comunal</label>
-                                           </div>
                                            </div>
 
                                             </div>
@@ -207,10 +203,6 @@
                                                   <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="ocupacion" id="inlineRadio3" value="Labores del campo o de la pesca: Terreno o casa particular" checked>
                                                     <label class="form-check-label" for="inlineRadio3">Labores del campo o de la pesca: Terreno o casa particular</label>
-                                                  </div>
-                                                  <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="ocupacion" id="inlineRadio4" value="Labores del campo o de la pesca: Terreno o casa ajena">
-                                                    <label class="form-check-label" for="inlineRadio4">Labores del campo o de la pesca: Terreno o casa ajena</label>
                                                   </div>
                                             </div>
 
@@ -242,7 +234,7 @@
                                                     <div class="col-md-6 col-sm-6 col-xs-6">
                                                          <div class="form-check form-check-inline">
                                                            <input class="form-check-input" type="radio" name="ocupacion" id="inlineRadio3" value="Otro" checked>
-                                                           <label class="form-check-label" for="inlineRadio3">Jubilado o pensionado</label>
+                                                           <label class="form-check-label" for="inlineRadio3">Otro (Especifique)</label>
                                                          </div>
                                                       </div>
                                                       <div class="col-md-6 col-sm-6 col-xs-6">
@@ -348,7 +340,7 @@
                                                             </div>
                                                               <div class="co2-md-2 col-sm-2 col-xs-2">
                                                                <span class="preguntas"><strong>Edad:</strong></span>
-                                                               <input type="number" class="form-control" name="edad_tercero" max="50" min="17"/>
+                                                               <input type="number" class="form-control" name="edad_tercero" max="50" min="17" value="18"/>
                                                               </div>
                                                               <div class="col-md-4 col-sm-4 col-xs-4">
                                                                <span class="preguntas"><strong>Parentesco:</strong></span>
@@ -391,7 +383,8 @@
                                        <div class="row ">
                                          <div class="col-md-12">
                                          <br><br>
-                                          <button class="btn btn-outline-success  btn-lg">Guardar información</button>
+
+                                          <input type="button" class="btn btn-outline-success btn-lg btn-block " value="Guardar" onclick="validarInformacion()">
                                          </div>
 
                                           </div>
@@ -403,7 +396,38 @@
                           </form>
               </div>
           </div>
-
+          <script>
+            let texto1 = document.querySelector('#texto1');
+            let texto2 = document.querySelector('#texto2');
+            let texto3 = document.querySelector('#texto3');
+            let texto4 = document.querySelector('#texto4');
+            let texto5 = document.querySelector('#texto5');
+            let texto6 = document.querySelector('#texto6');
+            let texto7 = document.querySelector('#texto7');
+            let texto8 = document.querySelector('#texto8');
+            let texto9 = document.querySelector('#texto9');
+            let texto10 = document.querySelector('#texto10');
+            let texto11 = document.querySelector('#texto11');
+            let texto12 = document.querySelector('#texto12');
+            let texto13 = document.querySelector('#texto13');
+            function validarInformacion() {
+              if ( (texto1.value != null && texto1.value.length != 0) && (texto2.value != null && texto2.value.length != 0) &&
+                  (texto3.value != null && texto3.value.length != 0) && (texto4.value != null && texto4.value.length != 0) &&
+                  (texto5.value != null && texto5.value.length != 0) && (texto6.value != null && texto6.value.length != 0) &&
+                  (texto7.value != null && texto7.value.length != 0) && (texto8.value != null && texto8.value.length != 0) && (texto9.value != null && texto9.value.length != 0) &&
+                      (texto10.value != null && texto10.value.length != 0) && (texto11.value != null && texto11.value.length != 0) &&
+                      (texto12.value != null && texto12.value.length != 0) && (texto13.value != null && texto13.value.length != 0)   ){
+                  document.form_dependencias.submit();
+              }else{
+                Swal.fire({
+                  icon: 'error',
+                  text: '¡Hacen falta agunos datos en el primer formulario!'
+                })
+                document.form_dependencias.apellido_paterno.estado({preventScroll:false});
+                return 0;
+              }
+            }
+          </script>
 
   </body>
 
