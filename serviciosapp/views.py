@@ -38,10 +38,29 @@ def obtenerDatos_Solicitante(request):
 def obtenerGastos_Solicitante(request):
     id_usuario_actual = int(request.POST['id_usuario'])
     consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
-
     v1 = True
     v2 = True
     v3 = True
+    if not request.POST['gastos_adicionales']:
+        gastos_adicionales_  = 0
+    else:
+        gastos_adicionales_ = request.POST["gastos_adicionales"]
+    if not request.POST["cant_personas_renta"]:
+        cant_personas_renta_ = 0
+    else:
+        cant_personas_renta_ = request.POST["cant_personas_renta"]
+    if not request.POST["renta_mensual"]:
+        renta_mensual_= 0
+    else:
+        renta_mensual_ = request.POST["renta_mensual"]
+    if not request.POST["cant_familiares_renta"]:
+        cant_familiares_renta_ = 0
+    else:
+        cant_familiares_renta_ = request.POST["cant_familiares_renta"]
+    if not request.POST["parentesco_arrentador"]:
+        parentesco_arrentador_ = ""
+    else:
+        parentesco_arrentador_ = request.POST["parentesco_arrentador"]
     try:
         if  1 == request.POST['camara_fotografica']:
             v1 = True
@@ -60,44 +79,21 @@ def obtenerGastos_Solicitante(request):
     except Exception as e:
         v3 = False
 
-    if request.POST['celular'] == 'Si':
-        if request.POST['jefe_de_familia'] == 'Si':
-            datosGastosSolicitante = gastosDelSolicitante(usuario_foraneo  = consulta_datosPersonales,gastos_mensuales = request.POST['gastos_mensuales'], gastos_adicionales = request.POST['gastos_adicionales'],
-            cant_personas_renta = request.POST['cant_personas_renta'], renta_mensual = request.POST['renta_mensual'], cant_familiares_renta = request.POST['cant_familiares_renta'],
-            parentesco_arrentador = request.POST['parentesco_arrentador'], medio_de_transporte = request.POST['medio_de_transporte'], datos_transporte_propio = request.POST['datos_transporte_propio'],
-            celular = request.POST['celular'], celular_marca = request.POST['celular_marca'], celular_modelo = request.POST['celular_modelo'], camara_fotografica = v1, reproductor_de_audio = v2,
-            tableta_electronica = v3, centro_de_trabajo = request.POST['centro_de_trabajo'], ingreso_mensual = request.POST['ingreso_mensual'], datos_trabajo = request.POST['datos_trabajo'],
-            jefe_de_familia = request.POST['jefe_de_familia'], personas_dependientes = request.POST['personas_dependientes'])
-        else:
-            datosGastosSolicitante = gastosDelSolicitante(usuario_foraneo  = consulta_datosPersonales,gastos_mensuales = request.POST['gastos_mensuales'], gastos_adicionales = request.POST['gastos_adicionales'],
-            cant_personas_renta = request.POST['cant_personas_renta'], renta_mensual = request.POST['renta_mensual'], cant_familiares_renta = request.POST['cant_familiares_renta'],
-            parentesco_arrentador = request.POST['parentesco_arrentador'], medio_de_transporte = request.POST['medio_de_transporte'], datos_transporte_propio = request.POST['datos_transporte_propio'],
-            celular = request.POST['celular'], celular_marca = request.POST['celular_marca'], celular_modelo = request.POST['celular_modelo'], camara_fotografica = v1, reproductor_de_audio = v2,
-            tableta_electronica = v3, centro_de_trabajo = request.POST['centro_de_trabajo'], ingreso_mensual = request.POST['ingreso_mensual'], datos_trabajo = request.POST['datos_trabajo'],
-            jefe_de_familia = request.POST['jefe_de_familia'])
-    else:
-        if request.POST['jefe_de_familia'] == 'Si':
-            datosGastosSolicitante = gastosDelSolicitante(usuario_foraneo  = consulta_datosPersonales,gastos_mensuales = request.POST['gastos_mensuales'], gastos_adicionales = request.POST['gastos_adicionales'],
-            cant_personas_renta = request.POST['cant_personas_renta'], renta_mensual = request.POST['renta_mensual'], cant_familiares_renta = request.POST['cant_familiares_renta'],
-            parentesco_arrentador = request.POST['parentesco_arrentador'], medio_de_transporte = request.POST['medio_de_transporte'], datos_transporte_propio = request.POST['datos_transporte_propio'],
-            celular = request.POST['celular'], camara_fotografica = v1, reproductor_de_audio = v2,
-            tableta_electronica = v3, centro_de_trabajo = request.POST['centro_de_trabajo'], ingreso_mensual = request.POST['ingreso_mensual'], datos_trabajo = request.POST['datos_trabajo'],
-            jefe_de_familia = request.POST['jefe_de_familia'], personas_dependientes = request.POST['personas_dependientes'])
-        else:
-            datosGastosSolicitante = gastosDelSolicitante(usuario_foraneo  = consulta_datosPersonales,gastos_mensuales = request.POST['gastos_mensuales'], gastos_adicionales = request.POST['gastos_adicionales'],
-            cant_personas_renta = request.POST['cant_personas_renta'], renta_mensual = request.POST['renta_mensual'], cant_familiares_renta = request.POST['cant_familiares_renta'],
-            parentesco_arrentador = request.POST['parentesco_arrentador'], medio_de_transporte = request.POST['medio_de_transporte'], datos_transporte_propio = request.POST['datos_transporte_propio'],
-            celular = request.POST['celular'], camara_fotografica = v1, reproductor_de_audio = v2,
-            tableta_electronica = v3, centro_de_trabajo = request.POST['centro_de_trabajo'], ingreso_mensual = request.POST['ingreso_mensual'], datos_trabajo = request.POST['datos_trabajo'],
-            jefe_de_familia = request.POST['jefe_de_familia'])
+    if request.POST["trabaja"]:
+        ingreso_mensual_ = 0
 
+    datosGastosSolicitante = gastosDelSolicitante(usuario_foraneo  = consulta_datosPersonales,gastos_mensuales = request.POST['gastos_mensuales'], gastos_adicionales = gastos_adicionales_,
+    cant_personas_renta = cant_personas_renta_ , renta_mensual = renta_mensual_ , cant_familiares_renta = cant_familiares_renta_ ,
+    parentesco_arrentador = parentesco_arrentador_ , medio_de_transporte = request.POST['medio_de_transporte'], datos_transporte_propio = request.POST['datos_transporte_propio'],
+    celular = request.POST['celular'], celular_marca =request.POST['celular_marca'], celular_modelo = request.POST['celular_modelo'], camara_fotografica = v1, reproductor_de_audio = v2,
+    tableta_electronica = v3, centro_de_trabajo = request.POST['centro_de_trabajo'], ingreso_mensual =  ingreso_mensual_ , datos_trabajo = request.POST['datos_trabajo'],
+    jefe_de_familia = request.POST['jefe_de_familia'], personas_dependientes = request.POST['personas_dependientes'])
     datosGastosSolicitante.save()
 
     context = {
         'datosGastosSolicitante':datosGastosSolicitante,
         'id_usuario_actual':id_usuario_actual,
     }
-
     return render(request,'medios_estudiar.html', context)
 
 def obtenermedios_estudiar(request):

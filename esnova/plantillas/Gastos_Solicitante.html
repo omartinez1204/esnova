@@ -101,7 +101,7 @@
           <div class="row">
           <p class="preguntas" style="color: #566573;"><strong>Si renta cuarto o casa. ¿Con cuántas personas comparte el costo de la renta?    (No se cuente Ud.)</strong></p>
            <div class="col-md-3 col-sm-3 col-xs-3">
-                <input type="number" id="cant_personas_renta" name="cant_personas_renta" class="form-control" max="5" min="0" placeholder="" required>
+                <input type="number" id="cant_personas_renta" name="cant_personas_renta" class="form-control" max="5" min="0" placeholder="" >
             </div>
             </div>
           <br>
@@ -110,7 +110,7 @@
             <p class="preguntas" style="color: #566573;"><strong> ¿Cuánto paga de renta mensualmente (anote solo lo que Ud. Aporta)?</strong></p>
           <div class="col-md-3 col-sm-3 col-xs-3">
 
-              <input type="text" id="renta_mensual" name="renta_mensual" class="form-control"  onkeypress="return filterFloat(event,this);" placeholder="$  mensuales" required>
+              <input type="text" id="renta_mensual" name="renta_mensual" class="form-control"  onkeypress="return filterFloat(event,this);" placeholder="$  mensuales" >
 
 
             </div>
@@ -119,7 +119,7 @@
          <div class="row">
               <p class="preguntas" style="color: #566573;"><strong>Si renta y vive con familiares. ¿Cuántas personas habitan la vivienda? </strong></p>
                <div class="col-md-3 col-sm-3 col-xs-3">
-                  <input type="number" id="cant_familiares_renta" name="cant_familiares_renta" max="20" min="1" class="form-control" placeholder="" required>
+                  <input type="number" id="cant_familiares_renta" name="cant_familiares_renta" max="20" min="1" class="form-control" placeholder="" >
             </div>
           </div>
           <br>
@@ -340,6 +340,7 @@
 
                 <br>
       <script type="text/javascript">
+         let gastos_mensuales = document.querySelector("#gastos_mensuales");
          let gastos_adicionales = document.querySelector("#gastos_adicionales");
          let causa = document.querySelector("#causa");
          let cant_personas_renta = document.querySelector("#cant_personas_renta");
@@ -356,7 +357,6 @@
          let datos_trabajo = document.querySelector("#texto7");
         let personas_dependientes = document.querySelector("#personas_dependientes");
          function validarInformacion(){
-        
           try {
             var marcador =-1, marcador1=-1, marcador2 = -1,marcador3=-1, marcador4 = -1,  marcador5=-1, marcador6=-1;
             for (var i = 0; i < document.form_datos_gastos.gastos_medicos.length; i++) {
@@ -394,7 +394,12 @@
             var bandera_trabaja = false;
             var bandera_celular = false;
             //para saber si los radio han sido llenados
+            bandera_1=false;
+            if ((gastos_mensuales.value != null && gastos_mensuales.value.length != 0) ) {
+                   bandera_1 = true;
+            }
             if (marcador != -1 && marcador1 != -1 &&marcador2 != -1 &&marcador3 != -1 &&marcador4 != -1 && marcador5 != -1 && marcador6 !=-1) {
+
               //alert("Validar informacion"+gastos_adicionales.value+causa.value+cant_personas_renta.value+document.form_datos_gastos.gastos_medicos[marcador].value+"  tiene celular ? "+
               //document.form_datos_gastos.celular[marcador1].value+document.form_datos_gastos.camara_fotografica[marcador2].value+document.form_datos_gastos.reproductor_de_audio[marcador3].value+
               //document.form_datos _gastos.tableta_electronica[marcador4].value+document.form_datos_gastos.trabaja[marcador5].value+document.form_datos_gastos.jefe_de_familia[marcador6].value);
@@ -495,10 +500,13 @@
               })
             }
             //verificacion de banderas
-            if (bandera_celular==true && bandera_radios == true && bandera_gastos_medicos == true && bandera_vehiculo_propio ==true && bandera_trabaja == true) {
+            if (bandera_1==true && bandera_celular==true && bandera_radios == true && bandera_gastos_medicos == true && bandera_vehiculo_propio ==true && bandera_trabaja == true) {
               document.form_datos_gastos.submit();
             }else {
-
+              Swal.fire({
+                icon: 'error',
+                text: '¡Verifique haber introducido todos los datos solicitados !'
+              })
             }
 
 
