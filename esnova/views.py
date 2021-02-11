@@ -89,9 +89,9 @@ def enviar_recuperacion(request):
             smtpserver.starttls()
             smtpserver.ehlo
             smtpserver.login(gmail_user, gmail_pwd)
-            header = 'To:' + to + '\n' + 'From: ' + gmail_user + '\n' + 'Subject: Recuperación de contraseña de cuenta para estudio socioeconomico NovaUniversitas \n'
+            header = 'To:' + to + '\n' + 'From: ' + gmail_user + '\n' + 'Subject: Recuperar password de cuenta para estudio socioeconomico NovaUniversitas \n'
             print(header)
-            msg = header + '\nHola Hace unos minutos recibimos una solicitud sobre que has olvidado la contraseña de tu cuenta de estudio socioeconomico NovaUniversitas, si tú no realizaste esta petición haz caso omiso a este correo. \n\nLa contraseña de tu cuenta es: '+user.contrasenia+'\n\n'
+            msg = header + '\nHola Hace unos minutos recibimos una solicitud sobre recuperar el password de tu cuenta de estudio socioeconomico NovaUniversitas, si no realizaste esta solicitud haz caso omiso a este correo. \n\nEl password de tu cuenta es: '+user.contrasenia+'\n\n'
             #gmail_user.encode("utf-8", errors="ignore")
             #to.encode("utf-8", errors="ignore")
             #msg.encode("utf-8", errors="ignore")
