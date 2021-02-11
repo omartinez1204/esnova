@@ -392,11 +392,12 @@
             var bandera_radios = false;
             var bandera_gastos_medicos = false;
             var bandera_vehiculo_propio = false;
+            var bandera_trabaja = false;
             //para saber si los radio han sido llenados
             if (marcador != -1 && marcador1 != -1 &&marcador2 != -1 &&marcador3 != -1 &&marcador4 != -1 && marcador5 != -1 && marcador6 !=-1) {
-              alert("Validar informacion"+gastos_adicionales.value+causa.value+cant_personas_renta.value+document.form_datos_gastos.gastos_medicos[marcador].value+"  tiene celular ? "+
-              document.form_datos_gastos.celular[marcador1].value+document.form_datos_gastos.camara_fotografica[marcador2].value+document.form_datos_gastos.reproductor_de_audio[marcador3].value+
-              document.form_datos_gastos.tableta_electronica[marcador4].value+document.form_datos_gastos.trabaja[marcador5].value+document.form_datos_gastos.jefe_de_familia[marcador6].value);
+              //alert("Validar informacion"+gastos_adicionales.value+causa.value+cant_personas_renta.value+document.form_datos_gastos.gastos_medicos[marcador].value+"  tiene celular ? "+
+              //document.form_datos_gastos.celular[marcador1].value+document.form_datos_gastos.camara_fotografica[marcador2].value+document.form_datos_gastos.reproductor_de_audio[marcador3].value+
+              //document.form_datos_gastos.tableta_electronica[marcador4].value+document.form_datos_gastos.trabaja[marcador5].value+document.form_datos_gastos.jefe_de_familia[marcador6].value);
               bandera_radios = true;
             }else {
               bandera_radios = false;
@@ -410,18 +411,20 @@
             if (document.form_datos_gastos.gastos_medicos[marcador].value=="Si") {
               if( (gastos_adicionales.value != null && gastos_adicionales.value.length != 0) && (causa.value != null && causa.value.length != 0) ){
                 bandera_gastos_medicos = true;
+
               }else {
+                bandera_gastos_medicos = false;
                 Swal.fire({
                   icon: 'error',
                   text: '¡Causa y mononto de gastos adicionales no ha sido rellenado!'
-                })
+                });
               }
             }else {
               bandera_gastos_medicos = false;
             }
 
-            //para saber si tienen cvehículo propio
-            if (seleccion.value=="Motocicleta" || seleccion.value== "Automóvil propio") {
+            //para saber si tienen vehículo propio u es otro tipo de transporte
+            if (seleccion.value=="Motocicleta" || seleccion.value== "Automóvil") {
                 if (datos_transporte_propio.value != null && datos_transporte_propio.value.length !=0) {
                     bandera_vehiculo_propio=true;
                 }else {
@@ -431,8 +434,16 @@
                     text: '¡Indica marca modelo y año de tu vehículo!'
                   })
                 }
-            }else{
-
+            }else if (seleccion.value == "otro") {
+              if (medio_de_transporte.value != null && medio_de_transporte.value.length !=0) {
+                  bandera_vehiculo_propio=true;
+              }else {
+                bandera_vehiculo_propio=false;
+                Swal.fire({
+                  icon: 'error',
+                  text: '¡Especifica que tipo de transporte!'
+                })
+              }
             }
 
             //Para conocer si tiene celular propio
@@ -448,10 +459,21 @@
             }
 
             //Para conocer si trabaja o no
-            if (document.form_datos_gastos.trabaja[marcador4].value == "Si" ) {
-
-            }else if (document.form_datos_gastos.trabaja[marcador4].value == "No") {
-
+            if (document.form_datos_gastos.trabaja[marcador5].value == "Si" ) {
+              let centro_de_trabajo = document.querySelector("#texto5");
+              let ingreso_mensual = document.querySelector("#texto6");
+              let datos_trabajo = document.querySelector("#texto7");
+              if ( (centro_de_trabajo.value != null && centro_de_trabajo.value.length != 0)  && (ingreso_mensual.value != null && ingreso_mensual.value.length != 0) &&  (datos_trabajo.value != null && datos_trabajo.value.length != 0)   ) {
+                Swal.fire({
+                  icon: 'success',
+                  text: '¡El usuario relleno correctamente los campos!'
+                })
+              }else {
+                Swal.fire({
+                  icon: 'error',
+                  text: '¡Por favor introduce tus datos de empleo!'
+                })
+              }
             }
 
 
