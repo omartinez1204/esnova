@@ -304,10 +304,59 @@ def obtenerGastoFamiliar(request):
 
 def obtenerPersonasQueDependen(request):
     consulta_datosPersonales = Usuario.objects.get(pk = 1)
+    t_nombre = request.POST['t_nombre']
+    t_edad = request.POST['t_edad']
+    t_parentesco = request.POST['t_parentesco']
+    t_comprobante = request.POST['t_comprobante']
+    t_observaciones = request.POST['t_observaciones']
+    atributo = ""
+    lista_nombre = list()
+    lista_edad = list()
+    lista_parentesco = list()
+    lista_comprobante = list()
+    lista_observaciones = list()
 
-    datospersonasquedependen = personasQueDependenDelIngresoMensual(usuario_fore = consulta_datosPersonales, numero_hermanos = request.POST['numero_hermanos'])
+    if t_nombre != "":
+        for l in t_nombre:
+            if l != '╣':
+                atributo = atributo+l
+            else:
+                lista_nombre.append(atributo)
+                atributo = ""
+        for l in t_edad:
+            if l != '╣':
+                atributo = atributo+l
+            else:
+                lista_edad.append(int(atributo))
+                atributo = ""
+        for l in t_parentesco:
+            if l != '╣':
+                atributo = atributo+l
+            else:
+                lista_parentesco.append(atributo)
+                atributo = ""
+        for l in t_comprobante:
+            if l != '╣':
+                atributo = atributo+l
+            else:
+                lista_comprobante.append(atributo)
+                atributo = ""
+        for l in t_observaciones:
+            if l != '╣':
+                atributo = atributo+l
+            else:
+                lista_observaciones.append(atributo)
+                atributo = ""
 
+    datospersonasquedependen = personasQueDependenDelIngresoMensual(usuario_fore = consulta_datosPersonales, numero_hermanos = request.POST['num_hermanos'])
     datospersonasquedependen.save()
+    for i in range(0, len(lista_nombre), 1):
+        p = PersonaDependiente(nombre = lista_nombre[i], edad = lista_edad[i], parentesco = lista_parentesco[i],
+        tipo_comprobante = lista_comprobante[i], observaciones = lista_observaciones[i])
+        p.save()
+        print(p)
+        datospersonasquedependen.personas.add(p)
+
     context = {
         'datospersonasquedependen':datospersonasquedependen,
     }
