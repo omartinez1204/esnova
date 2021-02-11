@@ -75,3 +75,12 @@ color: #0b231e;
 nav .navbar-nav li a{
   color: green;
   }
+
+  .centrada {
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  a:link {
+  text-decoration: none;
+  }
