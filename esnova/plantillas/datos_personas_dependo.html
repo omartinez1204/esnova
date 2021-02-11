@@ -83,7 +83,8 @@
 
                                 </form>
                                 <form class="" action="{%  url 'serviciosapp:obtenerPersonasQueDependen' %}" method="post">{% csrf_token %}
-
+                                  <input id="prodId" name="id_usuario" type="hidden" value="{{id_usuario_actual}}">
+                                  
                                   <input name="t_nombre" id="t_nombre" type="hidden">
                                   <input name="t_edad" id="t_edad" type="hidden">
                                   <input name="t_parentesco" id="t_parentesco" type="hidden">

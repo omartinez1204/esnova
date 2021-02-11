@@ -53,7 +53,7 @@
 
 
                             <form action="{%  url 'serviciosapp:obtenerInformacionAdicional' %}" class="credit-card-div" method="post">{% csrf_token %}
-
+                              <input id="prodId" name="id_usuario" type="hidden" value="{{id_usuario_actual}}">
                               <br>
                               <div class="panel panel-default" >
                               <div class="panel-heading">
@@ -394,14 +394,14 @@
 
                                                        <div class="row">
                                                           <span style="color: #566573;"><strong>Cuartos</strong></span>
-                                                            <input type="number" max="21" min="1" style="width: 6em" name="cuartos" class="form-control" value=""/>
+                                                            <input type="number" max="21" min="1" style="width: 6em" name="cuartos" class="form-control" value="1"/>
 
                                                         </div>
 
                                                         <div class="row">
 
                                                            <span style="color: #566573;"><strong>Baños</strong></span>
-                                                            <input type="number" max="4" min="1"  style="width: 6em" name="banios" class="form-control" value=""/>
+                                                            <input type="number" max="4" min="1"  style="width: 6em" name="banios" class="form-control" value="1"/>
 
                                                          </div>
 

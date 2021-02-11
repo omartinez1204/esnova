@@ -36,8 +36,8 @@ def obtenerDatos_Solicitante(request):
 
 #segundo formulario
 def obtenerGastos_Solicitante(request):
-    #id_usuario_actual = int(request.POST['id_usuario'])
-    consulta_datosPersonales = Usuario.objects.get(pk = 1)
+    id_usuario_actual = int(request.POST['id_usuario'])
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
 
     v1 = True
     v2 = True
@@ -103,6 +103,7 @@ def obtenerGastos_Solicitante(request):
 def obtenermedios_estudiar(request):
 
     id_usuario_actual = int(request.POST['id_usuario'])
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
     try:
         if  'True' == request.POST['computadora_de_escritorio']:
             v1 = True
@@ -165,7 +166,6 @@ def obtenermedios_estudiar(request):
     except Exception as e:
         v11 = False
 
-    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
     datosmediosEstudiar = mediosParaEstudiar( usuario_foraneo = consulta_datosPersonales,computadora_de_escritorio = v1, laptop = v2,
     impresora = v3, dvd = v4, maquina_de_escribir =v5, calculadora =v6,
     escritorio =v7, enciclopedia =v8, libros_especializados = v9,
@@ -228,6 +228,8 @@ def obtenerDatos_Responsable(request):
     return render(request,'ingreso_familiar.html', context)
 #formulario 6
 def obtenerIngresoFamiliar(request):
+    id_usuario_actual = int(request.POST['id_usuario'])
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
     v1 = False
     try:
         if  'Si' == request.POST['apoyo_F_E']:
@@ -243,10 +245,6 @@ def obtenerIngresoFamiliar(request):
         ingreso_nombre_2 = float(request.POST['ingreso_nombre_2'])
     except ValueError:
         ingreso_nombre_2 = 0.0
-
-    #id_usuario_actual = int(request.POST['id_usuario'])
-    consulta_datosPersonales = Usuario.objects.get(pk = 1)
-    id_usuario_actual = 1;
 
     if request.POST['apoyo_F_E'] == 'Si':
 
@@ -303,7 +301,8 @@ def obtenerGastoFamiliar(request):
     return render(request,'datos_personas_dependo.html', context)
 
 def obtenerPersonasQueDependen(request):
-    consulta_datosPersonales = Usuario.objects.get(pk = 1)
+    id_usuario_actual = int(request.POST['id_usuario'])
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
     t_nombre = request.POST['t_nombre']
     t_edad = request.POST['t_edad']
     t_parentesco = request.POST['t_parentesco']
@@ -359,11 +358,13 @@ def obtenerPersonasQueDependen(request):
 
     context = {
         'datospersonasquedependen':datospersonasquedependen,
+        'id_usuario_actual':id_usuario_actual,
     }
-    return render(request,'temporal.html', context)
+    return render(request,'informacion_adicional.html', context)
 
 def obtenerInformacionAdicional(request):
-    consulta_datosPersonales = Usuario.objects.get(pk = 1)
+    id_usuario_actual = int(request.POST['id_usuario'])
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
 
     v1 = False
     v2 = False
@@ -603,8 +604,9 @@ def obtenerInformacionAdicional(request):
     datosInformacionAdicional.save()
     context = {
         'datosInformacionAdicional':datosInformacionAdicional,
+        'id_usuario_actual':id_usuario_actual,
     }
-    return render(request,'temporal.html', context)
+    return render(request,'anexar_documentacion.html', context)
 
 def archivos(request):
     if request.method == 'POST':
