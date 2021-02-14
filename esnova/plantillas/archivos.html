@@ -2,15 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Archivos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   </head>
   <body>
+     <input id="prodId" name="id_usuario" type="hidden" value="{{id_usuario_actual}}">
     <table>
       {% for imagen in imagenes %}
         <tr>
           <td><label for="">Titulo: </label></td>
           <td>{{imagen.titulo}}</td>
-          <td><img width="50" height="60" src=“../media/{{imagen.imagen}}"></td>
+          <td><img width="50" height="60" src="../media/{{imagen.imagen}}"></td>
         </tr>
       {% endfor %}
     </table>

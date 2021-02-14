@@ -4,7 +4,7 @@ from django.template import Template, Context
 from django.shortcuts import render
 from serviciosapp.models import *
 from datetime import datetime,date
-
+from serviciosapp.forms import *
 # Create your views here.
 id_usuario_actual = 0
 
@@ -611,20 +611,35 @@ def obtenerInformacionAdicional(request):
     return render(request,'anexar_documentacion.html', context)
 
 def archivos(request):
+    try:
+        id_usuario_actual = int(request.POST['id_usuario'])
+    except Exception as e:
+        id_usuario_actual = 1
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
+    context = {
+        'id_usuario_actual':id_usuario_actual,
+    }
     if request.method == 'POST':
         form = UpArchivos(request.POST or None, request.FILES or None)
+        form.usuario_fore = consulta_datosPersonales
         if form.is_valid():
             form.save()
             form = UpArchivos()
-            return render(request,'serviciosapp/anexar_documentacion.html',{'form':form})
+            return render(request,'anexar_documentacion.html',{'form':form})
     else:
         form = UpArchivos()
-    return render(request,'serviciosapp/anexar_documentacion.html',{'form':form})
+    return render(request,'anexar_documentacion.html',{'form':form})
 
 def imagenes(request):
-    print("solicitando todos los doxumentos")
+    try:
+        id_usuario_actual = int(request.POST['id_usuario'])
+    except Exception as e:
+        id_usuario_actual = 1
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
+    print("solicitando todos los documentos")
     imagenes = subirArchivos.objects.all()
     context = {
-        'imagenes':imagenes
+        'imagenes':imagenes,
+        'id_usuario_actual':id_usuario_actual,
     }
-    return render(request,'serviciosapp/archivos.html',context)
+    return render(request,'archivos.html',context)

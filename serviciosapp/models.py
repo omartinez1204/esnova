@@ -320,7 +320,8 @@ class informacionSocioEconomica(models.Model):
         self.en_especie, self.monto_apoyo, self.dependencia_empresa, self.periodo_apoyo
         )
 class subirArchivos(models.Model):
+    usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     titulo = models.CharField(max_length=30)
-    media = models.FileField(upload_to='myfolder/',blank=True, null=True)
+    media = models.FileField(upload_to='', blank=True, null=True)
     def __str__(self):
         return '{0}'.format(self.titulo)

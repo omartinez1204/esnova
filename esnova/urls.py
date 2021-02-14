@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from esnova.views import *
+from django.conf import settings
+from django.conf.urls.static import static
 #from serviciosapp.views import *
 
 urlpatterns = [
@@ -26,9 +28,4 @@ urlpatterns = [
     path('registrar/>',registrar, name= "registrar"),
     path('enviar_recuperacion/>',enviar_recuperacion, name= "enviar_recuperacion"),
     path('admin/', admin.site.urls),
-]
-#Comentario nuevo
-#Eymar Josue. Nuevo comentario.
-#Eymar Josue. Nuevo comentario 2.
-#cambio eros
-#Hola amigos
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
