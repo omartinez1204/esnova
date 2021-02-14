@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script type="text/javascript" src="{% static 'js/validaciones_numericas.js'  %}?v=0.0.3"></script>
   </head>
   <body>
       {% block header %}
@@ -244,7 +245,7 @@
                               </div>
                               <div class="col-md-5 col-sm-5 col-xs-5">
                                 <span class="preguntas"> <strong style="color: #566573;">Cuántas personas en TOTAL dependen del ingreso reportado:</strong></span>
-                              <input type="number" name="numero_persona_dep" max="10" min="1" class="form-control" value="1" required/>
+                              <input type="number" name="numero_persona_dep" max="10" min="1" class="form-control" value="1" onkeypress="return numeros(event)" required/>
                             </div>
                             <div class="col-md-5 col-sm-5 col-xs-5">
                               <span class="preguntas"> <strong style="color: #566573;">Ingreso mensual TOTAL:</strong></span>
@@ -407,44 +408,6 @@
 
 
               }
-
-              function filterFloat(evt,input){
-                  // Backspace = 8, Enter = 13, ‘0′ = 48, ‘9′ = 57, ‘.’ = 46, ‘-’ = 43
-                  var key = window.Event ? evt.which : evt.keyCode;
-                  var chark = String.fromCharCode(key);
-                  var tempValue = input.value+chark;
-                  if(key >= 48 && key <= 57){
-                      if(filter(tempValue)=== false){
-                          return false;
-                      }else{
-                          return true;
-                      }
-                  }else{
-                        if(key == 8 || key == 13 || key == 0) {
-                            return true;
-                        }else if(key == 46){
-                              if(filter(tempValue)=== false){
-                                  return false;
-                              }else{
-                                  return true;
-                              }
-                        }else{
-                            return false;
-                        }
-                  }
-              }
-              function filter(__val__){
-                  var preg = /^([0-9]+\.?[0-9]{0,2})$/;
-                  if(preg.test(__val__) === true){
-                      return true;
-                  }else{
-                     return false;
-                  }
-
-              }
-
-
-
 
               </script>
 
