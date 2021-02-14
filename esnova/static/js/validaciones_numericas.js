@@ -44,3 +44,7 @@ function numeros(e){
     var tecla_final = String.fromCharCode(tecla);
     return patron.test(tecla_final);
 }
+
+
+//onkeypress="return filterFloat(event,this);"
+//onkeypress="return numeros(event)"
