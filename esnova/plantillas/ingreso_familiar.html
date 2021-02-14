@@ -33,7 +33,7 @@
                       </div>
                   </div>
 
-                           <form action="{%  url 'serviciosapp:obtenerIngresoFamiliar' %}" class="needs-validation" novalidate method="post">{% csrf_token %}
+                           <form action="{%  url 'serviciosapp:obtenerIngresoFamiliar' %}" name="form_ingreso_familiar" class="needs-validation" novalidate method="post">{% csrf_token %}
                              {{ form.as_p }}
 
                               <br>
@@ -71,11 +71,11 @@
                                  </div>
                                     <div class="col-md-4 col-sm-4 col-xs-4 ">
                                      <span class="preguntas"> <strong  style="color: #566573;">Padre:</strong></span>
-                                     <input type="number" onkeypress="return filterFloat(event,this);" step="0.01" name="ingreso_padre" value="0" class="form-control" required>
+                                     <input type="number" onkeypress="return filterFloat(event,this);" min="0" step="0.01" name="ingreso_padre" value="0" class="form-control" required>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-4">
                                      <span class="preguntas"><strong  style="color: #566573;"> Madre:</strong></span>
-                                     <input type="number" onkeypress="return filterFloat(event,this);" step="0.01" name="ingreso_madre" value="0" class="form-control" required/>
+                                     <input type="number" onkeypress="return filterFloat(event,this);" min="0" step="0.01" name="ingreso_madre" value="0" class="form-control" required/>
                                     </div>
                                     <div class="col-md-2 col-sm-2 col-xs-2  text-center">
 
@@ -115,9 +115,9 @@
                                            <div class="col-md-4 col-sm-4 col-xs-4">
                                            <input type="number" name="ingreso_nombre_1" step="0.01" value="0" onkeypress="return filterFloat(event,this);"  class="form-control"  id="texto2" placeholder="Ingreso"/>
                                           </div>
-                                         </div>
-
-                                         <div class="row ">
+                                        </div>
+                                        <br>
+                                        <div class="row ">
                                            <div class="col-md-1 col-sm-1 col-xs-1">
                                            </div>
                                                <div class="col-md-4 col-sm-4 col-xs-4">
@@ -127,7 +127,7 @@
                                               <input type="number" name="ingreso_nombre_2" step="0.01" value="0" onkeypress="return filterFloat(event,this);"  class="form-control"  id="texto4" placeholder="Ingreso"/>
                                               <br>
                                              </div>
-                                            </div>
+                                          </div>
 
                                        </div>
 
@@ -272,7 +272,9 @@
                                <br>
                                <div class="row  text-center ">
                                    <div class="col-md-12">
-                                   <button class="btn btn-outline-success  btn-lg">Guardar</button>
+                                   <!--<button class="btn btn-outline-success  btn-lg">Guardar</button>-->
+                                   <input type="button" class="btn btn-outline-success btn-lg btn-block " value="Guardar" onclick="funcionValidacion()">
+
                                    <br><br><br>
                                    </div>
 
@@ -283,6 +285,32 @@
                           </form>
               </div>
               </div>
+
+              <script>
+                let num_folio = document.querySelector('#texto5');
+                let fol_monto = document.querySelector("#texto6");
+                let otro_especifique = document.querySelector("texto7");
+                let iniciativa_privada = document.querySelector("texto8");
+                let monto_i_p = document.querySelector("texto9");
+
+                function funcionValidacion(){
+                  var marcado=-1;
+
+                  for(i=0;i<document.form_ingreso_familiar.tipo_de_apoyo.length;i++){
+                    if(document.form_ingreso_familiar.tipo_de_apoyo[i].checked) {
+                      marcado=i;
+                    }
+                  }
+                  if (marcado!=-1) {
+                    Swal.fire({
+                      icon: 'success',
+                      text: '¡Entro a la funcion!'+ document.form_ingreso_familiar.tipo_de_apoyo[marcado].value
+                    })
+                  }
+                }
+
+              </script>
+
 
               <script>
               'use strict';
