@@ -102,7 +102,7 @@
           <div class="row">
           <p class="preguntas" style="color: #566573;"><strong>Si renta cuarto o casa. ¿Con cuántas personas comparte el costo de la renta?    (No se cuente Ud.)</strong></p>
            <div class="col-md-3 col-sm-3 col-xs-3">
-                <input type="number" id="cant_personas_renta" name="cant_personas_renta" class="form-control" max="5" min="0" placeholder="" >
+                <input type="number" id="cant_personas_renta" name="cant_personas_renta" class="form-control" max="5" min="0" onkeypress="return numeros(event)" placeholder="" >
             </div>
             </div>
           <br>
@@ -120,7 +120,7 @@
          <div class="row">
               <p class="preguntas" style="color: #566573;"><strong>Si renta y vive con familiares. ¿Cuántas personas habitan la vivienda? </strong></p>
                <div class="col-md-3 col-sm-3 col-xs-3">
-                  <input type="number" id="cant_familiares_renta" name="cant_familiares_renta" max="20" min="1" class="form-control" placeholder="" >
+                  <input type="number" id="cant_familiares_renta" name="cant_familiares_renta" max="20" min="1" class="form-control" onkeypress="return numeros(event)" placeholder="" >
             </div>
           </div>
           <br>
@@ -320,7 +320,7 @@
 
                        <span class="preguntas" style="color: #566573;"> <strong>¿Cuántas personas dependen económicamente de usted?:</strong></span>
                        <div class="col-md-3 col-sm-3 col-xs-3">
-                       <input type="number" name="personas_dependientes" id="personas_dependientes" value="" max="10" min="1" class="form-control" id="texto3"/>
+                       <input type="number" name="personas_dependientes" id="personas_dependientes" value="" max="10" min="1" class="form-control" id="texto3" onkeypress="return numeros(event)" />
                       </div>
                    </div>
 
