@@ -15,3 +15,4 @@ class UpArchivos(ModelForm):
     class Meta:
         model = subirArchivos
         fields = '__all__'
+        exclude = ['usuario_fore']

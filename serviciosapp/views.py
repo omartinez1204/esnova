@@ -604,9 +604,12 @@ def obtenerInformacionAdicional(request):
     periodo_apoyo = request.POST['periodo_apoyo'])
 
     datosInformacionAdicional.save()
+    form = UpArchivos()
+    form.usuario_fore = id_usuario_actual
     context = {
         'datosInformacionAdicional':datosInformacionAdicional,
         'id_usuario_actual':id_usuario_actual,
+        'form':form,
     }
     return render(request,'anexar_documentacion.html', context)
 
@@ -616,19 +619,25 @@ def archivos(request):
     except Exception as e:
         id_usuario_actual = 1
     consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
-    context = {
-        'id_usuario_actual':id_usuario_actual,
-    }
+
     if request.method == 'POST':
-        form = UpArchivos(request.POST or None, request.FILES or None)
+        form = UpArchivos(request.POST or None)
         form.usuario_fore = consulta_datosPersonales
         if form.is_valid():
             form.save()
             form = UpArchivos()
-            return render(request,'anexar_documentacion.html',{'form':form})
+            context = {
+                'id_usuario_actual':id_usuario_actual,
+                'form':form,
+            }
+            return render(request,'anexar_documentacion.html',context)
     else:
         form = UpArchivos()
-    return render(request,'anexar_documentacion.html',{'form':form})
+        context = {
+            'id_usuario_actual':id_usuario_actual,
+            'form':form,
+        }
+    return render(request,'anexar_documentacion.html',context)
 
 def imagenes(request):
     try:

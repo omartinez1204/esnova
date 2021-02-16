@@ -321,7 +321,17 @@ class informacionSocioEconomica(models.Model):
         )
 class subirArchivos(models.Model):
     usuario_fore = models.ForeignKey(Usuario, on_delete = models.CASCADE)
-    titulo = models.CharField(max_length=30)
-    media = models.FileField(upload_to='', blank=True, null=True)
+    #titulo = models.CharField(max_length=30)
+    ultimo_recibo_prospera = models.FileField(upload_to='', blank=True, null=True)
+    comprobante_de_ingresos = models.FileField(upload_to='', blank=True, null=True)
+    comprobante_de_agua = models.FileField(upload_to='', blank=True, null=True)
+    comprobante_de_luz = models.FileField(upload_to='', blank=True, null=True)
+    comprobante_de_teléfono = models.FileField(upload_to='', blank=True, null=True)
+    comprobante_de_depedientes = models.FileField(upload_to='', blank=True, null=True)
+    croquis_de_donde_habita_solicitante = models.FileField(upload_to='', blank=True, null=True)
+    croquis_de_donde_habita_la_persona_de_quién_depende = models.FileField(upload_to='', blank=True, null=True)
+    croquis_de_donde_habita_el_responsable = models.FileField(upload_to='', blank=True, null=True)
     def __str__(self):
-        return '{0}'.format(self.titulo)
+        return '{0}{1}{2}{3}{4}{5}{6}{7}{8}'.format(self.ultimo_recibo_prospera, self.comprobante_de_ingresos, self.comprobante_de_agua,
+        self.comprobante_de_luz, self.comprobante_de_teléfono, self.comprobante_de_depedientes, self.croquis_de_donde_habita_solicitante,
+        self.croquis_de_donde_habita_la_persona_de_quién_depende, self.croquis_de_donde_habita_el_responsable)

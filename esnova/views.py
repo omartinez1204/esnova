@@ -7,6 +7,7 @@ from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 import smtplib
 from django.contrib import messages
+from serviciosapp.forms import *
 
 def index(request):
     return render(request, 'index.html')
@@ -26,7 +27,15 @@ def anexar_documentos2(request):
     return render(request, 'archivos.html')
 
 def anexar_documentos(request):
-        return render(request, 'anexar_documentacion.html')
+    id_usuario_actual = 1
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
+    form = UpArchivos()
+    form.usuario_fore = consulta_datosPersonales
+    context = {
+        'id_usuario_actual':id_usuario_actual,
+        'form':form,
+    }
+    return render(request, 'anexar_documentacion.html', context)
 
 def datos_personas_dependo(request):
     return render(request, 'datos_personas_dependo.html')
