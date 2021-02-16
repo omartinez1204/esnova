@@ -18,7 +18,7 @@
       {% include 'subPlantillas/header.html' %}
       {% endblock %}
       <br>
-        <div class="container justify-content-center" >
+        <div class="container" >
 
               <div class="row justify-content-center">
 
@@ -27,7 +27,7 @@
                       <div class="co2-md-1 col-sm-1 col-xs-1">
                       </div>
                       <div class="co2-md-10 col-sm-10 col-xs-10">
-                        <h2 class="text-center titulos" style="color: #34495E;">6. INGRESO FAMILIAR MENSUAL</h2>
+                        <h2 class="text-center" style="color: #34495E;">6. INGRESO FAMILIAR MENSUAL</h2>
                         <hr>
                       </div>
                       <div class="co2-md-1 col-sm-1 col-xs-1">
@@ -62,7 +62,7 @@
                               <div class="row ">
                                 <div class="col-md-1 col-sm-1 col-xs-1">
                                 </div>
-                                  <div class="col-md-11 col-sm-11 col-xs-11 text-center ">
+                                  <div class="col-md-11 col-sm-11 col-xs-11">
                                 <p class="preguntas"><strong style="font-family: 'Montserrat', sans-serif; color: #0E6251;" >INGRESO MENSUAL DE LA FAMILIA: </strong></p>
                               </div>
                             </div>
@@ -72,12 +72,14 @@
                                  </div>
                                     <div class="col-md-4 col-sm-4 col-xs-4 ">
                                      <span class="preguntas"> <strong  style="color: #566573;">Padre:</strong></span>
+                                     <div class="col-lg-5">
                                      <input type="number" onkeypress="return filterFloat(event,this);" min="0" step="0.01" name="ingreso_padre" value="0" class="form-control" required>
-                                    </div>
+                                   </div></div>
                                     <div class="col-md-4 col-sm-4 col-xs-4">
                                      <span class="preguntas"><strong  style="color: #566573;"> Madre:</strong></span>
+                                     <div class="col-lg-5">
                                      <input type="number" onkeypress="return filterFloat(event,this);" min="0" step="0.01" name="ingreso_madre" value="0" class="form-control" required/>
-                                    </div>
+                                   </div></div>
                                     <div class="col-md-2 col-sm-2 col-xs-2  text-center">
 
                                         <span class="preguntas"><strong  style="color: #566573;"> Otras personas aportan gasto?</strong></span>
@@ -111,23 +113,27 @@
                                             <div class="col-md-1 col-sm-1 col-xs-1">
                                             </div>
                                             <div class="col-md-4 col-sm-4 col-xs-4">
+                                              <div class="col-lg-8">
                                             <input type="text" name="otro_nombre_1" value="" class="form-control" id="texto1" placeholder="Nombre"/>
-                                           </div>
+                                          </div></div>
                                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                             <div class="col-lg-5">
                                            <input type="number" name="ingreso_nombre_1" step="0.01" value="0" onkeypress="return filterFloat(event,this);"  class="form-control"  id="texto2" placeholder="Ingreso"/>
-                                          </div>
+                                         </div></div>
                                         </div>
                                         <br>
                                         <div class="row ">
                                            <div class="col-md-1 col-sm-1 col-xs-1">
                                            </div>
                                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                                 <div class="col-lg-8">
                                                <input type="text" name="otro_nombre_2" step="0.01" value="" class="form-control"  id="texto3" placeholder="Nombre"/>
-                                              </div>
+                                             </div></div>
                                               <div class="col-md-4 col-sm-4 col-xs-4">
+                                                <div class="col-lg-5">
                                               <input type="number" name="ingreso_nombre_2" step="0.01" value="0" onkeypress="return filterFloat(event,this);"  class="form-control"  id="texto4" placeholder="Ingreso"/>
                                               <br>
-                                             </div>
+                                            </div></div>
                                           </div>
 
                                        </div>
@@ -198,13 +204,15 @@
                                   </div>
                                       <div class="col-md-4 col-sm-4 col-xs-4">
                                       <span class="preguntas"> <strong  style="color: #566573;">Numero de Folio:</strong></span>
+                                      <div class="col-lg-8">
                                       <input type="text" name="numero_folio" value="" class="form-control" id="texto5"/>
-                                     </div>
+                                    </div></div>
 
                                      <div class="col-md-4 col-sm-4 col-xs-4">
                                      <span class="preguntas"> <strong  style="color: #566573;">Monto:</strong></span>
+                                     <div class="col-lg-5">
                                      <input type="text" onkeypress="return filterFloat(event,this);" name="folio_monto" value="" class="form-control" id="texto6"/>
-                                    </div>
+                                   </div></div>
 
                                    </div>
                                    <br>
@@ -216,17 +224,20 @@
                                         </div>
                                             <div class="col-md-4 col-sm-4 col-xs-4">
                                             <span class="preguntas"> <strong  style="color: #566573;">Especifique:</strong></span>
+                                            <div class="col-lg-8">
                                             <input type="text" name="otro_especifique" value="" class="form-control" id="texto7"/>
-                                           </div>
+                                          </div></div>
 
                                            <div class="col-md-3 col-sm-3 col-xs-3">
                                            <span class="preguntas"> <strong  style="color: #566573;">Iniciativa privada: </strong></span>
+                                           <div class="col-lg-8">
                                            <input type="text" name="iniciativa_privada" value="" class="form-control" id="texto8"/>
-                                          </div>
+                                         </div></div>
                                           <div class="col-md-3 col-sm-3 col-xs-3">
                                           <span class="preguntas"> <strong  style="color: #566573;">Monto:</strong></span>
+                                          <div class="col-lg-8">
                                           <input type="text" onkeypress="return filterFloat(event,this);" name="monto_i_p" value="" class="form-control" id="texto9"/>
-                                         </div>
+                                        </div></div>
 
                                          </div>
                                          <br>
@@ -245,12 +256,14 @@
                               </div>
                               <div class="col-md-5 col-sm-5 col-xs-5">
                                 <span class="preguntas"> <strong style="color: #566573;">Cuántas personas en TOTAL dependen del ingreso reportado:</strong></span>
+                                <div class="col-lg-3">
                               <input type="number" name="numero_persona_dep" max="10" min="1" class="form-control" value="1" onkeypress="return numeros(event)" required/>
-                            </div>
+                            </div></div>
                             <div class="col-md-5 col-sm-5 col-xs-5">
                               <span class="preguntas"> <strong style="color: #566573;">Ingreso mensual TOTAL:</strong></span>
+                              <div class="col-lg-6">
                             <input type="number" onkeypress="return filterFloat(event,this);" name="ingreso_mensual_total" class="form-control" value="0" id="texto7" required/>
-                          </div>
+                          </div></div>
                           <div class="col-md-1 col-sm-1 col-xs-1">
                           </div>
                             </div>
