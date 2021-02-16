@@ -10,131 +10,192 @@
     <link rel="stylesheet" href="{% static 'css/estilos.css'  %}">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
       <script type="text/javascript" src="{% static 'js/validaciones_numericas.js'  %}?v=0.0.3"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
   </head>
   <body>
       {% block header %}
       {% include 'subPlantillas/header.html' %}
       {% endblock %}
-      <h2 class="text-center">7. GASTO FAMILIAR MENSUAL</h2>
+      <h2 class="text-center" style="color: #34495E;">7. GASTO FAMILIAR MENSUAL</h2>
 
 
-        <div class="container text-center justify-content-center" >
+        <div class="container justify-content-center" >
 
               <div class="row justify-content-center">
                            <form action="{%  url 'serviciosapp:obtenerGastoFamiliar' %}" class="credit-card-div" method="post">{% csrf_token %}
 
                               <br>
-                              <h5 class="preguntas"><strong>Pago mensual de servicios</strong></h5>
-                              <div class="row justify-content-center">
-                                     <span class="preguntas"><strong>Agua:</strong></span>
+                              <h5 style="color: #566573;"><strong>Pago mensual de servicios</strong></h5>
+                              <div class="row">
+                                     <div class="col-md-3 col-sm-3 col-xs-3">
+                                     <label class="" style="color: #566573;"><strong>Agua:</strong></label>
                                      <input id="prodId" name="id_usuario" type="hidden" value="{{id_usuario_actual}}">
-                                     <input type="number" style="width: 8em" onkeypress="return filterFloat(event,this);" value="0" step="0.01" name="agua" class="form-control" value="" id="texto7"/>
+                                     <div class="col-lg-6">
+                                     <input type="number"  onkeypress="return filterFloat(event,this);" value="0" step="0.01" name="agua" class="form-control" value="" id="texto7"/>
+                                   </div>
 
                                   </div>
-                                  <div class="row justify-content-center">
-                                         <span class="preguntas"><strong>Luz:</strong></span>
-                                         <input type="number" style="width: 8em" onkeypress="return filterFloat(event,this);" value = "0" step="0.01" name="luz" class="form-control" value="" id="texto7"/>
+                                  <div class="col-md-3 col-sm-3 col-xs-3">
+                                         <span style="color: #566573;"><strong>Luz:</strong></span>
+                                         <div class="col-lg-6">
+                                         <input type="number" onkeypress="return filterFloat(event,this);" value = "0" step="0.01" name="luz" class="form-control" value="" id="texto7"/>
+                                       </div>
 
                                       </div>
-                                      <div class="row justify-content-center">
-                                             <span class="preguntas"><strong>Telefono:</strong></span>
-                                             <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="telefono" class="form-control" value="" id="texto7"/>
+                                      <div class="col-md-3 col-sm-3 col-xs-3">
+                                             <span style="color: #566573;"><strong>Telefono:</strong></span>
+                                             <div class="col-lg-6">
+                                             <input type="text" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="telefono" class="form-control" value="" id="texto7"/>
 
-                                          </div>
-                                          <div class="row justify-content-center">
-                                                 <span class="preguntas"><strong>Gas:</strong></span>
-                                                 <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="gas" class="form-control" value="" id="texto7"/>
+                                          </div></div>
+                                          <div class="col-md-3 col-sm-3 col-xs-3">
+                                                 <span style="color: #566573;"><strong>Gas:</strong></span>
+                                                 <div class="col-lg-6">
+                                                 <input type="text" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="gas" class="form-control" value="" id="texto7"/>
 
-                                              </div>
-                                              <div class="row justify-content-center">
-                                                     <span class="preguntas"><strong>Educacion:</strong></span>
-                                                     <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="educacion" class="form-control" value="" id="texto7"/>
+                                              </div></div>
+                                        </div>
+                                              <div class="row">
+                                                  <div class="col-md-3 col-sm-3 col-xs-3">
+                                                     <span style="color: #566573;"><strong>Educacion:</strong></span>
+                                                     <div class="col-lg-6">
+                                                     <input type="text" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="educacion" class="form-control" value="" id="texto7"/>
 
-                                                  </div>
-                                                <div class="row justify-content-center">
-                                                         <span class="preguntas"><strong>Transporte:</strong></span>
-                                                         <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="transporte" class="form-control" value="" id="texto7"/>
+                                                  </div></div>
+                                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                                         <span style="color: #566573;"><strong>Transporte:</strong></span>
+                                                         <div class="col-lg-6">
+                                                         <input type="text" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="transporte" class="form-control" value="" id="texto7"/>
 
-                                                  </div>
-                                                  <div class="row justify-content-center">
-                                                             <span class="preguntas"><strong>Renta:</strong></span>
-                                                             <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);"   value="0" step="0.01" name="renta" class="form-control" value="" id="texto7"/>
+                                                  </div></div>
+                                                  <div class="col-md-3 col-sm-3 col-xs-3">
+                                                             <span style="color: #566573;"><strong>Renta:</strong></span>
+                                                             <div class="col-lg-6">
+                                                             <input type="text" onkeypress="return filterFloat(event,this);"   value="0" step="0.01" name="renta" class="form-control" value="" id="texto7"/>
 
-                                                    </div>
-                                                      <div class="row justify-content-center">
-                                                                 <span class="preguntas"><strong>Television por cable:</strong></span>
-                                                                 <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="television_por_cable" class="form-control" value="" id="texto7"/>
+                                                    </div></div>
+                                                      <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                 <span style="color: #566573;"><strong>Television por cable:</strong></span>
+                                                                 <div class="col-lg-6">
+                                                                 <input type="text" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="television_por_cable" class="form-control" value="" id="texto7"/>
 
-                                                          </div>
+                                                          </div></div>
 
-                                                          <div class="row justify-content-center">
-                                                                     <span class="preguntas"><strong>Internet:</strong></span>
-                                                                     <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="internet" class="form-control" value="" id="texto7"/>
+                                                        </div>
 
-                                                              </div>
-                                                            <h5 class="preguntas"><strong>Otros (especifique):</strong></h5>
-                                                              <div class="row justify-content-center">
-                                                                          <input type="text" style="width: 12em" name="Otros_1_nombre" class="form-control"  value="" placeholder="Gasto nombre"/>
-                                                                         <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="otros_1" class="form-control" value="0" step="0.01" placeholder="Gasto $"/>
+                                                          <div class="row">
+                                                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                     <span style="color: #566573;"><strong>Internet:</strong></span>
+                                                                     <div class="col-lg-6">
+                                                                     <input type="text" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="internet" class="form-control" value="" id="texto7"/>
+                                                            </div></div>
 
-                                                                  </div>
+                                                            </div>
+                                                            <h5 style="color: #566573;"><strong>Otros (especifique):</strong></h5>
+                                                              <div class="row">
+                                                                <div class="col-md-3 col-sm-3 col-xs-3">
+
+                                                                          <div class="col-lg-6">
+                                                                          <input type="text" name="Otros_1_nombre" class="form-control"  value="" placeholder="Gasto nombre"/>
+                                                                        </div>
+                                                                          <div class="col-lg-6">
+                                                                         <input type="text" onkeypress="return filterFloat(event,this);" name="otros_1" class="form-control" value="0" step="0.01" placeholder="Gasto $"/>
+
+                                                                  </div></div>
+
+                                                                </div>
                                                                   <br>
-                                                                  <div class="row justify-content-center">
-                                                                              <input type="text" style="width: 12em" name="Otros_2_nombre" class="form-control" value="" placeholder="Gasto nombre"/>
-                                                                             <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" name="otros_2" class="form-control" value="0" step="0.01" placeholder="Gasto $"/>
+                                                                  <div class="row">
+                                                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                              <div class="col-lg-6">
+                                                                              <input type="text" name="Otros_2_nombre" class="form-control" value="" placeholder="Gasto nombre"/>
+                                                                            </div>
+                                                                              <div class="col-lg-6">
+                                                                             <input type="text" onkeypress="return filterFloat(event,this);" name="otros_2" class="form-control" value="0" step="0.01" placeholder="Gasto $"/>
 
-                                                                      </div>
+                                                                      </div></div>
+
+                                                                    </div>
                                       <br>
-                                      <div class="row justify-content-center">
-                                             <span class="preguntas"><strong>Gasto de alimentación:</strong></span>
-                                             <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);"  value="0" step="0.01"  name="gasto_alimentacion" class="form-control" value="" id="texto7"/>
+                                      <div class="row">
+                                        <div class="col-md-3 col-sm-3 col-xs-3">
+                                             <span style="color: #566573;"><strong>Gasto de alimentación:</strong></span>
+                                             <div class="col-lg-6">
+                                             <input type="text" onkeypress="return filterFloat(event,this);"  value="0" step="0.01"  name="gasto_alimentacion" class="form-control" value="" id="texto7"/>
 
-                                          </div>
-                                          <div class="row justify-content-center">
-                                                 <span class="preguntas"><strong>Gasto de vestido:</strong></span>
-                                                 <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);"  value="0" step="0.01"  name="gastos_vestido" class="form-control" value="" id="texto7"/>
+                                          </div></div>
+                                          <div class="col-md-3 col-sm-3 col-xs-3">
+                                                 <span style="color: #566573;"><strong>Gasto de vestido:</strong></span>
+                                                 <div class="col-lg-6">
+                                                 <input type="text" onkeypress="return filterFloat(event,this);"  value="0" step="0.01"  name="gastos_vestido" class="form-control" value="" id="texto7"/>
 
-                                              </div>
-                                            <div class="row justify-content-center">
-                                                     <span class="preguntas"><strong>Gasto mensual de servicios:</strong></span>
-                                                     <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="gastos_servicios" class="form-control" value="" id="texto7"/>
+                                              </div></div>
+                                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                                     <span style="color: #566573;"><strong>Gasto mensual de servicios:</strong></span>
+                                                     <div class="col-lg-4">
+                                                     <input type="text" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="gastos_servicios" class="form-control" value="" id="texto7"/>
 
-                                              </div>
-                                              <div class="row justify-content-center">
-                                                         <span class="preguntas"><strong>médicos o medicamentos:</strong></span>
-                                                         <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="gastos_servicios_medicos" class="form-control" value="" id="texto7"/>
+                                              </div></div>
+                                              <div>
 
-                                                </div>
-                                                  <div class="row justify-content-center">
-                                                             <span class="preguntas"><strong>Gasto de diversión:</strong></span>
-                                                             <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="gasto_diversion" class="form-control" value="" id="texto7"/>
+                                              </div class="row">
 
-                                                      </div>
+                                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                                         <span style="color: #566573;"><strong>médicos o medicamentos:</strong></span>
+                                                         <div class="col-lg-6">
+                                                         <input type="text" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="gastos_servicios_medicos" class="form-control" value="" id="texto7"/>
+
+                                                </div></div>
+                                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                                             <span style="color: #566573;"><strong>Gasto de diversión:</strong></span>
+                                                             <div class="col-lg-6">
+                                                             <input type="text" onkeypress="return filterFloat(event,this);"  value="0" step="0.01" name="gasto_diversion" class="form-control" value="" id="texto7"/>
+
+                                                      </div></div>
+                                                    </div>
 
 
-                                                        <h5 class="preguntas"><strong>Otros gastos(especifique):</strong></h5>
-                                                          <div class="row justify-content-center">
-                                                                      <input type="text" style="width: 12em" name="otros_gastos_1_nombre"  value="" class="form-control" value="" placeholder="Gasto nombre"/>
-                                                                     <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" value = "0" step="0.01" name="otros_gastos_1" class="form-control" value="" placeholder="Gasto $"/>
+                                                        <h5 style="color: #566573;"><strong>Otros gastos(especifique):</strong></h5>
+                                                          <div class="row">
+                                                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                      <div class="col-lg-6">
+                                                                      <input type="text" name="otros_gastos_1_nombre"  value="" class="form-control" value="" placeholder="Gasto nombre"/>
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                     <input type="text" onkeypress="return filterFloat(event,this);" value = "0" step="0.01" name="otros_gastos_1" class="form-control" value="" placeholder="Gasto $"/>
+                                                                   </div>
+
+                                                                 </div>
 
                                                               </div>
                                                               <br>
-                                                              <div class="row justify-content-center">
-                                                                          <input type="text" style="width: 12em" name="otros_gastos_2_nombre"  value="" class="form-control" value="" placeholder="Gasto nombre"/>
-                                                                         <input type="text" style="width: 8em" onkeypress="return filterFloat(event,this);" value=0 step="0.01" name="otros_gastos_2" class="form-control" value="" placeholder="Gasto $"/>
+                                                              <div class="row">
+                                                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                          <div class="col-lg-6">
+                                                                          <input type="text" name="otros_gastos_2_nombre"  value="" class="form-control" value="" placeholder="Gasto nombre"/>
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                         <input type="text" onkeypress="return filterFloat(event,this);" value=0 step="0.01" name="otros_gastos_2" class="form-control" value="" placeholder="Gasto $"/>
 
                                                                   </div>
-                                                             <br>
-                                                                  <div class="row justify-content-center">
-                                                                             <span class="preguntas"><strong>Total:</strong></span>
-                                                                             <input type="text" style="width: 8em"  value="0" onkeypress="return filterFloat(event,this);" name="total_gastos" class="form-control" value="" id="texto7"/>
 
-                                                                      </div>
+                                                                </div></div>
+                                                             <br>
+                                                                  <div class="row">
+                                                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                             <span style="color: #566573;"><strong>Total:</strong></span>
+                                                                             <div class="col-lg-6">
+                                                                             <input type="text" value="0" onkeypress="return filterFloat(event,this);" name="total_gastos" class="form-control" value="" id="texto7"/>
+                                                                           </div>
+                                                                           </div>
+
+                                                                    </div>
 
                               <br>
 
-                               <div class="row ">
-                                   <div class="col-md-12">
+                               <div class="row">
+                                   <div class="col text-center">
                                    <button class="btn btn-outline-success  btn-lg">Guardar</button>
                                    </div>
 
@@ -175,7 +236,7 @@
               }
 
 
-      
+
 
 
 
