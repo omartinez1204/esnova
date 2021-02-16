@@ -622,7 +622,7 @@ def archivos(request):
 
     if request.method == 'POST':
         form = UpArchivos(request.POST or None, request.FILES or None)
-        form.usuario_fore = consulta_datosPersonales
+        #form.usuario_fore = consulta_datosPersonales
         if form.is_valid():
             form.save()
             form = UpArchivos()
