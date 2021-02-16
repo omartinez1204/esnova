@@ -30,7 +30,6 @@ def anexar_documentos(request):
     id_usuario_actual = 1
     consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
     form = UpArchivos()
-    form.usuario_fore = consulta_datosPersonales
     context = {
         'id_usuario_actual':id_usuario_actual,
         'form':form,

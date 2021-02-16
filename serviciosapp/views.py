@@ -621,7 +621,7 @@ def archivos(request):
     consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
 
     if request.method == 'POST':
-        form = UpArchivos(request.POST or None)
+        form = UpArchivos(request.POST or None, request.FILES or None)
         form.usuario_fore = consulta_datosPersonales
         if form.is_valid():
             form.save()

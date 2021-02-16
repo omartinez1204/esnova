@@ -6,16 +6,73 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   </head>
   <body>
-     <input id="prodId" name="id_usuario" type="hidden" value="{{id_usuario_actual}}">
-    <table>
-      {% for imagen in imagenes %}
-        <tr>
-          <td><label for="">Titulo: </label></td>
-          <td>{{imagen.titulo}}</td>
-          <td><img width="50" height="60" src="../media/{{imagen.imagen}}"></td>
-        </tr>
-      {% endfor %}
-    </table>
+    {% block header %}
+    {% include 'subPlantillas/header.html' %}
+    {% endblock %}
 
+          <div class="container justify-content-center" >
+            <div class="row">
+     <input id="prodId" name="id_usuario" type="hidden" value="{{id_usuario_actual}}">
+     <div class="table-responsive">
+       <table class="table table-hover m-2">
+         <thead>
+           <tr>
+             <td>Ultimo recibo de PROSPERA</td>
+             <td>Comprobante de ingresos</td>
+             <td>Comprobante de agua</td>
+           </tr>
+         </thead>
+         {% for imagen in imagenes %}
+           <tr>
+             <td><img width="200" src="/media/{{imagen.ultimo_recibo_prospera}}"></td>
+             <td><img width="200" src="/media/{{imagen.comprobante_de_ingresos}}"></td>
+             <td><img width="200" src="/media/{{imagen.comprobante_de_agua}}"></td>
+           </tr>
+         {% endfor %}
+       </table>
+       <table class="table table-hover m-2">
+         <thead>
+           <tr>
+             <td>Comprobante de luz</td>
+             <td>Comprobante de teléfono</td>
+             <td>Comprobante de dependientes</td>
+           </tr>
+         </thead>
+         {% for imagen in imagenes %}
+           <tr>
+             <td><img width="200" src="/media/{{imagen.comprobante_de_luz}}"></td>
+             <td><img width="200" src="/media/{{imagen.comprobante_de_teléfono}}"></td>
+             <td><img width="200" src="/media/{{imagen.comprobante_de_depedientes}}"></td>
+           </tr>
+         {% endfor %}
+       </table>
+       <table class="table table-hover m-2">
+         <thead>
+           <tr>
+             <td>Croquis 1</td>
+             <td>Croquis 2</td>
+             <td>Croquis 3</td>
+           </tr>
+         </thead>
+         {% for imagen in imagenes %}
+           <tr>
+             <td><img width="200" src="/media/{{imagen.croquis_de_donde_habita_solicitante}}"></td>
+             <td><img width="200" src="/media/{{imagen.croquis_de_donde_habita_la_persona_de_quién_depende}}"></td>
+             <td><img width="200" src="/media/{{imagen.croquis_de_donde_habita_el_responsable}}"></td>
+           </tr>
+         {% endfor %}
+       </table>
+     </div>
+
+  </div><br><br>
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-4">
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-4">
+      <a href="{% url 'serviciosapp:archivos' %}" style="color:#FF0000">Volver</a>
+    </div><br><br>
+
+    </div>
+</div>
   </body>
 </html>
