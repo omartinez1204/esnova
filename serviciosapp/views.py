@@ -622,9 +622,10 @@ def archivos(request):
 
     if request.method == 'POST':
         form = UpArchivos(request.POST or None, request.FILES or None)
-        #form.usuario_fore = consulta_datosPersonales
         if form.is_valid():
-            form.save()
+            instance = form.save(commit=False)
+            instance.usuario_fore = consulta_datosPersonales
+            instance.save()
             form = UpArchivos()
             context = {
                 'id_usuario_actual':id_usuario_actual,
@@ -646,7 +647,22 @@ def imagenes(request):
         id_usuario_actual = 1
     consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
     print("solicitando todos los documentos")
-    imagenes = subirArchivos.objects.all()
+    imagenes = subirArchivos.objects.all().filter(usuario_fore = consulta_datosPersonales)
+
+    context = {
+        'imagenes':imagenes,
+        'id_usuario_actual':id_usuario_actual,
+    }
+    return render(request,'archivos.html',context)
+
+def descargarSolicitud(request):
+    try:
+        id_usuario_actual = int(request.POST['id_usuario'])
+    except Exception as e:
+        id_usuario_actual = 1
+    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
+    imagenes = subirArchivos.objects.all().filter(usuario_fore = consulta_datosPersonales)
+    
     context = {
         'imagenes':imagenes,
         'id_usuario_actual':id_usuario_actual,

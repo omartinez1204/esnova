@@ -17,4 +17,5 @@ urlpatterns = [
     path('obtenerInformacionAdicional/>',views.obtenerInformacionAdicional, name= "obtenerInformacionAdicional"),
     path('archivos/>',views.archivos, name= "archivos"),
     path('imagenes/>',views.imagenes, name= "imagenes"),
+    path('descargarSolicitud/>',views.descargarSolicitud, name= "descargarSolicitud"),
 ]
