@@ -5,8 +5,21 @@ from django.shortcuts import render
 from serviciosapp.models import *
 from datetime import datetime,date
 from serviciosapp.forms import *
+from django.views import View
+from io import BytesIO
+from django.template.loader import get_template
+from xhtml2pdf import pisa
 # Create your views here.
 id_usuario_actual = 0
+
+def render_to_pdf(template_src, context_dict={}):
+	template = get_template(template_src)
+	html  = template.render(context_dict)
+	result = BytesIO()
+	pdf = pisa.pisaDocument(BytesIO(html.encode("UTF-8")), result)
+	if not pdf.err:
+		return HttpResponse(result.getvalue(), content_type='application/pdf')
+	return None
 
 def obtenerDatos_Solicitante(request):
     id_usuario_actual = int(request.POST['id_usuario'])
@@ -655,16 +668,32 @@ def imagenes(request):
     }
     return render(request,'archivos.html',context)
 
-def descargarSolicitud(request):
-    try:
-        id_usuario_actual = int(request.POST['id_usuario'])
-    except Exception as e:
-        id_usuario_actual = 1
-    consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
-    imagenes = subirArchivos.objects.all().filter(usuario_fore = consulta_datosPersonales)
-    
-    context = {
-        'imagenes':imagenes,
-        'id_usuario_actual':id_usuario_actual,
-    }
-    return render(request,'archivos.html',context)
+data = {
+	"company": "Dennnis Ivanov Company",
+	"address": "123 Street name",
+	"city": "Vancouver",
+	"state": "WA",
+	"zipcode": "98663",
+
+
+	"phone": "555-555-2345",
+	"email": "youremail@dennisivy.com",
+	"website": "dennisivy.com",
+	}
+
+class ViewPDF(View):
+	def get(self, request, *args, **kwargs):
+
+		pdf = render_to_pdf('plantilla_pdf.html', data)
+		return HttpResponse(pdf, content_type='application/pdf')
+
+class DownloadPDF(View):
+	def get(self, request, *args, **kwargs):
+
+		pdf = render_to_pdf('app/pdf_template.html', data)
+
+		response = HttpResponse(pdf, content_type='application/pdf')
+		filename = "Invoice_%s.pdf" %("12341231")
+		content = "attachment; filename='%s'" %(filename)
+		response['Content-Disposition'] = content
+		return response

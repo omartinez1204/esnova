@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Estudio Socioeconómico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/estilos.css'  %}">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  </head>
+  <body>
+      {% block header %}
+      {% include 'subPlantillas/header.html' %}
+      {% endblock %}
+      <h2 class="text-center" style="color: #34495E;">1. DATOS PERSONALES DEL SOLICITANTE</h2>
+      <script>
+          function enableInput(index) {
+          	var input1=document.querySelectorAll("input[name=residencia_distinta1]");
+          	for(var i=0;i<input1.length;i++)
+          	{
+          		input1[i].disabled=true;
+          	}
+          	document.getElementsByName(index.id)[0].disabled=false;
+          }
+      </script>
+
+
+      <div class="row">
+        <div class="col-md-1 col-sm-1 col-xs-1"></div>
+        <div class="col-md-10 col-sm-10 col-xs-10">
+
+          <div class="container   justify-content-center" >
+                <form name="form_datos_solicitante" action="{%  url 'serviciosapp:obtenerDatos_Solicitante' %}" class="credit-card-div" method="post">{% csrf_token %}
+                      {{ form.as_p }}
+                      <br>
+                      <div class="panel panel-default" >
+
+                            <div class="panel-heading">
+                                <div class="row ">
+                                      <div class="col-md-9 col-sm-9 col-xs-9">
+                                       <span ></span>
+                                          <input id="prodId" name="id_usuario" type="hidden" value="{{usuario.pk}}">
+                                      </div>
+
+                                      <div class="col-md-3 col-sm-3 col-xs-3">
+                                      <span style="color: #566573;"><strong>Solicita Beca Alimentaria:</strong> </span>
+                                      <div class="radio">
+                                      <input class="form-check-input" type="radio" name="solicita_beca_alimentaria" id="flexRadioDefault1" value="si">
+                                      <label class="form-check-label" for="flexRadioDefault1">
+                                        Si
+                                      </label>
+                                      <input class="form-check-input" type="radio" name="solicita_beca_alimentaria" id="flexRadioDefault2" value="no" checked>
+                                      <label class="form-check-label" for="flexRadioDefault2">
+                                         No
+                                      </label>
+                                      </div>
+
+                                      </div>
+                                </div>
+                                <br>
+                                <div class="row ">
+                                        <div class="col-md-4 col-sm-4 col-xs-4 ">
+                                            <span style="color: #566573;"><strong> Apellido Paterno:</strong></span>
+                                            <div class="col-lg-8">
+                                            <input type="text" id="apellido_paterno" name="apellido_paterno" class="form-control" required/>
+                                          </div>
+                                          </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                         <span style="color: #566573;"><strong> Apellido Materno:</strong></span>
+                                         <div class="col-lg-8">
+                                         <input type="text" id="apellido_materno"name="apellido_materno" class="form-control" required/>
+                                       </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                         <span style="color: #566573;"><strong> Nombre:</strong></span>
+                                         <div class="col-lg-8">
+                                         <input type="text" id="nombre" name="nombre" class="form-control" required/>
+                                       </div>
+                                        </div>
+                                </div>
+                                     <br>
+                                     <div class="row ">
+
+                                          <div class="col-md-4 col-sm-4 col-xs-4">
+                                           <span style="color: #566573;"><strong> Sexo:</strong></span>
+
+                                           <div class="radio">
+                                           <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault1" value="M"   >
+                                           <label class="form-check-label" for="flexRadioDefault1">
+                                             M
+                                           </label>
+                                           <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault2" value="F" checked>
+                                           <label class="form-check-label" for="flexRadioDefault2">
+                                              F
+                                           </label>
+                                           </div>
+
+                                          </div>
+                                          <div class="col-md-4 col-sm-4 col-xs-4">
+                                           <span class="text-right" style="color: #566573;"><strong>Edad:</strong></span>
+                                           <div class="col-lg-4">
+                                           <input type="number" id="edad" name="edad" class="form-control" max="99" min="17" required/>
+                                         </div>
+                                          </div>
+
+                                          <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <div class="col-lg-8">
+                                            <span style="color: #566573;"><strong> Estado Civil:</strong></span>
+                                            <select id="estado_civil"name="estado_civil" class="form-control">
+                                              <option value="soltero"selected>Soltero</option>
+                                              <option value="casado">Casado</option>
+                                              <option value="viudo">Viudo</option>
+                                              <option value="divorciado">Divorciado</option>
+                                              <option value="divorciado">Union libre</option>
+                                            </select>
+                                          </div>
+                                          </div>
+                                       </div>
+                                       <br>
+                                <div class="row ">
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <span style="color: #566573;"><strong>Carrera</strong></span>
+                                          <select id="carrera" name="carrera" class="form-control">
+                                            <option value="informatica"selected>Licenciatura en informatica</option>
+                                            <option value="agronomia">Ingenieria en Agronomia </option>
+                                            <option value="administracion">Licenciatura en administracion</option>
+                                          </select>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                     <span style="color: #566573;"><strong>Semestre</strong></span>
+                                     <div class="col-lg-6">
+                                     <input id="semestre" type="number" name="semestre" class="form-control" max="10" min="1" required/>
+                                   </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                     <span style="color: #566573;"><strong> Grupo</strong></span>
+                                     <div class="col-lg-6">
+                                     <input id="grupo" type="text" name="grupo" class="form-control" required/>
+                                   </div>
+                                    </div>
+
+
+                                  </div>
+                                  <br>
+                                <div class="row">
+                                  <div class="col-md-4 col-sm-4 col-xs-4">
+                                   <span style="color: #566573;"><strong>Celular(lada:)</strong></span>
+                                   <div class="col-lg-8">
+                                   <input type="text" id="celular" maxlength="10" name="celular" class="form-control" required/>
+                                  </div>
+                                  </div>
+                                  <div class="col-md-8 col-sm-8 col-xs-8">
+
+                                   <span style="color: #566573;"> <strong>Además del idioma español, ¿Qué otro idioma, lenguaje o dialecto habla?</strong></span>
+                                   <div class="col-lg-4">
+                                   <input type="text" id="otro_idioma" name="otro_idioma" class="form-control" required/>
+                                 </div>
+
+                                  </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                  <div class="col-md-8 col-sm-8 col-xs-8">
+                                  <span  style="color: #566573;"><strong>Su estancia en la universidad, implica residencia distinta a la familiar: </strong></span>
+                                  <div class="radio">
+                                    <input class="form-check-input" type="radio" name="residencia_distinta" id="check" value="Si"  onclick="javascript:showContent()">
+                                    <label class="form-check-label" for="residencia_distinta1">
+                                      Si
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="residencia_distinta" id="check" value="No"  onclick="javascript:showContent2()">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                       No
+                                    </label>
+                                  </div>
+
+                                  </div>
+                                </div>
+                                <br><br>
+                                <div class="row ">
+
+                               <br>
+                              <div class="bg-light border rounded" id="content" style="display: none;">
+
+                                 <div class="row ">
+
+                                   <div class="col-md-12">
+                                       <span  class="subtitulos"><strong>Domicilio donde vivirá mientras estudia:</strong> </span>
+                                   </div>
+                                 </div>
+                                 <div class="row ">
+                                     <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <span style="color: #566573;"><strong> Calle</strong></span>
+                                      <input type="text" name="calle" class="form-control" value="" id="texto1"/>
+                                     </div>
+                                     <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <span style="color: #566573;"><strong>Numero</strong></span>
+                                      <input type="number" name="numero_calle" min="0" value="" class="form-control" id="texto2"/>
+                                     </div>
+                                     <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <span style="color: #566573;"><strong>Colonia o barrio</strong></span>
+                                      <input type="text" name="barrio" class="form-control" value="" id="texto3"/>
+                                     </div>
+
+
+                                   </div>
+                                   <br>
+                                   <div class="row ">
+
+                                     <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <span style="color: #566573;"><strong>Municipio:</strong></span>
+                                      <input type="text" name="municipio" class="form-control" value="" id="texto4"/>
+                                       </div>
+                                       <div class="col-md-3 col-sm-3 col-xs-3">
+                                        <span style="color: #566573;"><strong> Estado</strong></span>
+                                        <input type="text" name="estado" class="form-control" value="" id="texto5"/>
+                                       </div>
+                                       <div class="co6-md-5 col-sm-5 col-xs-5">
+                                        <span style="color: #566573;"><strong>Nombre de la casa de huésped o del propietario(si la residencia es distinta a la familiar:</strong></span>
+                                        <input type="text" name="propietario" class="form-control" value="" id="texto6"/>
+                                       </div>
+
+                                     </div>
+                                     <div class="row">
+                                       <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <span style="color: #566573;"><strong>Parentesco</strong></span>
+                                        <input type="text" name="parentesco" class="form-control" value="" id="texto7"/>
+                                        </div>
+                                     </div>
+
+
+
+                              </div>
+                                   <br><br>
+                                   <div class="row ">
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                          <div class="container   justify-content-center">
+                                            <br>
+                                            <input type="button" class="btn btn-outline-success btn-lg btn-block " value="Guardar" onclick="validarInformacion()">
+
+                                          </div>
+                                          <!--<button class="btn btn-outline-success  btn-lg">Guardar</button>-->
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+
+                                        </div>
+                                    </div>
+
+                                  </div>
+                                  <div class="row">
+
+                                  </div>
+
+                                  </div>
+                        </div>
+                  </form>
+                  <br><br>
+              </div>
+
+        </div>
+        <!--Final de la columna principal-->
+        <div class="col-md-1 col-sm-1 col-xs-1"></div>
+
+      </div>
+
+
+          <script>
+
+            let texto1 = document.querySelector('#texto1');
+            let texto2 = document.querySelector('#texto2');
+            let texto3 = document.querySelector('#texto3');
+            let texto4 = document.querySelector('#texto4');
+            let texto5 = document.querySelector('#texto5');
+            let texto6 = document.querySelector('#texto6');
+            let texto7 = document.querySelector('#texto7');
+            let verificacion_ = document.querySelector('#check');
+
+            let ap_paterno = document.querySelector("#apellido_paterno");
+            let ap_materno = document.querySelector("#apellido_materno");
+            let nombre = document.querySelector("#nombre");
+            let edad = document.querySelector("#edad");
+            let estado_civi  = document.querySelector("#estado_civil");
+            let carrera = document.querySelector("#carrera");
+            let semestre = document.querySelector("#semestre");
+            let grupo = document.querySelector("#grupo");
+            let celular = document.querySelector("#celular");
+            let idioma = document.querySelector("#otro_idioma");
+
+
+
+
+
+              function validarInformacion() {
+                for(i=0;i<document.form_datos_solicitante.residencia_distinta.length;i++){
+                  if(document.form_datos_solicitante.residencia_distinta[i].checked) {
+                    marcado=i;
+                  }
+                }
+
+                for(i=0;i<document.form_datos_solicitante.sexo.length;i++){
+                  if(document.form_datos_solicitante.sexo[i].checked) {
+                    marcado2=i;
+                  }
+                }
+                if (document.form_datos_solicitante.residencia_distinta[marcado].value != 0 &&  document.form_datos_solicitante.sexo[marcado2].value != null &&
+                  (ap_paterno.value != null && ap_paterno.value.length != 0) && (ap_materno.value != null && ap_materno.value.length != 0) &&
+                  (nombre.value != null && nombre.value.length != 0) && (edad.value != 0 && ap_materno.value.length != 0) && (estado_civi.value != null && estado_civi.value.length != 0) &&
+                  (carrera.value != null && carrera.value.length != 0) && (semestre.value != 0 && semestre.value.length != 0) && (grupo.value != null && grupo.value.length != 0) &&
+                  (celular.value != null && celular.value.length != 0) &&   (idioma.value != null && idioma.value.length != 0)
+                ) {
+
+                  if (document.form_datos_solicitante.residencia_distinta[marcado].value == "Si") {
+
+                    if ( (texto1.value != null && texto1.value.length != 0) && (texto2.value != null && texto2.value.length != 0) &&
+                        (texto3.value != null && texto3.value.length != 0) && (texto4.value != null && texto4.value.length != 0) &&
+                        (texto5.value != null && texto5.value.length != 0) && (texto6.value != null && texto6.value.length != 0) &&
+                        (texto7.value != null && texto7.value.length != 0)   ){
+                        document.form_datos_solicitante.submit();
+                    }else{
+                      Swal.fire({
+                        icon: 'error',
+                        text: '¡Hacen falta agunos datos en el segundo formulario!'
+                      })
+                      document.form_datos_solicitante.estado.focus({preventScroll:false});
+                      return 0;
+                    }
+                  }else{
+
+                    document.form_datos_solicitante.submit();
+                  }
+
+                }else {
+                  Swal.fire({
+                    icon: 'error',
+                    text: '¡Hacen falta agunos datos en el primer formulario!'
+                  })
+                  document.form_datos_solicitante.estado.focus({preventScroll:false});
+                  return 0;
+
+                }
+
+
+              }
+
+
+
+
+          </script>
+
+
+          <script>
+            var input1=document.querySelectorAll("input[name=residencia_distinta1]");
+            for(var i=0;i<input1.length;i++)
+            {
+              input1[i].disabled=true;
+            }
+          </script>
+
+      <script type="text/javascript">
+          function showContent() {
+              element = document.getElementById("content");
+              check = document.getElementById("check");
+              if (check.checked) {
+                  element.style.display='block';
+              }
+              else {
+                  element.style.display='none';
+              }
+          }
+          function showContent2() {
+            element = document.getElementById("content");
+            check = document.getElementById("check");
+            if (check.checked) {
+                element.style.display='none';
+            }
+            else {
+                element.style.display='none';
+            }
+            document.getElementById("texto1").value='';
+            document.getElementById("texto2").value='';
+            document.getElementById("texto3").value='';
+            document.getElementById("texto4").value='';
+            document.getElementById("texto5").value='';
+            document.getElementById("texto6").value='';
+            document.getElementById("texto7").value='';
+          }
+
+      </script>
+  </body>
+
+</html>
