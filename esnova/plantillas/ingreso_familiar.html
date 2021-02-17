@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="col-md-2 col-sm-2 col-xs-2">
                                       <input id="prodId" name="id_usuario" type="hidden" value="{{id_usuario_actual}}">
-                                      <input type="number" name="personas_que_trabajan" class="form-control" value="1" min="0" onkeypress="return numeros(event)" required/>
+                                      <input type="number" id="numero_de_personas" name="personas_que_trabajan" class="form-control" value="1" min="0" onkeypress="return numeros(event)" required/>
                                     </div>
                                   </div>
 
@@ -63,7 +63,7 @@
                                 <div class="col-md-1 col-sm-1 col-xs-1">
                                 </div>
                                   <div class="col-md-11 col-sm-11 col-xs-11">
-                                <p class="preguntas"><strong style="font-family: 'Montserrat', sans-serif; color: #0E6251;" >INGRESO MENSUAL DE LA FAMILIA: </strong></p>
+                                <p class="preguntas"><strong style="font-family: 'Montserrat', sans-serif; color: #0E6251;">INGRESO MENSUAL DE LA FAMILIA: </strong></p>
                               </div>
                             </div>
                             <br>
@@ -73,12 +73,12 @@
                                     <div class="col-md-4 col-sm-4 col-xs-4 ">
                                      <span class="preguntas"> <strong  style="color: #566573;">Padre:</strong></span>
                                      <div class="col-lg-5">
-                                     <input type="number" onkeypress="return filterFloat(event,this);" min="0" step="0.01" name="ingreso_padre" value="0" class="form-control" required>
+                                     <input type="number" onkeypress="return filterFloat(event,this);" min="0" step="0.01" id="ingreso_padre" name="ingreso_padre" value="0" class="form-control" required>
                                    </div></div>
                                     <div class="col-md-4 col-sm-4 col-xs-4">
                                      <span class="preguntas"><strong  style="color: #566573;"> Madre:</strong></span>
                                      <div class="col-lg-5">
-                                     <input type="number" onkeypress="return filterFloat(event,this);" min="0" step="0.01" name="ingreso_madre" value="0" class="form-control" required/>
+                                     <input type="number" onkeypress="return filterFloat(event,this);" min="0" step="0.01" id="ingreso_madre" name="ingreso_madre" value="0" class="form-control" required/>
                                    </div></div>
                                     <div class="col-md-2 col-sm-2 col-xs-2  text-center">
 
@@ -153,11 +153,11 @@
                                         </div>
                                         <div class="col-md-11 col-sm-11 col-xs-11">
                                          <div class="radio">
-                                         <input class="form-check-input" type="radio" name="apoyo_F_E"  onclick="showContent3()" id="check2" value="1"  checked >
+                                         <input class="form-check-input" type="radio" name="apoyo_F_E"  onclick="showContent3()" id="check2" value="Si"  checked >
                                          <label class="form-check-label" for="flexRadioDefault1">
                                            Si
                                          </label>
-                                         <input class="form-check-input" type="radio" name="apoyo_F_E"  onclick="showContent4()" id="check2" value="0" checked>
+                                         <input class="form-check-input" type="radio" name="apoyo_F_E"  onclick="showContent4()" id="check2" value="No" checked>
                                          <label class="form-check-label" for="flexRadioDefault2">
                                             No
                                          </label>
@@ -286,8 +286,8 @@
                                <br>
                                <div class="row  text-center ">
                                    <div class="col-md-12">
-                                   <button class="btn btn-outline-success  btn-lg">Guardar</button>
-                                   <!--<input type="button" class="btn btn-outline-success btn-lg btn-block " value="Guardar" onclick="funcionValidacion()">-->
+                                   <!--<button class="btn btn-outline-success  btn-lg">Guardar</button>-->
+                                   <input type="button" class="btn btn-outline-success btn-lg btn-block " value="Guardar" onclick="funcionValidacion()">
 
                                    <br><br><br>
                                    </div>
@@ -303,24 +303,67 @@
               <script>
                 let num_folio = document.querySelector('#texto5');
                 let fol_monto = document.querySelector("#texto6");
-                let otro_especifique = document.querySelector("texto7");
-                let iniciativa_privada = document.querySelector("texto8");
-                let monto_i_p = document.querySelector("texto9");
+                let otro_especifique = document.querySelector("#texto7");
+                let iniciativa_privada = document.querySelector("#texto8");
+                let monto_i_p = document.querySelector("#texto9");
+                let numero_de_personas = document.querySelector("#numero_de_personas");
+                let ingreso_padre = document.querySelector("#ingreso_padre");
+                let ingreso_madre = document.querySelector("#ingreso_madre");
 
                 function funcionValidacion(){
-                  var marcado=-1;
-
+                  var marcado=-1, marcado=-1, marcado2=-1;
+                  var bandera1=false, bandera2=false;
+                  var mensaje = "";
                   for(i=0;i<document.form_ingreso_familiar.tipo_de_apoyo.length;i++){
                     if(document.form_ingreso_familiar.tipo_de_apoyo[i].checked) {
                       marcado=i;
                     }
                   }
-                  if (marcado!=-1) {
-                    Swal.fire({
-                      icon: 'success',
-                      text: '¡Entro a la funcion!'+ document.form_ingreso_familiar.tipo_de_apoyo[marcado].value
-                    })
+                  for(i=0;i<document.form_ingreso_familiar.apoyo_F_E.length;i++){
+                    if(document.form_ingreso_familiar.apoyo_F_E[i].checked) {
+                      marcado2=i;
+                    }
                   }
+                  for(i=0;i<document.form_ingreso_familiar.otros.length;i++){
+                    if(document.form_ingreso_familiar.otros[i].checked) {
+                      marcado1=i;
+                    }
+                  }
+                  if (marcado!=-1 &&  document.form_ingreso_familiar.apoyo_F_E[marcado2].value=="Si") {
+                    if (document.form_ingreso_familiar.tipo_de_apoyo[marcado].value == "Otro") {
+                          if ((otro_especifique.value != null && otro_especifique.value.length != 0) &&
+                              (iniciativa_privada.value != null && iniciativa_privada.value.length != 0) &&
+                              (monto_i_p.value != null && monto_i_p.value.length != 0)) {
+                              bandera1=true;
+                          }else {
+                            mensaje =" Apoyo familiar"
+                          }
+                    }else {
+                      if ((num_folio.value != null && num_folio.value.length != 0) &&
+                          (fol_monto.value != null && fol_monto.value.length != 0)) {
+                          bandera1=true;
+                      }else {
+                        mensaje =" Apoyo familiar"
+                      }
+                    }
+                  }else if(marcado!=-1 && document.form_ingreso_familiar.apoyo_F_E[marcado2].value=="No"){
+                    bandera1=true;
+                  }
+                  if (bandera1 == true && ( numero_de_personas.value != null && numero_de_personas.value.length != 0 ) &&
+                      ( ingreso_padre.value != null && ingreso_padre.value.length != 0 ) && ( ingreso_madre.value != null && ingreso_madre.value.length != 0 ) &&
+                        marcado1!=-1
+                      ) {
+                        document.form_ingreso_familiar.submit();
+                  }else {
+                    Swal.fire({
+                      icon: 'error',
+                      text: '¡Verifique sus datos! '+mensaje,
+                      position: 'top',
+                      showConfirmButton: false,
+                      timer: 1200
+                    });
+                  }
+
                 }
 
               </script>
