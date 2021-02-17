@@ -668,22 +668,12 @@ def imagenes(request):
     }
     return render(request,'archivos.html',context)
 
-data = {
-	"company": "Dennnis Ivanov Company",
-	"address": "123 Street name",
-	"city": "Vancouver",
-	"state": "WA",
-	"zipcode": "98663",
-
-
-	"phone": "555-555-2345",
-	"email": "youremail@dennisivy.com",
-	"website": "dennisivy.com",
-	}
 
 class ViewPDF(View):
 	def get(self, request, *args, **kwargs):
+		data = {
 
+			}
 		pdf = render_to_pdf('plantilla_pdf.html', data)
 		return HttpResponse(pdf, content_type='application/pdf')
 
