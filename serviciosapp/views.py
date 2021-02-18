@@ -11,6 +11,7 @@ from django.template.loader import get_template
 from xhtml2pdf import pisa
 # Create your views here.
 id_usuario_actual = 0
+now = datetime.now()
 
 def render_to_pdf(template_src, context_dict={}):
 	template = get_template(template_src)
@@ -721,6 +722,7 @@ class ViewPDF(View):
 				'f7':f7,
 				'f8':f8,
 				'f9':f9,
+				'fecha_actual':now.date()
 			}
 		pdf = render_to_pdf('plantilla_pdf.html', data)
 		return HttpResponse(pdf, content_type='application/pdf')
@@ -777,6 +779,7 @@ class DownloadPDF(View):
 				'f7':f7,
 				'f8':f8,
 				'f9':f9,
+				'fecha_actual':now.date()
 			}
 		pdf = render_to_pdf('plantilla_pdf.html', data)
 
