@@ -28,9 +28,9 @@
     <br>
     <table>
       <tr>
-        <td>Fecha:</td>
+        <td>Fecha: {{fecha_actual}}</td>
         <td></td>
-        <td>Solicita Beca Alimentaria:</td>
+        <td>Solicita Beca Alimentaria: {{f1.solicita_beca_alimentaria}}</td>
       </tr>
     </table>
       <h2 style="color: #34495E; text-align:center;">1. DATOS PERSONALES DEL SOLICITANTE</h2>
@@ -49,9 +49,9 @@
             <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.ap_paterno}}</td>
             <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.ap_materno}}</td>
             <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.nombre}}</td>
-            <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
-            <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
-            <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
+            <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.sexo}}</td>
+            <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.edad}}</td>
+            <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.estado_civil}}</td>
           </tr>
           <tr>
             <td>Apellido Paterno</td>
@@ -65,17 +65,17 @@
         <table style="text-align:center;">
           <tr>
             <td>Carrera:</td>
-            <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
+            <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.carrera}}</td>
             <td>Semestre:</td>
-            <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
+            <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.semestre}}</td>
             <td>Grupo:</td>
-            <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
+            <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.grupo}}</td>
           </tr>
         </table><br>
         <table>
           <tr>
             <td>Teléfono celular (lada):</td>
-            <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
+            <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF; text-align:center;">{{f1.telefono}}</td>
             <td></td>
             <td></td>
             <td></td>
@@ -84,13 +84,13 @@
           <table>
             <tr>
               <td>Además del idioma español, ¿Qué otro idioma, lenguaje o dialecto habla?</td>
-              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
+              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF; text-align:center;">{{f1.otro_idiona}}</td>
             </tr>
           </table><br>
           <table>
             <tr>
               <td>Su estancia en la universidad, implica residencia distinta a la familiar: </td>
-              <td></td>
+              <td>{{f1.residencia_distinta}}</td>
             </tr>
           </table><br>
           <table>
@@ -100,10 +100,10 @@
           </table><br>
           <table style="text-align:center;">
             <tr>
-              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
-              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
-              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
-              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
+              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.calle}}</td>
+              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.numero}}</td>
+              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.colonia}}</td>
+              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.municipio}}</td>
             </tr>
             <tr>
               <td>Calle</td>
@@ -114,9 +114,9 @@
           </table><br>
           <table style="text-align:center;">
             <tr>
-              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
-              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
-              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;"></td>
+              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.estado}}</td>
+              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.propietario}}</td>
+              <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f1.parentesco}}</td>
             </tr>
             <tr>
               <td>Estado</td>
@@ -124,7 +124,7 @@
               <td>Parentesco</td>
             </tr>
           </table><br>
-      </table><br>
+      </table><br><br>
       <h2 style="color: #34495E; text-align:center;">2. INFORMACIÓN SOBRE GASTOS DEL SOLICITANTE</h2>
       <table style=" padding: 5px;">
       <table>
@@ -136,7 +136,7 @@ de la universidad):</td>
       </table>
       <table>
         <tr>
-          <td style="border-bottom: 1px solid #000000;">$</td>
+          <td style="border-bottom: 1px solid #000000;">${{f2.gastos_mensuales}}</td>
           <td></td>
           <td></td>
           <td></td>
@@ -149,7 +149,7 @@ de la universidad):</td>
       </table><br>
       <table>
         <tr>
-          <td style="border-bottom: 1px solid #000000;"></td>
+          <td style="border-bottom: 1px solid #000000;">{{f2.gastos_adicionales}}</td>
         </tr>
       </table><br>
       <table>
@@ -162,27 +162,27 @@ de la universidad):</td>
         <td></td>
         <td></td>
         <td></td>
-        <td style="border-bottom: 1px solid #000000;"></td>
+        <td style="border-bottom: 1px solid #000000;">{{f2.cant_personas_renta}}</td>
       </tr>
     </table><br>
       <table>
         <tr>
           <td>¿Cuánto paga de renta mensualmente (anote solo lo que Ud. Aporta)?</td>
-          <td  style="border-bottom: 1px solid #000000;">$</td>
+          <td  style="border-bottom: 1px solid #000000;">${{f2.renta_mensual}}</td>
         </tr>
       </table><br>
       <table>
         <tr>
           <td>Si renta y vive con familiares. ¿Cuántas personas habitan la vivienda?</td>
-          <td style="border-bottom: 1px solid #000000;"></td>
+          <td style="border-bottom: 1px solid #000000;">{{f2.cant_familiares_renta}}</td>
           <td>¿Qué parentesco tiene con usted?</td>
-          <td style="border-bottom: 1px solid #000000;"></td>
+          <td style="border-bottom: 1px solid #000000;">{{f2.parentesco_arrentador}}</td>
         </tr>
       </table><br>
       <table>
         <tr>
           <td>Medio más frecuente para el traslado a la Universidad:</td>
-          <td style="border-bottom: 1px solid #000000;"></td>
+          <td style="border-bottom: 1px solid #000000;">{{f2.medio_de_transporte}}</td>
         </tr>
       </table><br>
       <table>
@@ -192,27 +192,27 @@ de la universidad):</td>
       </table><br>
       <table>
         <tr>
-          <td style="border-bottom: 1px solid #000000;"></td>
+          <td style="border-bottom: 1px solid #000000;">{{f2.datos_transporte_propio}}</td>
         </tr>
       </table><br>
       <table>
         <tr>
           <td>Celular:</td>
-          <td></td>
+          <td>{{f2.celular}}</td>
           <td>Marca:</td>
-          <td style="border-bottom: 1px solid #000000;"></td>
+          <td style="border-bottom: 1px solid #000000;">{{f2.celular_marca}}</td>
           <td>Modelo:</td>
-          <td style="border-bottom: 1px solid #000000;"></td>
+          <td style="border-bottom: 1px solid #000000;">{{f2.celular_modelo}}</td>
         </tr>
       </table><br>
       <table>
         <tr>
           <td>Cámara fotografica:</td>
-          <td></td>
+          <td>{{f2.camara_fotografica}}</td>
           <td>Reproductor de audio</td>
-          <td></td>
+          <td>{{f2.reproductor_de_audio}}</td>
           <td>Tableta electrónica:</td>
-          <td></td>
+          <td>{{f2.tableta_electronica}}</td>
         </tr>
       </table><br>
       <table>
@@ -224,7 +224,7 @@ de la universidad):</td>
         <tr>
           <td></td>
           <td></td>
-          <td style="border-bottom: 1px solid #000000;"></td>
+          <td style="border-bottom: 1px solid #000000;">{{f2.centro_de_trabajo}}</td>
         </tr>
       </table><br>
       <table>
@@ -236,7 +236,7 @@ de la universidad):</td>
         <tr>
           <td></td>
           <td></td>
-          <td style="border-bottom: 1px solid #000000;">$</td>
+          <td style="border-bottom: 1px solid #000000;">${{f2.ingreso_mensual}}</td>
         </tr>
       </table><br>
       <table>
@@ -246,13 +246,13 @@ de la universidad):</td>
       </table><br>
       <table>
         <tr>
-          <td style="border-bottom: 1px solid #000000;"></td>
+          <td style="border-bottom: 1px solid #000000;">{{f2.datos_trabajo}}</td>
         </tr>
       </table><br>
       <table>
         <tr>
           <td>¿Es jefe de familia?:</td>
-          <td></td>
+          <td>{{f2.jefe_de_familia}}</td>
           <td></td>
         </tr>
       </table><br>
@@ -265,10 +265,10 @@ de la universidad):</td>
         <tr>
           <td></td>
           <td></td>
-          <td style="border-bottom: 1px solid #000000;"></td>
+          <td style="border-bottom: 1px solid #000000;">{{f2.personas_dependientes}}</td>
         </tr>
       </table><br>
-    </table><br>
+    </table><br><br><br>
     <h2 style="color: #34495E; text-align:center;">3. MEDIOS PARA ESTUDIAR (Propiedad actual)</h2>
     <table style=" padding: 5px;">
       <table>
@@ -279,37 +279,37 @@ de la universidad):</td>
       <table>
         <tr>
           <td>Computadora de escritorio</td>
-          <td></td>
+          <td>{{f3.computadora_de_escritorio}}</td>
           <td>Laptop</td>
-          <td></td>
+          <td>{{f3.laptop}}</td>
           <td>Impresora</td>
-          <td></td>
+          <td>{{f3.impresora}}</td>
           <td>DVD-CD/WR</td>
-          <td></td>
+          <td>{{f3.dvd}}</td>
 
         </tr>
       </table><br>
       <table>
         <tr>
           <td>Máquina de escribir</td>
-          <td></td>
+          <td>{{f3.maquina_de_escribir}}</td>
           <td>Calculadora</td>
-          <td></td>
+          <td>{{f3.calculadora}}</td>
           <td>Escritorio/mesa de trabajo</td>
-          <td></td>
+          <td>{{f3.escritorio}}</td>
           <td>Enciclopedias</td>
-          <td></td>
+          <td>{{f3.enciclopedia}}</td>
         </tr>
       </table><br>
       <table>
         <tr>
           <td>Libros Especializados</td>
-          <td></td>
+          <td>{{f3.libros_especializados}}</td>
           <td>Internet:</td>
           <td>Telefonía</td>
-          <td></td>
+          <td>{{f3.telefonia}}</td>
           <td>banda ancha</td>
-          <td></td>
+          <td>{{f3.banda_ancha}}</td>
         </tr>
       </table><br>
       <table>
@@ -319,10 +319,10 @@ de la universidad):</td>
       </table><br>
       <table>
         <tr>
-          <td style="border-bottom: 1px solid #000000;"></td>
+          <td style="border-bottom: 1px solid #000000;">{{f3.falta_algun_medio}}</td>
         </tr>
       </table><br>
-    </table><br>
+    </table><br><br><br>
     <h2 style="color: #34495E; text-align:center;">4. DATOS DE LA(S) PERSONA(S) DE QUIEN(ES) DEPENDE ECONÓMICAMENTE</h2>
     <table style=" padding: 5px;">
       <table>
@@ -330,13 +330,403 @@ de la universidad):</td>
           <td>a) Datos de quien depende económicamente</td>
         </tr>
       </table>
-    </table>
+      <table style="text-align:center;">
+        <tr>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.ap_paterno}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.ap_materno}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.nombre}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.sexo}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.edad}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.estado_civil}}</td>
+        </tr>
+        <tr>
+          <td>Apellido Paterno</td>
+          <td>Apellido Materno</td>
+          <td>Nombre</td>
+          <td>Sexo</td>
+          <td>Edad</td>
+          <td>Estado Civil</td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Teléfono fijo (lada):</td>
+          <td style="border-bottom: 1px solid #000000;">{{f4.telefono_fijo}}</td>
+          <td>Celular:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f4.celular}}</td>
+          <td>Parentesco:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f4.parentesco}}</td>
+        </tr>
+      </table><br>
+      <table style="text-align:center;">
+        <tr>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.calle}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.numero}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.colonia}}</td>
+        </tr>
+        <tr>
+          <td>Calle</td>
+          <td>Número</td>
+          <td>Colonia o Barrio</td>
+        </tr>
+      </table><br>
+      <table style="text-align:center;">
+        <tr>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.municipio}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.region}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.estado}}</td>
+        </tr>
+        <tr>
+          <td>Municipio</td>
+          <td>Región</td>
+          <td>Estado</td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Grado de escolaridad:</td>
+          <td>{{f4.grado_escolaridad}}</td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Tipo de trabajo:</td>
+          <td>{{f4.tipo_de_trabajo}}</td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Ocupación:</td>
+          <td>{{f4.ocupacion}}</td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>En caso de trabajar actualmente mencione:</td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Nombre de la empresa/dependencia:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f4.empresa}}</td>
+          <td>Cargo:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f4.cargo}}</td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Área o Departamento:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f4.area}}</td>
+          <td>Antigüedad:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f4.antiguedad}}</td>
+          <td>Teléfono (lada):</td>
+          <td style="border-bottom: 1px solid #000000;">{{f4.telefono_empresa}}</td>
+        </tr>
+      </table><br>
+      <table style="text-align:center;">
+        <tr>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.calle_empresa}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.numero_empresa}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.colonia_empresa}}</td>
+        </tr>
+        <tr>
+          <td>Calle</td>
+          <td>Número</td>
+          <td>Colonia o Barrio</td>
+        </tr>
+      </table><br>
+      <table style="text-align:center;">
+        <tr>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.municipio_empresa}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.region_empresa}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.estado_empresa}}</td>
+        </tr>
+        <tr>
+          <td>Municipio</td>
+          <td>Región</td>
+          <td>Estado</td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>b) Datos de un tercero que apoya económicamente al solicitante</td>
+        </tr>
+      </table><br>
+      <table style="text-align:center;">
+        <tr>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.ap_paterno_tercero}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.ap_materno_tercero}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.nombre_tercero}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.edad_tercero}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f4.parentesco_tercero}}</td>
+        </tr>
+        <tr>
+          <td>Apellido Paterno</td>
+          <td>Apellido Materno</td>
+          <td>Nombre</td>
+          <td>Edad</td>
+          <td>Parentesco</td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Teléfono fijo (lada):</td>
+          <td style="border-bottom: 1px solid #000000;">{{f4.telefono_tercero}}</td>
+          <td>Celular:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f4.celular_tercero}}</td>
+          <td>Ocupación:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f4.ocupacion_tercero}}</td>
+        </tr>
+      </table><br><br>
+      <table>
+        <tr>
+          <td>Nota: Si el responsable es la misma persona de quien depende económicamente, pasar al punto 6.</td>
+        </tr>
+      </table><br>
+    </table><br><br><br>
+    <h2 style="color: #34495E; text-align:center;">5. DATOS DEL RESPONSABLE</h2>
+    <table style=" padding: 5px;">
+      <table style="text-align:center;">
+        <tr>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.ap_paterno}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.ap_materno}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.nombre}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.sexo}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.edad}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.estado_civil}}</td>
+        </tr>
+        <tr>
+          <td>Apellido Paterno</td>
+          <td>Apellido Materno</td>
+          <td>Nombre</td>
+          <td>Sexo</td>
+          <td>Edad</td>
+          <td>Estado Civil</td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Teléfono fijo (lada):</td>
+          <td style="border-bottom: 1px solid #000000;">{{f5.telefono_fijo}}</td>
+          <td>Celular:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f5.celular}}</td>
+          <td>Parentesco:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f5.parentesco}}</td>
+        </tr>
+      </table><br>
+      <table style="text-align:center;">
+        <tr>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.calle}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.numero}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.colonia}}</td>
+        </tr>
+        <tr>
+          <td>Calle</td>
+          <td>Número</td>
+          <td>Colonia o Barrio</td>
+        </tr>
+      </table><br>
+      <table style="text-align:center;">
+        <tr>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.municipio}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.region}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.estado}}</td>
+        </tr>
+        <tr>
+          <td>Municipio</td>
+          <td>Región</td>
+          <td>Estado</td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Grado de escolaridad:</td>
+          <td>{{f5.grado_escolaridad}}</td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Tipo de trabajo:</td>
+          <td>{{f5.tipo_de_trabajo}}</td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Ocupación:</td>
+          <td>{{f5.ocupacion}}</td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>En caso de trabajar actualmente mencione:</td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Nombre de la empresa/dependencia:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f5.empresa}}</td>
+          <td>Cargo:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f5.cargo}}</td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Área o Departamento:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f5.area}}</td>
+          <td>Antigüedad:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f5.antiguedad}}</td>
+          <td>Teléfono (lada):</td>
+          <td style="border-bottom: 1px solid #000000;">{{f5.telefono_empresa}}</td>
+        </tr>
+      </table><br>
+      <table style="text-align:center;">
+        <tr>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.calle_empresa}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.numero_empresa}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.colonia_empresa}}</td>
+        </tr>
+        <tr>
+          <td>Calle</td>
+          <td>Número</td>
+          <td>Colonia o Barrio</td>
+        </tr>
+      </table><br>
+      <table style="text-align:center;">
+        <tr>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.municipio_empresa}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.region_empresa}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">{{f5.estado_empresa}}</td>
+        </tr>
+        <tr>
+          <td>Municipio</td>
+          <td>Región</td>
+          <td>Estado</td>
+        </tr>
+      </table><br>
+    </table><br><br><br>
+    <h2 style="color: #34495E; text-align:center;">6. INGRESO FAMILIAR MENSUAL</h2>
+    <table style=" padding: 5px;">
+      <table>
+        <tr>
+          <td>Número de personas que trabajan:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f6.personas_que_trabajan}}</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>INGRESO MENSUAL DE LA FAMILIA</td>
+        </tr>
+      </table><br>
+      <table style="text-align:center;">
+        <tr>
+          <td>Padre:</td>
+          <td style="border-bottom: 1px solid #000000;">${{f6.ingreso_padre}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table style="text-align:center;">
+        <tr>
+          <td>Madre:</td>
+          <td style="border-bottom: 1px solid #000000;">${{f6.ingreso_madre}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Otros (especifique)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table style="text-align:center;">
+        <tr>
+          <td style="border-bottom: 1px solid #000000;">{{f6.otro_nombre_1}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">${{f6.ingreso_nombre_1}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table style="text-align:center;">
+        <tr>
+          <td style="border-bottom: 1px solid #000000;">{{f6.otro_nombre_2}}</td>
+          <td style="border-bottom: 1px solid #000000; border-left: 15px solid #FFFFFF;">${{f6.ingreso_nombre_2}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>¿Recibe apoyo tu familia por parte del Gobierno Federal o Estatal?:</td>
+          <td>{{f6.apoyo_F_E}}</td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Indica cuál:</td>
+          <td>{{f6.tipo_de_apoyo}}</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Número de Folio:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f6.numero_folio}}</td>
+          <td>Monto:</td>
+          <td style="border-bottom: 1px solid #000000;">${{f6.monto_folio}}</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>OTRO (especifique):</td>
+          <td style="border-bottom: 1px solid #000000;">{{f6.otro_especifique}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table><br>
+      <table>
+        <tr>
+          <td>Iniciativa privada:</td>
+          <td style="border-bottom: 1px solid #000000;">{{f6.iniciativa_privada}}</td>
+          <td>Monto:</td>
+          <td style="border-bottom: 1px solid #000000;">${{f6.monto_i_p}}</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table><br>
+    </table><br><br><br>
   </body>
 
 </html>
 <style>
     @page {
-        size: a4 portrait;
+        size: letter portrait;
         @frame header_frame {           /* Static Frame */
             -pdf-frame-content: header_content;
             left: 50pt; width: 512pt; top: 50pt; height: 40pt;
