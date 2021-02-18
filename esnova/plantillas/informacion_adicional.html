@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+      <script type="text/javascript" src="{% static 'js/validaciones_numericas.js'  %}?v=0.0.3"></script>
 
   </head>
   <body>
@@ -80,12 +81,12 @@
 
                                    </div>
                                     <br>
+                                    <span  style="color: #566573;"><strong>Material con que esta construida la casa(Paredes):</strong></span>
+
                                      <div class="row ">
-                                     <div class="col-md-12">
-                                       <br>
-                                       <br>
-                                             <span  style="color: #566573;"><strong>Material con que esta construida la casa(Paredes):</strong></span>
-                                             <br>
+                                     <div class="col-md-5">
+
+
 
                                              <div class="form-check form-check-inline">
                                                <input class="form-check-input" type="radio" name="material_paredes" id="inlineRadio11" value="Adobe"  onclick="enableInput(this)" required>
@@ -106,37 +107,36 @@
 
 
                                            </div>
+                                           <div class="col-md-3 col-sm-3 col-xs-3">
+
+                                                  <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="material_paredes" id="otro_material" value="Otro (Especifique)" onclick="enableInput(this)" >
+                                                    <label class="form-check-label" for="otro_material">Otro (Especifique)</label>
+                                                  </div>
+
+                                             <input type="text" class="form-control" name="otro_material" placeholder="Especificar otro material" required/>
+                                           </div>
 
                                             </div>
 
-                                              <div class="row ">
 
-                                                      <div class="col-md-3 col-sm-3 col-xs-3">
-                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="material_paredes" id="otro_material" value="Otro (Especifique)" onclick="enableInput(this)" >
-                                                               <label class="form-check-label" for="otro_material">Otro (Especifique)</label>
-                                                             </div>
-
-                                                        <input type="text" class="form-control" name="otro_material" placeholder="Especificar otro material" required/>
-                                                      </div>
-                                                      <div class="col-md-3 col-sm-3 col-xs-3">
-                                                      </div>
-                                              </div>
-                                              <br>
-                                                <br>
                                                     <div class="row ">
 
 
                                                         <div class="col-md-3 col-sm-3 col-xs-3">
 
                                                          <span style="color: #566573;"><strong>Material del piso:</strong></span>
+                                                         <div class="col-lg-8">
                                                          <input type="text" class="form-control" name="material_piso"/>
+                                                        </div>
                                                         </div>
 
                                                         <div class="col-md-4 col-sm-4 col-xs-4">
 
                                                          <span style="color: #566573;"><strong>Material del techo:</strong></span>
+                                                         <div class="col-lg-8">
                                                          <input type="text" class="form-control" name="material_techo"/>
+                                                       </div>
                                                         </div>
 
 
@@ -146,10 +146,11 @@
                                                 </div>
                                                 </div>
                                                <br>
+                                               <span style="color: #566573;"><strong>Tipo de vivienda:</strong></span>
+
                                                <div class="row ">
                                                <div class="col-md-12">
-                                                       <span style="color: #566573;"><strong>Tipo de vivienda:</strong></span>
-                                                       <br>
+
 
                                                        <div class="form-check form-check-inline">
                                                          <input class="form-check-input" type="radio" name="tipo_vivienda" id="inlineRadio14" value="Casa sola"  required>
@@ -174,11 +175,9 @@
                                                       </div>
 
                                                 <br>
+                                                        <span style="color: #566573;"><strong>Servicios públicos:</strong></span>
 
                                                        <div class="row ">
-
-                                                               <span style="color: #566573;"><strong>Servicios públicos:</strong></span>
-
 
 
                                                                <div class="col-md-3 col-sm-3 col-xs-3">
@@ -200,25 +199,20 @@
                                                                  <label class="form-check-label" for="exampleCheck1"><strong>Drenaje</strong></label>
                                                                  </div>
                                                                </div>
+                                                               <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                  <span ><strong>Otro Servicio publico</strong></span>
+                                                                 <input type="text" class="form-control" name="otro_servicio" value="" placeholder="Especificar servicio" />
+                                                               </div>
 
 
 
                                                               </div>
+                                                              <span style="color: #566573;"><strong>Servicios con los que cuenta la vivienda:</strong></span>
 
-                                                       <div class="row">
 
-
-                                                                 <div class="col-md-4 col-sm-4 col-xs-4">
-                                                                    <span style="color: #566573;"><strong>Otro Servicio publico</strong></span>
-                                                                   <input type="text" class="form-control" name="otro_servicio" value="" placeholder="Especificar servicio" />
-                                                                 </div>
-
-                                                         </div>
-                                                         <br>
                                                          <div class="row ">
 
-                                                                 <span style="color: #566573;"><strong>Servicios con los que cuenta la vivienda:</strong></span>
-                                                                 <br>
+
 
                                                                  <div class="col-md-2 col-sm-2 col-xs-2">
                                                                    <div class="form-check">
@@ -251,21 +245,14 @@
                                                                    <label class="form-check-label" for="exampleCheck1"><strong>Drenaje</strong></label>
                                                                    </div>
                                                                  </div>
-                                                                  <div class="col-md-1 col-sm-1 col-xs-1"></div>
+                                                                  <div class="col-md-2 col-sm-2 col-xs-2">
+                                                                  <span ><strong>Otro Servicio</strong></span>
+                                                                 <input type="text" class="form-control" name="otro_servicio_vivienda" value="" placeholder="Especificar servicio" />
+                                                                 </div>
 
                                                                 </div>
 
-                                                                <div class="row">
 
-
-                                                                          <div class="col-md-3 col-sm-3 col-xs-3">
-                                                                             <span style="color: #566573;"><strong>Otro Servicio</strong></span>
-                                                                            <input type="text" class="form-control" name="otro_servicio_vivienda" value="" placeholder="Especificar servicio" />
-                                                                          </div>
-
-                                                                  </div>
-
-                                                                <br>
                                                                 <div class="row ">
 
                                                                    <span style="color: #566573;"><strong>La casa familiar cuenta con:</strong></span>
@@ -386,154 +373,151 @@
                                                             <br>
                                                             <div class="row">
                                                                <span style="color: #566573;"> <strong>No. de personas TOTAL que habitan en la vivienda:</strong></span>
-                                                               <input style="width: 4em" type="number" max="21" min="1" name="personas_habitan" class="form-control" required/>
+                                                                <div class="col-lg-2">
+                                                               <input type="number" max="21" min="1" name="personas_habitan" class="form-control" onkeypress="return numeros(event)" required/>
+                                                             </div>
                                                              </div>
                                                              <br>
 
-                                                             <p style="color: #566573;">Espacios con los que cuenta la vivienda (indique con número):<strong></strong></p>
+                                                             <p style="color: #566573;"><strong>Espacios con los que cuenta la vivienda (indique con número):</strong></p>
 
                                                        <div class="row">
+                                                         <div class="col-md-2 col-sm-2 col-xs-2">
                                                           <span style="color: #566573;"><strong>Cuartos</strong></span>
-                                                            <input type="number" max="21" min="1" style="width: 6em" name="cuartos" class="form-control" value="1"/>
+                                                            <input type="number" max="21" min="1" name="cuartos" class="form-control" value="1"/>
 
                                                         </div>
 
-                                                        <div class="row">
+                                                        <div class="col-md-2 col-sm-2 col-xs-2">
 
                                                            <span style="color: #566573;"><strong>Baños</strong></span>
-                                                            <input type="number" max="4" min="1"  style="width: 6em" name="banios" class="form-control" value="1"/>
+                                                            <input type="number" max="4" min="1" name="banios" class="form-control" value="1"/>
 
                                                          </div>
 
-                                                         <div class="row">
-                                                           <div class="col-md-12">
-                                                             <span style="color: #566573;"><strong>Baños tipo:</strong></span>
+                                                         <div class="col-md-3 col-sm-3 col-xs-3">
+                                                           <span style="color: #566573;"><strong>Baños tipo:</strong></span>
+                                                           <br>
+
+                                                           <div class="form-check form-check-inline">
+                                                             <input class="form-check-input" type="radio" name="banios_tipo" id="inlineRadio6" value="completos" required>
+                                                             <label class="form-check-label" for="inlineRadio5">Completos</label>
+                                                           </div>
+
+
+                                                           <div class="form-check form-check-inline">
+                                                             <input class="form-check-input" type="radio" name="banios_tipo" id="inlineRadio6" value="medios" required>
+                                                             <label class="form-check-label" for="inlineRadio5">Medios</label>
+                                                           </div>
+
+                                                           </div>
+
+                                                           <div class="col-md-4 col-sm-4 col-xs-4">
+                                                             <span style="color: #566573;"><strong>Cocina Tipo:</strong></span>
                                                              <br>
 
-                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="banios_tipo" id="inlineRadio6" value="completos" required>
-                                                               <label class="form-check-label" for="inlineRadio5">Completos</label>
-                                                             </div>
+                                                           <div class="form-check form-check-inline">
+                                                             <input class="form-check-input" type="radio" name="cocina_tipo" id="inlineRadio6" value="integral" required>
+                                                             <label class="form-check-label" for="inlineRadio3">Integral</label>
+                                                           </div>
+                                                           <div class="form-check form-check-inline">
+                                                             <input class="form-check-input" type="radio" name="cocina_tipo" id="inlineRadio6" value="tradicional" required>
+                                                             <label class="form-check-label" for="inlineRadio4">Tradicional</label>
+                                                           </div>
+                                                           <div class="form-check form-check-inline">
+                                                             <input class="form-check-input" type="radio" name="cocina_tipo" id="inlineRadio6" value="rural" required>
+                                                             <label class="form-check-label" for="inlineRadio5">Rural (Fogón)</label>
+                                                           </div>
 
+                                                           </div>
 
-                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="banios_tipo" id="inlineRadio6" value="medios" required>
-                                                               <label class="form-check-label" for="inlineRadio5">Medios</label>
-                                                             </div>
+                                                       </div>
 
-                                                         </div>
-
-                                                         </div>
-
-                                                         <div class="row ">
-                                                          <div class="col-md-12">
-                                                            <span style="color: #566573;"><strong>Cocina Tipo:</strong></span>
-                                                            <br>
-
-                                                          <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="cocina_tipo" id="inlineRadio6" value="integral" required>
-                                                            <label class="form-check-label" for="inlineRadio3">Integral</label>
-                                                          </div>
-                                                          <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="cocina_tipo" id="inlineRadio6" value="tradicional" required>
-                                                            <label class="form-check-label" for="inlineRadio4">Tradicional</label>
-                                                          </div>
-                                                          <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="cocina_tipo" id="inlineRadio6" value="rural" required>
-                                                            <label class="form-check-label" for="inlineRadio5">Rural (Fogón)</label>
-                                                          </div>
                                                           <br>
 
                                                           <div class="row justify-content-center">
 
-                                                            <div class="col-xs-2 col-xs-offset-4">
+                                                            <div class="col-md-3 col-sm-3 col-xs-3">
                                                               <div class="checkbox-inline">
                                                                 <label class="checkbox-inline">
-                                                                  <br>
+
                                                                   <input type="checkbox" name="comedor" value=""><strong>Comedor (aparte de la cocina) </strong></label>
                                                               </div>
                                                             </div>
 
-                                                           </div>
-                                                           <br>
-                                                           <div class="row justify-content-center">
-                                                             <div class="col-xs-2 col-xs-offset-4">
+
+                                                             <div class="col-md-3 col-sm-3 col-xs-3">
                                                                <div class="checkbox-inline">
                                                                  <label class="checkbox-inline">
                                                                    <input type="checkbox" name="sala" value=""><strong>Sala </strong></label>
                                                                </div>
                                                              </div>
-                                                            </div>
-                                                            <br>
 
-                                                            <div class="row checkbox-row">
 
-                                                              <div class="col-xs-2 col-xs-offset-4">
+                                                              <div class="col-md-3 col-sm-3 col-xs-3">
                                                                 <div class="checkbox-inline">
                                                                   <label class="checkbox-inline">
                                                                     <input type="checkbox" name="biblioteca" value="True"><strong>Biblioteca </strong></label>
                                                                 </div>
                                                               </div>
-                                                             </div>
-                                                             <br>
 
-                                                             <div class="row justify-content-center">
-                                                               <div class="col-xs-2 col-xs-offset-4">
+                                                               <div class="col-md-3 col-sm-3 col-xs-3">
                                                                  <div class="checkbox-inline">
                                                                    <label class="checkbox-inline">
                                                                      <input type="checkbox" name="terraza" value="True"><strong>Terraza </strong></label>
                                                                  </div>
                                                                </div>
+
                                                               </div>
-                                                              <br>
+
+
                                                               <div class="row justify-content-center">
-                                                                <div class="col-xs-2 col-xs-offset-4">
+                                                              <div class="col-md-3 col-sm-3 col-xs-3">
                                                                   <div class="checkbox-inline">
                                                                     <label class="checkbox-inline">
                                                                       <input type="checkbox" name="cuarto_estudio" value="True"><strong>Cuarto de Estudio </strong></label>
                                                                   </div>
                                                                 </div>
-                                                               </div>
-                                                               <br>
-                                                               <div class="row justify-content-center">
-                                                                 <div class="col-xs-2 col-xs-offset-4">
+
+
+                                                                 <div class="col-md-3 col-sm-3 col-xs-3">
                                                                    <div class="checkbox-inline">
                                                                      <label class="checkbox-inline">
                                                                        <input type="checkbox" name="patio" value="True"><strong>Patio </strong></label>
                                                                    </div>
                                                                  </div>
-                                                                </div>
-                                                                <br>
 
-                                                                <div class="row justify-content-center">
-                                                                  <div class="col-xs-2 col-xs-offset-4">
+
+
+                                                                  <div class="col-md-3 col-sm-3 col-xs-3">
                                                                     <div class="checkbox-inline">
                                                                       <label class="checkbox-inline">
                                                                         <input type="checkbox" name="cochera" value="True"><strong>Cochera </strong></label>
                                                                     </div>
                                                                   </div>
-                                                                 </div>
-                                                                 <br>
-                                                                 <div class="row justify-content-center">
-                                                                   <div class="col-xs-2 col-xs-offset-4">
+
+                                                                   <div class="col-md-3 col-sm-3 col-xs-3">
                                                                      <div class="checkbox-inline">
                                                                        <label class="checkbox-inline">
                                                                          <input type="checkbox" name="cuarto_servicio" value="True"><strong>Cuarto de Servicio </strong></label>
                                                                      </div>
                                                                    </div>
                                                                   </div>
-                                                                  <br>
 
-                                                                  <div class="row justify-content-center">
+
+                                                                  <div class="row">
                                                                      <span style="color: #566573;"><strong>Otro(especifique)</strong></span>
-                                                                       <input type="text"  style="width: 6em" name="otro" class="form-control" value=""/>
+                                                                      <div class="col-lg-3">
+                                                                       <input type="text" name="otro" class="form-control" value=""/>
+                                                                     </div>
 
                                                                    </div>
                                                                    <br>
+                                                                   <span style="color: #566573;"><strong>Focos existentes en la vivienda (contando lámparas de techo, mesa y patio):</strong></span>
+
                                                                    <div class="row ">
                                                                     <div class="col-md-12">
-                                                                      <span style="color: #566573;"><strong>Focos existentes en la vivienda (contando lámparas de techo, mesa y patio):</strong></span>
-                                                                      <br>
+
 
                                                                     <div class="form-check form-check-inline">
                                                                       <input class="form-check-input" type="radio" name="focos" id="inlineRadio6" value="3_o_menos" required>
@@ -588,20 +572,24 @@
 
                                                                             <div class="col-md-3 col-sm-3 col-xs-3">
                                                                               <span style="color: #566573;"> <strong>Marca</strong></span>
+                                                                              <div class="col-lg-8">
                                                                             <input type="text" name="marca" value=" " class="form-control" id="texto1"/>
-                                                                           </div>
+                                                                          </div></div>
                                                                            <div class="col-md-3 col-sm-3 col-xs-3">
                                                                              <span style="color: #566573;"> <strong>Modelo</strong></span>
+                                                                             <div class="col-lg-8">
                                                                            <input type="text" name="modelo" value=" " class="form-control" id="texto2"/>
-                                                                          </div>
+                                                                         </div></div>
                                                                           <div class="col-md-3 col-sm-3 col-xs-3">
                                                                             <span style="color: #566573;"> <strong>Año</strong></span>
+                                                                            <div class="col-lg-8">
                                                                           <input type="number" max="2022" min="1900" name="anio" value="" class="form-control" id="texto3"/>
-                                                                         </div>
+                                                                        </div></div>
                                                                         </div>
+                                                                        <br>
 
                                                                       </div>
-                                                                      <br>
+
                                                                       <div class="row ">
                                                                        <div class="col-md-12">
                                                                          <span style="color: #566573;"><strong>En caso de que la persona de quien depende económicamente sea productor agropecuario, especifique tipo de cultivo y/o tipo de
@@ -670,23 +658,27 @@
                                                                     <div class="row">
                                                                       <div class="col-md-3 col-sm-3 col-xs-3">
                                                                        <span style="color: #566573;"><strong>Negocio: </strong></span>
+                                                                       <div class="col-lg-8">
                                                                          <input type="text" name="negocio" class="form-control" value=""/>
-                                                                         </div>
+                                                                       </div></div>
                                                                     <div class="col-md-3 col-sm-3 col-xs-3">
                                                                           <span style="color: #566573;"><strong>Tipo de Negocio: </strong></span>
+                                                                          <div class="col-lg-8">
                                                                             <input type="text" name="tipo_negocio" class="form-control" value=""/>
-                                                                    </div>
+                                                                    </div></div>
                                                                     <div class="col-md-3 col-sm-3 col-xs-3">
                                                                         <span style="color: #566573;"><strong>Otros (especifique): </strong></span>
+                                                                        <div class="col-lg-8">
                                                                        <input type="text" name="otros_bienes_especifique" class="form-control" value=""/>
-                                                                      </div>
+                                                                     </div></div>
 
                                                                      </div>
                                                                      <br>
+                                                                     <span style="color: #566573;"><strong>Servicios de asistencia médica que reciben los integrantes de la familia:</strong></span>
+
                                                                      <div class="row ">
-                                                                     <div class="col-md-12">
-                                                                             <span style="color: #566573;"><strong>Servicios de asistencia médica que reciben los integrantes de la familia:</strong></span>
-                                                                             <br>
+                                                                     <div class="col-md-7">
+
 
                                                                              <div class="form-check form-check-inline">
                                                                                <input class="form-check-input" type="radio" name="servicios_asistencia_medica" id="inlineRadio20" value="imss"  onclick="enableInput4(this)" required>
@@ -711,21 +703,20 @@
 
                                                                            </div>
 
+                                                                             <div class="col-md-3 col-sm-3 col-xs-3">
+
+                                                                            <div class="form-check form-check-inline">
+                                                                            <input class="form-check-input" type="radio" name="servicios_asistencia_medica" id="otros_servicios" value="Otro (Especifique)" onclick="enableInput4(this)">
+                                                                            <label class="form-check-label" for="otros_servicios">Otro (Especifique)</label>
                                                                             </div>
 
-                                                                            <div class="row ">
+                                                                           <input type="text" class="form-control"  value="" name="otros_servicios" placeholder="Especificar otro servicios">
+                                                                           </div>
 
-                                                                                    <div class="col-md-3 col-sm-3 col-xs-3">
-                                                                                           <div class="form-check form-check-inline">
-                                                                                             <input class="form-check-input" type="radio" name="servicios_asistencia_medica" id="otros_servicios" value="Otro (Especifique)" onclick="enableInput4(this)">
-                                                                                             <label class="form-check-label" for="otros_servicios">Otro (Especifique)</label>
-                                                                                           </div>
 
-                                                                                      <input type="text" class="form-control"  value="" name="otros_servicios" placeholder="Especificar otro servicios">
-                                                                                    </div>
-                                                                                    <div class="col-md-3 col-sm-3 col-xs-3">
-                                                                                    </div>
                                                                             </div>
+
+
                                                                             <br>
                                                                             <div class="row ">
                                                                              <div class="col-md-12">
@@ -746,21 +737,25 @@
                                                                          <div class="row justify-content-center">
                                                                            <div class="col-md-3 col-sm-3 col-xs-3">
                                                                             <span style="color: #566573;"><strong>En especie (especifique): </strong></span>
+                                                                            <div class="col-lg-8">
                                                                               <input type="text" name="en_especie" class="form-control" value=""/>
-                                                                              </div>
+                                                                            </div></div>
                                                                          <div class="col-md-3 col-sm-3 col-xs-3">
                                                                                <span style="color: #566573;"><strong>Monto: </strong></span>
+                                                                               <div class="col-lg-8">
                                                                                  <input type="text" name="monto_apoyo" class="form-control" onkeypress="return filterFloat(event,this);" placeholder="$" value=""/>
-                                                                         </div>
+                                                                         </div></div>
                                                                          <div class="col-md-3 col-sm-3 col-xs-3">
                                                                              <span style="color: #566573;"><strong>Dependencia/Empresa: </strong></span>
+                                                                             <div class="col-lg-8">
                                                                             <input type="text" name="dependencia_empresa" class="form-control" value=""/>
-                                                                           </div>
+                                                                          </div></div>
 
                                                                            <div class="col-md-3 col-sm-3 col-xs-3">
                                                                                <span style="color: #566573;"><strong>Periodo de apoyo:  </strong></span>
+                                                                               <div class="col-lg-8">
                                                                               <input type="text" name="periodo_apoyo" class="form-control" value=""/>
-                                                                             </div>
+                                                                            </div></div>
 
                                                                           </div>
                                                                           <br>
@@ -769,8 +764,8 @@
 
                                                         <div class="row justify-content-center">
                                                          <div class="col text-center">
-                                                           <br>
-                                                          <button class="btn btn-outline-success  btn-lg">Guardar información</button>
+
+                                                          <button class="btn btn-outline-success  btn-lg">Guardar</button>
                                                         <br>
                                                         </div>
 
