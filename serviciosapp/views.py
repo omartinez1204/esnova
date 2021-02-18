@@ -778,7 +778,7 @@ class DownloadPDF(View):
 				'f8':f8,
 				'f9':f9,
 			}
-		pdf = render_to_pdf('app/pdf_template.html', data)
+		pdf = render_to_pdf('plantilla_pdf.html', data)
 
 		response = HttpResponse(pdf, content_type='application/pdf')
 		filename = "Invoice_%s.pdf" %("12341231")
