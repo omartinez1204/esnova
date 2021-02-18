@@ -26,8 +26,6 @@ def obtenerDatos_Solicitante(request):
     id_usuario_actual = int(request.POST['id_usuario'])
     consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
 
-    obtener_usuario = 
-
     if request.POST['residencia_distinta'] == 'Si':
         datosPersonalesModel = datosPersonales(usuario_foraneo = consulta_datosPersonales,fecha = date.today(), solicita_beca_alimentaria= request.POST['solicita_beca_alimentaria'],
         ap_paterno=request.POST['apellido_paterno'], ap_materno = request.POST['apellido_materno'], nombre = request.POST['nombre'],
