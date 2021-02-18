@@ -671,15 +671,113 @@ def imagenes(request):
 
 class ViewPDF(View):
 	def get(self, request, *args, **kwargs):
-		data = {
+		id_usuario_actual = int(request.GET['id_usuario'])
+		consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
+		try:
+			f1 = datosPersonales.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f1 = datosPersonales()
+		try:
+			f2 = gastosDelSolicitante.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f2 = gastosDelSolicitante()
+		try:
+			f3 = mediosParaEstudiar.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f3 = mediosParaEstudiar()
+		try:
+			f4 = datosPersonaDeQuienDepende.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f4 = datosPersonaDeQuienDepende()
+		try:
+			f5 = datosDelResponsable.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f5 = datosDelResponsable()
+		try:
+			f6 = ingresoFamiliarMensual.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f6 = ingresoFamiliarMensual()
+		try:
+			f7 = gastoFamiliarMensual.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f7 = gastoFamiliarMensual()
+		try:
+			f8 = PersonaDependiente.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f8 = PersonaDependiente()
+		try:
+			f9 = personasQueDependenDelIngresoMensual.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f9 = personasQueDependenDelIngresoMensual()
 
+		data = {
+				'id_usuario_actual':id_usuario_actual,
+				'f1':f1,
+				'f2':f2,
+				'f3':f3,
+				'f4':f4,
+				'f5':f5,
+				'f6':f6,
+				'f7':f7,
+				'f8':f8,
+				'f9':f9,
 			}
 		pdf = render_to_pdf('plantilla_pdf.html', data)
 		return HttpResponse(pdf, content_type='application/pdf')
 
 class DownloadPDF(View):
 	def get(self, request, *args, **kwargs):
+		id_usuario_actual = int(request.GET['id_usuario'])
+		consulta_datosPersonales = Usuario.objects.get(pk = id_usuario_actual)
+		try:
+			f1 = datosPersonales.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f1 = datosPersonales()
+		try:
+			f2 = gastosDelSolicitante.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f2 = gastosDelSolicitante()
+		try:
+			f3 = mediosParaEstudiar.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f3 = mediosParaEstudiar()
+		try:
+			f4 = datosPersonaDeQuienDepende.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f4 = datosPersonaDeQuienDepende()
+		try:
+			f5 = datosDelResponsable.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f5 = datosDelResponsable()
+		try:
+			f6 = ingresoFamiliarMensual.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f6 = ingresoFamiliarMensual()
+		try:
+			f7 = gastoFamiliarMensual.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f7 = gastoFamiliarMensual()
+		try:
+			f8 = PersonaDependiente.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f8 = PersonaDependiente()
+		try:
+			f9 = personasQueDependenDelIngresoMensual.objects.get(pk = id_usuario_actual)
+		except Exception as e:
+			f9 = personasQueDependenDelIngresoMensual()
 
+		data = {
+				'id_usuario_actual':id_usuario_actual,
+				'f1':f1,
+				'f2':f2,
+				'f3':f3,
+				'f4':f4,
+				'f5':f5,
+				'f6':f6,
+				'f7':f7,
+				'f8':f8,
+				'f9':f9,
+			}
 		pdf = render_to_pdf('app/pdf_template.html', data)
 
 		response = HttpResponse(pdf, content_type='application/pdf')
