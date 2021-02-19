@@ -12,6 +12,21 @@
     <script type="text/javascript" src="{% static 'js/validaciones_numericas.js'  %}?v=0.0.3"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   </head>
+  <style>
+  <style>
+  p.required:after
+  {
+  color: red;
+  content: " *";
+  }
+  h6.required:after
+  {
+  color: red;
+  content: " *";
+  }
+
+  </style>
+  </style>
   <body>
       {% block header %}
       {% include 'subPlantillas/header.html' %}
@@ -34,7 +49,7 @@
         {{ form.as_p }}
 
       <div class="row">
-      <p class="text-justify" style="color: #566573;"><strong>l. ¿A cuánto ascienden sus gastos mensuales totales de manutención, incluyendo lo que paga de: alimentación,  transporte, vivienda,servicios médicos, libros y materiales escolares, entretenimiento, etc.? (por favor, no incluya los gastos en colegiatura e inscripciones de la universidad):
+      <p class="text-justify control-p required" style="color: #566573;"><strong>l. ¿A cuánto ascienden sus gastos mensuales totales de manutención, incluyendo lo que paga de: alimentación,  transporte, vivienda,servicios médicos, libros y materiales escolares, entretenimiento, etc.? (por favor, no incluya los gastos en colegiatura e inscripciones de la universidad):
       </strong>
       </p>
           <div class="row">
@@ -48,7 +63,7 @@
       <br>
       <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
-      <p  class="" style="color: #566573;"><strong> ¿Tiene gastos adicionales por concepto de servicios médicos especializados ?  </strong></p>
+      <p  class="control-p required"  style="color: #566573;"><strong> ¿Tiene gastos adicionales por concepto de servicios médicos especializados ?  </strong></p>
       <div class="radio">
       <input class="form-check-input" type="radio" name="gastos_medicos" id="check5" value="Si"  onclick="javascript:showContent8()">
       <label class="form-check-label" for="flexRadioDefault3">
@@ -135,7 +150,7 @@
 
           <br>
             <div class="row ">
-              <p style="color: #566573;"><strong>Medio más frecuente para el traslado a la Universidad: </strong></p>
+              <p class="control-p required" style="color: #566573;"><strong>Medio más frecuente para el traslado a la Universidad: </strong></p>
                <div class="col-md-4 col-sm-4 col-xs-4">
                 <select  name="seleccion"  onclick="javascript:showContent5()" id="inputState" class="form-control" >
                   <option value="Taxi "selected>Taxi</option>
@@ -173,7 +188,7 @@
 
 
             <div class="col-md-3 col-sm-3 col-xs-3">
-            <h6>Celular:</h6>
+            <h6 class="control-h6 required" >Celular:</h6>
             <div class="radio">
             <input class="form-check-input" type="radio" name="celular" id="check" value="Si"  onclick="showContent()">
             <label class="form-check-label" for="flexRadioDefault2">
@@ -187,7 +202,7 @@
             </div>
 
             <div class="col-md-3 col-sm-3 col-xs-3">
-            <h6>Cámara fotografica:</h6>
+            <h6 class="control-h6 required">Cámara fotografica:</h6>
             <div class="radio">
             <input class="form-check-input" type="radio" name="camara_fotografica" id="flexRadioDefault1" value="Si" >
             <label class="form-check-label" for="flexRadioDefault2">
@@ -201,7 +216,7 @@
           </div>
 
           <div class="col-md-3 col-sm-3 col-xs-3">
-          <h6>Reproductor de audio</h6>
+          <h6 class="control-h6 required">Reproductor de audio</h6>
           <div class="radio">
           <input class="form-check-input" type="radio" name="reproductor_de_audio" id="flexRadioDefault2" value="Si"  >
           <label class="form-check-label" for="flexRadioDefault2">
@@ -215,7 +230,7 @@
         </div>
 
         <div class="col-md-3 col-sm-3 col-xs-3">
-        <h6>Tableta electrónica:</h6>
+        <h6 class="control-h6 required">Tableta electrónica:</h6>
         <div class="radio">
         <input class="form-check-input" type="radio" name="tableta_electronica" id="flexRadioDefault3" value="Si">
         <label class="form-check-label" for="residencia_distinta1">
@@ -247,7 +262,7 @@
               <br>
               <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
-              <p  class="preguntas" style="color: #566573;"><strong> ¿Se encuentra empleado?  </strong></p>
+              <p class="control-p required"  style="color: #566573;"><strong> ¿Se encuentra empleado?  </strong></p>
               <div class="radio">
               <input class="form-check-input" type="radio" name="trabaja" id="check4" value="Si"  onclick="javascript:showContent6()">
               <label class="form-check-label" for="flexRadioDefault3">
@@ -297,7 +312,7 @@
 
                 <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                <p style="color: #566573;"><strong>¿Es jefe de familia?</strong></p>
+                <p class="control-p required" style="color: #566573;"><strong>¿Es jefe de familia?</strong></p>
                 <div class="radio">
                 <input class="form-check-input" type="radio" name="jefe_de_familia" id="check2" value="Si"  onclick="javascript:showContent3()">
                 <label class="form-check-label" for="residencia_distinta1">
