@@ -84,3 +84,9 @@ nav .navbar-nav li a{
   a:link {
   text-decoration: none;
   }
+
+  span.required:after
+{
+ color: red;
+ content: " *";
+}
